@@ -5,21 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://d2yr2v1e0ibvc" path="res://Scenes/player.tscn" id="3_nhqi6"]
 
 [sub_resource type="GDScript" id="GDScript_jhjj7"]
-script/source = "extends Node
-
-func _ready():
-	$Label.text = \"Hello World\"
-	$Label.modulate = Color.GREEN
-	
-	
-func _input(event):
-	if event.is_action_pressed(\"my_action\"):
-		$Label.modulate = Color.RED
-		
-	if event.is_action_released(\"my_action\"):
-		$Label.modulate = Color.GREEN
-	
-"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_32ymq"]
 texture = ExtResource("1_k0v2y")
@@ -1925,4 +1910,3 @@ position = Vector2(-290, -157)
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, 1)
 zoom = Vector2(3, 3)
-limit_smoothed = true
