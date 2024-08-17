@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const speed = 100 
+const speed = 200 
 var current_dir = "none"
 
 func _physics_process(delta):
@@ -18,24 +18,28 @@ func player_movement(delta):
 		play_anim(1)
 		velocity.x = speed
 		velocity.y = -speed
+		print("diagonal right up")
 	#diagonal down right
 	elif Input.is_action_pressed("right") and Input.is_action_pressed("down"):
 		current_dir = "right"
 		play_anim(1)
 		velocity.x = speed
 		velocity.y = speed
+		print("diagonal right down")
 	#diagonal up left
 	elif Input.is_action_pressed("left") and Input.is_action_pressed("up"):
 		current_dir = "left"
 		play_anim(1)
 		velocity.x = -speed
 		velocity.y = -speed
+		print("diagonal left up")
 	#diagonal down left
 	elif Input.is_action_pressed("left") and Input.is_action_pressed("down"):
 		current_dir = "left"
 		play_anim(1)
 		velocity.x = -speed
 		velocity.y = speed
+		print("diagonal left down")
 	elif Input.is_action_pressed("right"):
 		current_dir = "right"
 		play_anim(1)

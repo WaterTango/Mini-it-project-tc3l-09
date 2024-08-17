@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtmyakedkgrdd"
-path="res://.godot/imported/water6.png-dd097ee812abd48a1f44db578118b91d.ctex"
+uid="uid://bug45rieyho3f"
+path="res://.godot/imported/Snowrock (1).png-5ff6e676bc31244b5c521335cff0a141.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/P_P_FREE_RPG_TILESET/sprites/sprites/tilesets/water6.png"
-dest_files=["res://.godot/imported/water6.png-dd097ee812abd48a1f44db578118b91d.ctex"]
+source_file="res://Assets/P_P_FREE_RPG_TILESET/Snowrock (1).png"
+dest_files=["res://.godot/imported/Snowrock (1).png-5ff6e676bc31244b5c521335cff0a141.ctex"]
 
 [params]
 
