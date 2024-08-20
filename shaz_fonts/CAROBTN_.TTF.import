@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://f3bxx2ry3bsw"
-path="res://.godot/imported/BLKCHCRY.TTF-5a577e7a58ee855aa63b5082901073f1.fontdata"
+uid="uid://cb7pxe0c4fdr7"
+path="res://.godot/imported/CAROBTN_.TTF-9aa469e560312aaec9d789500a6264b3.fontdata"
 
 [deps]
 
-source_file="res://fonts/BLKCHCRY.TTF"
-dest_files=["res://.godot/imported/BLKCHCRY.TTF-5a577e7a58ee855aa63b5082901073f1.fontdata"]
+source_file="res://shaz_fonts/CAROBTN_.TTF"
+dest_files=["res://.godot/imported/CAROBTN_.TTF-9aa469e560312aaec9d789500a6264b3.fontdata"]
 
 [params]
 

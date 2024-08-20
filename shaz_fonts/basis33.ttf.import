@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://dh3g4jbn5a1op"
-path="res://.godot/imported/Mael.ttf-4e48f31fd2fffeaa9ca6b1ecc3cc6cc1.fontdata"
+uid="uid://b8oo2dguy484y"
+path="res://.godot/imported/basis33.ttf-fb13b547e66ee49471b5342c36af74c1.fontdata"
 
 [deps]
 
-source_file="res://fonts/Mael.ttf"
-dest_files=["res://.godot/imported/Mael.ttf-4e48f31fd2fffeaa9ca6b1ecc3cc6cc1.fontdata"]
+source_file="res://shaz_fonts/basis33.ttf"
+dest_files=["res://.godot/imported/basis33.ttf-fb13b547e66ee49471b5342c36af74c1.fontdata"]
 
 [params]
 

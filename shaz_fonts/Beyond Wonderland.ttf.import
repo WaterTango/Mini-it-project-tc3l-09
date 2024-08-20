@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://b8oo2dguy484y"
-path="res://.godot/imported/basis33.ttf-2ea728fd02f9869060eb9711694d1772.fontdata"
+uid="uid://brf41cibm5h5k"
+path="res://.godot/imported/Beyond Wonderland.ttf-176750ab1c6050a6bfa61e249150bc8a.fontdata"
 
 [deps]
 
-source_file="res://fonts/basis33.ttf"
-dest_files=["res://.godot/imported/basis33.ttf-2ea728fd02f9869060eb9711694d1772.fontdata"]
+source_file="res://shaz_fonts/Beyond Wonderland.ttf"
+dest_files=["res://.godot/imported/Beyond Wonderland.ttf-176750ab1c6050a6bfa61e249150bc8a.fontdata"]
 
 [params]
 

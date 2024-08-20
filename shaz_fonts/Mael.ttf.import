@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://cb7pxe0c4fdr7"
-path="res://.godot/imported/CAROBTN_.TTF-b0c49a57ce7d5a7c7981502e42363c06.fontdata"
+uid="uid://dh3g4jbn5a1op"
+path="res://.godot/imported/Mael.ttf-eb8c7c53553a841db155f5a325fdda25.fontdata"
 
 [deps]
 
-source_file="res://fonts/CAROBTN_.TTF"
-dest_files=["res://.godot/imported/CAROBTN_.TTF-b0c49a57ce7d5a7c7981502e42363c06.fontdata"]
+source_file="res://shaz_fonts/Mael.ttf"
+dest_files=["res://.godot/imported/Mael.ttf-eb8c7c53553a841db155f5a325fdda25.fontdata"]
 
 [params]
 

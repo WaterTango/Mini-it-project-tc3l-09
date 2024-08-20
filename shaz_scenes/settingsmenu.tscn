@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://cvrddgckuqve"]
 
-[ext_resource type="FontFile" uid="uid://f3bxx2ry3bsw" path="res://fonts/BLKCHCRY.TTF" id="1_lj1wd"]
-[ext_resource type="FontFile" uid="uid://b8oo2dguy484y" path="res://fonts/basis33.ttf" id="2_bm5xm"]
-[ext_resource type="Texture2D" uid="uid://d3v7bgb45ofjd" path="res://images/icons/exit-export-logout-svgrepo-com.svg" id="3_6k6jv"]
+[ext_resource type="FontFile" uid="uid://f3bxx2ry3bsw" path="res://shaz_fonts/BLKCHCRY.TTF" id="1_lj1wd"]
+[ext_resource type="FontFile" uid="uid://b8oo2dguy484y" path="res://shaz_fonts/basis33.ttf" id="2_bm5xm"]
+[ext_resource type="Texture2D" uid="uid://d3v7bgb45ofjd" path="res://shaz_images/icons/exit-export-logout-svgrepo-com.svg" id="3_6k6jv"]
 
 [node name="settingsmenu" type="Control"]
 layout_mode = 3

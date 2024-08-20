@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://brf41cibm5h5k"
-path="res://.godot/imported/Beyond Wonderland.ttf-7aa8aab875d57b4a668cce3940bd03d9.fontdata"
+uid="uid://f3bxx2ry3bsw"
+path="res://.godot/imported/BLKCHCRY.TTF-ac144e9b8a11fad53b188f5a5990e236.fontdata"
 
 [deps]
 
-source_file="res://fonts/Beyond Wonderland.ttf"
-dest_files=["res://.godot/imported/Beyond Wonderland.ttf-7aa8aab875d57b4a668cce3940bd03d9.fontdata"]
+source_file="res://shaz_fonts/BLKCHCRY.TTF"
+dest_files=["res://.godot/imported/BLKCHCRY.TTF-ac144e9b8a11fad53b188f5a5990e236.fontdata"]
 
 [params]
 
