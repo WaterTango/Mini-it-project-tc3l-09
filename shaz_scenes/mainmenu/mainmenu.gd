@@ -19,6 +19,8 @@ func _ready() -> void:
 	$backgroundmusic.play()
 	# Connect the mouse_entered signals to the buttons
 	handle_connecting_signals()
+	# center of screen
+	center = Vector2(get_viewport_rect().size.x/2, get_viewport_rect().size.y/2)
 
 func on_start_pressed() -> void:
 	$MarginContainer/HBoxContainer/VBoxContainer/clickSFX.play()
@@ -31,6 +33,8 @@ func on_settings_pressed() -> void:
 	$MarginContainer/HBoxContainer/VBoxContainer/clickSFX.play()
 	#get_tree().change_scene_to_packed(settingsmenu)
 	print("Settings Button pressed")
+	await get_tree().create_timer(1.5).timeout
+	get_tree().change_scene_to_file("res://shaz_scenes/settingsmenu.tscn")
 	pass
 
 func on_controls_pressed() -> void:
@@ -41,6 +45,7 @@ func on_controls_pressed() -> void:
 func on_exit_pressed() -> void:
 	$MarginContainer/HBoxContainer/VBoxContainer/clickSFX.play() # inaudible SFX cuz game is already closed
 	print("goodbye world")
+	await get_tree().create_timer(1.5).timeout
 	get_tree().quit()
 
 func handle_connecting_signals() -> void:
@@ -59,7 +64,12 @@ func _process(_delta: float) -> void:
 	button_hovered(settingsbutton)
 	button_hovered(controlsbutton)
 	button_hovered(exitbutton)
-
+	# calcs vector between mouse n center (for DynamicBG)
+	var BG_Offset = center - get_global_mouse_position() * 0.025
+	TS_start(DynamicBGnode, "position", BG_Offset, 1)
+	var Title_Offset = center - get_global_mouse_position() * 0.010
+	TS_start(DynamicTitlenode, "position", Title_Offset, 1)
+	
 func button_hovered(button: Button):
 	button.pivot_offset = button.size / 2
 	if button.is_hovered():
@@ -70,3 +80,5 @@ func button_hovered(button: Button):
 
 # center coords.
 var center : Vector2
+@onready var DynamicBGnode = $DynamicBG
+@onready var DynamicTitlenode = $MarginContainer/DynamicTitle
