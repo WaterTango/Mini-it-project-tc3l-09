@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=4 uid="uid://dlsridlehvsdw"]
+[gd_scene load_steps=15 format=4 uid="uid://dlsridlehvsdw"]
 
 [ext_resource type="Texture2D" uid="uid://bgvy6ifhhogvt" path="res://Assets/tilesets/walls-a4.png" id="1_k0v2y"]
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_l80ay"]
+[ext_resource type="PackedScene" uid="uid://jnri2ghf2mbi" path="res://Scenes/enemy.tscn" id="2_fc7v5"]
 [ext_resource type="Texture2D" uid="uid://ea2t51kv1q7s" path="res://Assets/tilesets/walls/walls.png" id="3_m8cuu"]
 [ext_resource type="PackedScene" uid="uid://d2yr2v1e0ibvc" path="res://Scenes/player.tscn" id="3_nhqi6"]
 [ext_resource type="Texture2D" uid="uid://b5r2k4k0bsl1q" path="res://Assets/tilesets/Dungeon_24x24.png" id="3_rwhpj"]
@@ -316,6 +317,12 @@ sources/7 = SubResource("TileSetAtlasSource_v6opy")
 [node name="Main" type="Node"]
 script = ExtResource("1_l80ay")
 
+[node name="enemy" parent="." instance=ExtResource("2_fc7v5")]
+position = Vector2(164, 1)
+
+[node name="enemy2" parent="." instance=ExtResource("2_fc7v5")]
+position = Vector2(-165, 1)
+
 [node name="TileMap" type="TileMapLayer" parent="."]
 z_index = 1
 y_sort_enabled = true
@@ -348,4 +355,4 @@ position = Vector2(0, -7)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, 7)
-zoom = Vector2(5, 5)
+zoom = Vector2(3, 3)

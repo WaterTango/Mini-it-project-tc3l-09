@@ -419,6 +419,7 @@ size = Vector2(11, 18)
 [node name="Player" type="CharacterBody2D"]
 y_sort_enabled = true
 position = Vector2(-2, -9)
+collision_layer = 3
 script = ExtResource("1_6x7ad")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
