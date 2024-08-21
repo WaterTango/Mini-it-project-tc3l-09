@@ -10,7 +10,7 @@ func _ready():
 	$AnimatedSprite2D.play("front_idle")
 	
 	
-func player_movement(delta):
+func player_movement(_delta):
 
 	#diagonal up right 0
 	if Input.is_action_pressed("right") and Input.is_action_pressed("up"):
