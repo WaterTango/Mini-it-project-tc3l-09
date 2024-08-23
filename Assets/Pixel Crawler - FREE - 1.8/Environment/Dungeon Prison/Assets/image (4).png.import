@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://m0sv21567v1v"
-path="res://.godot/imported/Black.png-1259e6012fa2171ad3c8e6e4f77b3e57.ctex"
+uid="uid://ldukf2fqae02"
+path="res://.godot/imported/image (4).png-66945a61e86dc11f8031de4199d60f44.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/Black.png"
-dest_files=["res://.godot/imported/Black.png-1259e6012fa2171ad3c8e6e4f77b3e57.ctex"]
+source_file="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/image (4).png"
+dest_files=["res://.godot/imported/image (4).png-66945a61e86dc11f8031de4199d60f44.ctex"]
 
 [params]
 
