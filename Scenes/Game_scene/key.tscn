@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://pt3v68ebmn6"]
+
+[ext_resource type="Script" path="res://Scripts/key.gd" id="1_a7f2i"]
+[ext_resource type="Texture2D" uid="uid://bysluhgy2hwsr" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/Props.png" id="2_xo05t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fks0r"]
+atlas = ExtResource("2_xo05t")
+region = Rect2(32, 64, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1rnpi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fks0r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6hilf"]
+radius = 7.07107
+
+[node name="key" type="StaticBody2D"]
+script = ExtResource("1_a7f2i")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1rnpi")
+frame_progress = 0.904762
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_6hilf")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

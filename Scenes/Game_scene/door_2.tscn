@@ -1,0 +1,67 @@
+[gd_scene load_steps=10 format=3 uid="uid://bfkdes8h20hgv"]
+
+[ext_resource type="Script" path="res://Scripts/door.gd" id="1_2hq0t"]
+[ext_resource type="Script" path="res://Scripts/door_collision.gd" id="2_wog1h"]
+[ext_resource type="Texture2D" uid="uid://d16kv83clog3f" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/door_close.png" id="3_4hjpx"]
+[ext_resource type="Texture2D" uid="uid://bmmvdmf6lyld5" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/door_open.png" id="4_1ti6b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l0a30"]
+size = Vector2(30.5, 18.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hao5"]
+atlas = ExtResource("3_4hjpx")
+region = Rect2(0, 0, 30, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wt46"]
+atlas = ExtResource("4_1ti6b")
+region = Rect2(0, 0, 30, 45)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qc8lr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hao5")
+}],
+"loop": true,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7wt46")
+}],
+"loop": true,
+"name": &"opened",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8h2rs"]
+radius = 24.0
+height = 110.0
+
+[node name="door2" type="StaticBody2D"]
+position = Vector2(107, -60)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_2hq0t")
+
+[node name="door_collision" type="CollisionShape2D" parent="."]
+position = Vector2(-0.25, 14.25)
+shape = SubResource("RectangleShape2D_l0a30")
+debug_color = Color(0.909804, 0.0196078, 0, 0.419608)
+script = ExtResource("2_wog1h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -3)
+scale = Vector2(1.2, 1.2)
+sprite_frames = SubResource("SpriteFrames_qc8lr")
+animation = &"closed"
+autoplay = "closed"
+
+[node name="door zone" type="Area2D" parent="."]
+
+[node name="open zone" type="CollisionShape2D" parent="door zone"]
+shape = SubResource("CapsuleShape2D_8h2rs")
+
+[connection signal="door_collision" from="." to="door_collision" method="_on_door_door_collision"]
+[connection signal="body_entered" from="door zone" to="door_collision" method="_on_door_zone_body_entered"]

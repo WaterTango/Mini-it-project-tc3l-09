@@ -24,7 +24,7 @@ func _ready() -> void:
 
 func on_start_pressed() -> void:
 	$MarginContainer/HBoxContainer/VBoxContainer/clickSFX.play()
-	get_tree().change_scene_to_file("res://Scenes/Game_scene/main.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Game_scene/world_1.tscn")
 	print("Start Button pressed") # all the print statements are for debugging just in case
 	$backgroundmusic.stop()
 	pass
