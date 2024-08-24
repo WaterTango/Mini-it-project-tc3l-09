@@ -414,7 +414,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_65ni1"]
-size = Vector2(11, 18)
+size = Vector2(9, 16)
 
 [node name="Player" type="CharacterBody2D"]
 y_sort_enabled = true
@@ -431,5 +431,5 @@ autoplay = "front_idle"
 offset = Vector2(0, -15)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2.5, 2)
+position = Vector2(2.5, 3)
 shape = SubResource("RectangleShape2D_65ni1")
