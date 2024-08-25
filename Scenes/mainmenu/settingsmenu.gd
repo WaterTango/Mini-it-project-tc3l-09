@@ -13,7 +13,7 @@ func handle_connecting_settings_signals() -> void:
 	set_process(false)
 
 func on_exit_pressed() -> void:
+	$"../MarginContainer/HBoxContainer/VBoxContainer/clickSFX".play()
 	exit_settings_menu.emit()
 	set_process(false)
-	#$clickSFX.play() 
-	print("going back to mainmenu")
+	print("exiting settings, going back to mainmenu")

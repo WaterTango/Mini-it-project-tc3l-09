@@ -5,7 +5,6 @@ extends Control
 # the button variables (drag, hold ctrl, drop for ease) + (defining the variable)
 @onready var startbutton: Button = $MarginContainer/HBoxContainer/VBoxContainer/startbutton as Button
 @onready var settingsbutton: Button = $MarginContainer/HBoxContainer/VBoxContainer/settingsbutton as Button
-@onready var controlsbutton: Button = $MarginContainer/HBoxContainer/VBoxContainer/controlsbutton as Button
 @onready var exitbutton: Button = $MarginContainer/HBoxContainer/VBoxContainer/exitbutton as Button
 @onready var settings_menu: settingsmenu = $settings_menu as settingsmenu
 @onready var margin_container: MarginContainer = $MarginContainer as MarginContainer
@@ -15,12 +14,17 @@ extends Control
 
 #----------------------------------main function for startup----------------------------------------
 func _ready() -> void:
-	$backgroundmusic.play()
-	$AnimationPlayer.play("menu fade in")
-	# Connect the mouse_entered signals to the buttons
-	handle_connecting_signals()
 	# center of screen
 	center = Vector2(get_viewport_rect().size.x/2, get_viewport_rect().size.y/2)
+	$backgroundmusic.play()
+	$AnimationPlayer.play("menu fade in")
+	print("animation is fading in...")
+	await get_tree().create_timer(3).timeout
+	$loadedSFX.play()
+	print("welcome to TOWER CRAWER!")
+	# Connect the mouse_entered signals to the buttons
+	handle_connecting_signals()
+	print("button signals connected")
 
 func on_start_pressed() -> void:
 	$MarginContainer/HBoxContainer/VBoxContainer/clickSFX.play()
@@ -39,11 +43,6 @@ func on_settings_pressed() -> void:
 	settings_menu.visible = true
 	pass
 
-func on_controls_pressed() -> void:
-	$MarginContainer/HBoxContainer/VBoxContainer/clickSFX.play()
-	print("Controls Button pressed")
-	pass
-
 func on_exit_pressed() -> void:
 	$MarginContainer/HBoxContainer/VBoxContainer/clickSFX.play() # inaudible SFX cuz game is already closed
 	print("goodbye world")
@@ -58,7 +57,6 @@ func on_exit_settings_menu() -> void:
 func handle_connecting_signals() -> void:
 	startbutton.button_down.connect(on_start_pressed)
 	settingsbutton.button_down.connect(on_settings_pressed)
-	controlsbutton.button_down.connect(on_controls_pressed)
 	exitbutton.button_down.connect(on_exit_pressed)
 	settings_menu.exit_settings_menu.connect(on_exit_settings_menu)
 
@@ -82,7 +80,6 @@ func TS_start(object: Object, property: String, final_val: Variant, duration: fl
 func _process(_delta: float) -> void:
 	button_hovered(startbutton)
 	button_hovered(settingsbutton)
-	button_hovered(controlsbutton)
 	button_hovered(exitbutton)
 	# calcs vector between mouse n center (for DynamicBG)
 	var BG_Offset = center - get_global_mouse_position() * 0.025

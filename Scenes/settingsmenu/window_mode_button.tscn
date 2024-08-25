@@ -1,7 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://ik6717x460lc"]
+[gd_scene load_steps=4 format=3 uid="uid://ik6717x460lc"]
 
 [ext_resource type="PackedScene" uid="uid://b36eiungshmti" path="res://Scenes/settingsmenu/settings_display_button.tscn" id="1_3g6w6"]
 [ext_resource type="Script" path="res://Scenes/settingsmenu/window_mode_button.gd" id="2_x3mgo"]
+[ext_resource type="Texture2D" uid="uid://cwysb4vcq7x4y" path="res://shaz_images/icons/video.svg" id="3_x833e"]
 
 [node name="Window_Mode_Button" instance=ExtResource("1_3g6w6")]
 script = ExtResource("2_x3mgo")
+
+[node name="HBoxContainer" parent="." index="0"]
+theme_override_constants/separation = 110
+
+[node name="Label" parent="HBoxContainer" index="0"]
+size_flags_horizontal = 0
+size_flags_vertical = 1
+
+[node name="OptionButton" parent="HBoxContainer" index="2"]
+custom_minimum_size = Vector2(400, 50)
+size_flags_horizontal = 2
+theme_override_constants/outline_size = 7
+theme_override_icons/icon = ExtResource("3_x833e")
+expand_icon = true

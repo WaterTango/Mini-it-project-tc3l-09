@@ -1,10 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://dk2ipp2f4qfeh"]
+[gd_scene load_steps=4 format=3 uid="uid://dk2ipp2f4qfeh"]
 
 [ext_resource type="PackedScene" uid="uid://b36eiungshmti" path="res://Scenes/settingsmenu/settings_display_button.tscn" id="1_jkmkj"]
 [ext_resource type="Script" path="res://Scenes/settingsmenu/resolution_mode_button.gd" id="2_tnjcy"]
+[ext_resource type="Texture2D" uid="uid://dndaxmmgk02bf" path="res://shaz_images/icons/resolution-svgrepo-com.svg" id="3_ofd7b"]
 
 [node name="resolution_mode_button" instance=ExtResource("1_jkmkj")]
 script = ExtResource("2_tnjcy")
 
+[node name="HBoxContainer" parent="." index="0"]
+theme_override_constants/separation = 110
+
 [node name="Label" parent="HBoxContainer" index="0"]
-text = "Resolution"
+text = "Resolution "
+
+[node name="OptionButton" parent="HBoxContainer" index="2"]
+custom_minimum_size = Vector2(400, 50)
+size_flags_horizontal = 2
+theme_override_constants/outline_size = 7
+theme_override_icons/icon = ExtResource("3_ofd7b")
+expand_icon = true
