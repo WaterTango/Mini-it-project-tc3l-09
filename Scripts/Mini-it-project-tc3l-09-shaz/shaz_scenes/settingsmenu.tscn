@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvrddgckuqve"]
+
+[ext_resource type="FontFile" uid="uid://f3bxx2ry3bsw" path="res://shaz_fonts/BLKCHCRY.TTF" id="1_lj1wd"]
+[ext_resource type="FontFile" uid="uid://b8oo2dguy484y" path="res://shaz_fonts/basis33.ttf" id="2_bm5xm"]
+[ext_resource type="Texture2D" uid="uid://d3v7bgb45ofjd" path="res://shaz_images/icons/exit-export-logout-svgrepo-com.svg" id="3_6k6jv"]
+
+[node name="settingsmenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 128
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = -10
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.788579, 0.577635, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("1_lj1wd")
+theme_override_font_sizes/font_size = 48
+text = "Settings"
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_colors/font_hover_color = Color(0, 0.858824, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_constants/h_separation = 5
+theme_override_constants/icon_max_width = 0
+theme_override_constants/align_to_largest_stylebox = 0
+theme_override_fonts/font = ExtResource("2_bm5xm")
+theme_override_font_sizes/font_size = 32
+text = "Back"
+icon = ExtResource("3_6k6jv")
+flat = true
+alignment = 0
+text_overrun_behavior = 1
+icon_alignment = 2
+expand_icon = true

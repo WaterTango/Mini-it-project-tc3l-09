@@ -1,0 +1,220 @@
+[gd_scene load_steps=13 format=3 uid="uid://bwwv1w4tn5b28"]
+
+[ext_resource type="Script" path="res://shaz_scenes/mainmenu/mainmenu.gd" id="1_e6pdu"]
+[ext_resource type="Texture2D" uid="uid://nwlgun5ydb5d" path="res://shaz_images/background.jpeg" id="1_tae3e"]
+[ext_resource type="FontFile" uid="uid://dh3g4jbn5a1op" path="res://shaz_fonts/Mael.ttf" id="2_85lks"]
+[ext_resource type="FontFile" uid="uid://f3bxx2ry3bsw" path="res://shaz_fonts/BLKCHCRY.TTF" id="3_mrjki"]
+[ext_resource type="AudioStream" uid="uid://bhnfdxn0m6r6f" path="res://shaz_audio/SFX/clicksfx.mp3" id="5_7a3fo"]
+[ext_resource type="Texture2D" uid="uid://bpw7x46s8xaas" path="res://shaz_images/icons/sword-svgrepo-com.svg" id="5_n7u76"]
+[ext_resource type="AudioStream" uid="uid://dak14mahdsqiw" path="res://shaz_audio/music/auf-grunen-wiesen.mp3" id="6_n4uxm"]
+[ext_resource type="Texture2D" uid="uid://bgo27ju8e1mld" path="res://shaz_images/icons/settings-svgrepo-com.svg" id="6_owkjg"]
+[ext_resource type="Texture2D" uid="uid://ca80j61b60gyi" path="res://shaz_images/icons/keyboard-svgrepo-com.svg" id="7_4nhrh"]
+[ext_resource type="Texture2D" uid="uid://ki4uora7ofry" path="res://shaz_images/icons/quit-svgrepo-com.svg" id="8_ta4wk"]
+[ext_resource type="AudioStream" uid="uid://dsrvt5qhrkmil" path="res://shaz_audio/SFX/hoversfx.mp3" id="10_33fa0"]
+[ext_resource type="Texture2D" uid="uid://b2bml5xl65kk1" path="res://shaz_images/tree_branch-removebg-preview.png" id="11_dmb41"]
+
+[node name="mainmenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e6pdu")
+tween_intensity = 1.0
+tween_duration = 0.3
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_tae3e")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+top_level = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 70
+
+[node name="Separator" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.902903, 0.662342, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_85lks")
+theme_override_font_sizes/font_size = 65
+text = "TOWER CRAWLER
+"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+size_flags_stretch_ratio = 4.99
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+z_as_relative = false
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 8
+size_flags_stretch_ratio = 1.05
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="Separator2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+top_level = true
+layout_mode = 2
+
+[node name="startbutton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+z_as_relative = false
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 0.666667, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.596386, 0.390577, 9.62615e-08, 1)
+theme_override_fonts/font = ExtResource("3_mrjki")
+theme_override_font_sizes/font_size = 30
+text = "  Start
+"
+icon = ExtResource("5_n7u76")
+alignment = 0
+clip_text = true
+expand_icon = true
+
+[node name="Separator3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="settingsbutton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 0.666667, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.596078, 0.392157, 0, 1)
+theme_override_fonts/font = ExtResource("3_mrjki")
+theme_override_font_sizes/font_size = 30
+text = "Settings
+"
+icon = ExtResource("6_owkjg")
+alignment = 0
+clip_text = true
+expand_icon = true
+
+[node name="Separator4" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="controlsbutton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 0.666667, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.596078, 0.392157, 0, 1)
+theme_override_fonts/font = ExtResource("3_mrjki")
+theme_override_font_sizes/font_size = 30
+text = "	Controls
+"
+icon = ExtResource("7_4nhrh")
+alignment = 0
+expand_icon = true
+
+[node name="Separator5" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="exitbutton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.559523, 1.27546e-06, 3.36915e-07, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_mrjki")
+theme_override_font_sizes/font_size = 30
+text = "	   Quit"
+icon = ExtResource("8_ta4wk")
+alignment = 0
+expand_icon = true
+
+[node name="clickSFX" type="AudioStreamPlayer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+stream = ExtResource("5_7a3fo")
+volume_db = -3.0
+pitch_scale = 0.48
+
+[node name="hoverSFX" type="AudioStreamPlayer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+stream = ExtResource("10_33fa0")
+volume_db = 9.0
+
+[node name="backgroundmusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_n4uxm")
+
+[node name="DynamicBG" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="DynamicBG"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -597.0
+offset_top = 265.0
+offset_right = 593.0
+offset_bottom = 339.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="DynamicBG"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -597.0
+offset_top = -350.0
+offset_right = 593.0
+offset_bottom = -276.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect2" type="TextureRect" parent="DynamicBG"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 352.0
+offset_top = -241.0
+offset_right = 791.0
+offset_bottom = 400.0
+texture = ExtResource("11_dmb41")
+flip_h = true
+
+[node name="TextureRect3" type="TextureRect" parent="DynamicBG"]
+visible = false
+show_behind_parent = true
+layout_mode = 0
+offset_left = -861.0
+offset_top = -85.0
+offset_right = -143.0
+offset_bottom = 821.0
+texture = ExtResource("11_dmb41")
