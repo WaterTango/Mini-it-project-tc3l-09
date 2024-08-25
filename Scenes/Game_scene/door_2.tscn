@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://bfkdes8h20hgv"]
 
 [ext_resource type="Script" path="res://Scripts/door.gd" id="1_2hq0t"]
-[ext_resource type="Script" path="res://Scripts/door_collision.gd" id="2_wog1h"]
+[ext_resource type="Script" path="res://Scripts/door1_collision.gd" id="2_wog1h"]
 [ext_resource type="Texture2D" uid="uid://d16kv83clog3f" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/door_close.png" id="3_4hjpx"]
 [ext_resource type="Texture2D" uid="uid://bmmvdmf6lyld5" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/door_open.png" id="4_1ti6b"]
 
