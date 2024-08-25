@@ -8,10 +8,11 @@ var keytaken = false
 var in_door1_zone = false
 var in_door2_zone = false
 
-func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
+func _on_area_2d_body_entered(_body: CharacterBody2D) -> void:
 	if keytaken == false:
 		keytaken = true 
 		$Sprite2D.queue_free()
+		$Area2D.queue_free()
 		print("key picked up")
 		
 func _process(_delta):
@@ -30,21 +31,21 @@ func _process(_delta):
 				return
 
 
-func _on_door_2_zone_body_entered(body: Node2D) -> void:
+func _on_door_2_zone_body_entered(_body: Node2D) -> void:
 	in_door2_zone = true
 	print("in door2 zone")
 
 
-func _on_door_2_zone_body_exited(body: Node2D) -> void:
+func _on_door_2_zone_body_exited(_body: Node2D) -> void:
 	in_door1_zone = false
 	print("NOT in door2 zone")
 
 
-func _on_door_1_zone_body_entered(body: Node2D) -> void:
+func _on_door_1_zone_body_entered(_body: Node2D) -> void:
 	in_door1_zone = true
 	print("in door1 zone")
 
 
-func _on_door_1_zone_body_exited(body: Node2D) -> void:
+func _on_door_1_zone_body_exited(_body: Node2D) -> void:
 	in_door1_zone = false
 	print("NOT in door1 zone")
