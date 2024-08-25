@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://dilgucspn6n7b"]
+[gd_scene load_steps=9 format=3 uid="uid://dilgucspn6n7b"]
 
 [ext_resource type="FontFile" uid="uid://f3bxx2ry3bsw" path="res://shaz_fonts/BLKCHCRY.TTF" id="1_vnq8c"]
 [ext_resource type="FontFile" uid="uid://b8oo2dguy484y" path="res://shaz_fonts/basis33.ttf" id="2_yc538"]
+[ext_resource type="Texture2D" uid="uid://cwysb4vcq7x4y" path="res://shaz_images/icons/video.svg" id="3_80ajn"]
 [ext_resource type="FontFile" uid="uid://cb7pxe0c4fdr7" path="res://shaz_fonts/CAROBTN_.TTF" id="3_eu6g7"]
 [ext_resource type="PackedScene" uid="uid://ik6717x460lc" path="res://Scenes/settingsmenu/window_mode_button.tscn" id="4_tocut"]
 [ext_resource type="PackedScene" uid="uid://dk2ipp2f4qfeh" path="res://Scenes/settingsmenu/resolution_mode_button.tscn" id="5_5knsg"]
+[ext_resource type="PackedScene" uid="uid://cl8l76vprw680" path="res://Scenes/settingsmenu/audio_slider_settings.tscn" id="6_cttw3"]
+[ext_resource type="PackedScene" uid="uid://cyl3l6qhj7r43" path="res://Scenes/settingsmenu/settings_vsync_button.tscn" id="6_q51ql"]
 
 [node name="settingsTabContainer" type="Control"]
 layout_mode = 3
@@ -36,6 +39,9 @@ drag_to_rearrange_enabled = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_yc538")
 theme_override_font_sizes/font_size = 28
+theme_override_icons/increment_highlight = ExtResource("3_80ajn")
+theme_override_icons/decrement = ExtResource("3_80ajn")
+theme_override_icons/decrement_highlight = ExtResource("3_80ajn")
 tab_alignment = 2
 max_tab_width = 20
 metadata/_tab_index = 0
@@ -47,10 +53,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 24
-theme_override_constants/margin_top = 24
-theme_override_constants/margin_right = 24
-theme_override_constants/margin_bottom = 24
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Video/MarginContainer"]
 layout_mode = 2
@@ -66,13 +72,13 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 128
 
-[node name="separator" type="Control" parent="TabContainer/Video/MarginContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-
 [node name="Window_Mode_Button" parent="TabContainer/Video/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_tocut")]
 layout_mode = 2
 
 [node name="resolution_mode_button" parent="TabContainer/Video/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("5_5knsg")]
+layout_mode = 2
+
+[node name="settings_vsync_button" parent="TabContainer/Video/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("6_q51ql")]
 layout_mode = 2
 
 [node name="Audio" type="TabBar" parent="TabContainer"]
@@ -91,43 +97,29 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 24
-theme_override_constants/margin_top = 24
-theme_override_constants/margin_right = 24
-theme_override_constants/margin_bottom = 24
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Audio/MarginContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Audio/MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 64
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Audio/MarginContainer/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 128
 alignment = 1
 
-[node name="Label" type="Label" parent="TabContainer/Audio/MarginContainer/VBoxContainer"]
+[node name="audio_slider_settings" parent="TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("6_cttw3")]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_eu6g7")
-theme_override_font_sizes/font_size = 50
-text = "Skibidi Toilette5
-"
 
-[node name="Label2" type="Label" parent="TabContainer/Audio/MarginContainer/VBoxContainer"]
+[node name="audio_slider_settings2" parent="TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("6_cttw3")]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_eu6g7")
-theme_override_font_sizes/font_size = 50
-text = "Skibidi Toilette6
-"
+bus_name = "Music"
 
-[node name="Label3" type="Label" parent="TabContainer/Audio/MarginContainer/VBoxContainer"]
+[node name="audio_slider_settings3" parent="TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("6_cttw3")]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_eu6g7")
-theme_override_font_sizes/font_size = 50
-text = "Skibidi Toilette7
-"
-
-[node name="Label4" type="Label" parent="TabContainer/Audio/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_eu6g7")
-theme_override_font_sizes/font_size = 50
-text = "Skibidi Toilette8
-"
+bus_name = "SFX"
 
 [node name="Controls" type="TabBar" parent="TabContainer"]
 visible = false
@@ -145,10 +137,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 24
-theme_override_constants/margin_top = 24
-theme_override_constants/margin_right = 24
-theme_override_constants/margin_bottom = 24
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Controls/MarginContainer"]
 layout_mode = 2
@@ -199,10 +191,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 24
-theme_override_constants/margin_top = 24
-theme_override_constants/margin_right = 24
-theme_override_constants/margin_bottom = 24
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Accessibility/MarginContainer"]
 layout_mode = 2

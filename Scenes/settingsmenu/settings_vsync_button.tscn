@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyl3l6qhj7r43"]
+
+[ext_resource type="FontFile" uid="uid://b8oo2dguy484y" path="res://shaz_fonts/basis33.ttf" id="1_020bb"]
+[ext_resource type="Script" path="res://Scenes/settingsmenu/settings_vsync_button.gd" id="1_v1a47"]
+
+[node name="settings_vsync_button" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v1a47")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 61.0
+grow_horizontal = 2
+theme_override_constants/separation = 110
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(264, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_020bb")
+theme_override_font_sizes/font_size = 60
+text = "V-Sync"
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="VSync" type="CheckButton" parent="HBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_horizontal = 2
+alignment = 1

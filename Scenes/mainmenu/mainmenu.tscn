@@ -8,10 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://bpw7x46s8xaas" path="res://shaz_images/icons/sword-svgrepo-com.svg" id="5_n7u76"]
 [ext_resource type="AudioStream" uid="uid://dak14mahdsqiw" path="res://shaz_audio/music/auf-grunen-wiesen.mp3" id="6_n4uxm"]
 [ext_resource type="Texture2D" uid="uid://bgo27ju8e1mld" path="res://shaz_images/icons/settings-svgrepo-com.svg" id="6_owkjg"]
-[ext_resource type="Texture2D" uid="uid://ca80j61b60gyi" path="res://shaz_images/icons/keyboard-svgrepo-com.svg" id="7_4nhrh"]
 [ext_resource type="Texture2D" uid="uid://ki4uora7ofry" path="res://shaz_images/icons/quit-svgrepo-com.svg" id="8_ta4wk"]
 [ext_resource type="AudioStream" uid="uid://dsrvt5qhrkmil" path="res://shaz_audio/SFX/hoversfx.mp3" id="10_33fa0"]
 [ext_resource type="Texture2D" uid="uid://b2bml5xl65kk1" path="res://shaz_images/tree_branch-removebg-preview.png" id="11_dmb41"]
+[ext_resource type="AudioStream" uid="uid://cf7bipeioldwe" path="res://shaz_audio/SFX/cartoonbasssfx.mp3" id="12_82dxi"]
 [ext_resource type="PackedScene" uid="uid://cvrddgckuqve" path="res://Scenes/settingsmenu/settingsmenu.tscn" id="13_0e0s6"]
 
 [sub_resource type="Animation" id="Animation_yabwg"]
@@ -153,7 +153,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.887255, 0.650624, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 10
+theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("2_85lks")
 theme_override_font_sizes/font_size = 120
 text = "TOWER CRAWLER
@@ -234,26 +234,6 @@ expand_icon = true
 [node name="Separator4" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="controlsbutton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(300, 75)
-layout_mode = 2
-size_flags_horizontal = 4
-mouse_default_cursor_shape = 2
-theme_override_colors/font_hover_color = Color(1, 0.666667, 0, 1)
-theme_override_colors/font_pressed_color = Color(0.596078, 0.392157, 0, 1)
-theme_override_constants/outline_size = 5
-theme_override_fonts/font = ExtResource("3_mrjki")
-theme_override_font_sizes/font_size = 45
-text = "	Controls
-"
-icon = ExtResource("7_4nhrh")
-flat = true
-alignment = 0
-expand_icon = true
-
-[node name="Separator5" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-
 [node name="exitbutton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(300, 75)
 layout_mode = 2
@@ -271,17 +251,19 @@ flat = true
 alignment = 0
 expand_icon = true
 
-[node name="Separator6" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Separator5" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
 [node name="clickSFX" type="AudioStreamPlayer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 stream = ExtResource("5_7a3fo")
 volume_db = -3.0
 pitch_scale = 0.48
+bus = &"SFX"
 
 [node name="hoverSFX" type="AudioStreamPlayer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-stream = ExtResource("10_33fa0")
-volume_db = 9.0
+stream = ExtResource("12_82dxi")
+volume_db = 3.0
+bus = &"SFX"
 
 [node name="DynamicBG" type="Control" parent="."]
 layout_mode = 1
@@ -359,9 +341,14 @@ offset_right = 961.0
 offset_bottom = 35.0
 color = Color(0, 0, 0, 1)
 
-[node name="backgroundmusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_n4uxm")
-
 [node name="settings_menu" parent="." instance=ExtResource("13_0e0s6")]
 visible = false
 layout_mode = 1
+
+[node name="backgroundmusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_n4uxm")
+bus = &"Music"
+
+[node name="loadedSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_33fa0")
+volume_db = 9.0
