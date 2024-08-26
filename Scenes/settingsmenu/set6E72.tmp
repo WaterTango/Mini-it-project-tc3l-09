@@ -64,18 +64,18 @@ text_overrun_behavior = 1
 icon_alignment = 2
 expand_icon = true
 
-[node name="FPScounter" type="Control" parent="." groups=["fps_overlay"]]
+[node name="FPSlayer" type="CanvasLayer" parent="."]
+offset = Vector2(10, 0)
+transform = Transform2D(1, 0, 0, 1, 10, 0)
+
+[node name="FPScounter" type="Control" parent="FPSlayer"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("6_mj8o6")
 
-[node name="FPSlayer" type="CanvasLayer" parent="FPScounter"]
-offset = Vector2(10, 0)
-transform = Transform2D(1, 0, 0, 1, 10, 0)
-
-[node name="Label" type="Label" parent="FPScounter/FPSlayer"]
+[node name="Label" type="Label" parent="FPSlayer/FPScounter"]
 offset_right = 40.0
 offset_bottom = 31.0
 theme_override_fonts/font = ExtResource("2_bm5xm")

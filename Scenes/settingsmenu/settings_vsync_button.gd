@@ -1,14 +1,14 @@
 extends Control
-
-
-@onready var v_sync: CheckButton = $HBoxContainer/VSync as CheckButton
-
+#
+@onready var v_sync_checkbox: CheckBox = $HBoxContainer/VSync_checkbox
+#
 func _ready():
-	v_sync.toggled.connect(on_v_sync_toggled)
-
-
-# vsync toggler when box is checked
-func on_v_sync_toggled(toggled_on: bool) -> void:
-	#DisplayServer.window_set_vsync_mode() = DisplayServer.VSYNC_ENABLED
-	#DisplayServer.window_set_vsync_mode() = DisplayServer.VSYNC_DISABLED
+	#on_v_sync_toggled()
 	pass
+#
+## vsync toggler when box is checked
+#func _on_v_sync_checkbox_toggled(toggled_on: bool) -> void:
+	#if toggled_on: true
+	#DisplayServer.window_set_vsync_mode()
+	#elif toggled_on: false
+	#DisplayServer.VSYNC_DISABLED

@@ -1,13 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://dilgucspn6n7b"]
+[gd_scene load_steps=11 format=3 uid="uid://dilgucspn6n7b"]
 
 [ext_resource type="FontFile" uid="uid://f3bxx2ry3bsw" path="res://shaz_fonts/BLKCHCRY.TTF" id="1_vnq8c"]
 [ext_resource type="FontFile" uid="uid://b8oo2dguy484y" path="res://shaz_fonts/basis33.ttf" id="2_yc538"]
 [ext_resource type="Texture2D" uid="uid://cwysb4vcq7x4y" path="res://shaz_images/icons/video.svg" id="3_80ajn"]
-[ext_resource type="FontFile" uid="uid://cb7pxe0c4fdr7" path="res://shaz_fonts/CAROBTN_.TTF" id="3_eu6g7"]
 [ext_resource type="PackedScene" uid="uid://ik6717x460lc" path="res://Scenes/settingsmenu/window_mode_button.tscn" id="4_tocut"]
 [ext_resource type="PackedScene" uid="uid://dk2ipp2f4qfeh" path="res://Scenes/settingsmenu/resolution_mode_button.tscn" id="5_5knsg"]
 [ext_resource type="PackedScene" uid="uid://cl8l76vprw680" path="res://Scenes/settingsmenu/audio_slider_settings.tscn" id="6_cttw3"]
 [ext_resource type="PackedScene" uid="uid://cyl3l6qhj7r43" path="res://Scenes/settingsmenu/settings_vsync_button.tscn" id="6_q51ql"]
+[ext_resource type="PackedScene" uid="uid://bmeuy7opkv1vh" path="res://Scenes/settingsmenu/settings_rtx.tscn" id="7_dr0a6"]
+[ext_resource type="PackedScene" uid="uid://opx1aa1wqdrk" path="res://Scenes/settingsmenu/hotkey_rebind_button.tscn" id="8_5eusy"]
+[ext_resource type="PackedScene" uid="uid://dbpf7ebqb4auh" path="res://Scenes/settingsmenu/accessibility_fpscounter_button.tscn" id="9_ksswr"]
 
 [node name="settingsTabContainer" type="Control"]
 layout_mode = 3
@@ -58,11 +60,6 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Video/MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 64
-alignment = 1
-
 [node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Video/MarginContainer"]
 layout_mode = 2
 
@@ -79,6 +76,9 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="settings_vsync_button" parent="TabContainer/Video/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("6_q51ql")]
+layout_mode = 2
+
+[node name="settings_rtx" parent="TabContainer/Video/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("7_dr0a6")]
 layout_mode = 2
 
 [node name="Audio" type="TabBar" parent="TabContainer"]
@@ -142,38 +142,43 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Controls/MarginContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Controls/MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 64
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/Controls/MarginContainer/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 128
 alignment = 1
 
-[node name="Label" type="Label" parent="TabContainer/Controls/MarginContainer/VBoxContainer"]
+[node name="hotkey_rebind_button" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer2" instance=ExtResource("8_5eusy")]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_eu6g7")
-theme_override_font_sizes/font_size = 50
-text = "Skibidi Toilette
-"
+action_name = "up"
 
-[node name="Label2" type="Label" parent="TabContainer/Controls/MarginContainer/VBoxContainer"]
+[node name="hotkey_rebind_button2" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer2" instance=ExtResource("8_5eusy")]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_eu6g7")
-theme_override_font_sizes/font_size = 50
-text = "Skibidi Toilette
-"
 
-[node name="Label3" type="Label" parent="TabContainer/Controls/MarginContainer/VBoxContainer"]
+[node name="hotkey_rebind_button3" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer2" instance=ExtResource("8_5eusy")]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_eu6g7")
-theme_override_font_sizes/font_size = 50
-text = "Skibidi Toilette
-"
+action_name = "down"
 
-[node name="Label4" type="Label" parent="TabContainer/Controls/MarginContainer/VBoxContainer"]
+[node name="hotkey_rebind_button4" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer2" instance=ExtResource("8_5eusy")]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_eu6g7")
+action_name = "right"
+
+[node name="hotkey_rebind_button5" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer2" instance=ExtResource("8_5eusy")]
+layout_mode = 2
+action_name = "interact"
+
+[node name="hotkey_rebind_button6" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer2" instance=ExtResource("8_5eusy")]
+layout_mode = 2
+action_name = "sprint"
+
+[node name="Label5" type="Label" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_fonts/font = ExtResource("2_yc538")
 theme_override_font_sizes/font_size = 50
-text = "Skibidi Toilette
-"
+text = "work in progress :3"
 
 [node name="Accessibility" type="TabBar" parent="TabContainer"]
 visible = false
@@ -201,30 +206,12 @@ layout_mode = 2
 theme_override_constants/separation = 64
 alignment = 1
 
-[node name="Label" type="Label" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
+[node name="accessibility_fpscounter_button" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer" instance=ExtResource("9_ksswr")]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_eu6g7")
-theme_override_font_sizes/font_size = 50
-text = "Skibidi Toilette
-"
-
-[node name="Label2" type="Label" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_eu6g7")
-theme_override_font_sizes/font_size = 50
-text = "Skibidi Toilette
-"
-
-[node name="Label3" type="Label" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_eu6g7")
-theme_override_font_sizes/font_size = 50
-text = "Skibidi Toilette
-"
 
 [node name="Label4" type="Label" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_eu6g7")
+size_flags_vertical = 10
+theme_override_fonts/font = ExtResource("2_yc538")
 theme_override_font_sizes/font_size = 50
-text = "Skibidi Toilette
-"
+text = "work in progress :3"

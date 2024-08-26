@@ -34,3 +34,4 @@ func add_resolution_items() -> void:
 # maybe cuz i set it to strectched scaling... oh well
 func on_resolution_selected(index: int) -> void:
 	DisplayServer.window_set_size(RESOLUTION_DICTIONARY.values()[index])
+	print("[SETTINGS > VIDEO > RESOLUTION] Resolution is now ", InputEventFromWindow)
