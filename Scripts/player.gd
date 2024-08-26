@@ -62,6 +62,8 @@ func player_movement(_delta):
 		velocity.x = 0
 		velocity.y = speed	
 		
+	#increase player speed	
+	#THIS IS FOR DEBUG ONLY 
 	elif Input.is_action_just_pressed("sprint"):
 		speed = 500
 	elif Input.is_action_just_released("sprint"):
@@ -74,11 +76,12 @@ func player_movement(_delta):
 		velocity.y = 0
 		
 	move_and_slide()
-
+#---------------------------------------------------------------------------------------------------------------
+#PLAYER ANIMATION
 func play_anim(movement):
 	var dir = current_dir
 	var anim = $AnimatedSprite2D
-	
+	#when player press d the sprite face the side
 	if dir == "right":
 		anim.flip_h = false
 		if movement == 1:
@@ -86,6 +89,7 @@ func play_anim(movement):
 		elif movement == 0:
 			anim.play("side_idle")
 			
+	#when player press a it flips the sprite so that it faces left
 	if dir == "left":
 		anim.flip_h = true
 		if movement == 1:
@@ -93,6 +97,7 @@ func play_anim(movement):
 		elif movement == 0:
 			anim.play("side_idle")
 			
+	#when player press W the sprite faces up
 	if dir == "up":
 
 		if movement == 1:
@@ -100,6 +105,7 @@ func play_anim(movement):
 		elif movement == 0:
 			anim.play("front_idle")
 			
+	#when player press S the sprite faces down
 	if dir == "down":	
 		if movement == 1:
 			anim.play("back_walk")
