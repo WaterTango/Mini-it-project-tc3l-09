@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const speed = 150 
+var speed = 150 
 var current_dir = "none"
 
 func _physics_process(delta):
@@ -61,6 +61,13 @@ func player_movement(_delta):
 		play_anim(1)
 		velocity.x = 0
 		velocity.y = speed	
+		
+	elif Input.is_action_just_pressed("sprint"):
+		speed = 500
+	elif Input.is_action_just_released("sprint"):
+		speed = 150
+	
+		
 	else:
 		play_anim(0)
 		velocity.x = 0
