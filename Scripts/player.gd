@@ -8,7 +8,7 @@ func _physics_process(delta):
 	
 	
 func _ready():
-	$AnimatedSprite2D.play("front_idle")
+	$AnimatedSprite2D.play("back_idle")
 	
 	
 func player_movement(_delta):

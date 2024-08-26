@@ -426,8 +426,7 @@ script = ExtResource("1_6x7ad")
 y_sort_enabled = true
 position = Vector2(2, 9)
 sprite_frames = SubResource("SpriteFrames_nn7uj")
-animation = &"front_idle"
-autoplay = "back_idle"
+animation = &"back_idle"
 offset = Vector2(0, -15)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
