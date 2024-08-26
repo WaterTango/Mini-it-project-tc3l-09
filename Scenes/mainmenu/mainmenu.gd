@@ -84,9 +84,9 @@ func _process(_delta: float) -> void:
 	# calcs vector between mouse n center (for DynamicBG)
 	var BG_Offset = center - get_global_mouse_position() * 0.025
 	TS_start(DynamicBGnode, "position", BG_Offset, 1)
-	var Title_Offset = center - get_global_mouse_position() * 0.010
+	var Title_Offset = center - get_global_mouse_position() * 0.005
 	TS_start(DynamicTitlenode, "position", Title_Offset, 1)
-	var MainBG_Offset = center - get_global_mouse_position() * 0.0075
+	var MainBG_Offset = center - get_global_mouse_position() * 0.01
 	TS_start(MainBGnode, "position" , MainBG_Offset, 1)
 
 func button_hovered(button: Button):
