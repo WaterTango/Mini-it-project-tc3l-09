@@ -1,15 +1,20 @@
+class_name FPSOverlay
 extends Control
 
-@onready var fps_checkbox: CheckBox = $HBoxContainer/fps_checkbox
+@onready var fps_checkbox: CheckBox = $HBoxContainer/fps_checkbox as CheckBox
+@onready var fp_slayer: CanvasLayer = $fps_overlay/FPSlayer
 
 
 func _ready() -> void:
-	#_on_fps_checkbox_toggled(false)
-	pass
-#
-#func _on_fps_checkbox_toggled(toggled_on: bool) -> void:
-	#var fps_nodes = get_tree().get_nodes_in_group("fps_overlay")
-	#
-	## toggle on and off
-	#for i in fps_nodes:
-		#i.visible = toggled_on
+	fps_checkbox.toggled.connect(on_fps_checkbox_toggled)
+
+#toggles fps layer on and off
+func on_fps_checkbox_toggled(toggled_on: bool) -> void:
+	if fp_slayer:
+		fp_slayer.visible = toggled_on
+		if toggled_on:
+			$interfaceCheckedSFX.play()
+			print("[SETTINGS > Accessibility] FPS Overlay ON!")
+		else:
+			$interfaceUncheckedSFX.play()
+			print("[SETTINGS > Accessibility] FPS Overlay OFF!")
