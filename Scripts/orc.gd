@@ -4,11 +4,11 @@ extends CharacterBody2D
 @export var speed = randi_range(50,80)
 var player = null
 var player_chase = false
-
+var within_range = false
 
 func _physics_process(_delta):
 	velocity = Vector2.ZERO
-	if player_chase:
+	if player_chase == true and within_range == false:
 		position  += (player.position - position) / speed
 
 		#this is so the enemy close the distance to the player 
@@ -34,3 +34,10 @@ func _on_detection_area_body_entered(body) -> void:
 func _on_detection_area_body_exited(body) -> void:
 	player = null
 	player_chase = false
+
+func _on_attack_range_body_entered(body):
+	if body.is_in_group("Player"):
+		within_range = true
+	
+func _on_attack_range_body_exited(body):
+	within_range = false
