@@ -20,7 +20,7 @@ func _physics_process(_delta):
 		$AnimatedSprite2D.play("idle")
 
 #godot node to detect when player enter the detection area
-func _on_detection_area_body_entered(body: Node2D) -> void:
+func _on_detection_area_body_entered(body: CharacterBody2D) -> void:
 	#this to set the body entered as the player
 	player = body
 	#this to signal the physics process that player has entered
@@ -30,6 +30,6 @@ func _on_detection_area_body_entered(body: Node2D) -> void:
 
 
 #godot node to detect when player exit the detection area
-func _on_detection_area_body_exited(body: Node2D) -> void:
+func _on_detection_area_body_exited(body: CharacterBody2D) -> void:
 	player = null
 	player_chase = false

@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 var speed = 150 
 var current_dir = "none"
+var player_character
 
 func _physics_process(delta):
 	player_movement(delta)

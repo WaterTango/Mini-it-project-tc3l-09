@@ -1,0 +1,166 @@
+[gd_scene load_steps=24 format=3 uid="uid://bf5px1sosea0q"]
+
+[ext_resource type="Script" path="res://Scripts/orc.gd" id="1_w5dqo"]
+[ext_resource type="Texture2D" uid="uid://cdlxuw7bq4ygg" path="res://Assets/Pixel Crawler - FREE - 1.8/Enemy/Orc Crew/Orc/Death-Sheet.png" id="2_i2pii"]
+[ext_resource type="Texture2D" uid="uid://drvx36sccp01x" path="res://Assets/Pixel Crawler - FREE - 1.8/Enemy/Orc Crew/Orc/Idle/Idle-Sheet.png" id="3_qlfl4"]
+[ext_resource type="Texture2D" uid="uid://bxmlfp10msfbx" path="res://Assets/Pixel Crawler - FREE - 1.8/Enemy/Orc Crew/Orc/Run-Sheet.png" id="4_31vwn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cxfub"]
+size = Vector2(12, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdo8f"]
+atlas = ExtResource("2_i2pii")
+region = Rect2(0, 0, 64, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fw4ak"]
+atlas = ExtResource("2_i2pii")
+region = Rect2(64, 0, 64, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v12d2"]
+atlas = ExtResource("2_i2pii")
+region = Rect2(128, 0, 64, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxvtw"]
+atlas = ExtResource("2_i2pii")
+region = Rect2(192, 0, 64, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdfx7"]
+atlas = ExtResource("2_i2pii")
+region = Rect2(256, 0, 64, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1rfgu"]
+atlas = ExtResource("2_i2pii")
+region = Rect2(320, 0, 64, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_acn34"]
+atlas = ExtResource("3_qlfl4")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhthg"]
+atlas = ExtResource("3_qlfl4")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xh2m"]
+atlas = ExtResource("3_qlfl4")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55xfj"]
+atlas = ExtResource("3_qlfl4")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ngwa"]
+atlas = ExtResource("4_31vwn")
+region = Rect2(0, 0, 64, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hv7ja"]
+atlas = ExtResource("4_31vwn")
+region = Rect2(64, 0, 64, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ji5jr"]
+atlas = ExtResource("4_31vwn")
+region = Rect2(128, 0, 64, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ta00s"]
+atlas = ExtResource("4_31vwn")
+region = Rect2(192, 0, 64, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_esnkv"]
+atlas = ExtResource("4_31vwn")
+region = Rect2(256, 0, 64, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfyar"]
+atlas = ExtResource("4_31vwn")
+region = Rect2(320, 0, 64, 35)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7jgql"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qdo8f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fw4ak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v12d2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxvtw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdfx7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1rfgu")
+}],
+"loop": true,
+"name": &"orc_death",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_acn34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhthg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xh2m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55xfj")
+}],
+"loop": true,
+"name": &"orc_idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ngwa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hv7ja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ji5jr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ta00s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_esnkv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bfyar")
+}],
+"loop": true,
+"name": &"orc_run",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1tll8"]
+radius = 46.3249
+
+[node name="orc" type="CharacterBody2D"]
+script = ExtResource("1_w5dqo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -11)
+shape = SubResource("RectangleShape2D_cxfub")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(9.53674e-07, -12)
+scale = Vector2(0.777344, 0.738281)
+sprite_frames = SubResource("SpriteFrames_7jgql")
+animation = &"orc_idle"
+autoplay = "orc_idle"
+
+[node name="detection_area" type="Area2D" parent="."]
+
+[node name="detection_shape" type="CollisionShape2D" parent="detection_area"]
+position = Vector2(0, -13)
+shape = SubResource("CircleShape2D_1tll8")
+debug_color = Color(0, 0.648554, 0.176894, 0.42)
+
+[connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
