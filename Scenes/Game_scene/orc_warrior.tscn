@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://da3tndjg1hbyh"]
+[gd_scene load_steps=25 format=3 uid="uid://da3tndjg1hbyh"]
 
 [ext_resource type="Texture2D" uid="uid://by13r7bt4c7ny" path="res://Assets/Pixel Crawler - FREE - 1.8/Enemy/Orc Crew/Orc - Warrior/Death/Death-Sheet (1).png" id="1_ce1s1"]
 [ext_resource type="Script" path="res://Scripts/orc_warrior.gd" id="1_kkpn0"]
@@ -139,7 +139,10 @@ animations = [{
 radius = 10.0499
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bhhld"]
-radius = 87.0517
+radius = 90.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5duks"]
+size = Vector2(24, 31)
 
 [node name="orc_warrior" type="CharacterBody2D"]
 script = ExtResource("1_kkpn0")
@@ -153,13 +156,21 @@ animation = &"orc_warrior_death"
 position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_ee3g5")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="detection" type="Area2D" parent="."]
 position = Vector2(0, -13)
 
-[node name="detection_shape" type="CollisionShape2D" parent="Area2D"]
+[node name="detection_shape" type="CollisionShape2D" parent="detection"]
 shape = SubResource("CircleShape2D_bhhld")
 debug_color = Color(0, 0.648554, 0.176894, 0.42)
 metadata/_edit_lock_ = true
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[node name="AttackRange" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
+position = Vector2(-1, -9.5)
+shape = SubResource("RectangleShape2D_5duks")
+
+[connection signal="body_entered" from="detection" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="detection" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="AttackRange" to="." method="_on_attack_range_body_entered"]
+[connection signal="body_exited" from="AttackRange" to="." method="_on_attack_range_body_exited"]

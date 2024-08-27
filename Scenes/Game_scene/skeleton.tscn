@@ -1,11 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://cx328oij4ofwy"]
+[gd_scene load_steps=18 format=3 uid="uid://cx328oij4ofwy"]
 
 [ext_resource type="Texture2D" uid="uid://c6x6dv1b6rn7v" path="res://Assets/Pixel Crawler - FREE - 1.8/Enemy/Skeleton Crew/Skeleton - Base/Idle/Idle-Sheet.png" id="1_6ndjl"]
 [ext_resource type="Script" path="res://Scripts/skeleton.gd" id="1_opges"]
 [ext_resource type="Texture2D" uid="uid://e37xo7bk2yvq" path="res://Assets/Pixel Crawler - FREE - 1.8/Enemy/Skeleton Crew/Skeleton - Base/Run/Run-Sheet (2).png" id="2_sq2b7"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_cp3bq"]
-radius = 67.0075
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_al3pb"]
 size = Vector2(15, 22)
@@ -93,14 +90,14 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_cp3bq"]
+radius = 82.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kcptu"]
+size = Vector2(23, 36)
+
 [node name="skeleton" type="CharacterBody2D"]
 script = ExtResource("1_opges")
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-z_index = 1
-shape = SubResource("CircleShape2D_cp3bq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.5, 5)
@@ -112,5 +109,19 @@ sprite_frames = SubResource("SpriteFrames_asjcj")
 animation = &"skeleton_idle"
 autoplay = "skeleton_idle"
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[node name="Detection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection"]
+z_index = 1
+shape = SubResource("CircleShape2D_cp3bq")
+
+[node name="Attack range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack range"]
+position = Vector2(-1.5, 2)
+shape = SubResource("RectangleShape2D_kcptu")
+
+[connection signal="body_entered" from="Detection" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Detection" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Attack range" to="." method="_on_attack_range_body_entered"]
+[connection signal="body_exited" from="Attack range" to="." method="_on_attack_range_body_exited"]
