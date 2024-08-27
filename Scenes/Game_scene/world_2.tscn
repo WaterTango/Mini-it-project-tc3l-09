@@ -1,10 +1,13 @@
-[gd_scene load_steps=47 format=4 uid="uid://o8fuiwevj7kb"]
+[gd_scene load_steps=50 format=4 uid="uid://o8fuiwevj7kb"]
 
 [ext_resource type="PackedScene" uid="uid://d2yr2v1e0ibvc" path="res://Scenes/Game_scene/player.tscn" id="1_5wfd0"]
 [ext_resource type="Script" path="res://Scripts/world_2.gd" id="1_sbijx"]
 [ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="2_sltbu"]
+[ext_resource type="PackedScene" uid="uid://bf5px1sosea0q" path="res://Scenes/Game_scene/orc.tscn" id="2_t5u74"]
 [ext_resource type="Texture2D" uid="uid://dktpn7ohj3m42" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Green Woods/Assets/forest.png" id="3_auihi"]
+[ext_resource type="PackedScene" uid="uid://da3tndjg1hbyh" path="res://Scenes/Game_scene/orc_warrior.tscn" id="3_ro4la"]
 [ext_resource type="Texture2D" uid="uid://bpaqdtleqnvqv" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Green Woods/Assets/forest_land.png" id="4_clet3"]
+[ext_resource type="PackedScene" uid="uid://cx328oij4ofwy" path="res://Scenes/Game_scene/skeleton.tscn" id="4_jpdtv"]
 [ext_resource type="Texture2D" uid="uid://cea87kxb4i4hm" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Green Woods/Assets/forest_water.png" id="5_psifg"]
 [ext_resource type="Texture2D" uid="uid://cyu5a38g5wbdc" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Green Woods/Assets/forest_texture/TX Shadow.png" id="6_mntli"]
 [ext_resource type="Texture2D" uid="uid://dts0o3myi8sd8" path="res://Assets/tilesets/RF_Catacombs_v1.0/mainlevbuild.png" id="7_30bn0"]
@@ -7175,6 +7178,72 @@ sources/4 = SubResource("TileSetAtlasSource_5n26x")
 
 [node name="world_2" type="Node2D"]
 script = ExtResource("1_sbijx")
+
+[node name="entities" type="Node" parent="."]
+
+[node name="orcs" type="Node" parent="entities"]
+
+[node name="orc" parent="entities/orcs" instance=ExtResource("2_t5u74")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(-1929, 401)
+
+[node name="orc2" parent="entities/orcs" instance=ExtResource("2_t5u74")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(-1554, 424)
+
+[node name="orc3" parent="entities/orcs" instance=ExtResource("2_t5u74")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(-1746, 268)
+
+[node name="orc_warrior" parent="entities/orcs" instance=ExtResource("3_ro4la")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(321, -725)
+
+[node name="orc_warrior3" parent="entities/orcs" instance=ExtResource("3_ro4la")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(155, -618)
+
+[node name="orc_warrior4" parent="entities/orcs" instance=ExtResource("3_ro4la")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(429, -631)
+
+[node name="orc_warrior2" parent="entities/orcs" instance=ExtResource("3_ro4la")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(134, -789)
+
+[node name="skeletons" type="Node" parent="entities"]
+
+[node name="skeleton" parent="entities/skeletons" instance=ExtResource("4_jpdtv")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(260, -329)
+
+[node name="skeleton2" parent="entities/skeletons" instance=ExtResource("4_jpdtv")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(291, -239)
+
+[node name="skeleton3" parent="entities/skeletons" instance=ExtResource("4_jpdtv")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(480, -335)
+
+[node name="skeleton4" parent="entities/skeletons" instance=ExtResource("4_jpdtv")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(427, -209)
+
+[node name="skeleton5" parent="entities/skeletons" instance=ExtResource("4_jpdtv")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(574, -215)
 
 [node name="Map" type="Node" parent="."]
 

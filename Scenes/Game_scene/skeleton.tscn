@@ -1,0 +1,127 @@
+[gd_scene load_steps=18 format=3 uid="uid://cx328oij4ofwy"]
+
+[ext_resource type="Texture2D" uid="uid://c6x6dv1b6rn7v" path="res://Assets/Pixel Crawler - FREE - 1.8/Enemy/Skeleton Crew/Skeleton - Base/Idle/Idle-Sheet.png" id="1_6ndjl"]
+[ext_resource type="Script" path="res://Scripts/skeleton.gd" id="1_opges"]
+[ext_resource type="Texture2D" uid="uid://e37xo7bk2yvq" path="res://Assets/Pixel Crawler - FREE - 1.8/Enemy/Skeleton Crew/Skeleton - Base/Run/Run-Sheet (2).png" id="2_sq2b7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_al3pb"]
+size = Vector2(15, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_60g0o"]
+atlas = ExtResource("1_6ndjl")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kgs13"]
+atlas = ExtResource("1_6ndjl")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xo56"]
+atlas = ExtResource("1_6ndjl")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jryj"]
+atlas = ExtResource("1_6ndjl")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uu3a1"]
+atlas = ExtResource("2_sq2b7")
+region = Rect2(0, 0, 64, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_taqxb"]
+atlas = ExtResource("2_sq2b7")
+region = Rect2(64, 0, 64, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tnkd6"]
+atlas = ExtResource("2_sq2b7")
+region = Rect2(128, 0, 64, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bckdc"]
+atlas = ExtResource("2_sq2b7")
+region = Rect2(192, 0, 64, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvl3w"]
+atlas = ExtResource("2_sq2b7")
+region = Rect2(256, 0, 64, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_py136"]
+atlas = ExtResource("2_sq2b7")
+region = Rect2(320, 0, 64, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_asjcj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_60g0o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kgs13")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xo56")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2jryj")
+}],
+"loop": true,
+"name": &"skeleton_idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uu3a1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_taqxb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tnkd6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bckdc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvl3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_py136")
+}],
+"loop": true,
+"name": &"skeleton_run",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cp3bq"]
+radius = 82.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kcptu"]
+size = Vector2(23, 36)
+
+[node name="skeleton" type="CharacterBody2D"]
+script = ExtResource("1_opges")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, 5)
+shape = SubResource("RectangleShape2D_al3pb")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_asjcj")
+animation = &"skeleton_idle"
+autoplay = "skeleton_idle"
+
+[node name="Detection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection"]
+z_index = 1
+shape = SubResource("CircleShape2D_cp3bq")
+
+[node name="Attack range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack range"]
+position = Vector2(-1.5, 2)
+shape = SubResource("RectangleShape2D_kcptu")
+
+[connection signal="body_entered" from="Detection" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Detection" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Attack range" to="." method="_on_attack_range_body_entered"]
+[connection signal="body_exited" from="Attack range" to="." method="_on_attack_range_body_exited"]
