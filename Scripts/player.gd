@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-var hp = 100
 var speed = 150 
 var current_dir = "none"
 
@@ -113,7 +112,3 @@ func play_anim(movement):
 		elif movement == 0:
 			anim.play("back_idle")
 			
-
-
-func _on_area_2d_body_entered(body : Node2D):
-	pass # Replace with function body.

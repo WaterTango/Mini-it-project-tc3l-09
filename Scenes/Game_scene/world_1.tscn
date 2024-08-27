@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
 [gd_scene load_steps=40 format=4 uid="uid://binah6hgxwfcd"]
-=======
-[gd_scene load_steps=45 format=4 uid="uid://binah6hgxwfcd"]
->>>>>>> Stashed changes
 
 [ext_resource type="Script" path="res://Scenes/Game_scene/main.gd" id="1_82yks"]
 [ext_resource type="PackedScene" uid="uid://pt3v68ebmn6" path="res://Scenes/Game_scene/key.tscn" id="2_7uyww"]
@@ -24,12 +20,6 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_27sym"]
 radius = 26.0192
-
-[sub_resource type="Curve2D" id="Curve2D_4vfqe"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -49, -26, 0, 0, 0, 0, -43, 60, 0, 0, 0, 0, 46, 60, 0, 0, 0, 0, 46, -25, 0, 0, 0, 0, -49, -26)
-}
-point_count = 5
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x204j"]
 texture = ExtResource("3_07pej")
@@ -3848,8 +3838,6 @@ animations = [{
 radius = 24.0
 height = 110.0
 
-[sub_resource type="Curve2D" id="Curve2D_ibkl5"]
-
 [node name="world_1" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_82yks")
@@ -3864,83 +3852,6 @@ position = Vector2(-1, -27)
 shape = SubResource("CircleShape2D_27sym")
 script = ExtResource("2_ujnhx")
 
-<<<<<<< Updated upstream
-=======
-[node name="entities" type="Node" parent="."]
-
-[node name="Player" parent="entities" instance=ExtResource("2_g4o5h")]
-z_index = 2
-position = Vector2(1, 1)
-
-[node name="Camera2D" type="Camera2D" parent="entities/Player"]
-zoom = Vector2(3, 3)
-process_callback = 0
-script = ExtResource("3_6rbjd")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="entities/Player"]
-
-[node name="orcs" type="Node" parent="entities"]
-
-[node name="orc" parent="entities/orcs" instance=ExtResource("4_qmu16")]
-z_index = 2
-y_sort_enabled = true
-position = Vector2(-403, 84)
-
-[node name="Path2D" type="Path2D" parent="entities/orcs/orc"]
-curve = SubResource("Curve2D_4vfqe")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="entities/orcs/orc/Path2D"]
-position = Vector2(-49, -26)
-rotation = 1.50114
-
-[node name="orc3" parent="entities/orcs" instance=ExtResource("4_qmu16")]
-z_index = 2
-y_sort_enabled = true
-position = Vector2(430, -405)
-
-[node name="orc4" parent="entities/orcs" instance=ExtResource("4_qmu16")]
-z_index = 2
-y_sort_enabled = true
-position = Vector2(687, -138)
-
-[node name="orc5" parent="entities/orcs" instance=ExtResource("4_qmu16")]
-z_index = 2
-y_sort_enabled = true
-position = Vector2(588, 70)
-
-[node name="orc6" parent="entities/orcs" instance=ExtResource("4_qmu16")]
-z_index = 2
-y_sort_enabled = true
-position = Vector2(390, 234)
-
-[node name="orc8" parent="entities/orcs" instance=ExtResource("4_qmu16")]
-z_index = 2
-y_sort_enabled = true
-position = Vector2(300, -124)
-
-[node name="orc2" parent="entities/orcs" instance=ExtResource("4_qmu16")]
-z_index = 2
-y_sort_enabled = true
-position = Vector2(-470, -180)
-
-[node name="orc_warrior" parent="entities/orcs" instance=ExtResource("7_lu8ay")]
-z_index = 2
-y_sort_enabled = true
-position = Vector2(202, -378)
-
-[node name="skeletons" type="Node" parent="entities"]
-
-[node name="skeleton" parent="entities/skeletons" instance=ExtResource("7_scj2g")]
-z_index = 2
-y_sort_enabled = true
-position = Vector2(143, 445)
-
-[node name="skeleton2" parent="entities/skeletons" instance=ExtResource("7_scj2g")]
-z_index = 2
-y_sort_enabled = true
-position = Vector2(-219, 446)
-
->>>>>>> Stashed changes
 [node name="map" type="Node" parent="."]
 
 [node name="collums" type="TileMapLayer" parent="map"]
@@ -4037,9 +3948,6 @@ texture = ExtResource("5_5pxiy")
 [node name="Screenshot2024-08-23153141" type="Sprite2D" parent="."]
 position = Vector2(1860, -201)
 texture = ExtResource("11_t1s64")
-
-[node name="Path2D" type="Path2D" parent="."]
-curve = SubResource("Curve2D_ibkl5")
 
 [connection signal="body_entered" from="Level1_TP/tp_area" to="Level1_TP/tp_area/tp_area1" method="_on_tp_area_body_entered"]
 [connection signal="door1_collision" from="Doors/door1" to="Doors/door1/door1_collision" method="_on_door_1_door_1_collision"]
