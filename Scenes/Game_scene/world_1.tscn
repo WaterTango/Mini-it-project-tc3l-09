@@ -3909,6 +3909,37 @@ z_index = 2
 y_sort_enabled = true
 position = Vector2(202, -378)
 
+[node name="orc_warrior2" parent="entities/orcs" instance=ExtResource("7_lu8ay")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(-184, -503)
+
+[node name="orc_warrior3" parent="entities/orcs" instance=ExtResource("7_lu8ay")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(92, -916)
+
+[node name="orc_warrior4" parent="entities/orcs" instance=ExtResource("7_lu8ay")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(244, -890)
+
+[node name="orc_warrior5" parent="entities/orcs" instance=ExtResource("7_lu8ay")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(75, -752)
+
+[node name="orc_warrior6" parent="entities/orcs" instance=ExtResource("7_lu8ay")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(237, -739)
+
+[node name="orc_warrior7" parent="entities/orcs" instance=ExtResource("7_lu8ay")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(159, -836)
+scale = Vector2(2.15461, 1.98205)
+
 [node name="skeletons" type="Node" parent="entities"]
 
 [node name="skeleton" parent="entities/skeletons" instance=ExtResource("7_scj2g")]

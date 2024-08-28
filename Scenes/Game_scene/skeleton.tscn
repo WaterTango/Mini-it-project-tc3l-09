@@ -94,17 +94,19 @@ animations = [{
 radius = 82.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kcptu"]
-size = Vector2(23, 36)
+size = Vector2(21.5, 27)
 
 [node name="skeleton" type="CharacterBody2D"]
 script = ExtResource("1_opges")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.5, 5)
+position = Vector2(-1, -11)
 shape = SubResource("RectangleShape2D_al3pb")
 debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -12)
+scale = Vector2(0.676943, 0.714641)
 sprite_frames = SubResource("SpriteFrames_asjcj")
 animation = &"skeleton_idle"
 autoplay = "skeleton_idle"
@@ -118,7 +120,7 @@ shape = SubResource("CircleShape2D_cp3bq")
 [node name="Attack range" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attack range"]
-position = Vector2(-1.5, 2)
+position = Vector2(-1.75, -12.5)
 shape = SubResource("RectangleShape2D_kcptu")
 
 [connection signal="body_entered" from="Detection" to="." method="_on_area_2d_body_entered"]
