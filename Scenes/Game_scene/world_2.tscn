@@ -7226,7 +7226,7 @@ position = Vector2(-2141, 450)
 [node name="orc15" parent="entities/orcs" instance=ExtResource("2_t5u74")]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(-1906, 595)
+position = Vector2(-2071, 724)
 
 [node name="orc4" parent="entities/orcs" instance=ExtResource("2_t5u74")]
 z_index = 2

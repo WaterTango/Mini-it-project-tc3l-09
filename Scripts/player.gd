@@ -9,7 +9,7 @@ func _physics_process(delta):
 	
 	
 func _ready():
-	$AnimatedSprite2D.play("back_idle")
+	$AnimatedSprite2D.play("wake")
 	
 	
 func player_movement(_delta):
@@ -65,7 +65,7 @@ func player_movement(_delta):
 		
 	#increase player speed	
 	#THIS IS FOR DEBUG ONLY 
-	elif Input.is_action_just_pressed("sprint"):
+	elif Input.is_action_pressed("sprint"):
 		speed = 500
 	elif Input.is_action_just_released("sprint"):
 		speed = 150
