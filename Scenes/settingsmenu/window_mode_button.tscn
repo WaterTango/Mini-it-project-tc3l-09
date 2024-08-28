@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ik6717x460lc"]
+[gd_scene load_steps=5 format=3 uid="uid://oltlwvbny1v"]
 
 [ext_resource type="PackedScene" uid="uid://b36eiungshmti" path="res://Scenes/settingsmenu/settings_display_button.tscn" id="1_3g6w6"]
 [ext_resource type="Script" path="res://Scenes/settingsmenu/window_mode_button.gd" id="2_x3mgo"]
 [ext_resource type="Texture2D" uid="uid://cwysb4vcq7x4y" path="res://shaz_images/icons/video.svg" id="3_x833e"]
+[ext_resource type="AudioStream" uid="uid://cd3rv4o6kp2we" path="res://shaz_audio/SFX/interface-release.mp3" id="4_cg30h"]
 
 [node name="Window_Mode_Button" instance=ExtResource("1_3g6w6")]
 script = ExtResource("2_x3mgo")
@@ -20,3 +21,8 @@ size_flags_horizontal = 2
 theme_override_constants/outline_size = 7
 theme_override_icons/icon = ExtResource("3_x833e")
 expand_icon = true
+
+[node name="interfaceReleaseSFX" type="AudioStreamPlayer" parent="." index="1"]
+stream = ExtResource("4_cg30h")
+volume_db = 1.0
+bus = &"SFX"

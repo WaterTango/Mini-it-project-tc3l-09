@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://opx1aa1wqdrk"]
+[gd_scene load_steps=5 format=3 uid="uid://opx1aa1wqdrk"]
 
 [ext_resource type="FontFile" uid="uid://b8oo2dguy484y" path="res://shaz_fonts/basis33.ttf" id="1_nwyky"]
 [ext_resource type="Script" path="res://Scenes/settingsmenu/hotkey_rebind_button.gd" id="1_wrfl2"]
+[ext_resource type="AudioStream" uid="uid://cd3rv4o6kp2we" path="res://shaz_audio/SFX/interface-release.mp3" id="3_ccdvy"]
+[ext_resource type="AudioStream" uid="uid://c13uer3sounwj" path="res://shaz_audio/SFX/interface-press.mp3" id="4_jil1n"]
 
 [node name="hotkey_rebind_button" type="Control" groups=["hotkey_button"]]
 layout_mode = 3
@@ -42,5 +44,15 @@ theme_override_fonts/font = ExtResource("1_nwyky")
 theme_override_font_sizes/font_size = 40
 toggle_mode = true
 text = "ACTION_KEY"
+
+[node name="interfaceReleaseSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ccdvy")
+volume_db = 1.0
+bus = &"SFX"
+
+[node name="ineterfacePressSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_jil1n")
+volume_db = -3.0
+bus = &"SFX"
 
 [connection signal="toggled" from="HBoxContainer/Button" to="." method="_on_button_toggled"]

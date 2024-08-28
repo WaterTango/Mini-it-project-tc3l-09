@@ -33,5 +33,6 @@ func add_resolution_items() -> void:
 # this will change the resolution based on the window, but it wont like upscale or anything for fullscreen, 
 # maybe cuz i set it to strectched scaling... oh well
 func on_resolution_selected(index: int) -> void:
+	$interfaceReleaseSFX.play()
 	DisplayServer.window_set_size(RESOLUTION_DICTIONARY.values()[index])
 	print("[SETTINGS > VIDEO > RESOLUTION] Resolution is now ", InputEventFromWindow)

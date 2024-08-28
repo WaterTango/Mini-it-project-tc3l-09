@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bmeuy7opkv1vh"]
+[gd_scene load_steps=7 format=3 uid="uid://bmeuy7opkv1vh"]
 
+[ext_resource type="Script" path="res://Scenes/settingsmenu/settings_rtx.gd" id="1_v2b8r"]
 [ext_resource type="FontFile" uid="uid://b8oo2dguy484y" path="res://shaz_fonts/basis33.ttf" id="1_w7w2n"]
 [ext_resource type="Texture2D" uid="uid://u3d3py5678wt" path="res://shaz_images/icons/checkbox-svgrepo-com.svg" id="2_lohsv"]
 [ext_resource type="Texture2D" uid="uid://cvss5egaw8csr" path="res://shaz_images/icons/checkbox-on-svgrepo-com.svg" id="3_e7efd"]
+[ext_resource type="AudioStream" uid="uid://cwiqjbp3iejho" path="res://shaz_audio/SFX/interface-checked.mp3" id="5_deto3"]
+[ext_resource type="AudioStream" uid="uid://cudbq52b7s0kh" path="res://shaz_audio/SFX/interface-unchecked.mp3" id="6_pu61u"]
 
 [node name="settings_rtx" type="Control"]
 layout_mode = 3
@@ -11,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_v2b8r")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -33,9 +37,19 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VSync_checkbox" type="CheckBox" parent="HBoxContainer"]
+[node name="rtx_checkbox" type="CheckBox" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 6
 theme_override_constants/icon_max_width = 50
 theme_override_icons/checked = ExtResource("2_lohsv")
 theme_override_icons/unchecked = ExtResource("3_e7efd")
+
+[node name="interfaceCheckedSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_deto3")
+bus = &"SFX"
+
+[node name="interfaceUncheckedSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_pu61u")
+bus = &"SFX"
+
+[connection signal="toggled" from="HBoxContainer/rtx_checkbox" to="." method="_on_rtx_checkbox_toggled"]

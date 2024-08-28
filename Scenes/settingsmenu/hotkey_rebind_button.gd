@@ -35,7 +35,7 @@ func set_text_for_key() -> void:
 	var action_events = InputMap.action_get_events(action_name)
 	var action_event = action_events[0]
 	var action_keycode = OS.get_keycode_string(action_event.physical_keycode)
-	print("[SETTINGS > Keybinding] Inputting new keybind")
+	print("[SETTINGS > Keybinding] Inputting new keybind boss")
 	# prints the available keys
 	print(action_keycode, " is for ", action_name)
 	button.text = "%s" % action_keycode
@@ -43,6 +43,7 @@ func set_text_for_key() -> void:
 
 func _on_button_toggled(toggled_on: bool) -> void:
 	if toggled_on:
+		$ineterfacePressSFX.play()
 		button.text = "Input new key"
 		set_process_unhandled_key_input(toggled_on)
 		
@@ -77,3 +78,5 @@ func rebind_action_key(event) -> void:
 	set_process_unhandled_key_input(false)
 	set_text_for_key()
 	set_action_name()
+	$interfaceReleaseSFX.play()
+	
