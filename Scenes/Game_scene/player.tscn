@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://ckt3rhr0ss645" path="res://Assets/characters/Basic Player Model/PNG/Unarmed_Death/Unarmed_Death_full.png" id="4_ro4w6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5tavq"]
-radius = 4.5
-height = 15.5
+radius = 5.0
+height = 22.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ldnlj"]
 atlas = ExtResource("2_ef4bw")
@@ -420,21 +420,18 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 y_sort_enabled = true
-position = Vector2(-2, -9)
 collision_layer = 3
 script = ExtResource("1_6x7ad")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
-position = Vector2(1.5, -1.75)
+y_sort_enabled = true
+position = Vector2(0, -11)
 shape = SubResource("CapsuleShape2D_5tavq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
-position = Vector2(2, 12)
 sprite_frames = SubResource("SpriteFrames_nn7uj")
-animation = &"wake"
+animation = &"back_walk"
 autoplay = "wake"
-frame = 6
-frame_progress = 1.0
-offset = Vector2(0, -15)
+offset = Vector2(0.655, -11.84)

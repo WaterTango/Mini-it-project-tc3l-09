@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=4 uid="uid://bmaj057vxjvul"]
+[gd_scene load_steps=10 format=4 uid="uid://bmaj057vxjvul"]
 
 [ext_resource type="PackedScene" uid="uid://d2yr2v1e0ibvc" path="res://Scenes/Game_scene/player.tscn" id="1_5q3mx"]
 [ext_resource type="Script" path="res://Scripts/world_3.gd" id="1_txdcy"]
 [ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="2_1jhtc"]
 [ext_resource type="Texture2D" uid="uid://dts0o3myi8sd8" path="res://Assets/tilesets/RF_Catacombs_v1.0/mainlevbuild.png" id="3_b3yuh"]
+[ext_resource type="Texture2D" uid="uid://dsjcuro71baxv" path="res://Assets/tilesets/RF_Catacombs_v1.0/tower.jpg" id="5_227ov"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ga5k3"]
 texture = ExtResource("3_b3yuh")
@@ -2040,3 +2041,8 @@ position = Vector2(-1, -54)
 zoom = Vector2(3, 3)
 process_callback = 0
 script = ExtResource("2_1jhtc")
+
+[node name="Tower" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-3, -446)
+texture = ExtResource("5_227ov")
