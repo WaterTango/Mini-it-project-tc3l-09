@@ -1,5 +1,7 @@
 extends Node
 
+func _ready() -> void:
+	pass
 #this is for debug 
 #REMOVE WHEN GAME IS RELEASED
 func _input(_event):
