@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dk47txfrdo6hq"
-path="res://.godot/imported/Tiles.png-43642f4fda70af9159727714dbdb6e25.ctex"
+uid="uid://bc83dbeq2mgs4"
+path="res://.godot/imported/playerlight.png-59c3174f3cda91ab90ac49bf479dc948.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/pixel assets/Pixel Crawler - Castle/Assets/Tiles.png"
-dest_files=["res://.godot/imported/Tiles.png-43642f4fda70af9159727714dbdb6e25.ctex"]
+source_file="res://Assets/pixel assets/Pixel Crawler - Castle/Assets/playerlight.png"
+dest_files=["res://.godot/imported/playerlight.png-59c3174f3cda91ab90ac49bf479dc948.ctex"]
 
 [params]
 

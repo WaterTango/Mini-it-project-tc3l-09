@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://da3tndjg1hbyh"]
+[gd_scene load_steps=26 format=3 uid="uid://da3tndjg1hbyh"]
 
 [ext_resource type="Texture2D" uid="uid://by13r7bt4c7ny" path="res://Assets/Pixel Crawler - FREE - 1.8/Enemy/Orc Crew/Orc - Warrior/Death/Death-Sheet (1).png" id="1_ce1s1"]
 [ext_resource type="Script" path="res://Scripts/orc_warrior.gd" id="1_kkpn0"]
@@ -144,6 +144,9 @@ radius = 90.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5duks"]
 size = Vector2(30, 34)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_mghtv"]
+polygon = PackedVector2Array(-2, -28, 3, -28, 7, -22, 7, -3, 6, 0, -8, 0, -13, -10, -11, -23)
+
 [node name="orc_warrior" type="CharacterBody2D"]
 script = ExtResource("1_kkpn0")
 
@@ -170,6 +173,9 @@ debug_color = Color(0, 0.648554, 0.176894, 0.42)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
 position = Vector2(0, -13)
 shape = SubResource("RectangleShape2D_5duks")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_mghtv")
 
 [connection signal="body_entered" from="detection" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="detection" to="." method="_on_area_2d_body_exited"]

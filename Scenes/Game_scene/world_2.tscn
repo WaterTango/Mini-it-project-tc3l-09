@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://d2yr2v1e0ibvc" path="res://Scenes/Game_scene/player.tscn" id="1_5wfd0"]
 [ext_resource type="Script" path="res://Scripts/world_2.gd" id="1_sbijx"]
-[ext_resource type="Script" path="res://Scripts/tp_area_2.gd" id="2_i6rsb"]
 [ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="2_sltbu"]
 [ext_resource type="PackedScene" uid="uid://bf5px1sosea0q" path="res://Scenes/Game_scene/orc.tscn" id="2_t5u74"]
 [ext_resource type="Texture2D" uid="uid://dktpn7ohj3m42" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Green Woods/Assets/forest.png" id="3_auihi"]
@@ -21,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://7p8exaxsxcrt" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Green Woods/Assets/forest_texture/TX Props.png" id="13_3rcac"]
 [ext_resource type="Texture2D" uid="uid://bofa2wfvbifoj" path="res://Assets/tilesets/RF_Catacombs_v1.0/decorative.png" id="14_vp6h0"]
 [ext_resource type="TileSet" uid="uid://cl5petjwvv2yd" path="res://new_tile_set.tres" id="19_rwmie"]
+[ext_resource type="PackedScene" uid="uid://cis0128ki1d6f" path="res://Scenes/Game_scene/scene_transition.tscn" id="22_q04a7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5qqo"]
 size = Vector2(38, 38)
@@ -6655,7 +6655,6 @@ position = Vector2(1, -911)
 position = Vector2(0, 72)
 shape = SubResource("RectangleShape2D_o5qqo")
 one_way_collision_margin = 0.0
-script = ExtResource("2_i6rsb")
 
 [node name="entities" type="Node" parent="."]
 
@@ -6766,50 +6765,42 @@ position = Vector2(-367, -382)
 [node name="skeletons" type="Node" parent="entities"]
 
 [node name="skeleton_Boss" parent="entities/skeletons" instance=ExtResource("4_jpdtv")]
-visible = false
 z_index = 2
 y_sort_enabled = true
 position = Vector2(490, -290)
 scale = Vector2(2, 2.026)
 
 [node name="skeleton2" parent="entities/skeletons" instance=ExtResource("4_jpdtv")]
-visible = false
 z_index = 2
 y_sort_enabled = true
 position = Vector2(246, -340)
 
 [node name="skeleton3" parent="entities/skeletons" instance=ExtResource("4_jpdtv")]
-visible = false
 z_index = 2
 y_sort_enabled = true
 position = Vector2(480, -335)
 
 [node name="skeleton4" parent="entities/skeletons" instance=ExtResource("4_jpdtv")]
-visible = false
 z_index = 2
 y_sort_enabled = true
 position = Vector2(427, -209)
 
 [node name="skeleton5" parent="entities/skeletons" instance=ExtResource("4_jpdtv")]
-visible = false
 z_index = 2
 y_sort_enabled = true
 position = Vector2(574, -215)
 
 [node name="skeleton6" parent="entities/skeletons" instance=ExtResource("4_jpdtv")]
-visible = false
 z_index = 2
 y_sort_enabled = true
 position = Vector2(757, -257)
 
 [node name="skeleton7" parent="entities/skeletons" instance=ExtResource("4_jpdtv")]
-visible = false
 z_index = 2
 y_sort_enabled = true
 position = Vector2(698, -66)
 
 [node name="skeleton8" parent="entities/skeletons" instance=ExtResource("4_jpdtv")]
-visible = false
 z_index = 2
 y_sort_enabled = true
 position = Vector2(586, 1)
@@ -6919,4 +6910,6 @@ zoom = Vector2(3, 3)
 process_callback = 0
 script = ExtResource("2_sltbu")
 
-[connection signal="body_entered" from="Level2_TP/tp_area2" to="Level2_TP/tp_area2/tp_area2" method="_on_tp_area_2_body_entered"]
+[node name="SceneTransition" parent="." instance=ExtResource("22_q04a7")]
+
+[connection signal="body_entered" from="Level2_TP/tp_area2" to="." method="_on_tp_area_2_body_entered"]

@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name Player
+
 var speed = 150 
 var current_dir = "none"
 var player_character

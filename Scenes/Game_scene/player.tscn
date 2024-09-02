@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://d2yr2v1e0ibvc"]
+[gd_scene load_steps=61 format=3 uid="uid://d2yr2v1e0ibvc"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_6x7ad"]
 [ext_resource type="Texture2D" uid="uid://cid6k7fr6udy" path="res://Assets/characters/Basic Player Model/PNG/Unarmed_Idle/Unarmed_Idle_full.png" id="2_ef4bw"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ckt3rhr0ss645" path="res://Assets/characters/Basic Player Model/PNG/Unarmed_Death/Unarmed_Death_full.png" id="4_ro4w6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5tavq"]
-radius = 5.0
+radius = 6.0
 height = 22.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ldnlj"]
@@ -262,7 +262,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"back_idle",
-"speed": 10.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -285,13 +285,13 @@ animations = [{
 }],
 "loop": true,
 "name": &"back_walk",
-"speed": 10.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_utb33")
 }, {
-"duration": 2.0,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_tbkf5")
 }, {
 "duration": 1.0,
@@ -299,6 +299,30 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ivnhh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tb4rj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ivnhh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ivnhh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbkf5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbkf5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbkf5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbkf5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tb4rj")
 }],
 "loop": true,
 "name": &"front_idle",
@@ -325,7 +349,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"front_walk",
-"speed": 10.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -418,6 +442,9 @@ animations = [{
 "speed": 7.0
 }]
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ehj6j"]
+polygon = PackedVector2Array(-3, -21, 4, -21, 5, -19, 6, -16, 6, -12, 5, -12, 6, -7, 5, -6, 3, -6, 4, -1, 3, 0, 0, 0, -4, 0, -6, -1, -5, -3, -4, -6, -6, -7, -6, -9, -5, -12, -6, -15, -5, -19)
+
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 y_sort_enabled = true
 collision_layer = 3
@@ -431,7 +458,14 @@ shape = SubResource("CapsuleShape2D_5tavq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
+texture_filter = 1
+position = Vector2(-1, 0)
 sprite_frames = SubResource("SpriteFrames_nn7uj")
 animation = &"front_idle"
 autoplay = "front_idle"
+frame_progress = 0.990889
 offset = Vector2(0.655, -11.84)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_ehj6j")
+occluder_light_mask = 2
