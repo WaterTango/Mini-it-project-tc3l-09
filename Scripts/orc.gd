@@ -24,7 +24,7 @@ func _physics_process(_delta):
 #godot node to detect when player enter the detection area
 func _on_detection_area_body_entered(body) -> void:
 	#this to set the body entered as the player
-	if body.is_in_group("Player"):
+	if body is Player:
 		player = body
 		player_chase = true
 	#this to signal the physics process that player has entered
@@ -36,7 +36,7 @@ func _on_detection_area_body_exited(body) -> void:
 	player_chase = false
 
 func _on_attack_range_body_entered(body):
-	if body.is_in_group("Player"):
+	if body is Player:
 		within_range = true
 	
 func _on_attack_range_body_exited(body):

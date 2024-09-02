@@ -12,7 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://dsrvt5qhrkmil" path="res://shaz_audio/SFX/hoversfx.mp3" id="10_33fa0"]
 [ext_resource type="Texture2D" uid="uid://b2bml5xl65kk1" path="res://shaz_images/tree_branch-removebg-preview.png" id="11_dmb41"]
 [ext_resource type="AudioStream" uid="uid://cf7bipeioldwe" path="res://shaz_audio/SFX/cartoonbasssfx.mp3" id="12_82dxi"]
-[ext_resource type="PackedScene" uid="uid://cvrddgckuqve" path="res://Scenes/settingsmenu/settingsmenu.tscn" id="13_0e0s6"]
+[ext_resource type="PackedScene" uid="uid://qnhy1jlu3dkk" path="res://Scenes/settingsmenu/settingsmenu.tscn" id="13_0e0s6"]
 
 [sub_resource type="Animation" id="Animation_yabwg"]
 length = 0.001

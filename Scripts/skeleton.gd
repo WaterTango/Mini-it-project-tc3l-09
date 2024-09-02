@@ -25,7 +25,7 @@ func _physics_process(_delta):
 
 func _on_area_2d_body_entered(body) -> void:
 	#this to set the body entered as the player
-	if body.is_in_group("Player"):
+	if body is Player:
 		player = body
 		player_chase = true
 	#this to signal the physics process that player has entered
