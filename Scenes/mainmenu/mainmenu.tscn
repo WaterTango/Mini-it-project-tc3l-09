@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bwwv1w4tn5b28"]
+[gd_scene load_steps=18 format=3 uid="uid://bwwv1w4tn5b28"]
 
 [ext_resource type="Script" path="res://Scenes/mainmenu/mainmenu.gd" id="1_e6pdu"]
 [ext_resource type="FontFile" uid="uid://dh3g4jbn5a1op" path="res://shaz_fonts/Mael.ttf" id="2_85lks"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://b2bml5xl65kk1" path="res://shaz_images/tree_branch-removebg-preview.png" id="11_dmb41"]
 [ext_resource type="AudioStream" uid="uid://cf7bipeioldwe" path="res://shaz_audio/SFX/cartoonbasssfx.mp3" id="12_82dxi"]
 [ext_resource type="PackedScene" uid="uid://qnhy1jlu3dkk" path="res://Scenes/settingsmenu/settingsmenu.tscn" id="13_0e0s6"]
+[ext_resource type="PackedScene" uid="uid://cis0128ki1d6f" path="res://Scenes/Game_scene/scene_transition.tscn" id="14_77q54"]
 
 [sub_resource type="Animation" id="Animation_yabwg"]
 length = 0.001
@@ -439,3 +440,5 @@ bus = &"Music"
 stream = ExtResource("10_33fa0")
 volume_db = 9.0
 bus = &"SFX"
+
+[node name="SceneTransition" parent="." instance=ExtResource("14_77q54")]
