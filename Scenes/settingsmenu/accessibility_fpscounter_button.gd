@@ -1,6 +1,7 @@
 class_name FPSOverlay
 extends Control
 
+
 @onready var fps_checkbox: CheckBox = $HBoxContainer/fps_checkbox as CheckBox
 @onready var fp_slayer: CanvasLayer = $fps_overlay/FPSlayer
 
