@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bif0os6sqs00m"]
+
+[ext_resource type="Script" path="res://Scenes/settingsmenu/fp_scounter.gd" id="1_evfmt"]
+[ext_resource type="FontFile" uid="uid://b8oo2dguy484y" path="res://shaz_fonts/basis33.ttf" id="2_v6vxu"]
+
+[node name="fps_overlayGlobal" type="Control" groups=["fpsOverlay"]]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_evfmt")
+
+[node name="FPSlayer2" type="CanvasLayer" parent="." groups=["fpsOverlay"]]
+offset = Vector2(10, 5)
+transform = Transform2D(1, 0, 0, 1, 10, 5)
+
+[node name="Label" type="Label" parent="FPSlayer2"]
+offset_right = 40.0
+offset_bottom = 31.0
+theme_override_fonts/font = ExtResource("2_v6vxu")
+theme_override_font_sizes/font_size = 30
+metadata/_edit_use_anchors_ = true
