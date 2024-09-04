@@ -6933,5 +6933,6 @@ theme_override_font_sizes/font_size = 30
 metadata/_edit_use_anchors_ = true
 
 [node name="SceneTransition" parent="." instance=ExtResource("22_q04a7")]
+visible = false
 
 [connection signal="body_entered" from="Level2_TP/tp_area2" to="." method="_on_tp_area_2_body_entered"]
