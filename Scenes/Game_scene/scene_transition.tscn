@@ -70,6 +70,16 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0)
 
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 308.0
+offset_top = 240.0
+offset_right = 384.0
+offset_bottom = 263.0
+text = "next level"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../ColorRect")
 libraries = {

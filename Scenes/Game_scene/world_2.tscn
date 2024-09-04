@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=4 uid="uid://o8fuiwevj7kb"]
+[gd_scene load_steps=53 format=4 uid="uid://o8fuiwevj7kb"]
 
 [ext_resource type="PackedScene" uid="uid://d2yr2v1e0ibvc" path="res://Scenes/Game_scene/player.tscn" id="1_5wfd0"]
 [ext_resource type="Script" path="res://Scripts/world_2.gd" id="1_sbijx"]
@@ -20,6 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://7p8exaxsxcrt" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Green Woods/Assets/forest_texture/TX Props.png" id="13_3rcac"]
 [ext_resource type="Texture2D" uid="uid://bofa2wfvbifoj" path="res://Assets/tilesets/RF_Catacombs_v1.0/decorative.png" id="14_vp6h0"]
 [ext_resource type="TileSet" uid="uid://cl5petjwvv2yd" path="res://new_tile_set.tres" id="19_rwmie"]
+[ext_resource type="Script" path="res://Scenes/settingsmenu/fp_scounter.gd" id="21_geoqs"]
+[ext_resource type="FontFile" uid="uid://b8oo2dguy484y" path="res://shaz_fonts/basis33.ttf" id="22_4rljb"]
 [ext_resource type="PackedScene" uid="uid://cis0128ki1d6f" path="res://Scenes/Game_scene/scene_transition.tscn" id="22_q04a7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5qqo"]
@@ -6909,6 +6911,26 @@ position = Vector2(1, 219)
 zoom = Vector2(3, 3)
 process_callback = 0
 script = ExtResource("2_sltbu")
+
+[node name="fps_overlay" type="Control" parent="Player"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("21_geoqs")
+
+[node name="FPSlayer" type="CanvasLayer" parent="Player/fps_overlay"]
+offset = Vector2(10, 5)
+transform = Transform2D(1, 0, 0, 1, 10, 5)
+
+[node name="Label" type="Label" parent="Player/fps_overlay/FPSlayer"]
+offset_right = 40.0
+offset_bottom = 31.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("22_4rljb")
+theme_override_font_sizes/font_size = 30
+metadata/_edit_use_anchors_ = true
 
 [node name="SceneTransition" parent="." instance=ExtResource("22_q04a7")]
 

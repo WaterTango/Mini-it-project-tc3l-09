@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cx328oij4ofwy"]
+[gd_scene load_steps=18 format=3 uid="uid://cx328oij4ofwy"]
 
 [ext_resource type="Texture2D" uid="uid://c6x6dv1b6rn7v" path="res://Assets/Pixel Crawler - FREE - 1.8/Enemy/Skeleton Crew/Skeleton - Base/Idle/Idle-Sheet.png" id="1_6ndjl"]
 [ext_resource type="Script" path="res://Scripts/skeleton.gd" id="1_opges"]
@@ -96,9 +96,6 @@ radius = 82.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kcptu"]
 size = Vector2(21.5, 29)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_s61mc"]
-polygon = PackedVector2Array(-4, -21, 2, -21, 4, -18, 3, -3, 4, 0, 1, 0, -7, 0, -4, -6, -6, -11)
-
 [node name="skeleton" type="CharacterBody2D"]
 script = ExtResource("1_opges")
 
@@ -109,7 +106,8 @@ shape = SubResource("RectangleShape2D_al3pb")
 debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -11)
+z_index = 5
+position = Vector2(0, -11.675)
 scale = Vector2(0.676943, 0.714641)
 sprite_frames = SubResource("SpriteFrames_asjcj")
 animation = &"skeleton_idle"
@@ -127,9 +125,6 @@ shape = SubResource("CircleShape2D_cp3bq")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attack range"]
 position = Vector2(0, -11)
 shape = SubResource("RectangleShape2D_kcptu")
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-occluder = SubResource("OccluderPolygon2D_s61mc")
 
 [connection signal="body_entered" from="Detection" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Detection" to="." method="_on_area_2d_body_exited"]

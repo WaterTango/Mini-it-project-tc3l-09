@@ -30,6 +30,7 @@ func on_start_pressed() -> void:
 	$MarginContainer/HBoxContainer/VBoxContainer/clickSFX.play()
 	await get_tree().create_timer(1).timeout
 	get_tree().change_scene_to_packed(start_level)
+	RenderingServer.set_default_clear_color(Color.BLACK)
 	print("Start Button pressed") # all the print statements are for DEBUGGING just in case
 	#$backgroundmusic.stop() - i dont think we need to stop the music as changing scene will remove the player anyways
 	pass

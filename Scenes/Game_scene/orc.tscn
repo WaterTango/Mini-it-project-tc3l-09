@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bf5px1sosea0q"]
+[gd_scene load_steps=25 format=3 uid="uid://bf5px1sosea0q"]
 
 [ext_resource type="Script" path="res://Scripts/orc.gd" id="1_w5dqo"]
 [ext_resource type="Texture2D" uid="uid://cdlxuw7bq4ygg" path="res://Assets/Pixel Crawler - FREE - 1.8/Enemy/Orc Crew/Orc/Death-Sheet.png" id="2_i2pii"]
@@ -144,9 +144,6 @@ radius = 56.0089
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vywfn"]
 size = Vector2(16, 27)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_240dq"]
-polygon = PackedVector2Array(-3, -22, 3, -22, 5, -19, 5, -10, 5, -1, -6, -1, -6, -16)
-
 [node name="orc" type="CharacterBody2D"]
 script = ExtResource("1_w5dqo")
 
@@ -157,6 +154,7 @@ shape = SubResource("RectangleShape2D_cxfub")
 debug_color = Color(0.898293, 0, 0, 0.419608)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 6
 position = Vector2(9.53674e-07, -12)
 scale = Vector2(0.777344, 0.738281)
 sprite_frames = SubResource("SpriteFrames_7jgql")
@@ -175,9 +173,6 @@ debug_color = Color(0, 0.648554, 0.176894, 0.42)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
 position = Vector2(0, -10.5)
 shape = SubResource("RectangleShape2D_vywfn")
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-occluder = SubResource("OccluderPolygon2D_240dq")
 
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
