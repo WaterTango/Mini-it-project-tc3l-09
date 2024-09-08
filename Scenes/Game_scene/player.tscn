@@ -453,21 +453,20 @@ script = ExtResource("1_6x7ad")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(-0.777275, -7.61701)
+position = Vector2(0.0619584, -5.97686)
 shape = SubResource("CapsuleShape2D_5tavq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
 texture_filter = 1
-position = Vector2(-1, 0)
+position = Vector2(-0.0405846, 0.0417137)
 sprite_frames = SubResource("SpriteFrames_nn7uj")
-animation = &"front_idle"
-autoplay = "front_idle"
-frame_progress = 0.990889
+animation = &"back_idle"
+autoplay = "back_idle"
 offset = Vector2(0.655, -11.84)
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 z_index = -1
+position = Vector2(0.875988, -0.0417137)
 occluder = SubResource("OccluderPolygon2D_ehj6j")
 occluder_light_mask = 2
-metadata/_edit_lock_ = true

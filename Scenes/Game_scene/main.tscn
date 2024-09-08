@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=4 uid="uid://dlsridlehvsdw"]
 
-[ext_resource type="Script" path="res://Scenes/Game_scene/main.gd" id="1_82yks"]
+[ext_resource type="Script" path="res://Scripts/world_1_3.gd" id="1_82yks"]
 [ext_resource type="PackedScene" uid="uid://d2yr2v1e0ibvc" path="res://Scenes/Game_scene/player.tscn" id="2_g4o5h"]
 [ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="3_6rbjd"]
 [ext_resource type="Texture2D" uid="uid://cmud5c4t613jg" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/Tiles.png" id="3_07pej"]

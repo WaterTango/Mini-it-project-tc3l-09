@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bf5px1sosea0q"]
+[gd_scene load_steps=26 format=3 uid="uid://bf5px1sosea0q"]
 
 [ext_resource type="Script" path="res://Scripts/orc.gd" id="1_w5dqo"]
 [ext_resource type="Texture2D" uid="uid://cdlxuw7bq4ygg" path="res://Assets/Pixel Crawler - FREE - 1.8/Enemy/Orc Crew/Orc/Death-Sheet.png" id="2_i2pii"]
@@ -138,8 +138,11 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0u1r2"]
+polygon = PackedVector2Array(-7.12599, -0.0832863, -4.37935, -0.149688, 6.07479, -0.121847, 6.11655, -0.859623, 5.37878, -0.887463, 5.35093, -1.65308, 4.61316, -1.68092, 4.61316, -2.73886, -5.56349, -2.80204, -5.53474, -2.39086, -6.27251, -2.33517, -6.32819, -0.901383, -7.06597, -0.859623)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_1tll8"]
-radius = 56.0089
+radius = 75.5059
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vywfn"]
 size = Vector2(16, 27)
@@ -160,6 +163,11 @@ scale = Vector2(0.777344, 0.738281)
 sprite_frames = SubResource("SpriteFrames_7jgql")
 animation = &"orc_idle"
 autoplay = "orc_idle"
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(0.875988, -0.0417137)
+occluder = SubResource("OccluderPolygon2D_0u1r2")
+occluder_light_mask = 2
 
 [node name="detection_area" type="Area2D" parent="."]
 
