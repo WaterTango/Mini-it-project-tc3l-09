@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://dah0ts1ddbmoi"]
+[gd_scene load_steps=41 format=4 uid="uid://dah0ts1ddbmoi"]
 
 [ext_resource type="Script" path="res://Scripts/world_1_1.gd" id="1_56o2p"]
 [ext_resource type="TileSet" uid="uid://hejtinux6a7x" path="res://Scenes/Game_scene/world_1.tres" id="1_lsqgd"]
@@ -319,20 +319,8 @@ polygon = PackedVector2Array(288, -160, 352, -160, 352, -112, 400, -112, 400, 80
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ul4gs"]
 polygon = PackedVector2Array(-64, 352, -64, 304, 64, 304, 64, 352, 12, 352)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ydbdh"]
-polygon = PackedVector2Array(-489, -64, -489, -103, -471, -103, -471, -64)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_og040"]
-polygon = PackedVector2Array(-571, 112, -571, 85, -534, 85, -534, 112)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_4mshc"]
-polygon = PackedVector2Array(-169, 408, -151, 408, -151, 448, -169, 448)
-
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_b4h7d"]
 polygon = PackedVector2Array(-143, 351, -143, 335, -113, 335, -113, 351)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_erljx"]
-polygon = PackedVector2Array(373, -216, 410, -216, 410, -192, 373, -192)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_elqvm"]
 polygon = PackedVector2Array(439, -216, 457, -216, 457, -176, 439, -176)
@@ -421,7 +409,7 @@ tile_set = ExtResource("1_lsqgd")
 metadata/_edit_lock_ = true
 
 [node name="pillars" type="TileMapLayer" parent="Map"]
-z_index = 2
+z_index = 3
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAD7//r/AwAoAAcAAAAEAPr/AwAoAAcAAAD7/wMAAwAqAAkAAAAEAAMAAwAqAAkAAAD3/xQAAwAsAAkAAAD4/xQAAwAtAAkAAAAHABQAAwAsAAkAAAAIABQAAwAtAAkAAAD///n/AwAsAAkAAAAAAPn/AwAtAAkAAAA=")
 tile_set = ExtResource("2_un0xr")
@@ -599,72 +587,7 @@ occluder = SubResource("OccluderPolygon2D_ul4gs")
 
 [node name="coffinsLeft" type="Node2D" parent="shadow"]
 
-[node name="left coffins" type="LightOccluder2D" parent="shadow/coffinsLeft"]
-occluder = SubResource("OccluderPolygon2D_ydbdh")
-
-[node name="left coffins2" type="LightOccluder2D" parent="shadow/coffinsLeft"]
-position = Vector2(48, 0)
-occluder = SubResource("OccluderPolygon2D_ydbdh")
-
-[node name="left coffins3" type="LightOccluder2D" parent="shadow/coffinsLeft"]
-position = Vector2(96, -1)
-occluder = SubResource("OccluderPolygon2D_ydbdh")
-
-[node name="left coffins4" type="LightOccluder2D" parent="shadow/coffinsLeft"]
-position = Vector2(0, 175)
-occluder = SubResource("OccluderPolygon2D_ydbdh")
-
-[node name="left coffins5" type="LightOccluder2D" parent="shadow/coffinsLeft"]
-position = Vector2(48, 177)
-occluder = SubResource("OccluderPolygon2D_ydbdh")
-
-[node name="left coffins6" type="LightOccluder2D" parent="shadow/coffinsLeft"]
-position = Vector2(96, 177)
-occluder = SubResource("OccluderPolygon2D_ydbdh")
-
-[node name="left coffins_hori" type="LightOccluder2D" parent="shadow/coffinsLeft"]
-occluder = SubResource("OccluderPolygon2D_og040")
-
-[node name="left coffins_hori2" type="LightOccluder2D" parent="shadow/coffinsLeft"]
-position = Vector2(0, -46)
-occluder = SubResource("OccluderPolygon2D_og040")
-
-[node name="left coffins_hori3" type="LightOccluder2D" parent="shadow/coffinsLeft"]
-position = Vector2(0, -95)
-occluder = SubResource("OccluderPolygon2D_og040")
-
-[node name="left coffins_hori4" type="LightOccluder2D" parent="shadow/coffinsLeft"]
-position = Vector2(0, -143)
-occluder = SubResource("OccluderPolygon2D_og040")
-
-[node name="left coffins_hori5" type="LightOccluder2D" parent="shadow/coffinsLeft"]
-position = Vector2(0, -191)
-occluder = SubResource("OccluderPolygon2D_og040")
-
 [node name="coffinsBottom" type="Node2D" parent="shadow"]
-
-[node name="coffinsbot" type="LightOccluder2D" parent="shadow/coffinsBottom"]
-occluder = SubResource("OccluderPolygon2D_4mshc")
-
-[node name="coffinsbot2" type="LightOccluder2D" parent="shadow/coffinsBottom"]
-position = Vector2(48, 0)
-occluder = SubResource("OccluderPolygon2D_4mshc")
-
-[node name="coffinsbot3" type="LightOccluder2D" parent="shadow/coffinsBottom"]
-position = Vector2(96, 0)
-occluder = SubResource("OccluderPolygon2D_4mshc")
-
-[node name="coffinsbot4" type="LightOccluder2D" parent="shadow/coffinsBottom"]
-position = Vector2(224, -1)
-occluder = SubResource("OccluderPolygon2D_4mshc")
-
-[node name="coffinsbot5" type="LightOccluder2D" parent="shadow/coffinsBottom"]
-position = Vector2(272, 1)
-occluder = SubResource("OccluderPolygon2D_4mshc")
-
-[node name="coffinsbot6" type="LightOccluder2D" parent="shadow/coffinsBottom"]
-position = Vector2(320, -1)
-occluder = SubResource("OccluderPolygon2D_4mshc")
 
 [node name="pillar" type="LightOccluder2D" parent="shadow/coffinsBottom"]
 occluder = SubResource("OccluderPolygon2D_b4h7d")
@@ -674,9 +597,6 @@ position = Vector2(256, -1)
 occluder = SubResource("OccluderPolygon2D_b4h7d")
 
 [node name="roomrighttop" type="Node2D" parent="shadow"]
-
-[node name="coffins" type="LightOccluder2D" parent="shadow/roomrighttop"]
-occluder = SubResource("OccluderPolygon2D_erljx")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="shadow/roomrighttop"]
 occluder = SubResource("OccluderPolygon2D_elqvm")
@@ -931,7 +851,7 @@ texture = ExtResource("5_expxc")
 [node name="door1" type="StaticBody2D" parent="Doors"]
 z_index = 3
 y_sort_enabled = true
-position = Vector2(0, -313)
+position = Vector2(-1, -328)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("11_0p0f3")

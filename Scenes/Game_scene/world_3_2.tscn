@@ -1,0 +1,159 @@
+[gd_scene load_steps=21 format=3 uid="uid://b3k265hce1ctr"]
+
+[ext_resource type="Script" path="res://Scripts/world_3_2.gd" id="1_342vo"]
+[ext_resource type="PackedScene" uid="uid://d2yr2v1e0ibvc" path="res://Scenes/Game_scene/player.tscn" id="1_ctdo8"]
+[ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="2_cb2ce"]
+[ext_resource type="Script" path="res://Scenes/settingsmenu/fp_scounter.gd" id="3_tbdp5"]
+[ext_resource type="FontFile" uid="uid://b8oo2dguy484y" path="res://shaz_fonts/basis33.ttf" id="4_ci84n"]
+[ext_resource type="Script" path="res://Scripts/door_library.gd" id="5_nkv88"]
+[ext_resource type="Script" path="res://Scripts/door1_collision.gd" id="6_xk5ly"]
+[ext_resource type="Texture2D" uid="uid://d16kv83clog3f" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/door_close.png" id="7_gvukn"]
+[ext_resource type="Texture2D" uid="uid://cnhp21decqan" path="res://Assets/pixel assets/Pixel Crawler - Library/Assets/library_closed.png" id="8_r3u00"]
+[ext_resource type="Texture2D" uid="uid://ouf3icuvgc5" path="res://Assets/pixel assets/Pixel Crawler - Library/Assets/library_opened.png" id="9_85ruh"]
+[ext_resource type="Texture2D" uid="uid://bmmvdmf6lyld5" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/door_open.png" id="10_t0usf"]
+[ext_resource type="PackedScene" uid="uid://pt3v68ebmn6" path="res://Scenes/Game_scene/key.tscn" id="11_tnrld"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tli52"]
+radius = 24.5153
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5xn2h"]
+size = Vector2(30.5, 18.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hao5"]
+atlas = ExtResource("7_gvukn")
+region = Rect2(0, 0, 30, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmvbb"]
+atlas = ExtResource("8_r3u00")
+region = Rect2(0, 0, 40, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ag5y"]
+atlas = ExtResource("9_85ruh")
+region = Rect2(0, 0, 40, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wt46"]
+atlas = ExtResource("10_t0usf")
+region = Rect2(0, 0, 30, 45)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_61lc1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hao5")
+}],
+"loop": true,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmvbb")
+}],
+"loop": true,
+"name": &"library_closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ag5y")
+}],
+"loop": true,
+"name": &"library_open",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7wt46")
+}],
+"loop": true,
+"name": &"opened",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ueh6n"]
+radius = 24.0
+height = 110.0
+
+[node name="world_3_2" type="Node2D"]
+script = ExtResource("1_342vo")
+
+[node name="Player" parent="." instance=ExtResource("1_ctdo8")]
+z_index = 5
+position = Vector2(0, 293)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(3, 3)
+process_callback = 0
+script = ExtResource("2_cb2ce")
+
+[node name="fps_overlay" type="Control" parent="Player"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_tbdp5")
+
+[node name="FPSlayer" type="CanvasLayer" parent="Player/fps_overlay"]
+offset = Vector2(10, 5)
+transform = Transform2D(1, 0, 0, 1, 10, 5)
+
+[node name="Label" type="Label" parent="Player/fps_overlay/FPSlayer"]
+offset_right = 40.0
+offset_bottom = 31.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_ci84n")
+theme_override_font_sizes/font_size = 30
+metadata/_edit_use_anchors_ = true
+
+[node name="Level3_1TP" type="StaticBody2D" parent="."]
+z_index = 5
+position = Vector2(113, 293)
+
+[node name="tp_area" type="Area2D" parent="Level3_1TP"]
+
+[node name="tp_area1" type="CollisionShape2D" parent="Level3_1TP/tp_area"]
+position = Vector2(-1, -66)
+shape = SubResource("CircleShape2D_tli52")
+
+[node name="Doors" type="Node" parent="."]
+
+[node name="door1" type="StaticBody2D" parent="Doors"]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(-36, 180)
+scale = Vector2(1.595, 1.595)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("5_nkv88")
+
+[node name="door1_collision" type="CollisionShape2D" parent="Doors/door1"]
+position = Vector2(1.78814e-07, 15.674)
+shape = SubResource("RectangleShape2D_5xn2h")
+debug_color = Color(0.909804, 0.0196078, 0, 0.419608)
+script = ExtResource("6_xk5ly")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Doors/door1"]
+texture_filter = 1
+position = Vector2(5.24521e-06, -1.35592)
+sprite_frames = SubResource("SpriteFrames_61lc1")
+animation = &"library_closed"
+autoplay = "library_closed"
+
+[node name="door1 zone" type="Area2D" parent="Doors/door1"]
+
+[node name="open1 zone" type="CollisionShape2D" parent="Doors/door1/door1 zone"]
+shape = SubResource("CapsuleShape2D_ueh6n")
+
+[node name="Keys" type="Node" parent="."]
+
+[node name="key" parent="Keys" instance=ExtResource("11_tnrld")]
+z_index = 5
+position = Vector2(27, 235)
+
+[connection signal="body_entered" from="Level3_1TP/tp_area" to="." method="_on_tp_area_body_entered"]
+[connection signal="door1_collision" from="Doors/door1" to="Doors/door1/door1_collision" method="_on_door_1_door_1_collision"]
+[connection signal="body_entered" from="Doors/door1/door1 zone" to="Doors/door1/door1_collision" method="_on_door_zone_body_entered"]
+[connection signal="body_entered" from="Doors/door1/door1 zone" to="Keys/key" method="_on_door_1_zone_body_entered"]
+[connection signal="body_exited" from="Doors/door1/door1 zone" to="Keys/key" method="_on_door_1_zone_body_exited"]
+[connection signal="door1_opened" from="Keys/key" to="Doors/door1" method="_on_key_door_1_opened"]
