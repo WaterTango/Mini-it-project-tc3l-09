@@ -12,13 +12,13 @@ func _physics_process(_delta):
 		position  += (player.position - position) / speed
 
 		#this is so the enemy close the distance to the player 
-		$AnimatedSprite2D.play("orc_run")
+		$AnimatedSprite2D.play("zombie_run")
 		if (player.position.x - position.x) <0:
 			$AnimatedSprite2D.flip_h = true
 		else:
 			$AnimatedSprite2D.flip_h = false
 	else:
-		$AnimatedSprite2D.play("orc_idle")
+		$AnimatedSprite2D.play("zombie_idle")
 	move_and_slide()
 
 #godot node to detect when player enter the detection area

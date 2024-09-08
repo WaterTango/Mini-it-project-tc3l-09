@@ -11,7 +11,7 @@
 [ext_resource type="FontFile" uid="uid://b8oo2dguy484y" path="res://shaz_fonts/basis33.ttf" id="9_u6ypq"]
 [ext_resource type="Texture2D" uid="uid://dsjcuro71baxv" path="res://Assets/tilesets/RF_Catacombs_v1.0/tower.jpg" id="10_g5adu"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oglbc"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5xpev"]
 texture = ExtResource("2_n1mrr")
 1:0/0 = 0
 2:0/0 = 0
@@ -552,7 +552,7 @@ texture = ExtResource("2_n1mrr")
 15:24/0 = 0
 16:24/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_503k5"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i1un5"]
 texture = ExtResource("3_t8qqg")
 1:0/0 = 0
 2:0/0 = 0
@@ -1136,10 +1136,10 @@ texture = ExtResource("3_t8qqg")
 
 [sub_resource type="TileSet" id="TileSet_ttx3q"]
 physics_layer_0/collision_layer = 1
-sources/1 = SubResource("TileSetAtlasSource_oglbc")
-sources/2 = SubResource("TileSetAtlasSource_503k5")
+sources/1 = SubResource("TileSetAtlasSource_5xpev")
+sources/2 = SubResource("TileSetAtlasSource_i1un5")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y65p5"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0mxtk"]
 texture = ExtResource("2_n1mrr")
 1:0/0 = 0
 2:0/0 = 0
@@ -1681,7 +1681,7 @@ texture = ExtResource("2_n1mrr")
 16:24/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_yxmr4"]
-sources/1 = SubResource("TileSetAtlasSource_y65p5")
+sources/1 = SubResource("TileSetAtlasSource_0mxtk")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_58kru"]
 texture = ExtResource("2_n1mrr")

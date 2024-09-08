@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctuwy6bck1drq"
-path="res://.godot/imported/Screenshot 2024-08-23 153155.png-9c166a00b11b556c202801b268be98f7.ctex"
+uid="uid://dhkd3enqicvre"
+path="res://.godot/imported/+HBSES.png-f1a4affa9633aa266c09cd2b18715374.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/Screenshot 2024-08-23 153155.png"
-dest_files=["res://.godot/imported/Screenshot 2024-08-23 153155.png-9c166a00b11b556c202801b268be98f7.ctex"]
+source_file="res://Assets/pixel assets/Pixel Crawler - Garden Environment/Assets/+HBSES.png"
+dest_files=["res://.godot/imported/+HBSES.png-f1a4affa9633aa266c09cd2b18715374.ctex"]
 
 [params]
 
