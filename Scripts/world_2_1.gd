@@ -1,7 +1,6 @@
 extends Node2D
 
 @onready var SceneTransition = $SceneTransition/AnimationPlayer
-@onready var start_level3 = preload("res://Scenes/Game_scene/world_3.tscn")
 
 func _ready() -> void:
 	#SceneTransitionAnimation.play("fade_out")
@@ -18,13 +17,11 @@ func _input(_event):
 	if Input.is_action_just_pressed("transition1"):
 		get_tree().change_scene_to_file("res://Scenes/Game_scene/world_1_1.tscn")
 	if Input.is_action_just_pressed("transition2"):
-		get_tree().change_scene_to_file("res://Scenes/Game_scene/world_2.tscn")
+		get_tree().change_scene_to_file("res://Scenes/Game_scene/world_2_1.tscn")
 	if Input.is_action_just_pressed("transition3"):
-		get_tree().change_scene_to_file("res://Scenes/Game_scene/world_3.tscn")
+		get_tree().change_scene_to_file("res://Scenes/Game_scene/world_3_1.tscn")
 
 
 func _on_tp_area_2_body_entered(body: Node2D) -> void:
 	if body is Player:
-		SceneTransition.play("fade_in")
-		await get_tree().create_timer(0.5).timeout
-		get_tree().change_scene_to_packed(start_level3)
+		get_tree().change_scene_to_file("res://Scenes/Game_scene/world_2_2.tscn")

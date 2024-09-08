@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4xee30mdqnld"
-path="res://.godot/imported/wooden floors.png-f69b6e587f2b059542080869bb6889d9.ctex"
+uid="uid://cnhp21decqan"
+path="res://.godot/imported/library_closed.png-ac0dbbda35ffea42cf2905046bead01c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/wooden floors.png"
-dest_files=["res://.godot/imported/wooden floors.png-f69b6e587f2b059542080869bb6889d9.ctex"]
+source_file="res://Assets/pixel assets/Pixel Crawler - Library/Assets/library_closed.png"
+dest_files=["res://.godot/imported/library_closed.png-ac0dbbda35ffea42cf2905046bead01c.ctex"]
 
 [params]
 

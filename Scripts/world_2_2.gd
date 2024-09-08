@@ -1,9 +1,10 @@
-extends Node
+extends Node2D
 
 func _ready() -> void:
+	#SceneTransitionAnimation.play("fade_out")
 	pass
-#this is for debug 
-#REMOVE WHEN GAME IS RELEASED
+	
+#this is to reload levels
 func _input(_event):
 	if Input.is_action_pressed("exit"):
 		get_tree().quit()
@@ -11,7 +12,6 @@ func _input(_event):
 	if Input.is_action_just_pressed('reset'):
 		get_tree().reload_current_scene()
 		print("reset")
-	#this is to reload levels
 	if Input.is_action_just_pressed("transition1"):
 		get_tree().change_scene_to_file("res://Scenes/Game_scene/world_1_1.tscn")
 	if Input.is_action_just_pressed("transition2"):
@@ -20,6 +20,6 @@ func _input(_event):
 		get_tree().change_scene_to_file("res://Scenes/Game_scene/world_3_1.tscn")
 
 
-func _on_tp_area_body_entered(body) -> void:
+func _on_tp_area_2_body_entered(body: Node2D) -> void:
 	if body is Player:
-		get_tree().change_scene_to_file("res://Scenes/Game_scene/world_1_2.tscn")
+		get_tree().change_scene_to_file("res://Scenes/Game_scene/world_3_1.tscn")
