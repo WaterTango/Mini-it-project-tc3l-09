@@ -674,9 +674,9 @@ texture = ExtResource("4_j06c7")
 12:4/0 = 0
 12:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, -4, -2, -4, -2, 4, 8, 4, 8, 8)
 13:4/0 = 0
-13:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -2, -8, -2, -8, 8, -4, 8)
+13:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 2, -4, 2, -4, 8, -8, 8)
 15:4/0 = 0
-15:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(4, -2, 8, -2, 8, 8, 4, 8)
+15:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 2, 4, 2, 4, 8, 8, 8)
 16:4/0 = 0
 16:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 8, 8, -4, 2, -4, 2, 4, -8, 4, -8, 8)
 17:4/0 = 0
@@ -755,9 +755,9 @@ texture = ExtResource("4_j06c7")
 15:7/0 = 0
 16:7/0 = 0
 17:7/0 = 0
-17:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(1, 0.625, -8, -8, -8, 8, 8, 8)
+17:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 4, 8, 4, 8, 8, -8, 8)
 18:7/0 = 0
-18:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1, 0.625, 8, -8, 8, 8, -8, 8)
+18:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 4, 8, 4, 8, 8, -8, 8)
 20:7/0 = 0
 21:7/0 = 0
 22:7/0 = 0
@@ -2258,7 +2258,7 @@ tile_set = SubResource("TileSet_ttx3q")
 metadata/_edit_lock_ = true
 
 [node name="rail" type="TileMapLayer" parent="map/TileMap"]
-z_index = 4
+z_index = 7
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AADP/+f/AgAOAAUAAADQ/+f/AgAOAAUAAADR/+f/AgAOAAUAAADS/+f/AgAOAAUAAADT/+f/AgAOAAUAAADU/+f/AgAOAAUAAADV/+f/AgAOAAUAAADW/+f/AgAOAAUAAADX/+f/AgAOAAUAAADY/+f/AgAOAAUAAADf/+f/AgAOAAUAAADg/+f/AgAOAAUAAADh/+f/AgAOAAUAAADi/+f/AgAOAAUAAADj/+f/AgAOAAUAAADk/+f/AgAOAAUAAADl/+f/AgAOAAUAAADm/+f/AgAOAAUAAADn/+f/AgAOAAUAAADo/+f/AgAOAAUAAADp/+j/AgAMAAMAAADp/+f/AgANAAQAAADp/+n/AgAMAAMAAADp/+r/AgAMAAMAAADp/+v/AgAMAAMAAADp/+z/AgAMAAMAAADp/+3/AgAMAAMAAADp/+7/AgAMAAMAAADp/+//AgAMAAMAAADp//D/AgAMAAMAAADp//H/AgAMAAMAAADp//L/AgAMAAMAAADp//P/AgAMAAQAAADq//P/AgAOAAUAAADr//P/AgAOAAUAAADs//P/AgAOAAUAAADt//P/AgAOAAUAAADu//P/AgAOAAUAAADv//P/AgAOAAUAAADw//P/AgAOAAUAAADx//P/AgAOAAUAAADy//P/AgAOAAUAAADz//P/AgAOAAUAAAD0//P/AgAOAAUAAAD1//P/AgAOAAUAAAD2//P/AgAOAAUAAAD3//P/AgAOAAUAAAD4//P/AgAOAAUAAAD5//P/AgAOAAUAAAD6//P/AgAOAAUAAAD7//P/AgAOAAUAAAD8//P/AgAOAAUAAAADAPP/AgAOAAUAAAAEAPP/AgAOAAUAAAAFAPP/AgAOAAUAAAAGAPP/AgAOAAUAAAAHAPP/AgAOAAUAAAAIAPP/AgAOAAUAAAAJAPP/AgAOAAUAAAAKAPP/AgAOAAUAAAALAPP/AgAOAAUAAAAMAPP/AgAOAAUAAAANAPP/AgAOAAUAAAAOAPP/AgAOAAUAAAAPAPP/AgAOAAUAAAAQAPP/AgAOAAUAAAARAPP/AgAOAAUAAAASAPP/AgAOAAUAAAATAPP/AgAOAAUAAAAUAPP/AgAOAAUAAAAVAPP/AgAOAAUAAAAWAPP/AgAQAAQAAAAWAPL/AgAQAAMAAAAWAPH/AgAQAAMAAAAWAPD/AgAQAAMAAAAWAO//AgAQAAMAAAAWAO7/AgAQAAMAAAAWAO3/AgAQAAMAAAAWAOz/AgAQAAMAAAAWAOv/AgAQAAMAAAAWAOr/AgAQAAMAAAAWAOn/AgAQAAMAAAAWAOj/AgAQAAMAAAAWAOf/AgAPAAQAAAAXAOf/AgAOAAUAAAAYAOf/AgAOAAUAAAAZAOf/AgAOAAUAAAAaAOf/AgAOAAUAAAAbAOf/AgAOAAUAAAAcAOf/AgAOAAUAAAAdAOf/AgAOAAUAAAAeAOf/AgAOAAUAAAAfAOf/AgAOAAUAAAAgAOf/AgAOAAUAAAAnAOf/AgAOAAUAAAAoAOf/AgAOAAUAAAApAOf/AgAOAAUAAAAqAOf/AgAOAAUAAAArAOf/AgAOAAUAAAAsAOf/AgAOAAUAAAAtAOf/AgAOAAUAAAAuAOf/AgAOAAUAAAAvAOf/AgAOAAUAAAAwAOf/AgAOAAUAAAAmAOf/AgASAAcAAAAmAOj/AgASAAgAAAAhAOf/AgARAAcAAAAhAOj/AgARAAgAAAD9//P/AgARAAcAAAD9//T/AgARAAgAAAACAPP/AgASAAcAAAACAPT/AgASAAgAAADe/+f/AgASAAcAAADe/+j/AgASAAgAAADZ/+f/AgARAAcAAADZ/+j/AgARAAgAAAA=")
 tile_set = SubResource("TileSet_ttx3q")
@@ -2329,7 +2329,7 @@ tile_map_data = PackedByteArray("AAD3/9r/AAAMAAQAAAD2/9r/AAAKAAAAAAD1/9r/AAAKAAA
 tile_set = ExtResource("5_e40cq")
 
 [node name="Player" parent="." instance=ExtResource("1_5q3mx")]
-z_index = 3
+z_index = 6
 position = Vector2(0, -2)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
