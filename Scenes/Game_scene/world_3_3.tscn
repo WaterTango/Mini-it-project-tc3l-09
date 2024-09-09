@@ -1714,7 +1714,7 @@ texture = ExtResource("2_n1mrr")
 [sub_resource type="TileSet" id="TileSet_rc6jo"]
 sources/0 = SubResource("TileSetAtlasSource_58kru")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mdxaf"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a6gqc"]
 texture = ExtResource("2_n1mrr")
 1:0/0 = 0
 2:0/0 = 0
@@ -2232,7 +2232,7 @@ texture = ExtResource("2_n1mrr")
 17:7/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_ckmvu"]
-sources/0 = SubResource("TileSetAtlasSource_mdxaf")
+sources/0 = SubResource("TileSetAtlasSource_a6gqc")
 
 [node name="world_3" type="Node2D"]
 script = ExtResource("1_6brog")
