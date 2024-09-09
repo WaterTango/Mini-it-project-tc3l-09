@@ -1,6 +1,13 @@
 extends Node2D
 
+# shaz's pausemenu ================================================================================
+@onready var pause_menu: pausemenuW2 = $Player/Camera2D/PauseMenu
+
+var paused = false
+# shaz's AudioPlaybackScript =======================================================================
 func _ready() -> void:
+	$"World 2 Music".play()
+	#===============================================================================================
 	#SceneTransitionAnimation.play("fade_out")
 	pass
 	
@@ -18,7 +25,28 @@ func _input(_event):
 		get_tree().change_scene_to_file("res://Scenes/Game_scene/world_2_1.tscn")
 	if Input.is_action_just_pressed("transition3"):
 		get_tree().change_scene_to_file("res://Scenes/Game_scene/world_3_1.tscn")
+# shaz's code for pause below =================================================================
+	if Input.is_action_just_pressed("pause"):
+		pauseMenu()
+		
+	# shaz's pausemenu function below =================================================================
+func pauseMenu():
+	if paused:
+		$ResumeSFX.play()
+		pause_menu.hide()
+		Engine.time_scale = 1
+		#get_tree().paused = true  
+		print("[Pause Menu] Game Resumed")
+	else:
+		$PausedSFX.play()
+		pause_menu.show()
+		Engine.time_scale = 0  
+		#get_tree().paused = false
+		print("[Pause Menu] Game Paused")
+		
+	paused = !paused
 
+#==================================================================================================
 
 func _on_tp_area_2_body_entered(body: Node2D) -> void:
 	if body is Player:

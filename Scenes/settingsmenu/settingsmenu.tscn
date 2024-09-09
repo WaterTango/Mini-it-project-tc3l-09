@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://qnhy1jlu3dkk"]
+[gd_scene load_steps=8 format=3 uid="uid://qnhy1jlu3dkk"]
 
 [ext_resource type="Script" path="res://Scenes/mainmenu/settingsmenu.gd" id="1_gnf14"]
 [ext_resource type="FontFile" uid="uid://f3bxx2ry3bsw" path="res://shaz_fonts/BLKCHCRY.TTF" id="1_lj1wd"]
 [ext_resource type="FontFile" uid="uid://b8oo2dguy484y" path="res://shaz_fonts/basis33.ttf" id="2_bm5xm"]
 [ext_resource type="Texture2D" uid="uid://d3v7bgb45ofjd" path="res://shaz_images/icons/exit-export-logout-svgrepo-com.svg" id="3_6k6jv"]
 [ext_resource type="PackedScene" uid="uid://dilgucspn6n7b" path="res://Scenes/settingsmenu/settings_tab_container.tscn" id="3_upxwc"]
+[ext_resource type="AudioStream" uid="uid://bhnfdxn0m6r6f" path="res://shaz_audio/SFX/clicksfx.mp3" id="6_bx2a3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sjlsr"]
 
@@ -69,3 +70,9 @@ alignment = 0
 text_overrun_behavior = 1
 icon_alignment = 2
 expand_icon = true
+
+[node name="clickSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_bx2a3")
+volume_db = -6.0
+pitch_scale = 0.48
+bus = &"SFX"

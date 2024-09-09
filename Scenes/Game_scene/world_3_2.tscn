@@ -1,12 +1,14 @@
-[gd_scene load_steps=32 format=4 uid="uid://b3k265hce1ctr"]
+[gd_scene load_steps=38 format=4 uid="uid://b3k265hce1ctr"]
 
 [ext_resource type="Script" path="res://Scripts/world_3_2.gd" id="1_342vo"]
 [ext_resource type="PackedScene" uid="uid://d2yr2v1e0ibvc" path="res://Scenes/Game_scene/player.tscn" id="1_ctdo8"]
 [ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="2_cb2ce"]
-[ext_resource type="Script" path="res://Scenes/settingsmenu/fp_scounter.gd" id="3_tbdp5"]
-[ext_resource type="FontFile" uid="uid://b8oo2dguy484y" path="res://shaz_fonts/basis33.ttf" id="4_ci84n"]
+[ext_resource type="PackedScene" uid="uid://bubxqu7jdai64" path="res://Scenes/mainmenu/pausemenu.tscn" id="4_s3bi1"]
 [ext_resource type="Script" path="res://Scripts/door_library.gd" id="5_nkv88"]
+[ext_resource type="Script" path="res://Scenes/mainmenu/pausemenuW3.gd" id="5_weq2b"]
+[ext_resource type="PackedScene" uid="uid://qnhy1jlu3dkk" path="res://Scenes/settingsmenu/settingsmenu.tscn" id="6_xj43a"]
 [ext_resource type="Script" path="res://Scripts/door1_collision.gd" id="6_xk5ly"]
+[ext_resource type="Script" path="res://Scenes/settingsmenu/settingsmenuInGameW3.gd" id="7_7duxl"]
 [ext_resource type="Texture2D" uid="uid://d16kv83clog3f" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/door_close.png" id="7_gvukn"]
 [ext_resource type="Texture2D" uid="uid://cnhp21decqan" path="res://Assets/pixel assets/Pixel Crawler - Library/Assets/library_closed.png" id="8_r3u00"]
 [ext_resource type="Texture2D" uid="uid://ouf3icuvgc5" path="res://Assets/pixel assets/Pixel Crawler - Library/Assets/library_opened.png" id="9_85ruh"]
@@ -16,6 +18,10 @@
 [ext_resource type="Texture2D" uid="uid://dk47txfrdo6hq" path="res://Assets/pixel assets/Pixel Crawler - Castle/Assets/ATiles.png" id="14_pt2tv"]
 [ext_resource type="Texture2D" uid="uid://dkavl6ffevps4" path="res://Assets/pixel assets/Pixel Crawler - Library/Assets/Tiles.png" id="15_ymt33"]
 [ext_resource type="TileSet" uid="uid://bm6wjjk4cc7qu" path="res://Scenes/Game_scene/props.tres" id="16_a7vi1"]
+[ext_resource type="AudioStream" uid="uid://bterik6f2282d" path="res://shaz_audio/music/the-time-is-upon-us [World 3].mp3" id="19_f4xys"]
+[ext_resource type="AudioStream" uid="uid://bhnfdxn0m6r6f" path="res://shaz_audio/SFX/clicksfx.mp3" id="20_mkjxl"]
+[ext_resource type="AudioStream" uid="uid://cv01x33uvm2v3" path="res://shaz_audio/SFX/paused.mp3" id="21_24if8"]
+[ext_resource type="AudioStream" uid="uid://cxdtgh6f6ljyb" path="res://shaz_audio/SFX/resume.mp3" id="22_n1j75"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tli52"]
 radius = 24.5153
@@ -2289,25 +2295,26 @@ zoom = Vector2(3, 3)
 process_callback = 0
 script = ExtResource("2_cb2ce")
 
-[node name="fps_overlay" type="Control" parent="Player"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("3_tbdp5")
+[node name="PauseMenu" parent="Player/Camera2D" instance=ExtResource("4_s3bi1")]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(1920, 1080)
+offset_left = -360.0
+offset_top = -210.0
+offset_right = 1560.0
+offset_bottom = 870.0
+scale = Vector2(0.375, 0.375)
+script = ExtResource("5_weq2b")
 
-[node name="FPSlayer" type="CanvasLayer" parent="Player/fps_overlay"]
-offset = Vector2(10, 5)
-transform = Transform2D(1, 0, 0, 1, 10, 5)
-
-[node name="Label" type="Label" parent="Player/fps_overlay/FPSlayer"]
-offset_right = 40.0
-offset_bottom = 31.0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 5
-theme_override_fonts/font = ExtResource("4_ci84n")
-theme_override_font_sizes/font_size = 30
-metadata/_edit_use_anchors_ = true
+[node name="settings_menu" parent="Player/Camera2D" instance=ExtResource("6_xj43a")]
+visible = false
+custom_minimum_size = Vector2(1920, 1080)
+offset_left = -335.0
+offset_top = -180.0
+offset_right = 1585.0
+offset_bottom = 900.0
+scale = Vector2(0.35, 0.35)
+script = ExtResource("7_7duxl")
 
 [node name="Level3_1TP" type="StaticBody2D" parent="."]
 z_index = 5
@@ -2439,6 +2446,28 @@ polygon = PackedVector2Array(784, -197, 737, -197, 737, -165, 737, -128, 784, -1
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="collisions"]
 polygon = PackedVector2Array(-64, -32, -64, -200, -176, -200, -176, -128, -128, -128, -127, -31, -256, -32, -256, -128, -208, -128, -208, -200, -352, -200, -352, -128, -304, -128, -304, -32, -432, -32, -432, -128, -384, -128, -384, -200, -528, -200, -528, -128, -480, -128, -480, -32, -608, -32, -608, -128, -560, -128, -560, -200, -704, -200, -704, -128, -656, -128, -656, -32, -784, -32, -784, -128, -736, -128, -736, -200, -790, -200, -860, -101, -806, 29, -220, 31, 40, 25, 65, -32)
+
+[node name="World 3 Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_f4xys")
+volume_db = -6.0
+bus = &"Music"
+parameters/looping = true
+
+[node name="clickSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_mkjxl")
+volume_db = -6.0
+pitch_scale = 0.48
+bus = &"SFX"
+
+[node name="PausedSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_24if8")
+volume_db = -3.0
+bus = &"SFX"
+
+[node name="ResumeSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_n1j75")
+volume_db = -3.0
+bus = &"SFX"
 
 [connection signal="body_entered" from="Level3_1TP/tp_area" to="." method="_on_tp_area_body_entered"]
 [connection signal="door1_collision" from="Doors/door1" to="Doors/door1/door1_collision" method="_on_door_1_door_1_collision"]

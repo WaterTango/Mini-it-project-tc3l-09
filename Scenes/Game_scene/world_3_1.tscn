@@ -1,12 +1,14 @@
-[gd_scene load_steps=24 format=4 uid="uid://cmkcsdcvi17xw"]
+[gd_scene load_steps=30 format=4 uid="uid://cmkcsdcvi17xw"]
 
 [ext_resource type="Script" path="res://Scripts/world_3_1.gd" id="1_s8enk"]
 [ext_resource type="PackedScene" uid="uid://d2yr2v1e0ibvc" path="res://Scenes/Game_scene/player.tscn" id="1_tegyf"]
 [ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="2_hw8fn"]
-[ext_resource type="Script" path="res://Scenes/settingsmenu/fp_scounter.gd" id="3_wlndg"]
-[ext_resource type="FontFile" uid="uid://b8oo2dguy484y" path="res://shaz_fonts/basis33.ttf" id="4_1atm6"]
+[ext_resource type="PackedScene" uid="uid://bubxqu7jdai64" path="res://Scenes/mainmenu/pausemenu.tscn" id="4_54rk5"]
 [ext_resource type="TileSet" uid="uid://cl5petjwvv2yd" path="res://new_tile_set.tres" id="5_iwy6x"]
+[ext_resource type="Script" path="res://Scenes/mainmenu/pausemenuW3.gd" id="5_nwkrd"]
+[ext_resource type="PackedScene" uid="uid://qnhy1jlu3dkk" path="res://Scenes/settingsmenu/settingsmenu.tscn" id="5_smye3"]
 [ext_resource type="TileSet" uid="uid://bm6wjjk4cc7qu" path="res://Scenes/Game_scene/props.tres" id="6_nrwa4"]
+[ext_resource type="Script" path="res://Scenes/settingsmenu/settingsmenuInGameW3.gd" id="7_g40fa"]
 [ext_resource type="Script" path="res://Scripts/door_library.gd" id="7_gx0xi"]
 [ext_resource type="Script" path="res://Scripts/door1_collision.gd" id="8_2psdb"]
 [ext_resource type="Texture2D" uid="uid://d16kv83clog3f" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/door_close.png" id="9_o62tb"]
@@ -14,6 +16,10 @@
 [ext_resource type="Texture2D" uid="uid://cnhp21decqan" path="res://Assets/pixel assets/Pixel Crawler - Library/Assets/library_closed.png" id="11_viav8"]
 [ext_resource type="Texture2D" uid="uid://ouf3icuvgc5" path="res://Assets/pixel assets/Pixel Crawler - Library/Assets/library_opened.png" id="12_6dlhn"]
 [ext_resource type="PackedScene" uid="uid://pt3v68ebmn6" path="res://Scenes/Game_scene/key.tscn" id="12_6dwbc"]
+[ext_resource type="AudioStream" uid="uid://bterik6f2282d" path="res://shaz_audio/music/the-time-is-upon-us [World 3].mp3" id="15_06ygu"]
+[ext_resource type="AudioStream" uid="uid://bhnfdxn0m6r6f" path="res://shaz_audio/SFX/clicksfx.mp3" id="17_t2rqx"]
+[ext_resource type="AudioStream" uid="uid://cv01x33uvm2v3" path="res://shaz_audio/SFX/paused.mp3" id="18_atj7h"]
+[ext_resource type="AudioStream" uid="uid://cxdtgh6f6ljyb" path="res://shaz_audio/SFX/resume.mp3" id="19_ggqts"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wjf7b"]
 radius = 24.5153
@@ -101,25 +107,26 @@ zoom = Vector2(3, 3)
 process_callback = 0
 script = ExtResource("2_hw8fn")
 
-[node name="fps_overlay" type="Control" parent="Player"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("3_wlndg")
+[node name="PauseMenu" parent="Player/Camera2D" instance=ExtResource("4_54rk5")]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(1920, 1080)
+offset_left = -360.0
+offset_top = -210.0
+offset_right = 1560.0
+offset_bottom = 870.0
+scale = Vector2(0.375, 0.375)
+script = ExtResource("5_nwkrd")
 
-[node name="FPSlayer" type="CanvasLayer" parent="Player/fps_overlay"]
-offset = Vector2(10, 5)
-transform = Transform2D(1, 0, 0, 1, 10, 5)
-
-[node name="Label" type="Label" parent="Player/fps_overlay/FPSlayer"]
-offset_right = 40.0
-offset_bottom = 31.0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 5
-theme_override_fonts/font = ExtResource("4_1atm6")
-theme_override_font_sizes/font_size = 30
-metadata/_edit_use_anchors_ = true
+[node name="settings_menu" parent="Player/Camera2D" instance=ExtResource("5_smye3")]
+visible = false
+custom_minimum_size = Vector2(1920, 1080)
+offset_left = -335.0
+offset_top = -180.0
+offset_right = 1585.0
+offset_bottom = 900.0
+scale = Vector2(0.35, 0.35)
+script = ExtResource("7_g40fa")
 
 [node name="map" type="Node" parent="."]
 
@@ -261,6 +268,28 @@ position = Vector2(-263, 74)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(262.75, 2)
 shape = SubResource("RectangleShape2D_hxyjx")
+
+[node name="World 3 Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_06ygu")
+volume_db = -6.0
+bus = &"Music"
+parameters/looping = true
+
+[node name="clickSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_t2rqx")
+volume_db = -6.0
+pitch_scale = 0.48
+bus = &"SFX"
+
+[node name="PausedSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_atj7h")
+volume_db = -3.0
+bus = &"SFX"
+
+[node name="ResumeSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_ggqts")
+volume_db = -3.0
+bus = &"SFX"
 
 [connection signal="body_entered" from="Level3_1TP/tp_area" to="." method="_on_tp_area_body_entered"]
 [connection signal="door1_collision" from="Doors/door1" to="Doors/door1/door1_collision" method="_on_door_1_door_1_collision"]

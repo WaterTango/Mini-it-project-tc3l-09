@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://dah0ts1ddbmoi"]
+[gd_scene load_steps=45 format=4 uid="uid://dah0ts1ddbmoi"]
 
 [ext_resource type="Script" path="res://Scripts/world_1_1.gd" id="1_56o2p"]
 [ext_resource type="TileSet" uid="uid://hejtinux6a7x" path="res://Scenes/Game_scene/world_1.tres" id="1_lsqgd"]
@@ -9,14 +9,19 @@
 [ext_resource type="Texture2D" uid="uid://ba8i2p8le62dm" path="res://Assets/pixel assets/Pixel Crawler - Castle/Assets/2d_lights_and_shadows_neutral_point_light.webp" id="5_expxc"]
 [ext_resource type="Texture2D" uid="uid://cng2glks0nexv" path="res://Assets/pixel assets/Pixel Crawler - Sewer/Assets/Tiles.png" id="5_uqiey"]
 [ext_resource type="TileSet" uid="uid://cl5petjwvv2yd" path="res://new_tile_set.tres" id="6_qflkk"]
-[ext_resource type="Script" path="res://Scenes/settingsmenu/fp_scounter.gd" id="6_s8g5n"]
-[ext_resource type="FontFile" uid="uid://b8oo2dguy484y" path="res://shaz_fonts/basis33.ttf" id="7_tbjq3"]
+[ext_resource type="PackedScene" uid="uid://bubxqu7jdai64" path="res://Scenes/mainmenu/pausemenu.tscn" id="10_838wu"]
+[ext_resource type="PackedScene" uid="uid://qnhy1jlu3dkk" path="res://Scenes/settingsmenu/settingsmenu.tscn" id="11_0daj7"]
 [ext_resource type="Script" path="res://Scripts/door1.gd" id="11_0p0f3"]
 [ext_resource type="PackedScene" uid="uid://cx328oij4ofwy" path="res://Scenes/Game_scene/skeleton.tscn" id="11_btl6v"]
 [ext_resource type="Script" path="res://Scripts/door1_collision.gd" id="12_ckv20"]
+[ext_resource type="Script" path="res://Scenes/settingsmenu/settingsmenuINGAME.gd" id="12_eeqmo"]
 [ext_resource type="Texture2D" uid="uid://d16kv83clog3f" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/door_close.png" id="13_dr23q"]
 [ext_resource type="Texture2D" uid="uid://bmmvdmf6lyld5" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/door_open.png" id="14_rwj3n"]
 [ext_resource type="PackedScene" uid="uid://pt3v68ebmn6" path="res://Scenes/Game_scene/key.tscn" id="15_ubtxd"]
+[ext_resource type="AudioStream" uid="uid://cv01x33uvm2v3" path="res://shaz_audio/SFX/paused.mp3" id="21_ff3dr"]
+[ext_resource type="AudioStream" uid="uid://bhnfdxn0m6r6f" path="res://shaz_audio/SFX/clicksfx.mp3" id="21_lj2ob"]
+[ext_resource type="AudioStream" uid="uid://cxdtgh6f6ljyb" path="res://shaz_audio/SFX/resume.mp3" id="22_27fjt"]
+[ext_resource type="AudioStream" uid="uid://bw5y0ammuwdv4" path="res://shaz_audio/music/apostatas [World 1].mp3" id="22_qrmdu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yabwm"]
 
@@ -379,6 +384,99 @@ metadata/_edit_lock_ = true
 self_modulate = Color(0.176419, 0.176419, 0.176419, 1)
 color = Color(0.09536, 0.0953585, 0.164729, 0.980392)
 
+[node name="entitites" type="Node" parent="."]
+
+[node name="Player" parent="entitites" instance=ExtResource("3_jdqqv")]
+z_index = 2
+position = Vector2(0, 1)
+
+[node name="Camera2D" type="Camera2D" parent="entitites/Player"]
+zoom = Vector2(3, 3)
+process_callback = 0
+script = ExtResource("4_qn5wu")
+
+[node name="Playerlight" type="PointLight2D" parent="entitites/Player/Camera2D"]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(4, -9)
+color = Color(0.838897, 0.838897, 0.838897, 1)
+energy = 0.7
+range_item_cull_mask = 3
+shadow_enabled = true
+texture = ExtResource("5_expxc")
+offset = Vector2(-8.28, 0)
+texture_scale = 0.5
+
+[node name="PauseMenu" parent="entitites/Player/Camera2D" instance=ExtResource("10_838wu")]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(1920, 1080)
+offset_left = -360.0
+offset_top = -210.0
+offset_right = 1560.0
+offset_bottom = 870.0
+scale = Vector2(0.375, 0.375)
+
+[node name="settings_menu" parent="entitites/Player/Camera2D" instance=ExtResource("11_0daj7")]
+visible = false
+custom_minimum_size = Vector2(1920, 1080)
+offset_left = -335.0
+offset_top = -180.0
+offset_right = 1585.0
+offset_bottom = 900.0
+scale = Vector2(0.35, 0.35)
+script = ExtResource("12_eeqmo")
+
+[node name="skeleton" type="Node" parent="entitites"]
+
+[node name="skeleton" parent="entitites/skeleton" instance=ExtResource("11_btl6v")]
+z_index = 2
+position = Vector2(-127, 393)
+
+[node name="skeleton2" parent="entitites/skeleton" instance=ExtResource("11_btl6v")]
+z_index = 2
+position = Vector2(105, 397)
+
+[node name="skeleton3" parent="entitites/skeleton" instance=ExtResource("11_btl6v")]
+z_index = 2
+position = Vector2(-429, 251)
+
+[node name="skeleton4" parent="entitites/skeleton" instance=ExtResource("11_btl6v")]
+z_index = 2
+position = Vector2(398, 162)
+
+[node name="skeleton5" parent="entitites/skeleton" instance=ExtResource("11_btl6v")]
+z_index = 2
+position = Vector2(-506, -52)
+
+[node name="skeleton6" parent="entitites/skeleton" instance=ExtResource("11_btl6v")]
+z_index = 2
+position = Vector2(-412, -35)
+
+[node name="skeleton7" parent="entitites/skeleton" instance=ExtResource("11_btl6v")]
+z_index = 2
+position = Vector2(-470, 43)
+
+[node name="skeleton8" parent="entitites/skeleton" instance=ExtResource("11_btl6v")]
+z_index = 2
+position = Vector2(595, -12)
+
+[node name="skeleton9" parent="entitites/skeleton" instance=ExtResource("11_btl6v")]
+z_index = 2
+position = Vector2(418, -156)
+
+[node name="skeleton10" parent="entitites/skeleton" instance=ExtResource("11_btl6v")]
+z_index = 2
+position = Vector2(-113, -264)
+
+[node name="skeleton11" parent="entitites/skeleton" instance=ExtResource("11_btl6v")]
+z_index = 2
+position = Vector2(-63, -501)
+
+[node name="skeleton12" parent="entitites/skeleton" instance=ExtResource("11_btl6v")]
+z_index = 2
+position = Vector2(79, -531)
+
 [node name="Level1_1TP" type="StaticBody2D" parent="."]
 z_index = 3
 position = Vector2(-265, -348)
@@ -481,99 +579,6 @@ polygon = PackedVector2Array(-192, 320, -192, 295, -176, 295, -176, 264, -144, 2
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Map/collisions"]
 z_index = 1
 polygon = PackedVector2Array(-176, -288, -176, -295, -32, -295, -32, -303, -17, -303, -16, -464, -112, -464, -112, -576, -32, -576, -32, -535, -17, -535, -17, -608, 17, -608, 17, -536, 32, -536, 32, -576, 112, -576, 112, -464, 16, -464, 16, -303, 32, -303, 32, -296, 160, -296, 176, -296, 225, -504, 153, -684, -230, -680, -285, -369)
-
-[node name="entitites" type="Node" parent="."]
-
-[node name="Player" parent="entitites" instance=ExtResource("3_jdqqv")]
-z_index = 2
-position = Vector2(0, 1)
-
-[node name="Camera2D" type="Camera2D" parent="entitites/Player"]
-zoom = Vector2(3, 3)
-process_callback = 0
-script = ExtResource("4_qn5wu")
-
-[node name="Playerlight" type="PointLight2D" parent="entitites/Player/Camera2D"]
-z_index = 2
-y_sort_enabled = true
-position = Vector2(4, -9)
-color = Color(0.838897, 0.838897, 0.838897, 1)
-energy = 0.7
-range_item_cull_mask = 3
-shadow_enabled = true
-texture = ExtResource("5_expxc")
-offset = Vector2(-8.28, 0)
-texture_scale = 0.5
-
-[node name="fps_overlay" type="Control" parent="entitites/Player"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("6_s8g5n")
-
-[node name="FPSlayer" type="CanvasLayer" parent="entitites/Player/fps_overlay"]
-offset = Vector2(10, 5)
-transform = Transform2D(1, 0, 0, 1, 10, 5)
-
-[node name="Label" type="Label" parent="entitites/Player/fps_overlay/FPSlayer"]
-offset_right = 40.0
-offset_bottom = 31.0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 5
-theme_override_fonts/font = ExtResource("7_tbjq3")
-theme_override_font_sizes/font_size = 30
-metadata/_edit_use_anchors_ = true
-
-[node name="skeleton" type="Node" parent="entitites"]
-
-[node name="skeleton" parent="entitites/skeleton" instance=ExtResource("11_btl6v")]
-z_index = 2
-position = Vector2(-127, 393)
-
-[node name="skeleton2" parent="entitites/skeleton" instance=ExtResource("11_btl6v")]
-z_index = 2
-position = Vector2(105, 397)
-
-[node name="skeleton3" parent="entitites/skeleton" instance=ExtResource("11_btl6v")]
-z_index = 2
-position = Vector2(-429, 251)
-
-[node name="skeleton4" parent="entitites/skeleton" instance=ExtResource("11_btl6v")]
-z_index = 2
-position = Vector2(398, 162)
-
-[node name="skeleton5" parent="entitites/skeleton" instance=ExtResource("11_btl6v")]
-z_index = 2
-position = Vector2(-506, -52)
-
-[node name="skeleton6" parent="entitites/skeleton" instance=ExtResource("11_btl6v")]
-z_index = 2
-position = Vector2(-412, -35)
-
-[node name="skeleton7" parent="entitites/skeleton" instance=ExtResource("11_btl6v")]
-z_index = 2
-position = Vector2(-470, 43)
-
-[node name="skeleton8" parent="entitites/skeleton" instance=ExtResource("11_btl6v")]
-z_index = 2
-position = Vector2(595, -12)
-
-[node name="skeleton9" parent="entitites/skeleton" instance=ExtResource("11_btl6v")]
-z_index = 2
-position = Vector2(418, -156)
-
-[node name="skeleton10" parent="entitites/skeleton" instance=ExtResource("11_btl6v")]
-z_index = 2
-position = Vector2(-113, -264)
-
-[node name="skeleton11" parent="entitites/skeleton" instance=ExtResource("11_btl6v")]
-z_index = 2
-position = Vector2(-63, -501)
-
-[node name="skeleton12" parent="entitites/skeleton" instance=ExtResource("11_btl6v")]
-z_index = 2
-position = Vector2(79, -531)
 
 [node name="shadow" type="Node" parent="."]
 
@@ -910,6 +915,28 @@ polygon = PackedVector2Array(-128, -31, -144, -31, -144, -24, -239, -23, -240, -
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(-33, -295, -17, -295, -18, -338, -17, -375, -16, -463, -111, -464, -112, -576, -32, -575, -32, -540, -17, -540, -17, -598, 17.0218, -598.15, 17, -540, 32, -540, 32, -576, 112, -576, 111, -463, 19, -464, 16, -295, 176, -296, 436, -600, 342, -725, -269, -741, -277, -326, -192, -295)
+
+[node name="clickSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_lj2ob")
+volume_db = -6.0
+pitch_scale = 0.48
+bus = &"SFX"
+
+[node name="World 1 Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_qrmdu")
+volume_db = -6.0
+bus = &"Music"
+parameters/looping = true
+
+[node name="PausedSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_ff3dr")
+volume_db = -3.0
+bus = &"SFX"
+
+[node name="ResumeSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_27fjt")
+volume_db = -3.0
+bus = &"SFX"
 
 [connection signal="body_entered" from="Level1_1TP/tp_area" to="." method="_on_tp_area_body_entered"]
 [connection signal="door1_collision" from="Doors/door1" to="Doors/door1/door1_collision" method="_on_door_1_door_1_collision"]
