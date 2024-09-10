@@ -512,6 +512,10 @@ z_index = 5
 y_sort_enabled = true
 script = ExtResource("1_mrylb")
 
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+self_modulate = Color(0.176419, 0.176419, 0.176419, 1)
+color = Color(0.180005, 0.180005, 0.180005, 0.980392)
+
 [node name="Level1_3TP" type="StaticBody2D" parent="."]
 position = Vector2(161, -1013)
 
@@ -547,6 +551,7 @@ texture_scale = 0.5
 [node name="PauseMenu" parent="entities/Player/Camera2D" instance=ExtResource("5_0m0xn")]
 visible = false
 self_modulate = Color(1, 1, 1, 0)
+z_index = 20
 custom_minimum_size = Vector2(1920, 1080)
 offset_left = -360.0
 offset_top = -210.0
@@ -556,6 +561,7 @@ scale = Vector2(0.375, 0.375)
 
 [node name="settings_menu" parent="entities/Player/Camera2D" instance=ExtResource("6_pnayf")]
 visible = false
+z_index = 20
 custom_minimum_size = Vector2(1920, 1080)
 offset_left = -335.0
 offset_top = -180.0
@@ -701,7 +707,7 @@ tile_set = ExtResource("16_ox8ea")
 [node name="Pillars" type="TileMapLayer" parent="map"]
 z_index = 2
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAD7//v/AwAoAAcAAAAEAPv/AwAoAAcAAAD7/wMAAwAoAAcAAAAEAAMAAwAoAAcAAAAJAMT/AwAsAAkAAAAKAMT/AwAtAAkAAAAMAMT/AwAqAAkAAAAHAMT/AwAqAAkAAAD9/8P/AwAoAAcAAAAWAMP/AwAoAAcAAAARAMT/AwAqAAkAAAACAMT/AwAqAAkAAAACAM7/AwAqAAkAAAARAM7/AwAqAAkAAAAHAM3/AwAoAAcAAAD9/83/AwAoAAcAAAAMAM7/AwAqAAkAAAAWAM3/AwAoAAcAAAD0/xsAAwAsAAkAAAD1/xsAAwAtAAkAAAAKABsAAwAsAAkAAAALABsAAwAtAAkAAAA=")
+tile_map_data = PackedByteArray("AAD7//v/AwAoAAcAAAAEAPv/AwAoAAcAAAD7/wMAAwAoAAcAAAAEAAMAAwAoAAcAAAAJAMT/AwAsAAkAAAAKAMT/AwAtAAkAAAAMAMT/AwAqAAkAAAAHAMT/AwAqAAkAAAD9/8P/AwAoAAcAAAAWAMP/AwAoAAcAAAARAMT/AwAqAAkAAAACAMT/AwAqAAkAAAACAM7/AwAqAAkAAAARAM7/AwAqAAkAAAAHAM3/AwAoAAcAAAD9/83/AwAoAAcAAAAMAM7/AwAqAAkAAAAWAM3/AwAoAAcAAAD0/xsAAwAsAAkAAAD1/xsAAwAtAAkAAAAKABsAAwAsAAkAAAALABsAAwAtAAkAAAAJAOX/AwAsAAkAAAAKAOX/AwAtAAkAAAA=")
 tile_set = ExtResource("13_qawwt")
 
 [node name="collisions" type="StaticBody2D" parent="map"]
@@ -1122,10 +1128,6 @@ shadow_enabled = true
 shadow_filter = 1
 shadow_item_cull_mask = 3
 texture = ExtResource("5_b1hax")
-
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-self_modulate = Color(0.176419, 0.176419, 0.176419, 1)
-color = Color(0.0980392, 0.0980392, 0.0980392, 0.980392)
 
 [node name="clickSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_wfhco")

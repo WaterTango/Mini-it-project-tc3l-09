@@ -29,7 +29,10 @@ func _input(_event):
 	# shaz's code for pause below =================================================================
 	if Input.is_action_just_pressed("pause"):
 		pauseMenu()
-		
+	if Input.is_action_just_pressed("light_off"):
+		$CanvasModulate.hide()
+	if Input.is_action_just_pressed("light_on"):
+		$CanvasModulate.show()		
 # shaz's pausemenu function below =================================================================
 func pauseMenu():
 	if paused:
