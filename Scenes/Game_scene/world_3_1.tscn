@@ -110,6 +110,7 @@ script = ExtResource("2_hw8fn")
 [node name="PauseMenu" parent="Player/Camera2D" instance=ExtResource("4_54rk5")]
 visible = false
 self_modulate = Color(1, 1, 1, 0)
+z_index = 20
 custom_minimum_size = Vector2(1920, 1080)
 offset_left = -360.0
 offset_top = -210.0
@@ -120,6 +121,7 @@ script = ExtResource("5_nwkrd")
 
 [node name="settings_menu" parent="Player/Camera2D" instance=ExtResource("5_smye3")]
 visible = false
+z_index = 20
 custom_minimum_size = Vector2(1920, 1080)
 offset_left = -335.0
 offset_top = -180.0

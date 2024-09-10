@@ -12,9 +12,9 @@ func _ready() -> void:
 #this is for debug 
 #REMOVE WHEN GAME IS RELEASED
 func _input(_event):
-	if Input.is_action_pressed("exit"):
-		get_tree().quit()
-		print("quit")
+	#if Input.is_action_pressed("exit"):
+		#get_tree().quit()
+		#print("quit")
 	if Input.is_action_just_pressed('reset'):
 		get_tree().reload_current_scene()
 		print("reset")
@@ -28,7 +28,10 @@ func _input(_event):
 	# shaz's code for pause below =================================================================
 	if Input.is_action_just_pressed("pause"):
 		pauseMenu()
-		
+	if Input.is_action_just_pressed("light_off"):
+		$CanvasModulate.hide()
+	if Input.is_action_just_pressed("light_on"):
+		$CanvasModulate.show()		
 # shaz's pausemenu function below =================================================================
 func pauseMenu():
 	if paused:
