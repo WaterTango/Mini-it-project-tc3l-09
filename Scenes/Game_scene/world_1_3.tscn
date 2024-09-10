@@ -514,7 +514,7 @@ script = ExtResource("1_mrylb")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 self_modulate = Color(0.176419, 0.176419, 0.176419, 1)
-color = Color(0.0980392, 0.0980392, 0.0980392, 0.980392)
+color = Color(0.180005, 0.180005, 0.180005, 0.980392)
 
 [node name="Level1_3TP" type="StaticBody2D" parent="."]
 position = Vector2(161, -1013)
