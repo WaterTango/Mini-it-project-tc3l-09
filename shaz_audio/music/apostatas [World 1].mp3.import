@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bw5y0ammuwdv4"
+path="res://.godot/imported/apostatas [World 1].mp3-d61b4853b52e23d3832cd66f58a70366.mp3str"
+
+[deps]
+
+source_file="res://shaz_audio/music/apostatas [World 1].mp3"
+dest_files=["res://.godot/imported/apostatas [World 1].mp3-d61b4853b52e23d3832cd66f58a70366.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

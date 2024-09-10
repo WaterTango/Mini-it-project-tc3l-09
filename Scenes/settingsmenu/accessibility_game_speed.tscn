@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3q5ax6axgy32"]
+
+[ext_resource type="Script" path="res://Scenes/settingsmenu/accessibility_game_speed.gd" id="1_wkkp2"]
+[ext_resource type="FontFile" uid="uid://b8oo2dguy484y" path="res://shaz_fonts/basis33.ttf" id="1_x03ed"]
+
+[node name="accessibility_game_speed" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wkkp2")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 42
+
+[node name="game_speed_label" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_x03ed")
+theme_override_font_sizes/font_size = 60
+text = "Game Speed"
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="HSlider" type="HSlider" parent="HBoxContainer"]
+custom_minimum_size = Vector2(700, 32)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 1
+min_value = -3.0
+max_value = 3.0
+
+[node name="VSeparator2" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="speednumber_label" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("1_x03ed")
+theme_override_font_sizes/font_size = 60
+text = "0
+"
+horizontal_alignment = 1

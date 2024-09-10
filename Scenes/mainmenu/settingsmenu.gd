@@ -2,6 +2,7 @@ class_name  settingsmenu
 extends Control
 
 @onready var backbutton: Button = $MarginContainer/VBoxContainer/backbutton as Button
+@onready var pause_menu: pausemenu = $entitites/Player/Camera2D/PauseMenu
 
 signal exit_settings_menu
 
@@ -13,7 +14,7 @@ func handle_connecting_settings_signals() -> void:
 	set_process(false)
 
 func on_exit_pressed() -> void:
-	$"../MarginContainer/HBoxContainer/VBoxContainer/clickSFX".play()
+	$clickSFX.play()
 	exit_settings_menu.emit()
 	set_process(false)
-	print("exiting settings, going back to mainmenu")
+	print("[Main Menu > Settings] Going back to Main Menu...")

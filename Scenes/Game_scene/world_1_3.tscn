@@ -1,11 +1,12 @@
-[gd_scene load_steps=57 format=4 uid="uid://binah6hgxwfcd"]
+[gd_scene load_steps=62 format=4 uid="uid://binah6hgxwfcd"]
 
 [ext_resource type="Script" path="res://Scripts/world_1_3.gd" id="1_mrylb"]
 [ext_resource type="PackedScene" uid="uid://d2yr2v1e0ibvc" path="res://Scenes/Game_scene/player.tscn" id="3_mbbc7"]
 [ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="4_c67gd"]
+[ext_resource type="PackedScene" uid="uid://bubxqu7jdai64" path="res://Scenes/mainmenu/pausemenu.tscn" id="5_0m0xn"]
 [ext_resource type="Texture2D" uid="uid://ba8i2p8le62dm" path="res://Assets/pixel assets/Pixel Crawler - Castle/Assets/2d_lights_and_shadows_neutral_point_light.webp" id="5_b1hax"]
-[ext_resource type="Script" path="res://Scenes/settingsmenu/fp_scounter.gd" id="6_8is07"]
-[ext_resource type="FontFile" uid="uid://b8oo2dguy484y" path="res://shaz_fonts/basis33.ttf" id="7_ff73t"]
+[ext_resource type="PackedScene" uid="uid://qnhy1jlu3dkk" path="res://Scenes/settingsmenu/settingsmenu.tscn" id="6_pnayf"]
+[ext_resource type="Script" path="res://Scenes/settingsmenu/settingsmenuINGAME.gd" id="7_g1hp4"]
 [ext_resource type="PackedScene" uid="uid://bf5px1sosea0q" path="res://Scenes/Game_scene/orc.tscn" id="8_36ivf"]
 [ext_resource type="PackedScene" uid="uid://da3tndjg1hbyh" path="res://Scenes/Game_scene/orc_warrior.tscn" id="9_nsfax"]
 [ext_resource type="PackedScene" uid="uid://cx328oij4ofwy" path="res://Scenes/Game_scene/skeleton.tscn" id="10_cc3sh"]
@@ -20,6 +21,10 @@
 [ext_resource type="Texture2D" uid="uid://d16kv83clog3f" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/door_close.png" id="19_3yldf"]
 [ext_resource type="Texture2D" uid="uid://bmmvdmf6lyld5" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/door_open.png" id="20_37k6d"]
 [ext_resource type="PackedScene" uid="uid://pt3v68ebmn6" path="res://Scenes/Game_scene/key.tscn" id="21_e1ob2"]
+[ext_resource type="AudioStream" uid="uid://bhnfdxn0m6r6f" path="res://shaz_audio/SFX/clicksfx.mp3" id="22_wfhco"]
+[ext_resource type="AudioStream" uid="uid://bw5y0ammuwdv4" path="res://shaz_audio/music/apostatas [World 1].mp3" id="23_3druw"]
+[ext_resource type="AudioStream" uid="uid://cv01x33uvm2v3" path="res://shaz_audio/SFX/paused.mp3" id="24_nr7vx"]
+[ext_resource type="AudioStream" uid="uid://cxdtgh6f6ljyb" path="res://shaz_audio/SFX/resume.mp3" id="25_de41v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_27sym"]
 radius = 10.2956
@@ -539,25 +544,25 @@ texture = ExtResource("5_b1hax")
 offset = Vector2(-8.28, 0)
 texture_scale = 0.5
 
-[node name="fps_overlay" type="Control" parent="entities/Player"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("6_8is07")
+[node name="PauseMenu" parent="entities/Player/Camera2D" instance=ExtResource("5_0m0xn")]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(1920, 1080)
+offset_left = -360.0
+offset_top = -210.0
+offset_right = 1560.0
+offset_bottom = 870.0
+scale = Vector2(0.375, 0.375)
 
-[node name="FPSlayer" type="CanvasLayer" parent="entities/Player/fps_overlay"]
-offset = Vector2(10, 5)
-transform = Transform2D(1, 0, 0, 1, 10, 5)
-
-[node name="Label" type="Label" parent="entities/Player/fps_overlay/FPSlayer"]
-offset_right = 40.0
-offset_bottom = 31.0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 5
-theme_override_fonts/font = ExtResource("7_ff73t")
-theme_override_font_sizes/font_size = 30
-metadata/_edit_use_anchors_ = true
+[node name="settings_menu" parent="entities/Player/Camera2D" instance=ExtResource("6_pnayf")]
+visible = false
+custom_minimum_size = Vector2(1920, 1080)
+offset_left = -335.0
+offset_top = -180.0
+offset_right = 1585.0
+offset_bottom = 900.0
+scale = Vector2(0.35, 0.35)
+script = ExtResource("7_g1hp4")
 
 [node name="orcs" type="Node" parent="entities"]
 
@@ -1121,6 +1126,28 @@ texture = ExtResource("5_b1hax")
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 self_modulate = Color(0.176419, 0.176419, 0.176419, 1)
 color = Color(0.0980392, 0.0980392, 0.0980392, 0.980392)
+
+[node name="clickSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_wfhco")
+volume_db = -6.0
+pitch_scale = 0.48
+bus = &"SFX"
+
+[node name="World 1 Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("23_3druw")
+volume_db = -6.0
+bus = &"Music"
+parameters/looping = true
+
+[node name="PausedSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("24_nr7vx")
+volume_db = -3.0
+bus = &"SFX"
+
+[node name="ResumeSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("25_de41v")
+volume_db = -3.0
+bus = &"SFX"
 
 [connection signal="body_entered" from="Level1_3TP/tp_area" to="." method="_on_tp_area_body_entered"]
 [connection signal="door1_collision" from="Doors/door1" to="Doors/door1/door1_collision" method="_on_door_1_door_1_collision"]

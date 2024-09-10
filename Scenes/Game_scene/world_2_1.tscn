@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=4 uid="uid://o8fuiwevj7kb"]
+[gd_scene load_steps=62 format=4 uid="uid://o8fuiwevj7kb"]
 
 [ext_resource type="Script" path="res://Scripts/world_2_1.gd" id="1_6krru"]
 [ext_resource type="PackedScene" uid="uid://bf5px1sosea0q" path="res://Scenes/Game_scene/orc.tscn" id="2_swtqg"]
@@ -14,11 +14,13 @@
 [ext_resource type="Texture2D" uid="uid://dcsxl8hwanurb" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Green Woods/Assets/Props.png" id="15_kwydb"]
 [ext_resource type="Texture2D" uid="uid://d4lrwq27x1u4u" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Green Woods/Assets/forest_texture/TX Player.png" id="16_n8wig"]
 [ext_resource type="Texture2D" uid="uid://bofa2wfvbifoj" path="res://Assets/tilesets/RF_Catacombs_v1.0/decorative.png" id="17_mbpcj"]
+[ext_resource type="PackedScene" uid="uid://bubxqu7jdai64" path="res://Scenes/mainmenu/pausemenu.tscn" id="18_1cw20"]
 [ext_resource type="TileSet" uid="uid://cl5petjwvv2yd" path="res://new_tile_set.tres" id="18_8jcnd"]
+[ext_resource type="Script" path="res://Scenes/mainmenu/pausemenuW2.gd" id="19_o8xu0"]
 [ext_resource type="PackedScene" uid="uid://d2yr2v1e0ibvc" path="res://Scenes/Game_scene/player.tscn" id="19_tp7xi"]
+[ext_resource type="PackedScene" uid="uid://qnhy1jlu3dkk" path="res://Scenes/settingsmenu/settingsmenu.tscn" id="20_4dct3"]
 [ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="20_rfwaq"]
-[ext_resource type="Script" path="res://Scenes/settingsmenu/fp_scounter.gd" id="21_rru2m"]
-[ext_resource type="FontFile" uid="uid://b8oo2dguy484y" path="res://shaz_fonts/basis33.ttf" id="22_adker"]
+[ext_resource type="Script" path="res://Scenes/settingsmenu/settingsmenuIngameW2.gd" id="21_5l3jv"]
 [ext_resource type="PackedScene" uid="uid://cis0128ki1d6f" path="res://Scenes/Game_scene/scene_transition.tscn" id="23_jjoyd"]
 [ext_resource type="Script" path="res://Scripts/door_library.gd" id="24_jl2rb"]
 [ext_resource type="Script" path="res://Scripts/door1_collision.gd" id="25_w6le1"]
@@ -26,7 +28,11 @@
 [ext_resource type="Texture2D" uid="uid://cnhp21decqan" path="res://Assets/pixel assets/Pixel Crawler - Library/Assets/library_closed.png" id="27_mkgvw"]
 [ext_resource type="Texture2D" uid="uid://ouf3icuvgc5" path="res://Assets/pixel assets/Pixel Crawler - Library/Assets/library_opened.png" id="28_qf5xo"]
 [ext_resource type="Texture2D" uid="uid://bmmvdmf6lyld5" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/door_open.png" id="29_pl1gw"]
+[ext_resource type="AudioStream" uid="uid://bhnfdxn0m6r6f" path="res://shaz_audio/SFX/clicksfx.mp3" id="30_6hhgc"]
 [ext_resource type="PackedScene" uid="uid://pt3v68ebmn6" path="res://Scenes/Game_scene/key.tscn" id="30_fk6ma"]
+[ext_resource type="AudioStream" uid="uid://bou0fy27tukkp" path="res://shaz_audio/music/medieval-ambient [World 2].mp3" id="31_4s2bn"]
+[ext_resource type="AudioStream" uid="uid://cv01x33uvm2v3" path="res://shaz_audio/SFX/paused.mp3" id="32_hmhcg"]
+[ext_resource type="AudioStream" uid="uid://cxdtgh6f6ljyb" path="res://shaz_audio/SFX/resume.mp3" id="33_6tv6v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5qqo"]
 size = Vector2(69, 38)
@@ -4605,25 +4611,26 @@ zoom = Vector2(3, 3)
 process_callback = 0
 script = ExtResource("20_rfwaq")
 
-[node name="fps_overlay" type="Control" parent="Player"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("21_rru2m")
+[node name="PauseMenu" parent="Player/Camera2D" instance=ExtResource("18_1cw20")]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(1920, 1080)
+offset_left = -360.0
+offset_top = -210.0
+offset_right = 1560.0
+offset_bottom = 870.0
+scale = Vector2(0.375, 0.375)
+script = ExtResource("19_o8xu0")
 
-[node name="FPSlayer" type="CanvasLayer" parent="Player/fps_overlay"]
-offset = Vector2(10, 5)
-transform = Transform2D(1, 0, 0, 1, 10, 5)
-
-[node name="Label" type="Label" parent="Player/fps_overlay/FPSlayer"]
-offset_right = 40.0
-offset_bottom = 31.0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 5
-theme_override_fonts/font = ExtResource("22_adker")
-theme_override_font_sizes/font_size = 30
-metadata/_edit_use_anchors_ = true
+[node name="settings_menu" parent="Player/Camera2D" instance=ExtResource("20_4dct3")]
+visible = false
+custom_minimum_size = Vector2(1920, 1080)
+offset_left = -335.0
+offset_top = -180.0
+offset_right = 1585.0
+offset_bottom = 900.0
+scale = Vector2(0.35, 0.35)
+script = ExtResource("21_5l3jv")
 
 [node name="SceneTransition" parent="." instance=ExtResource("23_jjoyd")]
 visible = false
@@ -4662,6 +4669,28 @@ shape = SubResource("CapsuleShape2D_nai2m")
 [node name="key" parent="Keys" instance=ExtResource("30_fk6ma")]
 z_index = 5
 position = Vector2(-48, -978)
+
+[node name="clickSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("30_6hhgc")
+volume_db = -6.0
+pitch_scale = 0.48
+bus = &"SFX"
+
+[node name="World 2 Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("31_4s2bn")
+volume_db = -3.0
+bus = &"Music"
+parameters/looping = true
+
+[node name="PausedSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("32_hmhcg")
+volume_db = -3.0
+bus = &"SFX"
+
+[node name="ResumeSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("33_6tv6v")
+volume_db = -3.0
+bus = &"SFX"
 
 [connection signal="body_entered" from="Level2_TP/tp_area2" to="." method="_on_tp_area_2_body_entered"]
 [connection signal="door1_collision" from="Doors/door1" to="Doors/door1/door1_collision" method="_on_door_1_door_1_collision"]
