@@ -2,13 +2,15 @@ extends CharacterBody2D
 
 class_name Player
 
+var health = 100
 var speed = 150 
 var current_dir = "none"
 var player_character
+var attack_inprogress = false
 
 func _physics_process(delta):
 	player_movement(delta)
-	
+	attack()
 	
 func _ready():
 	$AnimatedSprite2D.play("front_idle")
@@ -90,7 +92,8 @@ func play_anim(movement):
 		if movement == 1:
 			anim.play("side_walk")
 		elif movement == 0:
-			anim.play("side_idle")
+			if attack_inprogress == false:
+				anim.play("side_idle")
 			
 	#when player press a it flips the sprite so that it faces left
 	if dir == "left":
@@ -98,7 +101,8 @@ func play_anim(movement):
 		if movement == 1:
 			anim.play("side_walk")
 		elif movement == 0:
-			anim.play("side_idle")
+			if attack_inprogress == false:
+				anim.play("side_idle")
 			
 	#when player press W the sprite faces up
 	if dir == "up":
@@ -106,12 +110,26 @@ func play_anim(movement):
 		if movement == 1:
 			anim.play("front_walk")
 		elif movement == 0:
-			anim.play("front_idle")
+			if attack_inprogress == false:
+				anim.play("front_idle")
 			
 	#when player press S the sprite faces down
 	if dir == "down":	
 		if movement == 1:
 			anim.play("back_walk")
 		elif movement == 0:
-			anim.play("back_idle")
+			if attack_inprogress == false:
+				anim.play("back_idle")
 			
+func attack():
+	var anim = $AnimatedSprite2D
+	if Input.is_action_just_pressed("attack"):
+		attack_inprogress = true
+		Global.player_current_attack = true
+		$attack_timer.start()
+		anim.play("aoe_attack")
+
+func _on_attack_timer_timeout():
+	$attack_timer.stop()
+	Global.player_current_attack = false
+	attack_inprogress = false
