@@ -133,3 +133,6 @@ func _on_attack_timer_timeout():
 	$attack_timer.stop()
 	Global.player_current_attack = false
 	attack_inprogress = false
+
+func player():
+	pass
