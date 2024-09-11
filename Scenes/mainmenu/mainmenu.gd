@@ -10,35 +10,36 @@ extends Control
 @onready var margin_container: MarginContainer = $MarginContainer as MarginContainer
 
 #game initializer
-@onready var start_level = preload("res://Scenes/Game_scene/world_1.tscn") # INSERT THE GAME PATH HERE!!!!1!!1!!
+@onready var start_level = preload("res://Scenes/Game_scene/world_1_1.tscn") # INSERT THE GAME PATH HERE!!!!1!!1!!
 
 #----------------------------------main function for startup----------------------------------------
 func _ready() -> void:
+	# Connect the mouse_entered signals to the buttons
+	handle_connecting_signals()
+	startbutton.grab_focus()
+	print("[UI] Button signals connected and running!")
 	# center of screen
 	center = Vector2(get_viewport_rect().size.x/2, get_viewport_rect().size.y/2)
 	$backgroundmusic.play()
 	$AnimationPlayer.play("menu fade in")
-	print("animation is fading in...")
-	await get_tree().create_timer(3).timeout
+	print("Animation is Fading in...")
+	await get_tree().create_timer(4).timeout
 	$loadedSFX.play()
-	print("welcome to TOWER CRAWER!")
-	# Connect the mouse_entered signals to the buttons
-	handle_connecting_signals()
-	print("button signals connected")
+	print("Welcome To Tower Crawler!")
 
 func on_start_pressed() -> void:
 	$MarginContainer/HBoxContainer/VBoxContainer/clickSFX.play()
 	await get_tree().create_timer(1).timeout
 	get_tree().change_scene_to_packed(start_level)
 	RenderingServer.set_default_clear_color(Color.BLACK)
-	print("Start Button pressed") # all the print statements are for DEBUGGING just in case
+	print("[Main Menu] Start Button Pressed") # all the print statements are for DEBUGGING just in case
 	#$backgroundmusic.stop() - i dont think we need to stop the music as changing scene will remove the player anyways
 	pass
 
 func on_settings_pressed() -> void:
 	$MarginContainer/HBoxContainer/VBoxContainer/clickSFX.play()
 	#get_tree().change_scene_to_packed(settingsmenu) - save it just in case 
-	print("Settings Button pressed")
+	print("[Main Menu] Settings Button Pressed")
 	margin_container.visible = false
 	settings_menu.set_process(true)
 	settings_menu.visible = true

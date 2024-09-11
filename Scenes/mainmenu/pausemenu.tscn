@@ -1,0 +1,107 @@
+[gd_scene load_steps=10 format=3 uid="uid://bubxqu7jdai64"]
+
+[ext_resource type="FontFile" uid="uid://b8oo2dguy484y" path="res://shaz_fonts/basis33.ttf" id="1_hts6b"]
+[ext_resource type="Script" path="res://Scenes/mainmenu/pausemenu.gd" id="1_it465"]
+[ext_resource type="Shader" path="res://Scenes/mainmenu/pausemenu.gdshader" id="2_60hjp"]
+[ext_resource type="AudioStream" uid="uid://bhnfdxn0m6r6f" path="res://shaz_audio/SFX/clicksfx.mp3" id="3_c0suu"]
+[ext_resource type="AudioStream" uid="uid://cxdtgh6f6ljyb" path="res://shaz_audio/SFX/resume.mp3" id="6_t5orf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m85w3"]
+shader = ExtResource("2_60hjp")
+shader_parameter/amount = 3.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sh4xj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fyvty"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vfgno"]
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_it465")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_m85w3")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="Resume" type="Button" parent="MarginContainer/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0.933333)
+custom_minimum_size = Vector2(500, 70)
+layout_mode = 2
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("1_hts6b")
+theme_override_font_sizes/font_size = 50
+text = "Resume"
+
+[node name="HSeparator3" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 70
+theme_override_styles/separator = SubResource("StyleBoxEmpty_sh4xj")
+
+[node name="Settings" type="Button" parent="MarginContainer/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0.933333)
+custom_minimum_size = Vector2(500, 70)
+layout_mode = 2
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("1_hts6b")
+theme_override_font_sizes/font_size = 50
+text = "Settings
+"
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 70
+theme_override_styles/separator = SubResource("StyleBoxEmpty_fyvty")
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0.933333)
+layout_mode = 2
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("1_hts6b")
+theme_override_font_sizes/font_size = 50
+text = "Quit"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+theme_override_styles/separator = SubResource("StyleBoxEmpty_vfgno")
+
+[node name="clickSFX" type="AudioStreamPlayer" parent="MarginContainer/VBoxContainer"]
+stream = ExtResource("3_c0suu")
+volume_db = -6.0
+pitch_scale = 0.48
+bus = &"SFX"
+
+[node name="Node" type="Node" parent="."]
+
+[node name="ResumeSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_t5orf")
+volume_db = -3.0
+bus = &"SFX"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
