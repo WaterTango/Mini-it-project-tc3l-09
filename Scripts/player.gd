@@ -114,7 +114,7 @@ func play_anim(movement):
 				anim.play("front_idle")
 			
 	#when player press S the sprite faces down
-	if dir == "down":	
+	if dir == "down":
 		if movement == 1:
 			anim.play("back_walk")
 		elif movement == 0:
@@ -129,10 +129,12 @@ func attack():
 		$attack_timer.start()
 		anim.play("aoe_attack")
 
+
+func player():
+	pass
+
+
 func _on_attack_timer_timeout():
 	$attack_timer.stop()
 	Global.player_current_attack = false
 	attack_inprogress = false
-
-func player():
-	pass

@@ -528,8 +528,8 @@ animations = [{
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ehj6j"]
 polygon = PackedVector2Array(-4.2235, -20.9299, -3.34543, -21.8991, 1.64852, -21.8328, 2.7206, -20.783, 4.67831, -18.8384, 4.72577, -16.8314, 5.66829, -16.8314, 5.66829, -13.8674, 4.65136, -13.855, 4.69263, -12.5724, 4.69263, -11.8407, 3.67294, -11.793, 3.68465, -10.8215, 2.64286, -10.8449, 2.64286, -9.88505, 3.60271, -9.84993, 3.67474, -8.8667, 4.63936, -8.83163, 4.67443, -7.84947, 5.62151, -7.81439, 5.67841, -5.79648, 4.73454, -5.76698, 4.71979, -4.8526, 3.70217, -4.83786, 3.71692, -3.87923, 3.76116, -1.88825, 4.67554, -1.88825, 4.6018, -0.826391, 3.62843, 0.117484, -5.29426, 0.144345, -5.36387, -0.760474, -6.35156, -0.828125, -6.32437, -1.8045, -5.375, -1.85156, -5.34375, -2.88281, -4.35938, -2.88281, -4.36719, -3.85938, -4.35662, -4.75477, -5.33988, -4.77818, -6.29974, -4.76647, -6.32315, -5.76144, -7.31812, -5.79656, -7.29471, -7.76309, -6.35827, -7.92696, -6.31144, -8.86341, -5.35938, -8.875, -5.36719, -9.85156, -4.38281, -9.86719, -4.35156, -10.8047, -5.35156, -10.7891, -5.35938, -11.7969, -6.35403, -11.8208, -6.37058, -13.8073, -7.34727, -13.799, -7.339, -16.7953, -6.37886, -16.8864, -6.32092, -18.8397, -5.62439, -19.5339)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_61sms"]
-radius = 25.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_8a327"]
+radius = 26.0192
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 y_sort_enabled = true
@@ -547,6 +547,8 @@ y_sort_enabled = true
 texture_filter = 1
 position = Vector2(-0.0405846, 0.0417137)
 sprite_frames = SubResource("SpriteFrames_nn7uj")
+animation = &"aoe_attack"
+frame_progress = 0.0538838
 offset = Vector2(0.655, -11.84)
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
@@ -555,3 +557,13 @@ position = Vector2(0.875988, -0.0417137)
 occluder = SubResource("OccluderPolygon2D_ehj6j")
 occluder_light_mask = 2
 
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="attack_range" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -9)
+shape = SubResource("CircleShape2D_8a327")
+
+[node name="attack_timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="attack_timer" to="." method="_on_attack_timer_timeout"]
