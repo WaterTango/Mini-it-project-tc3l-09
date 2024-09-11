@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cx328oij4ofwy"]
+[gd_scene load_steps=20 format=3 uid="uid://cx328oij4ofwy"]
 
 [ext_resource type="Texture2D" uid="uid://c6x6dv1b6rn7v" path="res://Assets/Pixel Crawler - FREE - 1.8/Enemy/Skeleton Crew/Skeleton - Base/Idle/Idle-Sheet.png" id="1_6ndjl"]
 [ext_resource type="Script" path="res://Scripts/skeleton.gd" id="1_opges"]
@@ -99,6 +99,9 @@ radius = 82.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kcptu"]
 size = Vector2(21.5, 29)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ns51h"]
+radius = 26.0
+
 [node name="skeleton" type="CharacterBody2D"]
 y_sort_enabled = true
 collision_layer = 3
@@ -135,6 +138,12 @@ shape = SubResource("CircleShape2D_cp3bq")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attack range"]
 position = Vector2(0, -11)
 shape = SubResource("RectangleShape2D_kcptu")
+
+[node name="player_attack_range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_attack_range"]
+position = Vector2(0, -11)
+shape = SubResource("CircleShape2D_ns51h")
 
 [connection signal="body_entered" from="Detection" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Detection" to="." method="_on_area_2d_body_exited"]

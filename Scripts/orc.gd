@@ -5,9 +5,11 @@ extends CharacterBody2D
 var player = null
 var player_chase = false
 var within_range = false
+var within_player_range = false
 var health = 40
 
 func _physics_process(_delta):
+	deal_with_damage()
 	velocity = Vector2.ZERO
 	if player_chase == true and within_range == false:
 		position  += (player.position - position) / speed
@@ -45,9 +47,16 @@ func _on_attack_range_body_exited(body):
 		within_range = true
 
 func deal_with_damage():
-	if within_range and Global.player_current_attack == true:
+	if within_player_range and Global.player_current_attack == true:
 		health -= 20
 		print("enemy health = ", health)
 		if health <= 0:
 			self.queue_free()
-	
+
+func _on_player_attack_range_body_entered(body):
+	if body is Player:
+		within_player_range = true
+
+func _on_player_attack_range_body_exited(body):
+	if body is Player:
+		within_player_range = false
