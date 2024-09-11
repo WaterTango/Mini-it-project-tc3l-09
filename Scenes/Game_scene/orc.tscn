@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bf5px1sosea0q"]
+[gd_scene load_steps=27 format=3 uid="uid://bf5px1sosea0q"]
 
 [ext_resource type="Script" path="res://Scripts/orc.gd" id="1_w5dqo"]
 [ext_resource type="Texture2D" uid="uid://cdlxuw7bq4ygg" path="res://Assets/Pixel Crawler - FREE - 1.8/Enemy/Orc Crew/Orc/Death-Sheet.png" id="2_i2pii"]
@@ -147,6 +147,9 @@ radius = 75.5059
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vywfn"]
 size = Vector2(16, 27)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_q5a27"]
+radius = 25.02
+
 [node name="orc" type="CharacterBody2D"]
 script = ExtResource("1_w5dqo")
 
@@ -182,7 +185,15 @@ debug_color = Color(0, 0.648554, 0.176894, 0.42)
 position = Vector2(0, -10.5)
 shape = SubResource("RectangleShape2D_vywfn")
 
+[node name="player_attack_range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_attack_range"]
+position = Vector2(0, -11)
+shape = SubResource("CircleShape2D_q5a27")
+
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
 [connection signal="body_entered" from="AttackRange" to="." method="_on_attack_range_body_entered"]
 [connection signal="body_exited" from="AttackRange" to="." method="_on_attack_range_body_exited"]
+[connection signal="body_entered" from="player_attack_range" to="." method="_on_player_attack_range_body_entered"]
+[connection signal="body_exited" from="player_attack_range" to="." method="_on_player_attack_range_body_exited"]

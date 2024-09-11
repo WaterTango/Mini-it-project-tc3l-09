@@ -1,11 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://b0ajo0ydcnrw5"]
+[gd_scene load_steps=20 format=3 uid="uid://b0ajo0ydcnrw5"]
 
 [ext_resource type="Script" path="res://Scripts/zombie.gd" id="1_rmxnh"]
 [ext_resource type="Texture2D" uid="uid://b1egn181js2vt" path="res://Assets/pixel assets/Pixel Crawler - Zombie Crew/Zombie - Base/Idle/Idle-Sheet.png" id="2_esfhc"]
 [ext_resource type="Texture2D" uid="uid://bd7ejkr8rbs8b" path="res://Assets/pixel assets/Pixel Crawler - Zombie Crew/Zombie - Base/Run/Run-Sheet.png" id="3_kmj6t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cxfub"]
-size = Vector2(12, 20)
+size = Vector2(11.814, 12.7907)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pqsxg"]
 atlas = ExtResource("2_esfhc")
@@ -99,12 +99,15 @@ radius = 75.5059
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vywfn"]
 size = Vector2(16, 27)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_75fj3"]
+radius = 25.0
+
 [node name="zombie" type="CharacterBody2D"]
 script = ExtResource("1_rmxnh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
-position = Vector2(0, -8.225)
+position = Vector2(-0.0799996, -8.5)
 scale = Vector2(0.86, 0.86)
 shape = SubResource("RectangleShape2D_cxfub")
 debug_color = Color(0.898293, 0, 0, 0.419608)
@@ -137,6 +140,13 @@ debug_color = Color(0, 0.648554, 0.176894, 0.42)
 position = Vector2(0, -7.91)
 scale = Vector2(0.945, 0.945)
 shape = SubResource("RectangleShape2D_vywfn")
+
+[node name="player_attack_range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_attack_range"]
+z_index = -3
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_75fj3")
 
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
