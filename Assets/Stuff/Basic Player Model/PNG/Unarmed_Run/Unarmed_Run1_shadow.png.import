@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dskja5qem5mmh"
-path="res://.godot/imported/Unarmed_Run1_shadow.png-6a6c610e71f66d8ed389148aec858726.ctex"
+path="res://.godot/imported/Unarmed_Run1_shadow.png-882f9bd35a75a3578c4ddb5f8e479770.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/characters/Basic Player Model/PNG/Unarmed_Run/Unarmed_Run1_shadow.png"
-dest_files=["res://.godot/imported/Unarmed_Run1_shadow.png-6a6c610e71f66d8ed389148aec858726.ctex"]
+source_file="res://Assets/Stuff/Basic Player Model/PNG/Unarmed_Run/Unarmed_Run1_shadow.png"
+dest_files=["res://.godot/imported/Unarmed_Run1_shadow.png-882f9bd35a75a3578c4ddb5f8e479770.ctex"]
 
 [params]
 

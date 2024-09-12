@@ -51,4 +51,5 @@ func pauseMenu():
 
 func _on_tp_area_2_body_entered(body: Node2D) -> void:
 	if body is Player:
+		print("travelling to world 2_2")
 		get_tree().change_scene_to_file("res://Scenes/Game_scene/world_2_2.tscn")

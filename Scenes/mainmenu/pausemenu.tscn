@@ -48,9 +48,12 @@ size_flags_horizontal = 4
 size_flags_vertical = 8
 
 [node name="Resume" type="Button" parent="MarginContainer/VBoxContainer"]
-self_modulate = Color(1, 1, 1, 0.933333)
 custom_minimum_size = Vector2(500, 70)
 layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.174173, 0.127215, 1)
+theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("1_hts6b")
 theme_override_font_sizes/font_size = 50

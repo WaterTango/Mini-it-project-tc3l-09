@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ea8ui1b20wko"
-path="res://.godot/imported/Unarmed_Death4_red.png-cd999ed343dd1079d44104a1953d09d8.ctex"
+path="res://.godot/imported/Unarmed_Death4_red.png-87b39b7c55ed2cef178748a3df0f5583.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/characters/Basic Player Model/PNG/Unarmed_Death/Unarmed_Death4_red.png"
-dest_files=["res://.godot/imported/Unarmed_Death4_red.png-cd999ed343dd1079d44104a1953d09d8.ctex"]
+source_file="res://Assets/Stuff/Basic Player Model/PNG/Unarmed_Death/Unarmed_Death4_red.png"
+dest_files=["res://.godot/imported/Unarmed_Death4_red.png-87b39b7c55ed2cef178748a3df0f5583.ctex"]
 
 [params]
 

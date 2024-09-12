@@ -19,11 +19,11 @@ func _ready():
 	option_button.item_selected.connect(on_resolution_selected)
 	add_resolution_items()
 	
-	# sets the default res of 1920 x 1080 instead of 800 x 600 (try deleting these lines and see for yourself)
-	var default_resolution = Vector2i(1920, 1080)
-	var default_index = RESOLUTION_DICTIONARY.keys().find("1920 x 1080")
-	option_button.select(default_index)
-	DisplayServer.window_set_size(default_resolution)
+	#sets the default res of 1920 x 1080 instead of 800 x 600 (try deleting these lines and see for yourself)
+	#var default_resolution = Vector2i(1920, 1080)
+	#var default_index = RESOLUTION_DICTIONARY.keys().find("1920 x 1080")
+	#option_button.select(default_index)
+	#DisplayServer.window_set_size(default_resolution)
 
 # inserts all of the resolutions available to the optionsbox
 func add_resolution_items() -> void:

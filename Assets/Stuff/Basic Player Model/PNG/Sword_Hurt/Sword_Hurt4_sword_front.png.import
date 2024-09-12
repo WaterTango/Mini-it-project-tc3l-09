@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://q733q3sbgpmj"
-path="res://.godot/imported/Sword_Hurt4_sword_front.png-3c74496855fdacccb22b362a94d446ec.ctex"
+path="res://.godot/imported/Sword_Hurt4_sword_front.png-ca5cc77519f9cf3406eedfed4b39ed03.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/characters/Basic Player Model/PNG/Sword_Hurt/Sword_Hurt4_sword_front.png"
-dest_files=["res://.godot/imported/Sword_Hurt4_sword_front.png-3c74496855fdacccb22b362a94d446ec.ctex"]
+source_file="res://Assets/Stuff/Basic Player Model/PNG/Sword_Hurt/Sword_Hurt4_sword_front.png"
+dest_files=["res://.godot/imported/Sword_Hurt4_sword_front.png-ca5cc77519f9cf3406eedfed4b39ed03.ctex"]
 
 [params]
 

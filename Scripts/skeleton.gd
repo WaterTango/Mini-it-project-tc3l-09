@@ -9,6 +9,7 @@ var within_player_range = false
 var health = 60
 
 func _physics_process(_delta):
+	deal_with_damage()
 	velocity = Vector2.ZERO
 	if player_chase == true and within_range == false:
 		position  += (player.position - position) / speed
@@ -43,6 +44,7 @@ func deal_with_damage():
 		health -= 20
 		print("enemy health = ", health)
 		if health <= 0:
+			$AnimatedSprite2D.play("skeleton_death")
 			self.queue_free()
 
 func _on_player_attack_range_body_entered(body):
@@ -58,4 +60,5 @@ func _on_attack_range_body_entered(body):
 		within_range = true
 
 func _on_attack_range_body_exited(body):
-	within_range = false
+	if body.is_in_group("Player"):
+		within_range = false

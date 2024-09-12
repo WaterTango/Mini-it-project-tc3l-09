@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bxrxhvm1aecp8"
-path="res://.godot/imported/Sword_Run_Attack4_sword_front.png-e63442bb055bdd6bdffa6465f9739905.ctex"
+path="res://.godot/imported/Sword_Run_Attack4_sword_front.png-85c25c741e031a86f6d212ec467d8f4a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/characters/Basic Player Model/PNG/Sword_Run_Attack/Sword_Run_Attack4_sword_front.png"
-dest_files=["res://.godot/imported/Sword_Run_Attack4_sword_front.png-e63442bb055bdd6bdffa6465f9739905.ctex"]
+source_file="res://Assets/Stuff/Basic Player Model/PNG/Sword_Run_Attack/Sword_Run_Attack4_sword_front.png"
+dest_files=["res://.godot/imported/Sword_Run_Attack4_sword_front.png-85c25c741e031a86f6d212ec467d8f4a.ctex"]
 
 [params]
 

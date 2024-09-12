@@ -1,11 +1,44 @@
-[gd_scene load_steps=20 format=3 uid="uid://cx328oij4ofwy"]
+[gd_scene load_steps=29 format=3 uid="uid://cx328oij4ofwy"]
 
 [ext_resource type="Texture2D" uid="uid://c6x6dv1b6rn7v" path="res://Assets/Pixel Crawler - FREE - 1.8/Enemy/Skeleton Crew/Skeleton - Base/Idle/Idle-Sheet.png" id="1_6ndjl"]
 [ext_resource type="Script" path="res://Scripts/skeleton.gd" id="1_opges"]
+[ext_resource type="Texture2D" uid="uid://daaw60nhhegak" path="res://Assets/Pixel Crawler - FREE - 1.8/Enemy/Skeleton Crew/Skeleton - Base/Death/Death-Sheet.png" id="2_mff6d"]
 [ext_resource type="Texture2D" uid="uid://e37xo7bk2yvq" path="res://Assets/Pixel Crawler - FREE - 1.8/Enemy/Skeleton Crew/Skeleton - Base/Run/Run-Sheet (2).png" id="2_sq2b7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_al3pb"]
 size = Vector2(15, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgy5y"]
+atlas = ExtResource("2_mff6d")
+region = Rect2(0, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5ypt"]
+atlas = ExtResource("2_mff6d")
+region = Rect2(96, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahpqu"]
+atlas = ExtResource("2_mff6d")
+region = Rect2(192, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crvcl"]
+atlas = ExtResource("2_mff6d")
+region = Rect2(288, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yddd7"]
+atlas = ExtResource("2_mff6d")
+region = Rect2(384, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvaqd"]
+atlas = ExtResource("2_mff6d")
+region = Rect2(480, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vir8c"]
+atlas = ExtResource("2_mff6d")
+region = Rect2(576, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04u4o"]
+atlas = ExtResource("2_mff6d")
+region = Rect2(672, 0, 96, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_60g0o"]
 atlas = ExtResource("1_6ndjl")
@@ -49,6 +82,35 @@ region = Rect2(320, 0, 64, 33)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_asjcj"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rgy5y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5ypt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ahpqu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crvcl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yddd7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xvaqd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vir8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04u4o")
+}],
+"loop": false,
+"name": &"skeleton_death",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_60g0o")
@@ -119,7 +181,7 @@ y_sort_enabled = true
 position = Vector2(0, -11.675)
 scale = Vector2(0.676943, 0.714641)
 sprite_frames = SubResource("SpriteFrames_asjcj")
-animation = &"skeleton_idle"
+animation = &"skeleton_death"
 autoplay = "skeleton_idle"
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
@@ -149,3 +211,5 @@ shape = SubResource("CircleShape2D_ns51h")
 [connection signal="body_exited" from="Detection" to="." method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="Attack range" to="." method="_on_attack_range_body_entered"]
 [connection signal="body_exited" from="Attack range" to="." method="_on_attack_range_body_exited"]
+[connection signal="body_entered" from="player_attack_range" to="." method="_on_player_attack_range_body_entered"]
+[connection signal="body_exited" from="player_attack_range" to="." method="_on_player_attack_range_body_exited"]

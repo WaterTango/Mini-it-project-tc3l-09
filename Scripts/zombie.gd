@@ -5,10 +5,11 @@ extends CharacterBody2D
 var player = null
 var player_chase = false
 var within_range = false
-var health = 40
+var health = 100
 var within_player_range = false
 
 func _physics_process(_delta):
+	deal_with_damage()
 	velocity = Vector2.ZERO
 	if player_chase == true and within_range == false:
 		position  += (player.position - position) / speed
@@ -35,8 +36,10 @@ func _on_detection_area_body_entered(body) -> void:
 func deal_with_damage():
 	if within_player_range and Global.player_current_attack == true:
 		health -= 20
+		$AnimatedSprite2D.play("zombie_hit")
 		print("enemy health = ", health)
 		if health <= 0:
+			$AnimatedSprite2D.play("zombie_death")
 			self.queue_free()
 
 func _on_player_attack_range_body_entered(body):
