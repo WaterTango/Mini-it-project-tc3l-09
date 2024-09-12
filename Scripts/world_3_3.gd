@@ -8,6 +8,9 @@ extends Node2D
 var paused = false
 # shaz's AudioPlaybackScript =======================================================================
 func _ready() -> void:
+	$Entering.play()
+	$CanvasLayer/SceneFade.play("fade in")
+	await get_tree().create_timer(3).timeout
 	$"World 3 Music".play()
 	pass
 

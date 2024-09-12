@@ -6,6 +6,9 @@ extends Node2D
 var paused = false
 # shaz's AudioPlaybackScript =======================================================================
 func _ready() -> void:
+	$Entering.play()
+	$CanvasLayer/SceneFade.play("fade in")
+	await get_tree().create_timer(3).timeout
 	$"World 2 Music".play()
 	#===============================================================================================
 	#SceneTransitionAnimation.play("fade_out")
@@ -31,12 +34,14 @@ func _input(_event):
 		
 	# shaz's pausemenu function below =================================================================
 func pauseMenu():
+	# for resuming, not that paused is !paused
 	if paused:
 		$ResumeSFX.play()
 		pause_menu.hide()
 		Engine.time_scale = 1
 		#get_tree().paused = true  
 		print("[Pause Menu] Game Resumed")
+	# paused
 	else:
 		$PausedSFX.play()
 		pause_menu.show()
@@ -50,5 +55,10 @@ func pauseMenu():
 
 func _on_tp_area_2_body_entered(body: Node2D) -> void:
 	if body is Player:
+		# shaz's SceneTransitionFadeout =======================================
+		$Leaving.play()
 		print("travelling to world 3_1")
+		$CanvasLayer/SceneFade.play("fade out")
+		await get_tree().create_timer(3).timeout
+		# ======================================================================
 		get_tree().change_scene_to_file("res://Scenes/Game_scene/world_3_1.tscn")

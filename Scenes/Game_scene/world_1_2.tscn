@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://bg65fmt31h84x"]
+[gd_scene load_steps=46 format=4 uid="uid://bg65fmt31h84x"]
 
 [ext_resource type="Script" path="res://Scripts/world_1_2.gd" id="1_lcdo5"]
 [ext_resource type="TileSet" uid="uid://hejtinux6a7x" path="res://Scenes/Game_scene/world_1.tres" id="1_lsqgd"]
@@ -17,10 +17,68 @@
 [ext_resource type="Texture2D" uid="uid://d16kv83clog3f" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/door_close.png" id="13_56dr3"]
 [ext_resource type="Texture2D" uid="uid://bmmvdmf6lyld5" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/door_open.png" id="14_lufmx"]
 [ext_resource type="PackedScene" uid="uid://pt3v68ebmn6" path="res://Scenes/Game_scene/key.tscn" id="15_4nqj5"]
+[ext_resource type="AudioStream" uid="uid://bx0bb6f6awmqu" path="res://shaz_audio/SFX/DoorSFX.mp3" id="17_hetxw"]
 [ext_resource type="AudioStream" uid="uid://bhnfdxn0m6r6f" path="res://shaz_audio/SFX/clicksfx.mp3" id="18_p1qfy"]
+[ext_resource type="AudioStream" uid="uid://bgpo5phkq73t4" path="res://shaz_audio/SFX/Key.mp3" id="19_3i7kb"]
 [ext_resource type="AudioStream" uid="uid://bw5y0ammuwdv4" path="res://shaz_audio/music/apostatas [World 1].mp3" id="19_eq6bk"]
 [ext_resource type="AudioStream" uid="uid://cv01x33uvm2v3" path="res://shaz_audio/SFX/paused.mp3" id="20_hyoc5"]
 [ext_resource type="AudioStream" uid="uid://cxdtgh6f6ljyb" path="res://shaz_audio/SFX/resume.mp3" id="21_yww5x"]
+[ext_resource type="AudioStream" uid="uid://f8euu8wxjl1l" path="res://shaz_audio/SFX/Leaving.mp3" id="22_pnlev"]
+[ext_resource type="AudioStream" uid="uid://bykfi4pa6x6x8" path="res://shaz_audio/SFX/Entering.mp3" id="23_w7c3i"]
+
+[sub_resource type="Animation" id="Animation_d0r68"]
+resource_name = "fade out"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_yl1vf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8g7vc"]
+resource_name = "fade in"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ljjtb"]
+_data = {
+"RESET": SubResource("Animation_yl1vf"),
+"fade in": SubResource("Animation_8g7vc"),
+"fade out": SubResource("Animation_d0r68")
+}
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_qwpta"]
 polygon = PackedVector2Array(304, -304, 304, -52, 240, -52, 128, -52, 128, -180, 32, -180, 32, -121, 17, -121, 17, -181, -18, -181, -18, -121, -32, -121, -32, -180, -128, -180, -128, -52, -272, -51, -272, -241, -225, -241, -224, -304)
@@ -359,6 +417,22 @@ size = Vector2(142.25, 20)
 
 [node name="world_1_2" type="Node2D"]
 script = ExtResource("1_lcdo5")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="Fade" type="ColorRect" parent="CanvasLayer"]
+offset_left = -3440.0
+offset_top = -1810.0
+offset_right = 2367.0
+offset_bottom = 1673.0
+color = Color(0, 0, 0, 0)
+metadata/_edit_use_anchors_ = true
+
+[node name="SceneFade" type="AnimationPlayer" parent="CanvasLayer"]
+libraries = {
+"": SubResource("AnimationLibrary_ljjtb")
+}
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 self_modulate = Color(0.176419, 0.176419, 0.176419, 1)
@@ -750,11 +824,21 @@ autoplay = "closed"
 [node name="open1 zone" type="CollisionShape2D" parent="Doors/door1/door1 zone"]
 shape = SubResource("CapsuleShape2D_iqmyx")
 
+[node name="DoorSFX" type="AudioStreamPlayer" parent="Doors/door1"]
+stream = ExtResource("17_hetxw")
+
 [node name="Keys" type="Node" parent="."]
 
 [node name="key" parent="Keys" instance=ExtResource("15_4nqj5")]
 z_index = 2
 position = Vector2(-43, -356)
+
+[node name="KeySFX" type="AudioStreamPlayer" parent="Keys/key"]
+stream = ExtResource("19_3i7kb")
+bus = &"SFX"
+
+[node name="DoorSFX" type="AudioStreamPlayer" parent="Keys/key"]
+stream = ExtResource("17_hetxw")
 
 [node name="Area2D" type="StaticBody2D" parent="."]
 position = Vector2(140, -345)
@@ -781,12 +865,21 @@ parameters/looping = true
 
 [node name="PausedSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("20_hyoc5")
-volume_db = -3.0
+volume_db = -9.0
 bus = &"SFX"
 
 [node name="ResumeSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("21_yww5x")
 volume_db = -3.0
+bus = &"SFX"
+
+[node name="Leaving" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_pnlev")
+volume_db = -3.0
+bus = &"SFX"
+
+[node name="Entering" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("23_w7c3i")
 bus = &"SFX"
 
 [connection signal="body_entered" from="Level1_2TP/tp_area" to="." method="_on_tp_area_body_entered"]

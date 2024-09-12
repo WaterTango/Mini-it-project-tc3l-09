@@ -2,7 +2,7 @@ class_name  settingsmenu
 extends Control
 
 @onready var backbutton: Button = $MarginContainer/VBoxContainer/backbutton as Button
-@onready var pause_menu: pausemenu = $entitites/Player/Camera2D/PauseMenu
+#@onready var pause_menu: pausemenu = $entitites/Player/Camera2D/PauseMenu
 
 signal exit_settings_menu
 

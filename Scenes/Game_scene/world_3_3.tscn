@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://bmaj057vxjvul"]
+[gd_scene load_steps=32 format=4 uid="uid://bmaj057vxjvul"]
 
 [ext_resource type="Script" path="res://Scripts/world_3_3.gd" id="1_6brog"]
 [ext_resource type="Texture2D" uid="uid://dk47txfrdo6hq" path="res://Assets/pixel assets/Pixel Crawler - Castle/Assets/ATiles.png" id="2_n1mrr"]
@@ -7,17 +7,71 @@
 [ext_resource type="TileSet" uid="uid://bm6wjjk4cc7qu" path="res://Scenes/Game_scene/props.tres" id="5_xcnbl"]
 [ext_resource type="PackedScene" uid="uid://d2yr2v1e0ibvc" path="res://Scenes/Game_scene/player.tscn" id="6_km0e6"]
 [ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="7_h4us7"]
-[ext_resource type="Script" path="res://Scenes/settingsmenu/fp_scounter.gd" id="8_1ikxi"]
 [ext_resource type="PackedScene" uid="uid://bubxqu7jdai64" path="res://Scenes/mainmenu/pausemenu.tscn" id="8_v5k2t"]
 [ext_resource type="Script" path="res://Scenes/mainmenu/pausemenuW3.gd" id="9_kop5w"]
-[ext_resource type="FontFile" uid="uid://b8oo2dguy484y" path="res://shaz_fonts/basis33.ttf" id="9_u6ypq"]
 [ext_resource type="PackedScene" uid="uid://qnhy1jlu3dkk" path="res://Scenes/settingsmenu/settingsmenu.tscn" id="10_3jmn2"]
 [ext_resource type="Texture2D" uid="uid://dsjcuro71baxv" path="res://Assets/tilesets/RF_Catacombs_v1.0/tower.jpg" id="10_g5adu"]
 [ext_resource type="Script" path="res://Scenes/settingsmenu/settingsmenuInGameW3.gd" id="11_qhivs"]
 [ext_resource type="AudioStream" uid="uid://bterik6f2282d" path="res://shaz_audio/music/the-time-is-upon-us [World 3].mp3" id="15_vqbpq"]
 [ext_resource type="AudioStream" uid="uid://bhnfdxn0m6r6f" path="res://shaz_audio/SFX/clicksfx.mp3" id="16_30r3d"]
+[ext_resource type="AudioStream" uid="uid://f8euu8wxjl1l" path="res://shaz_audio/SFX/Leaving.mp3" id="17_s5sym"]
 [ext_resource type="AudioStream" uid="uid://cv01x33uvm2v3" path="res://shaz_audio/SFX/paused.mp3" id="17_thm0h"]
+[ext_resource type="AudioStream" uid="uid://bykfi4pa6x6x8" path="res://shaz_audio/SFX/Entering.mp3" id="18_062g3"]
 [ext_resource type="AudioStream" uid="uid://cxdtgh6f6ljyb" path="res://shaz_audio/SFX/resume.mp3" id="18_whr28"]
+
+[sub_resource type="Animation" id="Animation_d0r68"]
+resource_name = "fade out"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_yl1vf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8g7vc"]
+resource_name = "fade in"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ljjtb"]
+_data = {
+"RESET": SubResource("Animation_yl1vf"),
+"fade in": SubResource("Animation_8g7vc"),
+"fade out": SubResource("Animation_d0r68")
+}
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5xpev"]
 texture = ExtResource("2_n1mrr")
@@ -2245,6 +2299,22 @@ sources/0 = SubResource("TileSetAtlasSource_a6gqc")
 [node name="world_3" type="Node2D"]
 script = ExtResource("1_6brog")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="Fade" type="ColorRect" parent="CanvasLayer"]
+offset_left = -3440.0
+offset_top = -1810.0
+offset_right = 2367.0
+offset_bottom = 1673.0
+color = Color(0, 0, 0, 0)
+metadata/_edit_use_anchors_ = true
+
+[node name="SceneFade" type="AnimationPlayer" parent="CanvasLayer"]
+libraries = {
+"": SubResource("AnimationLibrary_ljjtb")
+}
+
 [node name="collisions" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collisions"]
@@ -2405,26 +2475,6 @@ offset_bottom = 900.0
 scale = Vector2(0.35, 0.35)
 script = ExtResource("11_qhivs")
 
-[node name="fps_overlay" type="Control" parent="Player"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("8_1ikxi")
-
-[node name="FPSlayer" type="CanvasLayer" parent="Player/fps_overlay"]
-offset = Vector2(10, 5)
-transform = Transform2D(1, 0, 0, 1, 10, 5)
-
-[node name="Label" type="Label" parent="Player/fps_overlay/FPSlayer"]
-offset_right = 40.0
-offset_bottom = 31.0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 5
-theme_override_fonts/font = ExtResource("9_u6ypq")
-theme_override_font_sizes/font_size = 30
-metadata/_edit_use_anchors_ = true
-
 [node name="Tower" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(1926, -757)
@@ -2444,10 +2494,19 @@ bus = &"SFX"
 
 [node name="PausedSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_thm0h")
-volume_db = -3.0
+volume_db = -9.0
 bus = &"SFX"
 
 [node name="ResumeSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_whr28")
 volume_db = -3.0
+bus = &"SFX"
+
+[node name="Leaving" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_s5sym")
+volume_db = -3.0
+bus = &"SFX"
+
+[node name="Entering" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_062g3")
 bus = &"SFX"

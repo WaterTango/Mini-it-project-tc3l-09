@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=4 uid="uid://o8fuiwevj7kb"]
+[gd_scene load_steps=70 format=4 uid="uid://o8fuiwevj7kb"]
 
 [ext_resource type="Script" path="res://Scripts/world_2_1.gd" id="1_6krru"]
 [ext_resource type="PackedScene" uid="uid://bf5px1sosea0q" path="res://Scenes/Game_scene/orc.tscn" id="2_swtqg"]
@@ -27,12 +27,70 @@
 [ext_resource type="Texture2D" uid="uid://d16kv83clog3f" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/door_close.png" id="26_keoqp"]
 [ext_resource type="Texture2D" uid="uid://cnhp21decqan" path="res://Assets/pixel assets/Pixel Crawler - Library/Assets/library_closed.png" id="27_mkgvw"]
 [ext_resource type="Texture2D" uid="uid://ouf3icuvgc5" path="res://Assets/pixel assets/Pixel Crawler - Library/Assets/library_opened.png" id="28_qf5xo"]
+[ext_resource type="AudioStream" uid="uid://bx0bb6f6awmqu" path="res://shaz_audio/SFX/DoorSFX.mp3" id="29_4ksty"]
 [ext_resource type="Texture2D" uid="uid://bmmvdmf6lyld5" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/door_open.png" id="29_pl1gw"]
+[ext_resource type="AudioStream" uid="uid://bgpo5phkq73t4" path="res://shaz_audio/SFX/Key.mp3" id="30_3pyoe"]
 [ext_resource type="AudioStream" uid="uid://bhnfdxn0m6r6f" path="res://shaz_audio/SFX/clicksfx.mp3" id="30_6hhgc"]
 [ext_resource type="PackedScene" uid="uid://pt3v68ebmn6" path="res://Scenes/Game_scene/key.tscn" id="30_fk6ma"]
 [ext_resource type="AudioStream" uid="uid://bou0fy27tukkp" path="res://shaz_audio/music/medieval-ambient [World 2].mp3" id="31_4s2bn"]
 [ext_resource type="AudioStream" uid="uid://cv01x33uvm2v3" path="res://shaz_audio/SFX/paused.mp3" id="32_hmhcg"]
 [ext_resource type="AudioStream" uid="uid://cxdtgh6f6ljyb" path="res://shaz_audio/SFX/resume.mp3" id="33_6tv6v"]
+[ext_resource type="AudioStream" uid="uid://f8euu8wxjl1l" path="res://shaz_audio/SFX/Leaving.mp3" id="34_id37p"]
+[ext_resource type="AudioStream" uid="uid://bykfi4pa6x6x8" path="res://shaz_audio/SFX/Entering.mp3" id="35_ca7t0"]
+
+[sub_resource type="Animation" id="Animation_d0r68"]
+resource_name = "fade out"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_yl1vf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8g7vc"]
+resource_name = "fade in"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ljjtb"]
+_data = {
+"RESET": SubResource("Animation_yl1vf"),
+"fade in": SubResource("Animation_8g7vc"),
+"fade out": SubResource("Animation_d0r68")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5qqo"]
 size = Vector2(69, 38)
@@ -4327,6 +4385,22 @@ height = 110.0
 script = ExtResource("1_6krru")
 metadata/_edit_lock_ = true
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="Fade" type="ColorRect" parent="CanvasLayer"]
+offset_left = -3440.0
+offset_top = -1810.0
+offset_right = 2367.0
+offset_bottom = 1673.0
+color = Color(0, 0, 0, 0)
+metadata/_edit_use_anchors_ = true
+
+[node name="SceneFade" type="AnimationPlayer" parent="CanvasLayer"]
+libraries = {
+"": SubResource("AnimationLibrary_ljjtb")
+}
+
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 self_modulate = Color(0.176419, 0.176419, 0.176419, 1)
 color = Color(0.764359, 0.625424, 0.73534, 0.980392)
@@ -4670,11 +4744,19 @@ autoplay = "library_closed"
 [node name="open1 zone" type="CollisionShape2D" parent="Doors/door1/door1 zone"]
 shape = SubResource("CapsuleShape2D_nai2m")
 
+[node name="DoorSFX" type="AudioStreamPlayer" parent="Doors/door1"]
+stream = ExtResource("29_4ksty")
+bus = &"SFX"
+
 [node name="Keys" type="Node" parent="."]
 
 [node name="key" parent="Keys" instance=ExtResource("30_fk6ma")]
 z_index = 5
 position = Vector2(-48, -978)
+
+[node name="KeySFX" type="AudioStreamPlayer" parent="Keys/key"]
+stream = ExtResource("30_3pyoe")
+bus = &"SFX"
 
 [node name="clickSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("30_6hhgc")
@@ -4684,18 +4766,26 @@ bus = &"SFX"
 
 [node name="World 2 Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("31_4s2bn")
-volume_db = -3.0
 bus = &"Music"
 parameters/looping = true
 
 [node name="PausedSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("32_hmhcg")
-volume_db = -3.0
+volume_db = -9.0
 bus = &"SFX"
 
 [node name="ResumeSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("33_6tv6v")
 volume_db = -3.0
+bus = &"SFX"
+
+[node name="Leaving" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("34_id37p")
+volume_db = -3.0
+bus = &"SFX"
+
+[node name="Entering" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("35_ca7t0")
 bus = &"SFX"
 
 [connection signal="body_entered" from="Level2_TP/tp_area2" to="." method="_on_tp_area_2_body_entered"]

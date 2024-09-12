@@ -94,7 +94,7 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_vfgno")
 
 [node name="clickSFX" type="AudioStreamPlayer" parent="MarginContainer/VBoxContainer"]
 stream = ExtResource("3_c0suu")
-volume_db = -6.0
+volume_db = -12.0
 pitch_scale = 0.48
 bus = &"SFX"
 
