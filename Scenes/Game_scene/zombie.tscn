@@ -1,11 +1,53 @@
-[gd_scene load_steps=20 format=3 uid="uid://b0ajo0ydcnrw5"]
+[gd_scene load_steps=32 format=3 uid="uid://b0ajo0ydcnrw5"]
 
 [ext_resource type="Script" path="res://Scripts/zombie.gd" id="1_rmxnh"]
+[ext_resource type="Texture2D" uid="uid://ynns5gpyjib2" path="res://Assets/pixel assets/Pixel Crawler - Zombie Crew/Zombie - Base/Death/Death-Sheet.png" id="2_2x3sr"]
 [ext_resource type="Texture2D" uid="uid://b1egn181js2vt" path="res://Assets/pixel assets/Pixel Crawler - Zombie Crew/Zombie - Base/Idle/Idle-Sheet.png" id="2_esfhc"]
+[ext_resource type="Texture2D" uid="uid://dj4klvnfvef1" path="res://Assets/pixel assets/Pixel Crawler - Zombie Crew/Zombie - Base/Hit/Hit-Sheet.png" id="3_h1piu"]
 [ext_resource type="Texture2D" uid="uid://bd7ejkr8rbs8b" path="res://Assets/pixel assets/Pixel Crawler - Zombie Crew/Zombie - Base/Run/Run-Sheet.png" id="3_kmj6t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cxfub"]
-size = Vector2(11.814, 12.7907)
+size = Vector2(12.9768, 23.2558)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k63d3"]
+atlas = ExtResource("2_2x3sr")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mm6j0"]
+atlas = ExtResource("2_2x3sr")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_karmw"]
+atlas = ExtResource("2_2x3sr")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iuhum"]
+atlas = ExtResource("2_2x3sr")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5v7fh"]
+atlas = ExtResource("2_2x3sr")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7c8a"]
+atlas = ExtResource("2_2x3sr")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uf4bd"]
+atlas = ExtResource("3_h1piu")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ln0o7"]
+atlas = ExtResource("3_h1piu")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bj23v"]
+atlas = ExtResource("3_h1piu")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0c1j"]
+atlas = ExtResource("3_h1piu")
+region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pqsxg"]
 atlas = ExtResource("2_esfhc")
@@ -51,6 +93,46 @@ region = Rect2(320, 0, 64, 64)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_k63d3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mm6j0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_karmw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iuhum")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5v7fh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a7c8a")
+}],
+"loop": true,
+"name": &"zombie_death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uf4bd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ln0o7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bj23v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0c1j")
+}],
+"loop": true,
+"name": &"zombie_hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_pqsxg")
 }, {
 "duration": 1.0,
@@ -94,10 +176,10 @@ animations = [{
 polygon = PackedVector2Array(-7.12599, -0.0832863, -4.37935, -0.149688, 6.07479, -0.121847, 6.11655, -0.859623, 5.37878, -0.887463, 5.35093, -1.65308, 4.61316, -1.68092, 4.61316, -2.73886, -5.56349, -2.80204, -5.53474, -2.39086, -6.27251, -2.33517, -6.32819, -0.901383, -7.06597, -0.859623)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1tll8"]
-radius = 75.5059
+radius = 88.7084
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vywfn"]
-size = Vector2(16, 27)
+size = Vector2(17.5238, 30.5265)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_75fj3"]
 radius = 25.0
@@ -107,18 +189,17 @@ script = ExtResource("1_rmxnh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
-position = Vector2(-0.0799996, -8.5)
+position = Vector2(0.41999, -10)
 scale = Vector2(0.86, 0.86)
 shape = SubResource("RectangleShape2D_cxfub")
 debug_color = Color(0.898293, 0, 0, 0.419608)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 1
-position = Vector2(0, -17.865)
-scale = Vector2(0.55, 0.55)
+position = Vector2(0, -22)
+scale = Vector2(0.71875, 0.691719)
 sprite_frames = SubResource("SpriteFrames_htpyl")
-animation = &"zombie_idle"
-frame_progress = 0.105965
+animation = &"zombie_death"
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 position = Vector2(0.875988, -0.0417137)
@@ -137,7 +218,7 @@ debug_color = Color(0, 0.648554, 0.176894, 0.42)
 [node name="AttackRange" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
-position = Vector2(0, -7.91)
+position = Vector2(0.72, -9.57625)
 scale = Vector2(0.945, 0.945)
 shape = SubResource("RectangleShape2D_vywfn")
 
@@ -152,3 +233,5 @@ shape = SubResource("CircleShape2D_75fj3")
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
 [connection signal="body_entered" from="AttackRange" to="." method="_on_attack_range_body_entered"]
 [connection signal="body_exited" from="AttackRange" to="." method="_on_attack_range_body_exited"]
+[connection signal="body_entered" from="player_attack_range" to="." method="_on_player_attack_range_body_entered"]
+[connection signal="body_exited" from="player_attack_range" to="." method="_on_player_attack_range_body_exited"]

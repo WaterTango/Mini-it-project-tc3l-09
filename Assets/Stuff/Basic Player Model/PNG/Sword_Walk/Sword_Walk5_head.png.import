@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://clduvn7ylqpcq"
-path="res://.godot/imported/Sword_Walk5_head.png-ace3fc3c4f972168d49b3fd9357b74f8.ctex"
+path="res://.godot/imported/Sword_Walk5_head.png-6f77255ef2c6aee5ee9e870cd7400c63.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/characters/Basic Player Model/PNG/Sword_Walk/Sword_Walk5_head.png"
-dest_files=["res://.godot/imported/Sword_Walk5_head.png-ace3fc3c4f972168d49b3fd9357b74f8.ctex"]
+source_file="res://Assets/Stuff/Basic Player Model/PNG/Sword_Walk/Sword_Walk5_head.png"
+dest_files=["res://.godot/imported/Sword_Walk5_head.png-6f77255ef2c6aee5ee9e870cd7400c63.ctex"]
 
 [params]
 

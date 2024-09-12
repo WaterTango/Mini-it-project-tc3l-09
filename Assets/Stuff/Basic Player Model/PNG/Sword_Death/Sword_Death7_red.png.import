@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c4wwnaurxvnyd"
-path="res://.godot/imported/Sword_Death7_red.png-e78b6c84430dfefc1c1a0265fe73bb81.ctex"
+path="res://.godot/imported/Sword_Death7_red.png-f9f3a52119dee896533aecee5bbd5d30.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/characters/Basic Player Model/PNG/Sword_Death/Sword_Death7_red.png"
-dest_files=["res://.godot/imported/Sword_Death7_red.png-e78b6c84430dfefc1c1a0265fe73bb81.ctex"]
+source_file="res://Assets/Stuff/Basic Player Model/PNG/Sword_Death/Sword_Death7_red.png"
+dest_files=["res://.godot/imported/Sword_Death7_red.png-f9f3a52119dee896533aecee5bbd5d30.ctex"]
 
 [params]
 

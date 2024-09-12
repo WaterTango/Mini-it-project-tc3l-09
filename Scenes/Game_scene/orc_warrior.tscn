@@ -94,6 +94,11 @@ animations = [{
 "name": &"orc_warrior_death",
 "speed": 5.0
 }, {
+"frames": [],
+"loop": true,
+"name": &"orc_warrior_hit",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_u6kl1")
@@ -154,7 +159,7 @@ script = ExtResource("1_kkpn0")
 z_index = 5
 position = Vector2(0, -21)
 sprite_frames = SubResource("SpriteFrames_b4ele")
-animation = &"orc_warrior_death"
+animation = &"orc_warrior_hit"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
@@ -183,6 +188,10 @@ shape = SubResource("CircleShape2D_2q85a")
 one_way_collision_margin = 0.0
 
 [connection signal="body_entered" from="detection" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="detection" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]
 [connection signal="body_entered" from="AttackRange" to="." method="_on_attack_range_body_entered"]
 [connection signal="body_exited" from="AttackRange" to="." method="_on_attack_range_body_exited"]
+[connection signal="body_entered" from="player_attack_range" to="." method="_on_player_attack_range_body_entered"]
+[connection signal="body_exited" from="player_attack_range" to="." method="_on_player_attack_range_body_exited"]

@@ -6,13 +6,14 @@ signal door1_opened
 var keytaken = false
 var in_door1_zone = false
 
-func _on_area_2d_body_entered(_body: CharacterBody2D) -> void:
-	if keytaken == false:
-		keytaken = true 
-		$Sprite2D.queue_free()
-		$Area2D.queue_free()
-		print("key picked up")
-		
+func _on_area_2d_body_entered(body) -> void:
+	if body is Player:
+		if keytaken == false:
+			keytaken = true 
+			$Sprite2D.queue_free()
+			$Area2D.queue_free()
+			print("key picked up")
+			
 func _process(_delta):
 	if keytaken == true:
 		if in_door1_zone == true:

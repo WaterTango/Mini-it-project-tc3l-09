@@ -52,4 +52,5 @@ func pauseMenu():
 #==================================================================================================
 func _on_tp_area_body_entered(body) -> void:
 	if body is Player:
+		print("travelling to world 1_3")
 		get_tree().change_scene_to_file("res://Scenes/Game_scene/world_1_3.tscn")

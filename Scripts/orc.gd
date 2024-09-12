@@ -6,7 +6,7 @@ var player = null
 var player_chase = false
 var within_range = false
 var within_player_range = false
-var health = 40
+var health = 100
 
 func _physics_process(_delta):
 	deal_with_damage()
@@ -46,11 +46,15 @@ func _on_attack_range_body_exited(body):
 	if body is Player:
 		within_range = true
 
+
+
 func deal_with_damage():
 	if within_player_range and Global.player_current_attack == true:
 		health -= 20
 		print("enemy health = ", health)
+		await get_tree().create_timer(1).timeout
 		if health <= 0:
+			$AnimatedSprite2D.play("orc_death")
 			self.queue_free()
 
 func _on_player_attack_range_body_entered(body):

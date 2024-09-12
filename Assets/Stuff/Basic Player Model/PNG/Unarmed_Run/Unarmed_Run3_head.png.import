@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bvanlwe6itc4f"
-path="res://.godot/imported/Unarmed_Run3_head.png-a6e14a29e9f1ca61d41915240f1792bc.ctex"
+path="res://.godot/imported/Unarmed_Run3_head.png-8c784b3051f8c4050bc41bc8c4ea7b35.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/characters/Basic Player Model/PNG/Unarmed_Run/Unarmed_Run3_head.png"
-dest_files=["res://.godot/imported/Unarmed_Run3_head.png-a6e14a29e9f1ca61d41915240f1792bc.ctex"]
+source_file="res://Assets/Stuff/Basic Player Model/PNG/Unarmed_Run/Unarmed_Run3_head.png"
+dest_files=["res://.godot/imported/Unarmed_Run3_head.png-8c784b3051f8c4050bc41bc8c4ea7b35.ctex"]
 
 [params]
 

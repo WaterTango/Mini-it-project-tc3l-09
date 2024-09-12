@@ -382,7 +382,7 @@ metadata/_edit_lock_ = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 self_modulate = Color(0.176419, 0.176419, 0.176419, 1)
-color = Color(0.09536, 0.0953585, 0.164729, 0.980392)
+color = Color(0.324023, 0.324827, 0.488136, 0.980392)
 
 [node name="entitites" type="Node" parent="."]
 
@@ -932,7 +932,7 @@ parameters/looping = true
 
 [node name="PausedSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("21_ff3dr")
-volume_db = -3.0
+volume_db = -9.0
 bus = &"SFX"
 
 [node name="ResumeSFX" type="AudioStreamPlayer" parent="."]

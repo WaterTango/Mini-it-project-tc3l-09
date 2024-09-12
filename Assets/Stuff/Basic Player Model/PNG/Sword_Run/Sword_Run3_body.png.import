@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c1xvimudp62qs"
-path="res://.godot/imported/Sword_Run3_body.png-de8193e004208cff7888ec70836fca6a.ctex"
+path="res://.godot/imported/Sword_Run3_body.png-29b3eab0c4c88576d47505fcbb5015df.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/characters/Basic Player Model/PNG/Sword_Run/Sword_Run3_body.png"
-dest_files=["res://.godot/imported/Sword_Run3_body.png-de8193e004208cff7888ec70836fca6a.ctex"]
+source_file="res://Assets/Stuff/Basic Player Model/PNG/Sword_Run/Sword_Run3_body.png"
+dest_files=["res://.godot/imported/Sword_Run3_body.png-29b3eab0c4c88576d47505fcbb5015df.ctex"]
 
 [params]
 
