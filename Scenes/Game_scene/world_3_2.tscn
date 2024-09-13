@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://b3k265hce1ctr"]
+[gd_scene load_steps=46 format=4 uid="uid://b3k265hce1ctr"]
 
 [ext_resource type="Script" path="res://Scripts/world_3_2.gd" id="1_342vo"]
 [ext_resource type="PackedScene" uid="uid://d2yr2v1e0ibvc" path="res://Scenes/Game_scene/player.tscn" id="1_ctdo8"]
@@ -15,13 +15,71 @@
 [ext_resource type="Texture2D" uid="uid://bmmvdmf6lyld5" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/door_open.png" id="10_t0usf"]
 [ext_resource type="PackedScene" uid="uid://pt3v68ebmn6" path="res://Scenes/Game_scene/key.tscn" id="11_tnrld"]
 [ext_resource type="TileSet" uid="uid://cl5petjwvv2yd" path="res://new_tile_set.tres" id="13_revk5"]
+[ext_resource type="AudioStream" uid="uid://bx0bb6f6awmqu" path="res://shaz_audio/SFX/DoorSFX.mp3" id="14_ckpsc"]
 [ext_resource type="Texture2D" uid="uid://dk47txfrdo6hq" path="res://Assets/pixel assets/Pixel Crawler - Castle/Assets/ATiles.png" id="14_pt2tv"]
 [ext_resource type="Texture2D" uid="uid://dkavl6ffevps4" path="res://Assets/pixel assets/Pixel Crawler - Library/Assets/Tiles.png" id="15_ymt33"]
 [ext_resource type="TileSet" uid="uid://bm6wjjk4cc7qu" path="res://Scenes/Game_scene/props.tres" id="16_a7vi1"]
+[ext_resource type="AudioStream" uid="uid://bgpo5phkq73t4" path="res://shaz_audio/SFX/Key.mp3" id="16_ee4bs"]
 [ext_resource type="AudioStream" uid="uid://bterik6f2282d" path="res://shaz_audio/music/the-time-is-upon-us [World 3].mp3" id="19_f4xys"]
 [ext_resource type="AudioStream" uid="uid://bhnfdxn0m6r6f" path="res://shaz_audio/SFX/clicksfx.mp3" id="20_mkjxl"]
 [ext_resource type="AudioStream" uid="uid://cv01x33uvm2v3" path="res://shaz_audio/SFX/paused.mp3" id="21_24if8"]
 [ext_resource type="AudioStream" uid="uid://cxdtgh6f6ljyb" path="res://shaz_audio/SFX/resume.mp3" id="22_n1j75"]
+[ext_resource type="AudioStream" uid="uid://f8euu8wxjl1l" path="res://shaz_audio/SFX/Leaving.mp3" id="25_0is43"]
+[ext_resource type="AudioStream" uid="uid://bykfi4pa6x6x8" path="res://shaz_audio/SFX/Entering.mp3" id="26_1icw1"]
+
+[sub_resource type="Animation" id="Animation_d0r68"]
+resource_name = "fade out"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_yl1vf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8g7vc"]
+resource_name = "fade in"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ljjtb"]
+_data = {
+"RESET": SubResource("Animation_yl1vf"),
+"fade in": SubResource("Animation_8g7vc"),
+"fade out": SubResource("Animation_d0r68")
+}
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tli52"]
 radius = 24.5153
@@ -2286,6 +2344,22 @@ sources/0 = SubResource("TileSetAtlasSource_dceiu")
 [node name="world_3_2" type="Node2D"]
 script = ExtResource("1_342vo")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="Fade" type="ColorRect" parent="CanvasLayer"]
+offset_left = -3440.0
+offset_top = -1810.0
+offset_right = 2367.0
+offset_bottom = 1673.0
+color = Color(0, 0, 0, 0)
+metadata/_edit_use_anchors_ = true
+
+[node name="SceneFade" type="AnimationPlayer" parent="CanvasLayer"]
+libraries = {
+"": SubResource("AnimationLibrary_ljjtb")
+}
+
 [node name="Player" parent="." instance=ExtResource("1_ctdo8")]
 z_index = 4
 position = Vector2(0, -92)
@@ -2357,11 +2431,18 @@ autoplay = "library_closed"
 [node name="open1 zone" type="CollisionShape2D" parent="Doors/door1/door1 zone"]
 shape = SubResource("CapsuleShape2D_ueh6n")
 
+[node name="DoorSFX" type="AudioStreamPlayer" parent="Doors/door1"]
+stream = ExtResource("14_ckpsc")
+
 [node name="Keys" type="Node" parent="."]
 
 [node name="key" parent="Keys" instance=ExtResource("11_tnrld")]
 z_index = 5
 position = Vector2(-68, -530)
+
+[node name="KeySFX" type="AudioStreamPlayer" parent="Keys/key"]
+stream = ExtResource("16_ee4bs")
+bus = &"SFX"
 
 [node name="map" type="Node" parent="."]
 
@@ -2463,12 +2544,21 @@ bus = &"SFX"
 
 [node name="PausedSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("21_24if8")
-volume_db = -3.0
+volume_db = -9.0
 bus = &"SFX"
 
 [node name="ResumeSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_n1j75")
 volume_db = -3.0
+bus = &"SFX"
+
+[node name="Leaving" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("25_0is43")
+volume_db = -3.0
+bus = &"SFX"
+
+[node name="Entering" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("26_1icw1")
 bus = &"SFX"
 
 [connection signal="body_entered" from="Level3_1TP/tp_area" to="." method="_on_tp_area_body_entered"]

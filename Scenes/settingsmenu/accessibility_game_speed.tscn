@@ -13,6 +13,7 @@ grow_vertical = 2
 script = ExtResource("1_wkkp2")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 theme_override_constants/separation = 42
@@ -36,8 +37,10 @@ custom_minimum_size = Vector2(700, 32)
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 1
-min_value = -3.0
-max_value = 3.0
+min_value = 0.25
+max_value = 1.75
+step = 0.25
+value = 1.0
 
 [node name="VSeparator2" type="VSeparator" parent="HBoxContainer"]
 layout_mode = 2
@@ -51,6 +54,6 @@ size_flags_vertical = 1
 theme_override_constants/outline_size = 7
 theme_override_fonts/font = ExtResource("1_x03ed")
 theme_override_font_sizes/font_size = 60
-text = "0
+text = "1.0
 "
 horizontal_alignment = 1

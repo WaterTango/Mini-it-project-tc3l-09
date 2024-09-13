@@ -1,6 +1,8 @@
 class_name hotkeyrebindbutton
 extends Control
 
+# damn this one took quite a long time :P
+
 @onready var label: Label = $HBoxContainer/Label as Label
 @onready var button: Button = $HBoxContainer/Button as Button
 
@@ -29,7 +31,8 @@ func set_action_name() -> void:
 				label.text = "Sprint"
 			"interact":
 				label.text = "Interact"
-			
+			"attack":
+				label.text = "Attack"
 
 func set_text_for_key() -> void:
 	var action_events = InputMap.action_get_events(action_name)
@@ -43,10 +46,12 @@ func set_text_for_key() -> void:
 
 func _on_button_toggled(toggled_on: bool) -> void:
 	if toggled_on:
+		# signal for the new input
 		$ineterfacePressSFX.play()
 		button.text = "Input new key"
 		set_process_unhandled_key_input(toggled_on)
 		
+		# when the input is recceived
 		for i in get_tree().get_nodes_in_group("hotkey_button"):
 			# iterates everything, then sees whats the current action_name and stops from overlapping bindings
 			if i.action_name != self.action_name:

@@ -172,6 +172,10 @@ action_name = "right"
 layout_mode = 2
 action_name = "interact"
 
+[node name="hotkey_rebind_button7" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer2" instance=ExtResource("8_5eusy")]
+layout_mode = 2
+action_name = "attack"
+
 [node name="hotkey_rebind_button6" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer2" instance=ExtResource("8_5eusy")]
 layout_mode = 2
 action_name = "sprint"

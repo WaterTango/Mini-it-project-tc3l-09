@@ -6,6 +6,9 @@ extends Node
 var paused = false
 # shaz's AudioPlaybackScript =======================================================================
 func _ready() -> void:
+	$Entering.play()
+	$CanvasLayer/SceneFade.play("fade in")
+	await get_tree().create_timer(3).timeout
 	$"World 1 Music".play()
 	pass
 #===================================================================================================
@@ -54,4 +57,10 @@ func pauseMenu():
 
 func _on_tp_area_body_entered(body) -> void:
 	if body is Player:
+		# shaz's SceneTransitionFadeout =======================================
+		$Leaving.play()
+		print("travelling to world 1_2")
+		$CanvasLayer/SceneFade.play("fade out")
+		await get_tree().create_timer(3).timeout
+		# ======================================================================
 		get_tree().change_scene_to_file("res://Scenes/Game_scene/world_1_2.tscn")

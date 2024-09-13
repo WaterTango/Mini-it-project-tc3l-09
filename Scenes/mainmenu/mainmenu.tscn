@@ -377,7 +377,7 @@ layout_mode = 2
 
 [node name="clickSFX" type="AudioStreamPlayer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 stream = ExtResource("5_7a3fo")
-volume_db = -6.0
+volume_db = -9.0
 pitch_scale = 0.48
 bus = &"SFX"
 

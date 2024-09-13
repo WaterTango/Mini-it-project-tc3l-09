@@ -9,6 +9,7 @@ func _ready() -> void:
 
 
 func _on_key_door_1_opened() -> void:
+	$DoorSFX #shaz SFX
 	$AnimatedSprite2D.play("opened")
 	emit_signal("door1_collision")
 	
