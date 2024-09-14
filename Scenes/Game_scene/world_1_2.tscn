@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://bg65fmt31h84x"]
+[gd_scene load_steps=47 format=4 uid="uid://bg65fmt31h84x"]
 
 [ext_resource type="Script" path="res://Scripts/world_1_2.gd" id="1_lcdo5"]
 [ext_resource type="TileSet" uid="uid://hejtinux6a7x" path="res://Scenes/Game_scene/world_1.tres" id="1_lsqgd"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://qnhy1jlu3dkk" path="res://Scenes/settingsmenu/settingsmenu.tscn" id="6_7hrci"]
 [ext_resource type="Script" path="res://Scenes/settingsmenu/settingsmenuINGAME.gd" id="7_7wpm4"]
 [ext_resource type="PackedScene" uid="uid://b0ajo0ydcnrw5" path="res://Scenes/Game_scene/zombie.tscn" id="7_27s8o"]
+[ext_resource type="Texture2D" uid="uid://crnws7b6mgnqc" path="res://Assets/png/e_dark.png" id="8_gpka8"]
 [ext_resource type="Script" path="res://Scripts/door1.gd" id="11_qa52s"]
 [ext_resource type="Script" path="res://Scripts/door1_collision.gd" id="12_e7k33"]
 [ext_resource type="Texture2D" uid="uid://d16kv83clog3f" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/door_close.png" id="13_56dr3"]
@@ -679,7 +680,7 @@ shape = SubResource("RectangleShape2D_u5ggu")
 
 [node name="Player" parent="entities" instance=ExtResource("3_jdqqv")]
 z_index = 5
-position = Vector2(-2, -91)
+position = Vector2(0, -149)
 
 [node name="Camera2D" type="Camera2D" parent="entities/Player"]
 zoom = Vector2(3, 3)
@@ -719,6 +720,13 @@ offset_right = 1585.0
 offset_bottom = 900.0
 scale = Vector2(0.35, 0.35)
 script = ExtResource("7_7wpm4")
+
+[node name="interact_popup2" type="Sprite2D" parent="entities/Player"]
+visible = false
+z_index = 10
+position = Vector2(-1.19209e-07, -28)
+scale = Vector2(0.236842, 0.231707)
+texture = ExtResource("8_gpka8")
 
 [node name="zombie" type="Node" parent="entities"]
 
@@ -926,3 +934,5 @@ bus = &"SFX"
 [connection signal="body_entered" from="Doors/door1/door1 zone" to="Keys/key" method="_on_door_1_zone_body_entered"]
 [connection signal="body_exited" from="Doors/door1/door1 zone" to="Keys/key" method="_on_door_1_zone_body_exited"]
 [connection signal="door1_opened" from="Keys/key" to="Doors/door1" method="_on_key_door_1_opened"]
+[connection signal="popup_hide" from="Keys/key" to="." method="_on_key_popup_hide"]
+[connection signal="popup_show" from="Keys/key" to="." method="_on_key_popup_show"]

@@ -7,6 +7,7 @@ extends Node2D
 var paused = false
 # shaz's AudioPlaybackScript =======================================================================
 func _ready() -> void:
+	$Player/interact_popup2.hide()
 	$Entering.play()
 	$CanvasLayer/SceneFade.play("fade in")
 	await get_tree().create_timer(3).timeout
@@ -86,3 +87,11 @@ func _on_door_opening_animation_body_entered(body: Node2D) -> void:
 func _on_door_opening_animation_body_exited(body: Node2D) -> void:
 	if body is Player:
 		$Map/TileMap/village/door.show()
+
+
+func _on_key_popup_hide() -> void:
+	$Player/interact_popup2.hide()
+
+
+func _on_key_popup_show() -> void:
+	$Player/interact_popup2.show()
