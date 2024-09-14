@@ -63,6 +63,7 @@ transform = Transform2D(1, 0, 0, 1, 10, 5)
 [node name="Label" type="Label" parent="fps_overlay/FPSlayer"]
 offset_right = 40.0
 offset_bottom = 31.0
+theme_override_constants/outline_size = 7
 theme_override_fonts/font = ExtResource("1_f4ejb")
 theme_override_font_sizes/font_size = 30
 metadata/_edit_use_anchors_ = true
