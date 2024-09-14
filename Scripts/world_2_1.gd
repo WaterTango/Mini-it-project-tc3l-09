@@ -61,3 +61,26 @@ func _on_tp_area_2_body_entered(body: Node2D) -> void:
 		await get_tree().create_timer(3).timeout
 		# ======================================================================
 		get_tree().change_scene_to_file("res://Scenes/Game_scene/world_2_2.tscn")
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body is Player:
+		$Map/TileMap/village/roof.hide()
+		$Player/Camera2D.zoom.x = 5
+		$Player/Camera2D.zoom.y = 5
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	if body is Player:
+		$Map/TileMap/village/roof.show()
+		$Player/Camera2D.zoom.x = 3
+		$Player/Camera2D.zoom.y = 3
+
+
+func _on_door_opening_animation_body_entered(body: Node2D) -> void:
+	if body is Player:
+		$Map/TileMap/village/door.hide()
+
+
+func _on_door_opening_animation_body_exited(body: Node2D) -> void:
+	if body is Player:
+		$Map/TileMap/village/door.show()

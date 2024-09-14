@@ -10,14 +10,14 @@
 [ext_resource type="Script" path="res://Scripts/door1_collision.gd" id="6_xk5ly"]
 [ext_resource type="Script" path="res://Scenes/settingsmenu/settingsmenuInGameW3.gd" id="7_7duxl"]
 [ext_resource type="Texture2D" uid="uid://d16kv83clog3f" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/door_close.png" id="7_gvukn"]
-[ext_resource type="Texture2D" uid="uid://cnhp21decqan" path="res://Assets/pixel assets/Pixel Crawler - Library/Assets/library_closed.png" id="8_r3u00"]
-[ext_resource type="Texture2D" uid="uid://ouf3icuvgc5" path="res://Assets/pixel assets/Pixel Crawler - Library/Assets/library_opened.png" id="9_85ruh"]
+[ext_resource type="Texture2D" uid="uid://cnhp21decqan" path="res://Assets/pixel assets/library/Assets/library_closed.png" id="8_r3u00"]
+[ext_resource type="Texture2D" uid="uid://ouf3icuvgc5" path="res://Assets/pixel assets/library/Assets/library_opened.png" id="9_85ruh"]
 [ext_resource type="Texture2D" uid="uid://bmmvdmf6lyld5" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/door_open.png" id="10_t0usf"]
 [ext_resource type="PackedScene" uid="uid://pt3v68ebmn6" path="res://Scenes/Game_scene/key.tscn" id="11_tnrld"]
 [ext_resource type="TileSet" uid="uid://cl5petjwvv2yd" path="res://new_tile_set.tres" id="13_revk5"]
 [ext_resource type="AudioStream" uid="uid://bx0bb6f6awmqu" path="res://shaz_audio/SFX/DoorSFX.mp3" id="14_ckpsc"]
-[ext_resource type="Texture2D" uid="uid://dk47txfrdo6hq" path="res://Assets/pixel assets/Pixel Crawler - Castle/Assets/ATiles.png" id="14_pt2tv"]
-[ext_resource type="Texture2D" uid="uid://dkavl6ffevps4" path="res://Assets/pixel assets/Pixel Crawler - Library/Assets/Tiles.png" id="15_ymt33"]
+[ext_resource type="Texture2D" uid="uid://dk47txfrdo6hq" path="res://Assets/pixel assets/castle/Assets/ATiles.png" id="14_pt2tv"]
+[ext_resource type="Texture2D" uid="uid://dkavl6ffevps4" path="res://Assets/pixel assets/library/Assets/Tiles.png" id="15_ymt33"]
 [ext_resource type="TileSet" uid="uid://bm6wjjk4cc7qu" path="res://Scenes/Game_scene/props.tres" id="16_a7vi1"]
 [ext_resource type="AudioStream" uid="uid://bgpo5phkq73t4" path="res://shaz_audio/SFX/Key.mp3" id="16_ee4bs"]
 [ext_resource type="AudioStream" uid="uid://bterik6f2282d" path="res://shaz_audio/music/the-time-is-upon-us [World 3].mp3" id="19_f4xys"]
@@ -26,22 +26,6 @@
 [ext_resource type="AudioStream" uid="uid://cxdtgh6f6ljyb" path="res://shaz_audio/SFX/resume.mp3" id="22_n1j75"]
 [ext_resource type="AudioStream" uid="uid://f8euu8wxjl1l" path="res://shaz_audio/SFX/Leaving.mp3" id="25_0is43"]
 [ext_resource type="AudioStream" uid="uid://bykfi4pa6x6x8" path="res://shaz_audio/SFX/Entering.mp3" id="26_1icw1"]
-
-[sub_resource type="Animation" id="Animation_d0r68"]
-resource_name = "fade out"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Fade:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
 
 [sub_resource type="Animation" id="Animation_yl1vf"]
 length = 0.001
@@ -72,6 +56,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_d0r68"]
+resource_name = "fade out"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ljjtb"]
@@ -2394,7 +2394,7 @@ script = ExtResource("7_7duxl")
 
 [node name="Level3_1TP" type="StaticBody2D" parent="."]
 z_index = 5
-position = Vector2(4, -660)
+position = Vector2(5, -570)
 
 [node name="tp_area" type="Area2D" parent="Level3_1TP"]
 
