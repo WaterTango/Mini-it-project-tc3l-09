@@ -2,14 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://cmud5c4t613jg" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/Tiles.png" id="1_rad27"]
 [ext_resource type="Texture2D" uid="uid://bysluhgy2hwsr" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/Props.png" id="2_jg64n"]
-[ext_resource type="Texture2D" uid="uid://conyiatj81fl1" path="res://Assets/pixel assets/Pixel Crawler - Hideout/Assets/Tiles.png" id="3_q7bok"]
+[ext_resource type="Texture2D" uid="uid://conyiatj81fl1" path="res://Assets/pixel assets/hideout/Assets/Tiles.png" id="3_k0u0j"]
 [ext_resource type="Texture2D" uid="uid://3vr7qles7yvs" path="res://Assets/tilesets/floors/carpet.png" id="3_xmvxa"]
 [ext_resource type="Texture2D" uid="uid://cng2glks0nexv" path="res://Assets/pixel assets/Pixel Crawler - Sewer/Assets/Tiles.png" id="4_kr67c"]
 [ext_resource type="Texture2D" uid="uid://dts0o3myi8sd8" path="res://Assets/tilesets/RF_Catacombs_v1.0/mainlevbuild.png" id="4_rs23w"]
-[ext_resource type="Texture2D" uid="uid://cvm1aguflduln" path="res://Assets/pixel assets/Pixel Crawler - Garden Environment/Assets/Tiles.png" id="5_pynxa"]
+[ext_resource type="Texture2D" uid="uid://cvm1aguflduln" path="res://Assets/pixel assets/garden/Assets/Tiles.png" id="5_j1qyd"]
 [ext_resource type="Texture2D" uid="uid://c7ltumb0113o" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Green Woods/Assets/pixil-frame-0.png" id="6_fjc5v"]
 [ext_resource type="Texture2D" uid="uid://dktpn7ohj3m42" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Green Woods/Assets/forest.png" id="7_eilf6"]
-[ext_resource type="Texture2D" uid="uid://dk47txfrdo6hq" path="res://Assets/pixel assets/Pixel Crawler - Castle/Assets/ATiles.png" id="8_8b0lk"]
+[ext_resource type="Texture2D" uid="uid://dk47txfrdo6hq" path="res://Assets/pixel assets/castle/Assets/ATiles.png" id="8_47fvc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x204j"]
 texture = ExtResource("1_rad27")
@@ -519,7 +519,7 @@ texture = ExtResource("2_jg64n")
 11:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ijcfn"]
-texture = ExtResource("3_q7bok")
+texture = ExtResource("3_k0u0j")
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
@@ -1448,7 +1448,7 @@ texture = ExtResource("4_kr67c")
 12:13/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i4pnk"]
-texture = ExtResource("5_pynxa")
+texture = ExtResource("5_j1qyd")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -2729,7 +2729,7 @@ texture = ExtResource("7_eilf6")
 44:6/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3fru5"]
-texture = ExtResource("8_8b0lk")
+texture = ExtResource("8_47fvc")
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0

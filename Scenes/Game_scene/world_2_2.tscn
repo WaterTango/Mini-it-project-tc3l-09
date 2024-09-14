@@ -24,8 +24,8 @@
 [ext_resource type="Texture2D" uid="uid://d16kv83clog3f" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/door_close.png" id="20_offjg"]
 [ext_resource type="Texture2D" uid="uid://cyu5a38g5wbdc" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Green Woods/Assets/forest_texture/TX Shadow.png" id="20_vxecm"]
 [ext_resource type="Texture2D" uid="uid://ces3fatiks2vw" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Green Woods/Assets/forest_texture/TX Struct.png" id="21_6as8y"]
-[ext_resource type="Texture2D" uid="uid://cnhp21decqan" path="res://Assets/pixel assets/Pixel Crawler - Library/Assets/library_closed.png" id="21_bbnqd"]
-[ext_resource type="Texture2D" uid="uid://ouf3icuvgc5" path="res://Assets/pixel assets/Pixel Crawler - Library/Assets/library_opened.png" id="22_udtu1"]
+[ext_resource type="Texture2D" uid="uid://cnhp21decqan" path="res://Assets/pixel assets/library/Assets/library_closed.png" id="21_bbnqd"]
+[ext_resource type="Texture2D" uid="uid://ouf3icuvgc5" path="res://Assets/pixel assets/library/Assets/library_opened.png" id="22_udtu1"]
 [ext_resource type="Texture2D" uid="uid://bmmvdmf6lyld5" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/door_open.png" id="23_u0nxr"]
 [ext_resource type="PackedScene" uid="uid://pt3v68ebmn6" path="res://Scenes/Game_scene/key.tscn" id="24_gcpm2"]
 [ext_resource type="AudioStream" uid="uid://bx0bb6f6awmqu" path="res://shaz_audio/SFX/DoorSFX.mp3" id="28_iek1m"]
@@ -36,22 +36,6 @@
 [ext_resource type="AudioStream" uid="uid://cxdtgh6f6ljyb" path="res://shaz_audio/SFX/resume.mp3" id="34_n7wuv"]
 [ext_resource type="AudioStream" uid="uid://f8euu8wxjl1l" path="res://shaz_audio/SFX/Leaving.mp3" id="35_hyubq"]
 [ext_resource type="AudioStream" uid="uid://bykfi4pa6x6x8" path="res://shaz_audio/SFX/Entering.mp3" id="36_hdej5"]
-
-[sub_resource type="Animation" id="Animation_d0r68"]
-resource_name = "fade out"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Fade:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
 
 [sub_resource type="Animation" id="Animation_yl1vf"]
 length = 0.001
@@ -82,6 +66,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_d0r68"]
+resource_name = "fade out"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ljjtb"]
@@ -4317,7 +4317,7 @@ bus = &"SFX"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collission"]
 z_index = 2
-polygon = PackedVector2Array(880, -1161, -945, -1140, -919, -919, -940, -869, -894, -864, -703, -864, -688, -864, -688, -848, -672, -848, -672, -832, -656, -828, -640, -828, -560, -828, -544, -832, -544, -848, -528, -848, -528, -864, -512, -864, -512, -908, -352, -908, -352, -864, -336, -864, -336, -848, -320, -848, -320, -832, -304, -828, -208, -828, -192, -832, -192, -848, -176, -848, -176, -864, -160, -864, -160, -908, -48, -908, -48, -897, -47, -814, -879, -815, -879, -785, -32, -785, -31, -896, -25, -1006, 29, -1006, 30, -897, 32, -786, 878, -786, 879, -814, 48, -815, 48, -908, 160, -908, 160, -864, 176, -864, 176, -848, 192, -848, 192, -832, 208, -828, 224, -828, 304, -828, 320, -832, 320, -848, 336, -848, 336, -864, 352, -864, 352, -908, 512, -908, 512, -864, 528, -864, 528, -848, 544, -848, 544, -832, 560, -828, 576, -828, 656, -828, 672, -832, 672, -848, 688, -848, 688, -864, 897, -864, 953, -938)
+polygon = PackedVector2Array(880, -1161, -945, -1140, -919, -919, -940, -869, -894, -864, -703, -864, -688, -864, -688, -848, -672, -848, -672, -832, -656, -828, -640, -828, -560, -828, -544, -832, -544, -848, -528, -848, -528, -864, -512, -864, -512, -908, -352, -908, -352, -864, -336, -864, -336, -848, -320, -848, -320, -832, -304, -828, -208, -828, -192, -832, -192, -848, -176, -848, -176, -864, -160, -864, -160, -908, -48, -908, -48, -897, -47, -814, -879, -815, -879, -785, -32, -785, -31, -896, -30, -933, 30, -932, 30, -897, 32, -786, 878, -786, 879, -814, 48, -815, 48, -908, 160, -908, 160, -864, 176, -864, 176, -848, 192, -848, 192, -832, 208, -828, 224, -828, 304, -828, 320, -832, 320, -848, 336, -848, 336, -864, 352, -864, 352, -908, 512, -908, 512, -864, 528, -864, 528, -848, 544, -848, 544, -832, 560, -828, 576, -828, 656, -828, 672, -832, 672, -848, 688, -848, 688, -864, 897, -864, 953, -938)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="collission"]
 z_index = 2

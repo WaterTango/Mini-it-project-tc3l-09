@@ -19,7 +19,7 @@ func _process(_delta):
 	if keytaken == true:
 		if in_door1_zone == true:
 			if Input.is_action_just_pressed("interact"):
-				$DoorSFX #shaz SFX
+				#$DoorSFX #shaz SFX
 				print("door1 opened")
 				emit_signal("door1_opened")
 				keytaken = false

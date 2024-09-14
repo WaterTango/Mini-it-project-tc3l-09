@@ -1,8 +1,8 @@
-[gd_scene load_steps=32 format=4 uid="uid://bmaj057vxjvul"]
+[gd_scene load_steps=47 format=4 uid="uid://bmaj057vxjvul"]
 
 [ext_resource type="Script" path="res://Scripts/world_3_3.gd" id="1_6brog"]
-[ext_resource type="Texture2D" uid="uid://dk47txfrdo6hq" path="res://Assets/pixel assets/Pixel Crawler - Castle/Assets/ATiles.png" id="2_n1mrr"]
-[ext_resource type="Texture2D" uid="uid://dkavl6ffevps4" path="res://Assets/pixel assets/Pixel Crawler - Library/Assets/Tiles.png" id="3_t8qqg"]
+[ext_resource type="Texture2D" uid="uid://dk47txfrdo6hq" path="res://Assets/pixel assets/castle/Assets/ATiles.png" id="2_n1mrr"]
+[ext_resource type="Texture2D" uid="uid://dkavl6ffevps4" path="res://Assets/pixel assets/library/Assets/Tiles.png" id="3_t8qqg"]
 [ext_resource type="TileSet" uid="uid://cl5petjwvv2yd" path="res://new_tile_set.tres" id="4_bci5w"]
 [ext_resource type="TileSet" uid="uid://bm6wjjk4cc7qu" path="res://Scenes/Game_scene/props.tres" id="5_xcnbl"]
 [ext_resource type="PackedScene" uid="uid://d2yr2v1e0ibvc" path="res://Scenes/Game_scene/player.tscn" id="6_km0e6"]
@@ -10,30 +10,22 @@
 [ext_resource type="PackedScene" uid="uid://bubxqu7jdai64" path="res://Scenes/mainmenu/pausemenu.tscn" id="8_v5k2t"]
 [ext_resource type="Script" path="res://Scenes/mainmenu/pausemenuW3.gd" id="9_kop5w"]
 [ext_resource type="PackedScene" uid="uid://qnhy1jlu3dkk" path="res://Scenes/settingsmenu/settingsmenu.tscn" id="10_3jmn2"]
-[ext_resource type="Texture2D" uid="uid://dsjcuro71baxv" path="res://Assets/tilesets/RF_Catacombs_v1.0/tower.jpg" id="10_g5adu"]
 [ext_resource type="Script" path="res://Scenes/settingsmenu/settingsmenuInGameW3.gd" id="11_qhivs"]
+[ext_resource type="Script" path="res://Scripts/door_library.gd" id="12_2mvmi"]
+[ext_resource type="Script" path="res://Scripts/door1_collision.gd" id="13_idjxu"]
+[ext_resource type="Texture2D" uid="uid://d16kv83clog3f" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/door_close.png" id="14_aikvc"]
+[ext_resource type="Texture2D" uid="uid://cnhp21decqan" path="res://Assets/pixel assets/library/Assets/library_closed.png" id="15_430io"]
 [ext_resource type="AudioStream" uid="uid://bterik6f2282d" path="res://shaz_audio/music/the-time-is-upon-us [World 3].mp3" id="15_vqbpq"]
 [ext_resource type="AudioStream" uid="uid://bhnfdxn0m6r6f" path="res://shaz_audio/SFX/clicksfx.mp3" id="16_30r3d"]
+[ext_resource type="Texture2D" uid="uid://ouf3icuvgc5" path="res://Assets/pixel assets/library/Assets/library_opened.png" id="16_h2dqt"]
+[ext_resource type="Texture2D" uid="uid://bmmvdmf6lyld5" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/door_open.png" id="17_nw3g7"]
 [ext_resource type="AudioStream" uid="uid://f8euu8wxjl1l" path="res://shaz_audio/SFX/Leaving.mp3" id="17_s5sym"]
 [ext_resource type="AudioStream" uid="uid://cv01x33uvm2v3" path="res://shaz_audio/SFX/paused.mp3" id="17_thm0h"]
 [ext_resource type="AudioStream" uid="uid://bykfi4pa6x6x8" path="res://shaz_audio/SFX/Entering.mp3" id="18_062g3"]
+[ext_resource type="AudioStream" uid="uid://bx0bb6f6awmqu" path="res://shaz_audio/SFX/DoorSFX.mp3" id="18_vht4x"]
 [ext_resource type="AudioStream" uid="uid://cxdtgh6f6ljyb" path="res://shaz_audio/SFX/resume.mp3" id="18_whr28"]
-
-[sub_resource type="Animation" id="Animation_d0r68"]
-resource_name = "fade out"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Fade:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
+[ext_resource type="PackedScene" uid="uid://pt3v68ebmn6" path="res://Scenes/Game_scene/key.tscn" id="19_ifrq4"]
+[ext_resource type="AudioStream" uid="uid://bgpo5phkq73t4" path="res://shaz_audio/SFX/Key.mp3" id="20_5iylj"]
 
 [sub_resource type="Animation" id="Animation_yl1vf"]
 length = 0.001
@@ -64,6 +56,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_d0r68"]
+resource_name = "fade out"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ljjtb"]
@@ -2296,6 +2304,64 @@ texture = ExtResource("2_n1mrr")
 [sub_resource type="TileSet" id="TileSet_ckmvu"]
 sources/0 = SubResource("TileSetAtlasSource_a6gqc")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k5in3"]
+size = Vector2(30.5, 18.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hao5"]
+atlas = ExtResource("14_aikvc")
+region = Rect2(0, 0, 30, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmvbb"]
+atlas = ExtResource("15_430io")
+region = Rect2(0, 0, 40, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ag5y"]
+atlas = ExtResource("16_h2dqt")
+region = Rect2(0, 0, 40, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wt46"]
+atlas = ExtResource("17_nw3g7")
+region = Rect2(0, 0, 30, 45)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b7pn1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hao5")
+}],
+"loop": true,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmvbb")
+}],
+"loop": true,
+"name": &"library_closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ag5y")
+}],
+"loop": true,
+"name": &"library_open",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7wt46")
+}],
+"loop": true,
+"name": &"opened",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xch5w"]
+radius = 24.0
+height = 110.0
+
 [node name="world_3" type="Node2D"]
 script = ExtResource("1_6brog")
 
@@ -2318,26 +2384,32 @@ libraries = {
 [node name="collisions" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collisions"]
-z_index = 4
+z_index = 7
 polygon = PackedVector2Array(-32, -112, -32, -185, -38, -192, -368, -191, -368, -368, -544, -368, -544, -304, -384, -304, -384, -112)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="collisions"]
-z_index = 14
+z_index = 7
 polygon = PackedVector2Array(32, -112, 32, -186, 38, -191, 368, -191, 368, -383, 538, -383, 544, -378, 545, -304, 384, -304, 384, -112)
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="collisions"]
-z_index = 4
+z_index = 7
 polygon = PackedVector2Array(784, -304, 608, -304, 608, -376, 616, -383, 784, -383)
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="collisions"]
-z_index = 4
+z_index = 7
 polygon = PackedVector2Array(-608, -368, -788, -368, -787, -305, -785, -304, -608, -304)
 
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="collisions"]
-polygon = PackedVector2Array(-16, -528, -16, -649, -234, -649, -229, -357, -176, -368, -177, -528)
+z_index = 7
+polygon = PackedVector2Array(-16, -528, -17, -649, -234, -649, -229, -357, -176, -368, -177, -528)
 
 [node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="collisions"]
+z_index = 7
 polygon = PackedVector2Array(16, -528, 16, -703, 236, -698, 234, -347, 176, -320, 176, -368, 176, -528)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="collisions"]
+z_index = 7
+polygon = PackedVector2Array(-321, -1360, 321, -1360, 321, -1007, 35, -1008, 34, -705, 358, -827, 369, -1485, -374, -1498, -372, -912, -33, -703, -33, -1007, -321, -1004)
 
 [node name="map" type="Node" parent="."]
 
@@ -2475,10 +2547,51 @@ offset_bottom = 900.0
 scale = Vector2(0.35, 0.35)
 script = ExtResource("11_qhivs")
 
-[node name="Tower" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(1926, -757)
-texture = ExtResource("10_g5adu")
+[node name="Doors" type="Node" parent="."]
+
+[node name="door1" type="StaticBody2D" parent="Doors"]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(3.38813e-21, -584)
+scale = Vector2(1.595, 1.595)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("12_2mvmi")
+
+[node name="door1_collision" type="CollisionShape2D" parent="Doors/door1"]
+position = Vector2(1.78814e-07, 15.674)
+shape = SubResource("RectangleShape2D_k5in3")
+debug_color = Color(0.909804, 0.0196078, 0, 0.419608)
+script = ExtResource("13_idjxu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Doors/door1"]
+texture_filter = 1
+position = Vector2(5.24521e-06, -1.35592)
+sprite_frames = SubResource("SpriteFrames_b7pn1")
+animation = &"library_closed"
+autoplay = "library_closed"
+
+[node name="door1 zone" type="Area2D" parent="Doors/door1"]
+
+[node name="open1 zone" type="CollisionShape2D" parent="Doors/door1/door1 zone"]
+shape = SubResource("CapsuleShape2D_xch5w")
+
+[node name="DoorSFX" type="AudioStreamPlayer" parent="Doors/door1"]
+stream = ExtResource("18_vht4x")
+bus = &"SFX"
+
+[node name="Keys" type="Node" parent="."]
+
+[node name="key" parent="Keys" instance=ExtResource("19_ifrq4")]
+z_index = 2
+position = Vector2(23, -523)
+
+[node name="KeySFX" type="AudioStreamPlayer" parent="Keys/key"]
+stream = ExtResource("20_5iylj")
+bus = &"SFX"
+
+[node name="DoorSFX2" type="AudioStreamPlayer" parent="Keys/key"]
+stream = ExtResource("18_vht4x")
 
 [node name="World 3 Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_vqbpq")
@@ -2510,3 +2623,11 @@ bus = &"SFX"
 [node name="Entering" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_062g3")
 bus = &"SFX"
+
+[connection signal="door1_collision" from="Doors/door1" to="Doors/door1/door1_collision" method="_on_door_1_door_1_collision"]
+[connection signal="body_entered" from="Doors/door1/door1 zone" to="Doors/door1" method="_on_door_1_zone_body_entered"]
+[connection signal="body_entered" from="Doors/door1/door1 zone" to="Doors/door1/door1_collision" method="_on_door_zone_body_entered"]
+[connection signal="body_entered" from="Doors/door1/door1 zone" to="Keys/key" method="_on_door_1_zone_body_entered"]
+[connection signal="body_exited" from="Doors/door1/door1 zone" to="Doors/door1" method="_on_door_1_zone_body_exited"]
+[connection signal="body_exited" from="Doors/door1/door1 zone" to="Keys/key" method="_on_door_1_zone_body_exited"]
+[connection signal="door1_opened" from="Keys/key" to="Doors/door1" method="_on_key_door_1_opened"]

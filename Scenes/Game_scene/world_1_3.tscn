@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://d2yr2v1e0ibvc" path="res://Scenes/Game_scene/player.tscn" id="3_mbbc7"]
 [ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="4_c67gd"]
 [ext_resource type="PackedScene" uid="uid://bubxqu7jdai64" path="res://Scenes/mainmenu/pausemenu.tscn" id="5_0m0xn"]
-[ext_resource type="Texture2D" uid="uid://ba8i2p8le62dm" path="res://Assets/pixel assets/Pixel Crawler - Castle/Assets/2d_lights_and_shadows_neutral_point_light.webp" id="5_b1hax"]
+[ext_resource type="Texture2D" uid="uid://ba8i2p8le62dm" path="res://Assets/pixel assets/castle/Assets/2d_lights_and_shadows_neutral_point_light.webp" id="5_b1hax"]
 [ext_resource type="PackedScene" uid="uid://qnhy1jlu3dkk" path="res://Scenes/settingsmenu/settingsmenu.tscn" id="6_pnayf"]
 [ext_resource type="Script" path="res://Scenes/settingsmenu/settingsmenuINGAME.gd" id="7_g1hp4"]
 [ext_resource type="PackedScene" uid="uid://bf5px1sosea0q" path="res://Scenes/Game_scene/orc.tscn" id="8_36ivf"]
@@ -29,22 +29,6 @@
 [ext_resource type="AudioStream" uid="uid://cxdtgh6f6ljyb" path="res://shaz_audio/SFX/resume.mp3" id="25_de41v"]
 [ext_resource type="AudioStream" uid="uid://f8euu8wxjl1l" path="res://shaz_audio/SFX/Leaving.mp3" id="28_s6hoo"]
 [ext_resource type="AudioStream" uid="uid://bykfi4pa6x6x8" path="res://shaz_audio/SFX/Entering.mp3" id="29_fiamf"]
-
-[sub_resource type="Animation" id="Animation_d0r68"]
-resource_name = "fade out"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Fade:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
 
 [sub_resource type="Animation" id="Animation_yl1vf"]
 length = 0.001
@@ -77,6 +61,22 @@ tracks/0/keys = {
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_d0r68"]
+resource_name = "fade out"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ljjtb"]
 _data = {
 "RESET": SubResource("Animation_yl1vf"),
@@ -84,8 +84,8 @@ _data = {
 "fade out": SubResource("Animation_d0r68")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_27sym"]
-radius = 10.2956
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cey23"]
+size = Vector2(33.5382, 20)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w7kbv"]
 texture = ExtResource("12_2qcwq")
@@ -588,7 +588,7 @@ libraries = {
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 self_modulate = Color(0.176419, 0.176419, 0.176419, 1)
-color = Color(0.385493, 0.385493, 0.385492, 0.980392)
+color = Color(0.215902, 0.215902, 0.215901, 0.980392)
 
 [node name="Level1_3TP" type="StaticBody2D" parent="."]
 position = Vector2(161, -1013)
@@ -596,8 +596,8 @@ position = Vector2(161, -1013)
 [node name="tp_area" type="Area2D" parent="Level1_3TP"]
 
 [node name="tp_area1" type="CollisionShape2D" parent="Level1_3TP/tp_area"]
-position = Vector2(-1, -66)
-shape = SubResource("CircleShape2D_27sym")
+position = Vector2(-1.19563, -55.0664)
+shape = SubResource("RectangleShape2D_cey23")
 
 [node name="entities" type="Node" parent="."]
 
@@ -787,7 +787,7 @@ tile_set = ExtResource("13_qawwt")
 [node name="collisions" type="StaticBody2D" parent="map"]
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="map/collisions"]
-polygon = PackedVector2Array(142, -1032, 126, -1031, 126, -1026, 99, -1026, 99, -1030, 29, -1030, 29, -1025, 3, -1025, 3, -1031, -67, -1032, -67, -1026, -81, -1026, -81, -1030, -114, -1030, -114, -1026, -129, -1026, -129, -704, 128, -704, 128, -577, 144, -577, 145, -489, 81, -488, 81, -392, -17, -392, -20, -652, -287, -666, -290, -1277, 637, -1288, 1036, -631, 1307, -98, 835, 54, 528, -62, 528, -112, 576, -112, 576, -64, 816, -65, 816, -183, 785, -184, 608, -186, 608, -178, 577, -178, 577, -143, 528, -143, 528, -264, 496, -264, 496, -270, 480, -270, 480, -337, 544, -336, 545, -497, 384, -496, 384, -336, 449, -336, 449, -272, 432, -271, 432, -264, 305, -265, 305, -399, 288, -399, 288, -393, 272, -393, 272, -399, 241, -399, 240, -489, 177, -489, 177, -575, 193, -576, 196, -704, 448, -704, 449, -1027, 435, -1027, 435, -1031, 401, -1031, 401, -1026, 386, -1026, 386, -1030, 318, -1031, 318, -1025, 290, -1025, 290, -1031, 222, -1031, 221, -1026, 194, -1027, 194, -1032, 177, -1031, 178, -1068, 178, -1104, 143, -1104)
+polygon = PackedVector2Array(142, -1032, 126, -1031, 126, -1026, 99, -1026, 99, -1030, 29, -1030, 29, -1025, 3, -1025, 3, -1031, -67, -1032, -67, -1026, -81, -1026, -81, -1030, -114, -1030, -114, -1026, -129, -1026, -129, -704, 128, -704, 128, -577, 144, -577, 145, -489, 81, -488, 81, -392, -17, -392, -20, -652, -287, -666, -290, -1277, 637, -1288, 1036, -631, 1307, -98, 835, 54, 528, -62, 528, -112, 576, -112, 576, -64, 816, -65, 816, -183, 785, -184, 608, -186, 608, -178, 577, -178, 577, -143, 528, -143, 528, -264, 496, -264, 496, -270, 480, -270, 480, -337, 544, -336, 545, -497, 384, -496, 384, -336, 449, -336, 449, -272, 432, -271, 432, -264, 305, -265, 305, -399, 288, -399, 288, -393, 272, -393, 272, -399, 241, -399, 240, -489, 177, -489, 177, -575, 193, -576, 196, -704, 448, -704, 449, -1027, 435, -1027, 435, -1031, 401, -1031, 401, -1026, 386, -1026, 386, -1030, 318, -1031, 318, -1025, 290, -1025, 290, -1031, 222, -1031, 221, -1026, 194, -1027, 194, -1032, 177, -1031, 178, -1068, 178.382, -1085.44, 143.261, -1085.25)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="map/collisions"]
 polygon = PackedVector2Array(-15, -313, -97, -313, -176, -313, -175, -401, -112, -401, -112, -554, -169, -553, -226, -553, -226, -561, -271, -561, -272, -561, -271, -496, -271, -489, -432, -489, -432, -290, -495, -290, -495, -232, -607, -232, -608, 112, -464, 111, -464, 160, -336, 160, -336, 111, -304, 111, -304, 176, -272, 176, -272, 15, -128, 15, -128, 128, -32, 128, -32, 244, -32, 272, -32, 313, -112, 312, -176, 312, -191, 312, -191, 408, -241, 408, -256, 408, -256, 528, -97, 528, -97, 496, 96, 495, 96, 528, 256, 528, 256, 403, 193, 404, 191, 313, 127, 313, 127, 305, 81, 305, 81, 312, 31, 312, 32, 225, 272, 224, 272, 352, 528, 352, 528, 80, 559, 80, 560, 127, 688, 128, 687, 24, 655, 24, 655, 2, 639, 2, 639, 21, 609, 21, 609, 9, 592, 9, 592, 24, 576, 24, 576, 47, 528, 47, 528, -14, 528, -65, 770, -65, 666, 411, 44, 805, -905, 323, -704, -579, -488, -681, -335, -636, -90, -626, -37, -396, -16, -395)
@@ -807,9 +807,9 @@ polygon = PackedVector2Array(-304, 80, -336, 80, -336, 39, -368, 39, -368, 32, -
 [node name="Doors" type="Node" parent="."]
 
 [node name="door1" type="StaticBody2D" parent="Doors"]
-z_index = 2
+z_index = 1
 y_sort_enabled = true
-position = Vector2(161, -522)
+position = Vector2(161, -520.371)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("17_0p3uj")
