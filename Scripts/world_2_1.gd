@@ -66,12 +66,14 @@ func _on_tp_area_2_body_entered(body: Node2D) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
 		$Map/TileMap/village/roof.hide()
+		$Map/TileMap/village/roofchimney.hide()
 		$Player/Camera2D.zoom.x = 5
 		$Player/Camera2D.zoom.y = 5
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body is Player:
 		$Map/TileMap/village/roof.show()
+		$Map/TileMap/village/roofchimney.show()
 		$Player/Camera2D.zoom.x = 3
 		$Player/Camera2D.zoom.y = 3
 

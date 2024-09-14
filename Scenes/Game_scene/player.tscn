@@ -409,7 +409,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"front_idle",
-"speed": 10.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -547,7 +547,8 @@ y_sort_enabled = true
 texture_filter = 1
 position = Vector2(-0.0405846, 0.0417137)
 sprite_frames = SubResource("SpriteFrames_nn7uj")
-animation = &"back_idle"
+animation = &"front_idle"
+frame_progress = 0.607213
 offset = Vector2(0.655, -11.84)
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]

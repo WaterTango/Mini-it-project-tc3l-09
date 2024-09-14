@@ -1,0 +1,108 @@
+[gd_scene load_steps=16 format=3 uid="uid://bhaxqd7s6djc2"]
+
+[ext_resource type="Script" path="res://Scripts/priestnpc.gd" id="1_bxi54"]
+[ext_resource type="Texture2D" uid="uid://b0365ou5j8hae" path="res://Assets/pixel assets/Pixel Crawler - Royal Crew/Priest/Idle-Sheet.png" id="2_kyvm6"]
+[ext_resource type="Texture2D" uid="uid://bgttx5unjiqvy" path="res://Assets/pixel assets/Pixel Crawler - Royal Crew/Priest/Run-Sheet.png" id="3_rm01t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0fras"]
+size = Vector2(20, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1is0"]
+atlas = ExtResource("2_kyvm6")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kf1fo"]
+atlas = ExtResource("2_kyvm6")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0g3vg"]
+atlas = ExtResource("2_kyvm6")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftmla"]
+atlas = ExtResource("2_kyvm6")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdq0c"]
+atlas = ExtResource("3_rm01t")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqsjf"]
+atlas = ExtResource("3_rm01t")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxqjr"]
+atlas = ExtResource("3_rm01t")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xw4d"]
+atlas = ExtResource("3_rm01t")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_soedy"]
+atlas = ExtResource("3_rm01t")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvldj"]
+atlas = ExtResource("3_rm01t")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lrfu5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1is0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kf1fo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0g3vg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ftmla")
+}],
+"loop": true,
+"name": &"priest_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sdq0c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqsjf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oxqjr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xw4d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_soedy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xvldj")
+}],
+"loop": true,
+"name": &"priest_run",
+"speed": 5.0
+}]
+
+[node name="priestnpc" type="CharacterBody2D"]
+script = ExtResource("1_bxi54")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -15.5)
+shape = SubResource("RectangleShape2D_0fras")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -32)
+sprite_frames = SubResource("SpriteFrames_lrfu5")
+animation = &"priest_run"
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
