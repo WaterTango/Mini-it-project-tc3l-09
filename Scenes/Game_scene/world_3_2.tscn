@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://b3k265hce1ctr"]
+[gd_scene load_steps=49 format=4 uid="uid://b3k265hce1ctr"]
 
 [ext_resource type="Script" path="res://Scripts/world_3_2.gd" id="1_342vo"]
 [ext_resource type="PackedScene" uid="uid://d2yr2v1e0ibvc" path="res://Scenes/Game_scene/player.tscn" id="1_ctdo8"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://Scripts/door1_collision.gd" id="6_xk5ly"]
 [ext_resource type="Script" path="res://Scenes/settingsmenu/settingsmenuInGameW3.gd" id="7_7duxl"]
 [ext_resource type="Texture2D" uid="uid://d16kv83clog3f" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/door_close.png" id="7_gvukn"]
+[ext_resource type="Texture2D" uid="uid://crnws7b6mgnqc" path="res://Assets/png/e_dark.png" id="8_ixb22"]
 [ext_resource type="Texture2D" uid="uid://cnhp21decqan" path="res://Assets/pixel assets/library/Assets/library_closed.png" id="8_r3u00"]
 [ext_resource type="Texture2D" uid="uid://ouf3icuvgc5" path="res://Assets/pixel assets/library/Assets/library_opened.png" id="9_85ruh"]
 [ext_resource type="Texture2D" uid="uid://bmmvdmf6lyld5" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/door_open.png" id="10_t0usf"]
@@ -2394,6 +2395,13 @@ offset_bottom = 900.0
 scale = Vector2(0.35, 0.35)
 script = ExtResource("7_7duxl")
 
+[node name="interact_popup2" type="Sprite2D" parent="Player"]
+visible = false
+z_index = 10
+position = Vector2(-1.19209e-07, -28)
+scale = Vector2(0.236842, 0.231707)
+texture = ExtResource("8_ixb22")
+
 [node name="Level3_1TP" type="StaticBody2D" parent="."]
 z_index = 5
 position = Vector2(5, -570)
@@ -2654,3 +2662,5 @@ bus = &"SFX"
 [connection signal="body_entered" from="Doors/door1/door1 zone" to="Keys/key" method="_on_door_1_zone_body_entered"]
 [connection signal="body_exited" from="Doors/door1/door1 zone" to="Keys/key" method="_on_door_1_zone_body_exited"]
 [connection signal="door1_opened" from="Keys/key" to="Doors/door1" method="_on_key_door_1_opened"]
+[connection signal="popup_hide" from="Keys/key" to="." method="_on_key_popup_hide"]
+[connection signal="popup_show" from="Keys/key" to="." method="_on_key_popup_show"]

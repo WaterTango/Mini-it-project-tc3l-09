@@ -50,3 +50,11 @@ func pauseMenu():
 	paused = !paused
 
 #==================================================================================================
+
+
+func _on_key_popup_hide() -> void:
+	$Player/interact_popup2.hide()
+
+
+func _on_key_popup_show() -> void:
+	$Player/interact_popup2.show()

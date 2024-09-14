@@ -8,6 +8,7 @@ var paused = false
 
 # shaz's AudioPlaybackScript =======================================================================
 func _ready() -> void:
+	$entities/Player/interact_popup2.hide()
 	$Entering.play()
 	$CanvasLayer/SceneFade.play("fade in")
 	await get_tree().create_timer(3).timeout
@@ -65,3 +66,10 @@ func _on_tp_area_body_entered(body) -> void:
 		# ======================================================================
 		print("travelling to world 1_3")
 		get_tree().change_scene_to_file("res://Scenes/Game_scene/world_1_3.tscn")
+
+
+func _on_key_popup_hide() -> void:
+	$entities/Player/interact_popup2.hide()
+
+func _on_key_popup_show() -> void:
+	$entities/Player/interact_popup2.show()

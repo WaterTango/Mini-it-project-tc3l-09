@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=4 uid="uid://bwn2x4mky6dpq"]
+[gd_scene load_steps=71 format=4 uid="uid://bwn2x4mky6dpq"]
 
 [ext_resource type="Script" path="res://Scripts/world_2_2.gd" id="1_oobcj"]
 [ext_resource type="PackedScene" uid="uid://d2yr2v1e0ibvc" path="res://Scenes/Game_scene/player.tscn" id="1_whs3t"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cmmgopq6ibyja" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Green Woods/Assets/riverbanks.png" id="7_lop1e"]
 [ext_resource type="Script" path="res://Scenes/settingsmenu/settingsmenuIngameW2.gd" id="7_u0exy"]
 [ext_resource type="Texture2D" uid="uid://cea87kxb4i4hm" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Green Woods/Assets/forest_water.png" id="8_7o0wh"]
+[ext_resource type="Texture2D" uid="uid://crnws7b6mgnqc" path="res://Assets/png/e_dark.png" id="8_j4hva"]
 [ext_resource type="Texture2D" uid="uid://7p8exaxsxcrt" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Green Woods/Assets/forest_texture/TX Props.png" id="9_4613w"]
 [ext_resource type="Texture2D" uid="uid://dts0o3myi8sd8" path="res://Assets/tilesets/RF_Catacombs_v1.0/mainlevbuild.png" id="10_k02wt"]
 [ext_resource type="Texture2D" uid="uid://c7ltumb0113o" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Green Woods/Assets/pixil-frame-0.png" id="11_6o86b"]
@@ -4115,6 +4116,13 @@ offset_bottom = 900.0
 scale = Vector2(0.35, 0.35)
 script = ExtResource("7_u0exy")
 
+[node name="interact_popup2" type="Sprite2D" parent="Player"]
+visible = false
+z_index = 10
+position = Vector2(-1.19209e-07, -28)
+scale = Vector2(0.236842, 0.231707)
+texture = ExtResource("8_j4hva")
+
 [node name="map" type="Node" parent="."]
 
 [node name="Cliff1" type="TileMapLayer" parent="map"]
@@ -4439,7 +4447,15 @@ position = Vector2(-315, 287)
 
 [node name="knight2" parent="mob/knight" instance=ExtResource("38_qp8vs")]
 z_index = 4
-position = Vector2(614, -157)
+position = Vector2(570, -149)
+
+[node name="knight10" parent="mob/knight" instance=ExtResource("38_qp8vs")]
+z_index = 4
+position = Vector2(-1, -126)
+
+[node name="knight11" parent="mob/knight" instance=ExtResource("38_qp8vs")]
+z_index = 4
+position = Vector2(-202, -61)
 
 [node name="knight3" parent="mob/knight" instance=ExtResource("38_qp8vs")]
 z_index = 4
@@ -4470,3 +4486,5 @@ scale = Vector2(1.575, 1.575)
 [connection signal="body_exited" from="Doors/door1/door1 zone" to="Doors/door1" method="_on_door_1_zone_body_exited"]
 [connection signal="body_exited" from="Doors/door1/door1 zone" to="Keys/key" method="_on_door_1_zone_body_exited"]
 [connection signal="door1_opened" from="Keys/key" to="Doors/door1" method="_on_key_door_1_opened"]
+[connection signal="popup_hide" from="Keys/key" to="." method="_on_key_popup_hide"]
+[connection signal="popup_show" from="Keys/key" to="." method="_on_key_popup_show"]

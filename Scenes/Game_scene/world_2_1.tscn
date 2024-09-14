@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=4 uid="uid://o8fuiwevj7kb"]
+[gd_scene load_steps=78 format=4 uid="uid://o8fuiwevj7kb"]
 
 [ext_resource type="Script" path="res://Scripts/world_2_1.gd" id="1_6krru"]
 [ext_resource type="PackedScene" uid="uid://bf5px1sosea0q" path="res://Scenes/Game_scene/orc.tscn" id="2_swtqg"]
@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://d16kv83clog3f" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/door_close.png" id="26_keoqp"]
 [ext_resource type="Texture2D" uid="uid://cnhp21decqan" path="res://Assets/pixel assets/library/Assets/library_closed.png" id="27_mkgvw"]
 [ext_resource type="Texture2D" uid="uid://ouf3icuvgc5" path="res://Assets/pixel assets/library/Assets/library_opened.png" id="28_qf5xo"]
+[ext_resource type="Texture2D" uid="uid://crnws7b6mgnqc" path="res://Assets/png/e_dark.png" id="28_sw41c"]
 [ext_resource type="AudioStream" uid="uid://bx0bb6f6awmqu" path="res://shaz_audio/SFX/DoorSFX.mp3" id="29_4ksty"]
 [ext_resource type="Texture2D" uid="uid://bmmvdmf6lyld5" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/door_open.png" id="29_pl1gw"]
 [ext_resource type="AudioStream" uid="uid://bgpo5phkq73t4" path="res://shaz_audio/SFX/Key.mp3" id="30_3pyoe"]
@@ -4388,7 +4389,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nai2m"]
 radius = 24.0
-height = 110.0
+height = 75.1021
 
 [node name="world_2_1" type="Node2D"]
 script = ExtResource("1_6krru")
@@ -4938,6 +4939,13 @@ offset_bottom = 900.0
 scale = Vector2(0.35, 0.35)
 script = ExtResource("21_5l3jv")
 
+[node name="interact_popup2" type="Sprite2D" parent="Player"]
+visible = false
+z_index = 10
+position = Vector2(-1.19209e-07, -28)
+scale = Vector2(0.236842, 0.231707)
+texture = ExtResource("28_sw41c")
+
 [node name="SceneTransition" parent="." instance=ExtResource("23_jjoyd")]
 visible = false
 
@@ -5026,3 +5034,5 @@ bus = &"SFX"
 [connection signal="body_exited" from="Doors/door1/door1 zone" to="Doors/door1" method="_on_door_1_zone_body_exited"]
 [connection signal="body_exited" from="Doors/door1/door1 zone" to="Keys/key" method="_on_door_1_zone_body_exited"]
 [connection signal="door1_opened" from="Keys/key" to="Doors/door1" method="_on_key_door_1_opened"]
+[connection signal="popup_hide" from="Keys/key" to="." method="_on_key_popup_hide"]
+[connection signal="popup_show" from="Keys/key" to="." method="_on_key_popup_show"]

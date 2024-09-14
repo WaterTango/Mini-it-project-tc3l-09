@@ -6,6 +6,7 @@ extends Node2D
 var paused = false
 # shaz's AudioPlaybackScript =======================================================================
 func _ready() -> void:
+	$Player/interact_popup2.hide()
 	$Entering.play()
 	$CanvasLayer/SceneFade.play("fade in")
 	await get_tree().create_timer(3).timeout
@@ -62,3 +63,11 @@ func _on_tp_area_2_body_entered(body: Node2D) -> void:
 		await get_tree().create_timer(3).timeout
 		# ======================================================================
 		get_tree().change_scene_to_file("res://Scenes/Game_scene/world_3_1.tscn")
+
+
+func _on_key_popup_hide() -> void:
+	$Player/interact_popup2.hide()
+
+
+func _on_key_popup_show() -> void:
+	$Player/interact_popup2.show()

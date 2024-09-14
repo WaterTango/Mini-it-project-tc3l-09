@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://cmkcsdcvi17xw"]
+[gd_scene load_steps=43 format=4 uid="uid://cmkcsdcvi17xw"]
 
 [ext_resource type="Script" path="res://Scripts/world_3_1.gd" id="1_s8enk"]
 [ext_resource type="PackedScene" uid="uid://d2yr2v1e0ibvc" path="res://Scenes/Game_scene/player.tscn" id="1_tegyf"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://Scenes/settingsmenu/settingsmenuInGameW3.gd" id="7_g40fa"]
 [ext_resource type="Script" path="res://Scripts/door_library.gd" id="7_gx0xi"]
 [ext_resource type="Script" path="res://Scripts/door1_collision.gd" id="8_2psdb"]
+[ext_resource type="Texture2D" uid="uid://crnws7b6mgnqc" path="res://Assets/png/e_dark.png" id="8_m28jp"]
 [ext_resource type="Texture2D" uid="uid://d16kv83clog3f" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/door_close.png" id="9_o62tb"]
 [ext_resource type="Texture2D" uid="uid://bmmvdmf6lyld5" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/door_open.png" id="11_0vsy0"]
 [ext_resource type="Texture2D" uid="uid://cnhp21decqan" path="res://Assets/pixel assets/library/Assets/library_closed.png" id="11_viav8"]
@@ -209,6 +210,13 @@ offset_right = 1585.0
 offset_bottom = 900.0
 scale = Vector2(0.35, 0.35)
 script = ExtResource("7_g40fa")
+
+[node name="interact_popup2" type="Sprite2D" parent="Player"]
+visible = false
+z_index = 10
+position = Vector2(-1.19209e-07, -28)
+scale = Vector2(0.236842, 0.231707)
+texture = ExtResource("8_m28jp")
 
 [node name="map" type="Node" parent="."]
 
@@ -452,3 +460,5 @@ position = Vector2(156, -14)
 [connection signal="body_entered" from="Doors/door1/door1 zone" to="Keys/key" method="_on_door_1_zone_body_entered"]
 [connection signal="body_exited" from="Doors/door1/door1 zone" to="Keys/key" method="_on_door_1_zone_body_exited"]
 [connection signal="door1_opened" from="Keys/key" to="Doors/door1" method="_on_key_door_1_opened"]
+[connection signal="popup_hide" from="Keys/key" to="." method="_on_key_popup_hide"]
+[connection signal="popup_show" from="Keys/key" to="." method="_on_key_popup_show"]
