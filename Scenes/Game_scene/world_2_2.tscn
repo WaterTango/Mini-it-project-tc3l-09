@@ -4215,7 +4215,7 @@ tile_set = ExtResource("5_njlrm")
 
 [node name="fountain" type="TileMapLayer" parent="map"]
 y_sort_enabled = true
-position = Vector2(-4.03, 0)
+position = Vector2(-8.295, 0)
 tile_map_data = PackedByteArray("AAAAAPv/BAAZAAAAAADX//D/BAAZAAAAAAAoAPD/BAAZAAAAAADX/wcABAAZAAAAAAAoAAcABAAZAAAAAAAVAOL/BAAWAAsAAAAWAOL/BAAWAAsAAAA=")
 tile_set = ExtResource("5_njlrm")
 
