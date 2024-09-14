@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=4 uid="uid://o8fuiwevj7kb"]
+[gd_scene load_steps=77 format=4 uid="uid://o8fuiwevj7kb"]
 
 [ext_resource type="Script" path="res://Scripts/world_2_1.gd" id="1_6krru"]
 [ext_resource type="PackedScene" uid="uid://bf5px1sosea0q" path="res://Scenes/Game_scene/orc.tscn" id="2_swtqg"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://d34f67t1vjwur" path="res://Scenes/Game_scene/villagenpc.tscn" id="5_i4cq7"]
 [ext_resource type="PackedScene" uid="uid://cde5mbjo7uyri" path="res://Scenes/Game_scene/researchernpc.tscn" id="6_bd8u3"]
 [ext_resource type="PackedScene" uid="uid://bx1u3jdh6th4s" path="res://Scenes/Game_scene/censornpc.tscn" id="7_e108j"]
+[ext_resource type="PackedScene" uid="uid://cijoarrtyou7a" path="res://Scenes/Game_scene/skeleton_warrior.tscn" id="8_m0dvs"]
 [ext_resource type="PackedScene" uid="uid://bhaxqd7s6djc2" path="res://Scenes/Game_scene/priestnpc.tscn" id="8_sc0jj"]
 [ext_resource type="Texture2D" uid="uid://7p8exaxsxcrt" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Green Woods/Assets/forest_texture/TX Props.png" id="9_i08hk"]
 [ext_resource type="Texture2D" uid="uid://dts0o3myi8sd8" path="res://Assets/tilesets/RF_Catacombs_v1.0/mainlevbuild.png" id="10_sgpat"]
@@ -4531,53 +4532,6 @@ z_index = 2
 y_sort_enabled = true
 position = Vector2(-367, -382)
 
-[node name="skeletons" type="Node" parent="entities"]
-
-[node name="skeleton_Boss" parent="entities/skeletons" instance=ExtResource("4_bly27")]
-z_index = 2
-position = Vector2(490, -290)
-scale = Vector2(2, 2.026)
-
-[node name="skeleton2" parent="entities/skeletons" instance=ExtResource("4_bly27")]
-z_index = 2
-position = Vector2(246, -340)
-
-[node name="skeleton3" parent="entities/skeletons" instance=ExtResource("4_bly27")]
-z_index = 2
-position = Vector2(480, -335)
-
-[node name="skeleton4" parent="entities/skeletons" instance=ExtResource("4_bly27")]
-z_index = 2
-position = Vector2(427, -209)
-
-[node name="skeleton5" parent="entities/skeletons" instance=ExtResource("4_bly27")]
-z_index = 2
-position = Vector2(574, -215)
-
-[node name="skeleton6" parent="entities/skeletons" instance=ExtResource("4_bly27")]
-z_index = 2
-position = Vector2(757, -257)
-
-[node name="skeleton7" parent="entities/skeletons" instance=ExtResource("4_bly27")]
-z_index = 2
-position = Vector2(698, -66)
-
-[node name="skeleton8" parent="entities/skeletons" instance=ExtResource("4_bly27")]
-z_index = 2
-position = Vector2(586, 1)
-
-[node name="west_skeleton2" parent="entities/skeletons" instance=ExtResource("4_bly27")]
-z_index = 2
-position = Vector2(-779, -359)
-
-[node name="west_skeleton" parent="entities/skeletons" instance=ExtResource("4_bly27")]
-z_index = 2
-position = Vector2(-727, -366)
-
-[node name="west_skeleton3" parent="entities/skeletons" instance=ExtResource("4_bly27")]
-z_index = 2
-position = Vector2(-790, -270)
-
 [node name="npc" type="Node" parent="entities"]
 
 [node name="villagenpc" parent="entities/npc" instance=ExtResource("5_i4cq7")]
@@ -4586,7 +4540,7 @@ position = Vector2(-58, 674)
 
 [node name="villagenpc2" parent="entities/npc" instance=ExtResource("5_i4cq7")]
 z_index = 3
-position = Vector2(-87, 253)
+position = Vector2(-41, 236)
 
 [node name="villagenpc4" parent="entities/npc" instance=ExtResource("5_i4cq7")]
 z_index = 3
@@ -4607,6 +4561,53 @@ position = Vector2(123, 270)
 [node name="priestnpc" parent="entities/npc" instance=ExtResource("8_sc0jj")]
 z_index = 2
 position = Vector2(-176, 518)
+
+[node name="Node" type="Node" parent="entities"]
+
+[node name="skeleton_warrior" parent="entities/Node" instance=ExtResource("8_m0dvs")]
+z_index = 4
+position = Vector2(489, -305)
+scale = Vector2(1.5, 1.63)
+
+[node name="skeleton" parent="entities/Node" instance=ExtResource("4_bly27")]
+z_index = 4
+position = Vector2(191, -342)
+
+[node name="skeleton2" parent="entities/Node" instance=ExtResource("4_bly27")]
+z_index = 4
+position = Vector2(299, -382)
+
+[node name="skeleton3" parent="entities/Node" instance=ExtResource("4_bly27")]
+z_index = 4
+position = Vector2(252, -150)
+
+[node name="skeleton4" parent="entities/Node" instance=ExtResource("4_bly27")]
+z_index = 4
+position = Vector2(419, -335)
+
+[node name="skeleton5" parent="entities/Node" instance=ExtResource("4_bly27")]
+z_index = 4
+position = Vector2(384, -156)
+
+[node name="skeleton6" parent="entities/Node" instance=ExtResource("4_bly27")]
+z_index = 4
+position = Vector2(609, -303)
+
+[node name="skeleton7" parent="entities/Node" instance=ExtResource("4_bly27")]
+z_index = 4
+position = Vector2(594, -166)
+
+[node name="skeleton8" parent="entities/Node" instance=ExtResource("4_bly27")]
+z_index = 4
+position = Vector2(716, -168)
+
+[node name="skeleton9" parent="entities/Node" instance=ExtResource("4_bly27")]
+z_index = 4
+position = Vector2(687, 18)
+
+[node name="skeleton10" parent="entities/Node" instance=ExtResource("4_bly27")]
+z_index = 4
+position = Vector2(519, 40)
 
 [node name="Map" type="Node" parent="."]
 
@@ -4704,7 +4705,7 @@ tile_set = SubResource("TileSet_iw4cn")
 [node name="deco" type="TileMapLayer" parent="Map/TileMap"]
 z_index = 4
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAD+/+L/AgAWAAoAAAADAOL/AgAWAAoAAAAMANv/AgAOAAsAAAAYANv/AgASABMAAAAMANL/AgAOAAAAAAAYANH/AgAOAAUAAAD1//3/AgASAAUAAAAdAP//AgASAAEAAAAgAAUAAgAYAAAAAAAXAAUAAgAYAAYAAAASAP7/AgAaAAwAAAD6//3/AgAGAA0AAACz/w4AAgAGAAkAAADO/+b/AgAOAA8AAADR/+b/AgAOAA8AAAAvAPf/AgAOAA8AAAA0APf/AgAOAA8AAAAvAP3/AgAOAA8AAAA0AP3/AgAOAA8AAAAvAAMAAgAOAA8AAAA0AAMAAgAOAA8AAACX/xoAAgAAABoAAACa/xsAAgAKAB4AAACT/xoAAgAEAB4AAACK/xEAAgAOAAUAAAACAOn/AgAYAAAAAADM//n/AgAaAAwAAADH/wgAAgAOAAUAAADT/wMAAgASAAEAAAD8//X/AgAYAAYAAAAvAPr/BAAKAAEAAAA0APn/BAAMAAEAAAAvAP//BAANAAEAAAA0AP//BAAKAAEAAAASAPb/AgASAAkAAAAWAPL/AgASAAUAAAAaAPb/AgASAAkAAAAeAPL/AgASAAUAAAANAPL/AgASAAUAAAAWAOz/AgAbAAEAAAAgAOj/BAAMAAEAAAAcAOj/BAANAAEAAAAUAOj/BAALAAEAAAAMAOb/AgAOAA8AAAAQAOb/AgASAA8AAAAUAOb/AgAOAA8AAAAYAOb/AgAOAA8AAAAcAOb/AgAOAA8AAAAgAOb/AgAOABMAAAD7/0wAAwAsAAkAAAD8/0gAAwAqAAkAAAD8/0wAAwAtAAkAAAD8/1AAAwAsAAkAAAD9/1AAAwAtAAkAAAD+/0YAAwAZAAEAAAD//0YAAwAbAAEAAAAAAEYAAwAbAAEAAAABAEYAAwAcAAEAAAACAFAAAwAsAAkAAAADAEgAAwAqAAkAAAADAEwAAwAsAAkAAAADAFAAAwAtAAkAAAAEAEwAAwAtAAkAAAD8/8v/AgAbAAEAAAADAMv/AgAbAAEAAAA=")
+tile_map_data = PackedByteArray("AAD+/+L/AgAWAAoAAAADAOL/AgAWAAoAAAAMANv/AgAOAAsAAAAYANv/AgASABMAAAAMANL/AgAOAAAAAAAYANH/AgAOAAUAAAD1//3/AgASAAUAAAAdAP//AgASAAEAAAAgAAUAAgAYAAAAAAAXAAUAAgAYAAYAAAASAP7/AgAaAAwAAAD6//3/AgAGAA0AAACz/w4AAgAGAAkAAADO/+b/AgAOAA8AAADR/+b/AgAOAA8AAAAvAPf/AgAOAA8AAAA0APf/AgAOAA8AAAAvAP3/AgAOAA8AAAA0AP3/AgAOAA8AAAAvAAMAAgAOAA8AAAA0AAMAAgAOAA8AAACX/xoAAgAAABoAAACa/xsAAgAKAB4AAACT/xoAAgAEAB4AAACK/xEAAgAOAAUAAAACAOn/AgAYAAAAAADM//n/AgAaAAwAAADH/wgAAgAOAAUAAADT/wMAAgASAAEAAAD8//X/AgAYAAYAAAAvAPr/BAAKAAEAAAA0APn/BAAMAAEAAAAvAP//BAANAAEAAAA0AP//BAAKAAEAAAASAPb/AgASAAkAAAAWAPL/AgASAAUAAAAaAPb/AgASAAkAAAAeAPL/AgASAAUAAAANAPL/AgASAAUAAAAgAOj/BAAMAAEAAAAcAOj/BAANAAEAAAAUAOj/BAALAAEAAAAMAOb/AgAOAA8AAAAQAOb/AgASAA8AAAAUAOb/AgAOAA8AAAAYAOb/AgAOAA8AAAAcAOb/AgAOAA8AAAAgAOb/AgAOABMAAAD7/0wAAwAsAAkAAAD8/0gAAwAqAAkAAAD8/0wAAwAtAAkAAAD8/1AAAwAsAAkAAAD9/1AAAwAtAAkAAAD+/0YAAwAZAAEAAAD//0YAAwAbAAEAAAAAAEYAAwAbAAEAAAABAEYAAwAcAAEAAAACAFAAAwAsAAkAAAADAEgAAwAqAAkAAAADAEwAAwAsAAkAAAADAFAAAwAtAAkAAAAEAEwAAwAtAAkAAAD8/8v/AgAbAAEAAAADAMv/AgAbAAEAAAA=")
 tile_set = SubResource("TileSet_hc4fh")
 
 [node name="grave" type="TileMapLayer" parent="Map/TileMap"]
@@ -4907,7 +4908,7 @@ polygon = PackedVector2Array(-30, -1023, -31, -1186, -31.7918, -1265.97, 40, -12
 
 [node name="Player" parent="." instance=ExtResource("19_tp7xi")]
 z_index = 3
-position = Vector2(-1, 1304)
+position = Vector2(-3, 1302)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(3, 3)

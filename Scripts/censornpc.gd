@@ -50,7 +50,7 @@ func move(delta):
 		position.x = start_pos.x + 9.9
 	if position.x <= start_pos.x - 10:
 		position.x = start_pos.x - 9.9
-
+	move_and_slide()
 
 func choose(array):
 	#create an array for randomizer

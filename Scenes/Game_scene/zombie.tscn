@@ -206,18 +206,18 @@ position = Vector2(0.875988, -0.0417137)
 occluder = SubResource("OccluderPolygon2D_0u1r2")
 occluder_light_mask = 2
 
-[node name="detection_area" type="Area2D" parent="."]
+[node name="Detection" type="Area2D" parent="."]
 
-[node name="detection_shape" type="CollisionShape2D" parent="detection_area"]
+[node name="detection_shape" type="CollisionShape2D" parent="Detection"]
 z_index = 2
 position = Vector2(0, -7.795)
 scale = Vector2(0.53, 0.53)
 shape = SubResource("CircleShape2D_1tll8")
 debug_color = Color(0, 0.648554, 0.176894, 0.42)
 
-[node name="AttackRange" type="Area2D" parent="."]
+[node name="Attack range" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack range"]
 position = Vector2(0.72, -9.57625)
 scale = Vector2(0.945, 0.945)
 shape = SubResource("RectangleShape2D_vywfn")
@@ -229,9 +229,15 @@ z_index = -3
 position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_75fj3")
 
-[connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
-[connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
-[connection signal="body_entered" from="AttackRange" to="." method="_on_attack_range_body_entered"]
-[connection signal="body_exited" from="AttackRange" to="." method="_on_attack_range_body_exited"]
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="body_entered" from="Detection" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
+[connection signal="body_exited" from="Detection" to="." method="_on_detection_area_body_exited"]
+[connection signal="body_exited" from="Detection" to="." method="_on_detection_body_exited"]
+[connection signal="body_entered" from="Attack range" to="." method="_on_attack_range_body_entered"]
+[connection signal="body_exited" from="Attack range" to="." method="_on_attack_range_body_exited"]
 [connection signal="body_entered" from="player_attack_range" to="." method="_on_player_attack_range_body_entered"]
 [connection signal="body_exited" from="player_attack_range" to="." method="_on_player_attack_range_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

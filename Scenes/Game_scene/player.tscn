@@ -548,7 +548,7 @@ texture_filter = 1
 position = Vector2(-0.0405846, 0.0417137)
 sprite_frames = SubResource("SpriteFrames_nn7uj")
 animation = &"front_idle"
-frame_progress = 0.607213
+frame_progress = 0.0660804
 offset = Vector2(0.655, -11.84)
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]

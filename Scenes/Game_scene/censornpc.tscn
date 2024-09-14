@@ -99,7 +99,7 @@ script = ExtResource("1_m3ct5")
 position = Vector2(8.88178e-15, -32.5)
 sprite_frames = SubResource("SpriteFrames_sh0iw")
 animation = &"censor_idle"
-frame_progress = 0.566536
+frame_progress = 0.679549
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
