@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 #set variables
-const speed = 30
+const speed = 35
 var current_state = IDLE
 var dir = Vector2.RIGHT
 
@@ -46,15 +46,15 @@ func move(delta):
 	elif dir.x == -1:
 		$AnimatedSprite2D.flip_h = true
 	#set the boundary of movement
-	if position.x >= start_pos.x + 100:
-		position.x = start_pos.x + 99
-	if position.x <= start_pos.x - 100:
-		position.x = start_pos.x - 99
+	if position.x >= start_pos.x + 50:
+		position.x = start_pos.x + 49
+	if position.x <= start_pos.x - 50:
+		position.x = start_pos.x - 49
 	if position.y >= start_pos.y + 20:
 		position.y = start_pos.y + 19.9
 	if position.y <= start_pos.y - 20:
 		position.y = start_pos.y - 19.9
-
+	move_and_slide()
 
 func choose(array):
 	#create an array for randomizer

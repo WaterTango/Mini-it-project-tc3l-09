@@ -724,11 +724,11 @@ script = ExtResource("7_7wpm4")
 
 [node name="zombie" parent="entities/zombie" instance=ExtResource("7_27s8o")]
 z_index = 2
-position = Vector2(-528, -27)
+position = Vector2(-481, -29)
 
 [node name="zombie2" parent="entities/zombie" instance=ExtResource("7_27s8o")]
 z_index = 2
-position = Vector2(-443, -177)
+position = Vector2(-508, -186)
 
 [node name="zombie3" parent="entities/zombie" instance=ExtResource("7_27s8o")]
 z_index = 2
@@ -740,31 +740,31 @@ position = Vector2(331, -340)
 
 [node name="zombie5" parent="entities/zombie" instance=ExtResource("7_27s8o")]
 z_index = 2
-position = Vector2(-251, 178)
+position = Vector2(-224, 190)
 
 [node name="zombie6" parent="entities/zombie" instance=ExtResource("7_27s8o")]
 z_index = 2
-position = Vector2(258, 174)
+position = Vector2(223, 186)
 
 [node name="zombie7" parent="entities/zombie" instance=ExtResource("7_27s8o")]
 z_index = 2
-position = Vector2(-156, 343)
+position = Vector2(-109, 361)
 
 [node name="zombie8" parent="entities/zombie" instance=ExtResource("7_27s8o")]
 z_index = 2
-position = Vector2(138, 455)
+position = Vector2(111, 513)
 
 [node name="zombie9" parent="entities/zombie" instance=ExtResource("7_27s8o")]
 z_index = 2
-position = Vector2(-99, 636)
+position = Vector2(-98, 646)
 
 [node name="zombie10" parent="entities/zombie" instance=ExtResource("7_27s8o")]
 z_index = 2
-position = Vector2(78, 636)
+position = Vector2(49, 654)
 
 [node name="zombie11" parent="entities/zombie" instance=ExtResource("7_27s8o")]
 z_index = 2
-position = Vector2(72, -489)
+position = Vector2(-1, -484)
 
 [node name="Map" type="Node" parent="."]
 

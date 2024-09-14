@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=4 uid="uid://bwn2x4mky6dpq"]
+[gd_scene load_steps=70 format=4 uid="uid://bwn2x4mky6dpq"]
 
 [ext_resource type="Script" path="res://Scripts/world_2_2.gd" id="1_oobcj"]
 [ext_resource type="PackedScene" uid="uid://d2yr2v1e0ibvc" path="res://Scenes/Game_scene/player.tscn" id="1_whs3t"]
@@ -36,6 +36,8 @@
 [ext_resource type="AudioStream" uid="uid://cxdtgh6f6ljyb" path="res://shaz_audio/SFX/resume.mp3" id="34_n7wuv"]
 [ext_resource type="AudioStream" uid="uid://f8euu8wxjl1l" path="res://shaz_audio/SFX/Leaving.mp3" id="35_hyubq"]
 [ext_resource type="AudioStream" uid="uid://bykfi4pa6x6x8" path="res://shaz_audio/SFX/Entering.mp3" id="36_hdej5"]
+[ext_resource type="PackedScene" uid="uid://bsl7oie8lwj0s" path="res://Scenes/Game_scene/soldier.tscn" id="37_hv2ck"]
+[ext_resource type="PackedScene" uid="uid://0uoxn0dpa05s" path="res://Scenes/Game_scene/knight.tscn" id="38_qp8vs"]
 
 [sub_resource type="Animation" id="Animation_yl1vf"]
 length = 0.001
@@ -4071,7 +4073,7 @@ libraries = {
 
 [node name="Level2_2TP" type="StaticBody2D" parent="."]
 z_index = 3
-position = Vector2(-1, -402)
+position = Vector2(-1, -384)
 
 [node name="tp_area2" type="Area2D" parent="Level2_2TP"]
 position = Vector2(-3, -616)
@@ -4317,7 +4319,7 @@ bus = &"SFX"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collission"]
 z_index = 1
-polygon = PackedVector2Array(880, -1161, -945, -1140, -919, -919, -940, -869, -894, -864, -703, -864, -688, -864, -688, -848, -672, -848, -672, -832, -656, -828, -640, -828, -560, -828, -544, -832, -544, -848, -528, -848, -528, -864, -512, -864, -512, -908, -352, -908, -352, -864, -336, -864, -336, -848, -320, -848, -320, -832, -304, -828, -208, -828, -192, -832, -192, -848, -176, -848, -176, -864, -160, -864, -160, -908, -48, -908, -48, -897, -47, -814, -879, -815, -879, -785, -32, -785, -31, -896, -26, -991, 26, -991, 30, -897, 32, -786, 878, -786, 879, -814, 48, -815, 48, -908, 160, -908, 160, -864, 176, -864, 176, -848, 192, -848, 192, -832, 208, -828, 224, -828, 304, -828, 320, -832, 320, -848, 336, -848, 336, -864, 352, -864, 352, -908, 512, -908, 512, -864, 528, -864, 528, -848, 544, -848, 544, -832, 560, -828, 576, -828, 656, -828, 672, -832, 672, -848, 688, -848, 688, -864, 897, -864, 953, -938)
+polygon = PackedVector2Array(880, -1161, -945, -1140, -919, -919, -940, -869, -894, -864, -703, -864, -688, -864, -688, -848, -672, -848, -672, -832, -656, -828, -640, -828, -560, -828, -544, -832, -544, -848, -528, -848, -528, -864, -512, -864, -512, -908, -352, -908, -352, -864, -336, -864, -336, -848, -320, -848, -320, -832, -304, -828, -208, -828, -192, -832, -192, -848, -176, -848, -176, -864, -160, -864, -160, -908, -48, -908, -48, -897, -47, -814, -879, -815, -879, -785, -32, -785, -31, -896, -28, -962, 27, -962, 30, -897, 32, -786, 878, -786, 879, -814, 48, -815, 48, -908, 160, -908, 160, -864, 176, -864, 176, -848, 192, -848, 192, -832, 208, -828, 224, -828, 304, -828, 320, -832, 320, -848, 336, -848, 336, -864, 352, -864, 352, -908, 512, -908, 512, -864, 528, -864, 528, -848, 544, -848, 544, -832, 560, -828, 576, -828, 656, -828, 672, -832, 672, -848, 688, -848, 688, -864, 897, -864, 953, -938)
 
 [node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="collission"]
 z_index = 1
@@ -4384,6 +4386,81 @@ bus = &"SFX"
 [node name="Entering" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("36_hdej5")
 bus = &"SFX"
+
+[node name="mob" type="Node" parent="."]
+
+[node name="soldier" type="Node" parent="mob"]
+
+[node name="soldier" parent="mob/soldier" instance=ExtResource("37_hv2ck")]
+z_index = 4
+position = Vector2(-684, -153)
+
+[node name="soldier2" parent="mob/soldier" instance=ExtResource("37_hv2ck")]
+z_index = 4
+position = Vector2(-498, -700)
+
+[node name="soldier3" parent="mob/soldier" instance=ExtResource("37_hv2ck")]
+z_index = 4
+position = Vector2(-492, -495)
+
+[node name="soldier6" parent="mob/soldier" instance=ExtResource("37_hv2ck")]
+z_index = 4
+position = Vector2(-813, -392)
+
+[node name="soldier7" parent="mob/soldier" instance=ExtResource("37_hv2ck")]
+z_index = 4
+position = Vector2(-462, -319)
+
+[node name="soldier8" parent="mob/soldier" instance=ExtResource("37_hv2ck")]
+z_index = 4
+position = Vector2(-467, 103)
+
+[node name="soldier4" parent="mob/soldier" instance=ExtResource("37_hv2ck")]
+z_index = 4
+position = Vector2(502, -696)
+
+[node name="soldier5" parent="mob/soldier" instance=ExtResource("37_hv2ck")]
+z_index = 4
+position = Vector2(-645, -2)
+
+[node name="knight" type="Node" parent="mob"]
+
+[node name="knight" parent="mob/knight" instance=ExtResource("38_qp8vs")]
+z_index = 4
+position = Vector2(465, 277)
+
+[node name="knight5" parent="mob/knight" instance=ExtResource("38_qp8vs")]
+z_index = 4
+position = Vector2(-9, -403)
+
+[node name="knight6" parent="mob/knight" instance=ExtResource("38_qp8vs")]
+z_index = 4
+position = Vector2(-315, 287)
+
+[node name="knight2" parent="mob/knight" instance=ExtResource("38_qp8vs")]
+z_index = 4
+position = Vector2(614, -157)
+
+[node name="knight3" parent="mob/knight" instance=ExtResource("38_qp8vs")]
+z_index = 4
+position = Vector2(504, -462)
+
+[node name="knight4" parent="mob/knight" instance=ExtResource("38_qp8vs")]
+z_index = 4
+position = Vector2(640, -23)
+
+[node name="knight7" parent="mob/knight" instance=ExtResource("38_qp8vs")]
+z_index = 4
+position = Vector2(262, -62)
+
+[node name="knight8" parent="mob/knight" instance=ExtResource("38_qp8vs")]
+z_index = 4
+position = Vector2(802, -385)
+
+[node name="knight9" parent="mob/knight" instance=ExtResource("38_qp8vs")]
+z_index = 4
+position = Vector2(0, -774)
+scale = Vector2(1.575, 1.575)
 
 [connection signal="body_entered" from="Level2_2TP/tp_area2" to="." method="_on_tp_area_2_body_entered"]
 [connection signal="door1_collision" from="Doors/door1" to="Doors/door1/door1_collision" method="_on_door_1_door_1_collision"]

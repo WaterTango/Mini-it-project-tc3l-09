@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://damomdvdpuphr"
-path="res://.godot/imported/Weapons.png-5126a7bf8c352b6b175ea72a7cb73fd1.ctex"
+uid="uid://ba0irgqioua4o"
+path="res://.godot/imported/Run-Sheet (3).png-cc47479804b4fbda9d3d3c38ede1e0aa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/pixel assets/Pixel Crawler - Weapons/Weapons.png"
-dest_files=["res://.godot/imported/Weapons.png-5126a7bf8c352b6b175ea72a7cb73fd1.ctex"]
+source_file="res://Assets/Pixel Crawler - FREE - 1.8/Enemy/Skeleton Crew/Skeleton - Warrior/Run/Run-Sheet (3).png"
+dest_files=["res://.godot/imported/Run-Sheet (3).png-cc47479804b4fbda9d3d3c38ede1e0aa.ctex"]
 
 [params]
 

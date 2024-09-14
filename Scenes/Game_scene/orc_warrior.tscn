@@ -157,9 +157,10 @@ script = ExtResource("1_kkpn0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 5
-position = Vector2(0, -21)
+position = Vector2(1, -17)
 sprite_frames = SubResource("SpriteFrames_b4ele")
-animation = &"orc_warrior_hit"
+animation = &"orc_warrior_idle"
+autoplay = "orc_warrior_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
@@ -167,16 +168,16 @@ position = Vector2(0, -13)
 shape = SubResource("RectangleShape2D_7uic6")
 debug_color = Color(1, 0.00784314, 0, 0.419608)
 
-[node name="detection" type="Area2D" parent="."]
+[node name="Detection" type="Area2D" parent="."]
 position = Vector2(0, -13)
 
-[node name="detection_shape" type="CollisionShape2D" parent="detection"]
+[node name="detection_shape" type="CollisionShape2D" parent="Detection"]
 shape = SubResource("CircleShape2D_bhhld")
 debug_color = Color(0, 0.648554, 0.176894, 0.42)
 
-[node name="AttackRange" type="Area2D" parent="."]
+[node name="Attack range" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack range"]
 position = Vector2(0, -13)
 shape = SubResource("RectangleShape2D_5duks")
 
@@ -187,11 +188,15 @@ position = Vector2(0, -13)
 shape = SubResource("CircleShape2D_2q85a")
 one_way_collision_margin = 0.0
 
-[connection signal="body_entered" from="detection" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
-[connection signal="body_exited" from="detection" to="." method="_on_area_2d_body_exited"]
-[connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]
-[connection signal="body_entered" from="AttackRange" to="." method="_on_attack_range_body_entered"]
-[connection signal="body_exited" from="AttackRange" to="." method="_on_attack_range_body_exited"]
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
+[connection signal="body_entered" from="Detection" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Detection" to="." method="_on_detection_body_exited"]
+[connection signal="body_exited" from="Detection" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Attack range" to="." method="_on_attack_range_body_entered"]
+[connection signal="body_exited" from="Attack range" to="." method="_on_attack_range_body_exited"]
 [connection signal="body_entered" from="player_attack_range" to="." method="_on_player_attack_range_body_entered"]
 [connection signal="body_exited" from="player_attack_range" to="." method="_on_player_attack_range_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

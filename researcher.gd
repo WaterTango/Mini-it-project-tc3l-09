@@ -28,15 +28,15 @@ func _ready():
 func _process(delta):
 	#0 = IDLE
 	if current_state == 0:
-		$AnimatedSprite2D.play("skeleton_idle")
+		$AnimatedSprite2D.play("researcher_idle")
 	if current_state == 1:
-		$AnimatedSprite2D.play("skeleton_idle")
+		$AnimatedSprite2D.play("researcher_idle")
 	if current_state == 2:
-		$AnimatedSprite2D.play("skeleton_run")
+		$AnimatedSprite2D.play("researcher_run")
 	
 	match current_state:
 		IDLE:
-			$AnimatedSprite2D.play("skeleton_idle")
+			$AnimatedSprite2D.play("researcher_idle")
 		NEW_DIR:
 			dir = choose([Vector2.RIGHT,Vector2.UP,Vector2.LEFT,Vector2.DOWN])
 		MOVE:
@@ -71,7 +71,7 @@ func chase(delta):
 		
 	position  += (player.position - position) / move_speed
 	
-	$AnimatedSprite2D.play("skeleton_run")
+	$AnimatedSprite2D.play("researcher_run")
 	move_and_slide()
 func choose(array):
 	#create an array for randomizer
@@ -103,7 +103,7 @@ func deal_with_damage():
 		health -= 20
 		print("enemy health = ", health)
 		if health <= 0:
-			$AnimatedSprite2D.play("skeleton_death")
+			$AnimatedSprite2D.play("researcher_death")
 			self.queue_free()
 
 func _on_player_attack_range_body_entered(body):
