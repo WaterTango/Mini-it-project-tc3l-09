@@ -1,10 +1,22 @@
-[gd_scene load_steps=10 format=3 uid="uid://bubxqu7jdai64"]
+[gd_scene load_steps=15 format=3 uid="uid://bubxqu7jdai64"]
 
 [ext_resource type="FontFile" uid="uid://b8oo2dguy484y" path="res://shaz_fonts/basis33.ttf" id="1_hts6b"]
 [ext_resource type="Script" path="res://Scenes/mainmenu/pausemenu.gd" id="1_it465"]
+[ext_resource type="StyleBox" uid="uid://di15lquv6t20y" path="res://shaz_images/UI/Theme & Styleboxes/normal_button.tres" id="2_7t0ii"]
+[ext_resource type="StyleBox" uid="uid://cq88qa0ga8kol" path="res://shaz_images/UI/Theme & Styleboxes/hoverl_button.tres" id="2_8ivuj"]
 [ext_resource type="Shader" path="res://Scenes/mainmenu/pausemenu.gdshader" id="2_60hjp"]
 [ext_resource type="AudioStream" uid="uid://bhnfdxn0m6r6f" path="res://shaz_audio/SFX/clicksfx.mp3" id="3_c0suu"]
+[ext_resource type="Texture2D" uid="uid://ds4lwyn054m6g" path="res://shaz_images/UI/Fantasy Minimal Pixel Art UI/UI/Button_52x14.png" id="5_7s0cg"]
 [ext_resource type="AudioStream" uid="uid://cxdtgh6f6ljyb" path="res://shaz_audio/SFX/resume.mp3" id="6_t5orf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vw33s"]
+
+[sub_resource type="Theme" id="Theme_ju8sn"]
+Button/colors/font_focus_color = Color(0.529412, 0.407843, 0.203922, 1)
+Button/fonts/font = ExtResource("1_hts6b")
+Button/styles/focus = SubResource("StyleBoxEmpty_vw33s")
+Button/styles/hover = ExtResource("2_8ivuj")
+Button/styles/normal = ExtResource("2_7t0ii")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m85w3"]
 shader = ExtResource("2_60hjp")
@@ -23,6 +35,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_ju8sn")
 script = ExtResource("1_it465")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -33,6 +46,27 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+offset_left = 727.0
+offset_top = 952.0
+offset_right = 1202.0
+offset_bottom = 1032.0
+texture = ExtResource("5_7s0cg")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 727.0
+offset_top = 809.0
+offset_right = 1202.0
+offset_bottom = 889.0
+texture = ExtResource("5_7s0cg")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = 727.0
+offset_top = 662.0
+offset_right = 1202.0
+offset_bottom = 742.0
+texture = ExtResource("5_7s0cg")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -50,14 +84,11 @@ size_flags_vertical = 8
 [node name="Resume" type="Button" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(500, 70)
 layout_mode = 2
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 0.174173, 0.127215, 1)
-theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 1, 0, 1)
-theme_override_constants/outline_size = 5
+theme_override_constants/outline_size = 7
 theme_override_fonts/font = ExtResource("1_hts6b")
 theme_override_font_sizes/font_size = 50
 text = "Resume"
+flat = true
 
 [node name="HSeparator3" type="HSeparator" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -68,11 +99,12 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_sh4xj")
 self_modulate = Color(1, 1, 1, 0.933333)
 custom_minimum_size = Vector2(500, 70)
 layout_mode = 2
-theme_override_constants/outline_size = 5
+theme_override_constants/outline_size = 7
 theme_override_fonts/font = ExtResource("1_hts6b")
 theme_override_font_sizes/font_size = 50
 text = "Settings
 "
+flat = true
 
 [node name="HSeparator2" type="HSeparator" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -82,10 +114,11 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_fyvty")
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 self_modulate = Color(1, 1, 1, 0.933333)
 layout_mode = 2
-theme_override_constants/outline_size = 5
+theme_override_constants/outline_size = 7
 theme_override_fonts/font = ExtResource("1_hts6b")
 theme_override_font_sizes/font_size = 50
 text = "Quit"
+flat = true
 
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
