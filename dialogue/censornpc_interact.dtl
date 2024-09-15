@@ -1,0 +1,11 @@
+[style name="lightnovel_File"]
+[signal arg="chatting"]
+- talk to Barmaid Lysandra?
+- look elsewhere
+	[signal arg="exit"]
+	[end_timeline]
+join censornpc left
+censornpc: Orc armies in the east, traitors in the palace—it's a wonder we’ve lasted this long.
+censornpc: Folk are whispering that the capital won’t stand much longer if things keep goin’ like this.
+censornpc: Mark my words, if no one acts soon, we’ll all be at the mercy of beasts and backstabbers alike.
+[signal arg="exit"]

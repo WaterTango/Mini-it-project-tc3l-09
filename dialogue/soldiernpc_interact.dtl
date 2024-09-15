@@ -5,7 +5,9 @@
 	[end_timeline]
 	[signal arg="exit"]
 join soldiernpc left
-soldiernpc: By the gods, it's you, my lord! We feared you were lost to the darkness forever, but you've returned at last.
+soldiernpc: By the gods, it's you, my lord! We feared you were lost to the darkness forever, but you've returned at last.\
+\
+(press enter to continue)
 soldiernpc: I'm ashamed we couldn't aid you when your treacherous brother sought the crown for himself.
 soldiernpc: How did you endure all this time? We thought you had perished.
 soldiernpc: The traitor was crowned not more than a fortnight ago

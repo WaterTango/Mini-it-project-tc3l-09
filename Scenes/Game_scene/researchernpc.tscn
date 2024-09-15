@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://cde5mbjo7uyri"]
+[gd_scene load_steps=18 format=3 uid="uid://cde5mbjo7uyri"]
 
 [ext_resource type="Script" path="res://Scripts/researchernpc.gd" id="1_x0f3i"]
 [ext_resource type="Texture2D" uid="uid://d4ctjb6wky2gr" path="res://Assets/pixel assets/hideout/Enemies/Baldits/Sorcerer/Idle/Idle-Sheet.png" id="2_qbxx5"]
+[ext_resource type="Texture2D" uid="uid://crnws7b6mgnqc" path="res://Assets/png/e_dark.png" id="2_vmlpf"]
 [ext_resource type="Texture2D" uid="uid://d4boc33rdv4xn" path="res://Assets/pixel assets/hideout/Enemies/Baldits/Sorcerer/Run/Run-Sheet.png" id="3_woeay"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_78l7p"]
@@ -90,9 +91,19 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_jxoxq"]
+radius = 68.4016
+
 [node name="researchernpc" type="CharacterBody2D"]
 scale = Vector2(0.965, 0.965)
 script = ExtResource("1_x0f3i")
+
+[node name="interact_popup3" type="Sprite2D" parent="."]
+visible = false
+z_index = 10
+position = Vector2(1.03627, -30.0518)
+scale = Vector2(0.236842, 0.231707)
+texture = ExtResource("2_vmlpf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -12)
@@ -109,4 +120,12 @@ frame_progress = 0.702139
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
+[node name="chat_detection_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chat_detection_area"]
+position = Vector2(1.03627, -10.3627)
+shape = SubResource("CircleShape2D_jxoxq")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="chat_detection_area" to="." method="_on_chat_detection_area_body_entered"]
+[connection signal="body_exited" from="chat_detection_area" to="." method="_on_chat_detection_area_body_exited"]
