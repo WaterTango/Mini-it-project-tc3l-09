@@ -7,6 +7,7 @@ extends Control
 @onready var quitbutton: Button = $MarginContainer/VBoxContainer/Quit as Button
 @onready var pause_menu: pausemenu = $"."
 @onready var settings_menu: settingsmenuINGAME = $"../settings_menu"
+@onready var canvas_modulate: CanvasModulate = $"../../../../CanvasModulate"
 
 @onready var main: Node2D = $"../../../.."
 
@@ -29,6 +30,7 @@ func handle_connecting_pause_signals() -> void:
 func _on_resume_pressed() -> void:
 	$ResumeSFX.play()
 	main.pauseMenu()
+	$"../../../../CanvasModulate".visible = true
 	print("[Pause Menu] Resuming game.")
 	pass
 
@@ -40,6 +42,7 @@ func _on_settings_pressed() -> void:
 	pause_menu.set_process(false)
 	settings_menu.set_process(true)
 	settings_menu.visible = true
+	$"../../../../CanvasModulate".visible = false
 	print("[Pause Menu] Opening settings.")
 	pass 
 

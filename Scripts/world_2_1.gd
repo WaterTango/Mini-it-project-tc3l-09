@@ -38,12 +38,14 @@ func _input(_event):
 func pauseMenu():
 	if paused:
 		$ResumeSFX.play()
+		$CanvasModulate.show()
 		pause_menu.hide()
 		Engine.time_scale = 1
 		#get_tree().paused = true  
 		print("[Pause Menu] Game Resumed")
 	else:
 		$PausedSFX.play()
+		$CanvasModulate.hide()
 		pause_menu.show()
 		Engine.time_scale = 0  
 		#get_tree().paused = false
@@ -70,6 +72,9 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		$Map/TileMap/village/roofchimney.hide()
 		$Player/Camera2D.zoom.x = 5
 		$Player/Camera2D.zoom.y = 5
+		#shaz's pausemenu rescalingww
+		pause_menu.scale = Vector2(.2 , .2)
+		pause_menu.position = Vector2(-192.5, -108.5)
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body is Player:
@@ -77,16 +82,21 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 		$Map/TileMap/village/roofchimney.show()
 		$Player/Camera2D.zoom.x = 3
 		$Player/Camera2D.zoom.y = 3
-
+		#shaz's pausemenu rescaling
+		pause_menu.scale = Vector2(.375 , .375)
+		pause_menu.position = Vector2(-360, -210)
 
 func _on_door_opening_animation_body_entered(body: Node2D) -> void:
 	if body is Player:
 		$Map/TileMap/village/door.hide()
-
+		#shazSFX
+		$Map/TileMap/village/door_opening_animation/DoorOpeningSFX.play()
 
 func _on_door_opening_animation_body_exited(body: Node2D) -> void:
 	if body is Player:
 		$Map/TileMap/village/door.show()
+		#shazSFX
+		$Map/TileMap/village/door_opening_animation/DoorClosingSFX.play()
 
 
 func _on_key_popup_hide() -> void:

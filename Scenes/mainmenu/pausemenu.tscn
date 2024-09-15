@@ -48,6 +48,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 727.0
 offset_top = 952.0
 offset_right = 1202.0
@@ -55,6 +56,7 @@ offset_bottom = 1032.0
 texture = ExtResource("5_7s0cg")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 727.0
 offset_top = 809.0
 offset_right = 1202.0
@@ -62,6 +64,7 @@ offset_bottom = 889.0
 texture = ExtResource("5_7s0cg")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 727.0
 offset_top = 662.0
 offset_right = 1202.0
@@ -84,6 +87,8 @@ size_flags_vertical = 8
 [node name="Resume" type="Button" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(500, 70)
 layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.729412, 0.568627, 0.345098, 1)
+theme_override_colors/font_focus_color = Color(0.894118, 0.815686, 0, 1)
 theme_override_constants/outline_size = 7
 theme_override_fonts/font = ExtResource("1_hts6b")
 theme_override_font_sizes/font_size = 50
@@ -99,6 +104,8 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_sh4xj")
 self_modulate = Color(1, 1, 1, 0.933333)
 custom_minimum_size = Vector2(500, 70)
 layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.729412, 0.568627, 0.345098, 1)
+theme_override_colors/font_focus_color = Color(0.894118, 0.815686, 0, 1)
 theme_override_constants/outline_size = 7
 theme_override_fonts/font = ExtResource("1_hts6b")
 theme_override_font_sizes/font_size = 50
@@ -114,6 +121,8 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_fyvty")
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 self_modulate = Color(1, 1, 1, 0.933333)
 layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.729412, 0.568627, 0.345098, 1)
+theme_override_colors/font_focus_color = Color(0.894118, 0.815686, 0, 1)
 theme_override_constants/outline_size = 7
 theme_override_fonts/font = ExtResource("1_hts6b")
 theme_override_font_sizes/font_size = 50

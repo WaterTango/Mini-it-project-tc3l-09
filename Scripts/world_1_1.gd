@@ -41,12 +41,14 @@ func _input(_event):
 func pauseMenu():
 	if paused:
 		$ResumeSFX.play()
+		$CanvasModulate.show()
 		pause_menu.hide()
 		Engine.time_scale = 1
 		#get_tree().paused = true  
 		print("[Pause Menu] Game Resumed")
 	else:
 		$PausedSFX.play()
+		$CanvasModulate.hide()
 		pause_menu.show()
 		Engine.time_scale = 0  
 		#get_tree().paused = false
