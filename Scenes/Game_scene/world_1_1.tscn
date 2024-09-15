@@ -484,6 +484,7 @@ offset = Vector2(-8.28, 0)
 texture_scale = 0.5
 
 [node name="PauseMenu" parent="entitites/Player/Camera2D" instance=ExtResource("10_838wu")]
+process_mode = 3
 visible = false
 self_modulate = Color(1, 1, 1, 0)
 z_index = 20
@@ -495,6 +496,7 @@ offset_bottom = 870.0
 scale = Vector2(0.375, 0.375)
 
 [node name="settings_menu" parent="entitites/Player/Camera2D" instance=ExtResource("11_0daj7")]
+process_mode = 3
 visible = false
 z_index = 20
 custom_minimum_size = Vector2(1920, 1080)
@@ -1019,23 +1021,27 @@ polygon = PackedVector2Array(-128, -31, -144, -31, -144, -24, -239, -23, -240, -
 polygon = PackedVector2Array(-33, -295, -17, -295, -18, -338, -17, -375, -16, -463, -111, -464, -112, -576, -32, -575, -32, -540, -17, -540, -17, -598, 17.0218, -598.15, 17, -540, 32, -540, 32, -576, 112, -576, 111, -463, 19, -464, 16, -295, 176, -296, 436, -600, 342, -725, -269, -741, -277, -326, -192, -295)
 
 [node name="clickSFX" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("21_lj2ob")
 volume_db = -6.0
 pitch_scale = 0.48
 bus = &"SFX"
 
 [node name="World 1 Music" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("22_qrmdu")
 volume_db = -6.0
 bus = &"Music"
 parameters/looping = true
 
 [node name="PausedSFX" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("21_ff3dr")
 volume_db = -9.0
 bus = &"SFX"
 
 [node name="ResumeSFX" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("22_27fjt")
 volume_db = -3.0
 bus = &"SFX"

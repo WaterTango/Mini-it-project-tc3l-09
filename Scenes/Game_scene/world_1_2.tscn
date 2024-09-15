@@ -700,6 +700,7 @@ offset = Vector2(-8.28, 0)
 texture_scale = 0.5
 
 [node name="PauseMenu" parent="entities/Player/Camera2D" instance=ExtResource("5_otfr6")]
+process_mode = 3
 visible = false
 self_modulate = Color(1, 1, 1, 0)
 z_index = 20
@@ -711,6 +712,7 @@ offset_bottom = 870.0
 scale = Vector2(0.375, 0.375)
 
 [node name="settings_menu" parent="entities/Player/Camera2D" instance=ExtResource("6_7hrci")]
+process_mode = 3
 visible = false
 z_index = 20
 custom_minimum_size = Vector2(1920, 1080)
@@ -898,23 +900,27 @@ position = Vector2(76.875, 328)
 shape = SubResource("RectangleShape2D_5hyif")
 
 [node name="clickSFX" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("18_p1qfy")
 volume_db = -6.0
 pitch_scale = 0.48
 bus = &"SFX"
 
 [node name="World 1 Music" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("19_eq6bk")
 volume_db = -6.0
 bus = &"Music"
 parameters/looping = true
 
 [node name="PausedSFX" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("20_hyoc5")
 volume_db = -9.0
 bus = &"SFX"
 
 [node name="ResumeSFX" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("21_yww5x")
 volume_db = -3.0
 bus = &"SFX"

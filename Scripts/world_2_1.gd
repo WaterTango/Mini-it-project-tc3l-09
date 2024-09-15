@@ -3,6 +3,7 @@ extends Node2D
 @onready var SceneTransition = $SceneTransition/AnimationPlayer
 # shaz's pausemenu =================================================================================
 @onready var pause_menu: pausemenuW2 = $Player/Camera2D/PauseMenu
+@onready var settings_menu: settingsmenuInGameW2 = $Player/Camera2D/settings_menu
 
 var paused = false
 # shaz's AudioPlaybackScript =======================================================================
@@ -40,15 +41,15 @@ func pauseMenu():
 		$ResumeSFX.play()
 		$CanvasModulate.show()
 		pause_menu.hide()
-		Engine.time_scale = 1
-		#get_tree().paused = true  
+		#Engine.time_scale = 1
+		get_tree().paused = false  
 		print("[Pause Menu] Game Resumed")
 	else:
 		$PausedSFX.play()
 		$CanvasModulate.hide()
 		pause_menu.show()
-		Engine.time_scale = 0  
-		#get_tree().paused = false
+		#Engine.time_scale = 0  
+		get_tree().paused = true
 		print("[Pause Menu] Game Paused")
 		
 	paused = !paused
@@ -75,6 +76,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		#shaz's pausemenu rescalingww
 		pause_menu.scale = Vector2(.2 , .2)
 		pause_menu.position = Vector2(-192.5, -108.5)
+		settings_menu.scale = Vector2(.2, .2)
+		settings_menu.position = Vector2(-192.5, -108.5)
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body is Player:
@@ -85,6 +88,9 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 		#shaz's pausemenu rescaling
 		pause_menu.scale = Vector2(.375 , .375)
 		pause_menu.position = Vector2(-360, -210)
+		settings_menu.scale = Vector2(0.35, 0.35)
+		settings_menu.position = Vector2(-335, -192.5)
+
 
 func _on_door_opening_animation_body_entered(body: Node2D) -> void:
 	if body is Player:

@@ -1,12 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://dbpf7ebqb4auh"]
+[gd_scene load_steps=10 format=3 uid="uid://dbpf7ebqb4auh"]
 
 [ext_resource type="FontFile" uid="uid://b8oo2dguy484y" path="res://shaz_fonts/basis33.ttf" id="1_f4ejb"]
 [ext_resource type="Script" path="res://Scenes/settingsmenu/accessibility_fpscounter_button.gd" id="1_rd5y8"]
 [ext_resource type="Texture2D" uid="uid://u3d3py5678wt" path="res://shaz_images/icons/checkbox-svgrepo-com.svg" id="2_g54g6"]
+[ext_resource type="Texture2D" uid="uid://b5xaw21th5old" path="res://shaz_images/UI/Fantasy Minimal Pixel Art UI/UI/RectangleBox_96x96.png" id="2_xuxso"]
 [ext_resource type="Texture2D" uid="uid://cvss5egaw8csr" path="res://shaz_images/icons/checkbox-on-svgrepo-com.svg" id="3_byhe0"]
 [ext_resource type="Script" path="res://Scenes/settingsmenu/fp_scounter.gd" id="5_icn61"]
 [ext_resource type="AudioStream" uid="uid://cwiqjbp3iejho" path="res://shaz_audio/SFX/interface-checked.mp3" id="6_kbp20"]
 [ext_resource type="AudioStream" uid="uid://cudbq52b7s0kh" path="res://shaz_audio/SFX/interface-unchecked.mp3" id="7_6rwak"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0j20y"]
 
 [node name="accessibility_fpscounter_button" type="Control"]
 layout_mode = 3
@@ -19,10 +22,21 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rd5y8")
 
+[node name="NinePatchRect7" type="NinePatchRect" parent="."]
+offset_left = 1395.0
+offset_right = 1456.0
+offset_bottom = 62.0
+texture = ExtResource("2_xuxso")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 11
+patch_margin_bottom = 11
+
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
+offset_right = 12.5
 offset_bottom = 61.0
 grow_horizontal = 2
 theme_override_constants/separation = 260
@@ -40,6 +54,7 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_0j20y")
 
 [node name="fps_checkbox" type="CheckBox" parent="HBoxContainer"]
 layout_mode = 2

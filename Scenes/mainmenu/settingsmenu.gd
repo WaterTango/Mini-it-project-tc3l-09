@@ -3,12 +3,13 @@ extends Control
 
 @onready var backbutton: Button = $MarginContainer/VBoxContainer/backbutton as Button
 #@onready var pause_menu: pausemenu = $entitites/Player/Camera2D/PauseMenu
+@onready var settings_tab_container: Control = $MarginContainer/VBoxContainer/settingsTabContainer
 
 signal exit_settings_menu
 
 func _ready() -> void:
 	handle_connecting_settings_signals()
-	
+
 func handle_connecting_settings_signals() -> void:
 	backbutton.button_down.connect(on_exit_pressed)
 	set_process(false)

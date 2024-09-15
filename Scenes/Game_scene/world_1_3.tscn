@@ -624,6 +624,7 @@ offset = Vector2(-8.28, 0)
 texture_scale = 0.5
 
 [node name="PauseMenu" parent="entities/Player/Camera2D" instance=ExtResource("5_0m0xn")]
+process_mode = 3
 visible = false
 self_modulate = Color(1, 1, 1, 0)
 z_index = 20
@@ -635,6 +636,7 @@ offset_bottom = 870.0
 scale = Vector2(0.375, 0.375)
 
 [node name="settings_menu" parent="entities/Player/Camera2D" instance=ExtResource("6_pnayf")]
+process_mode = 3
 visible = false
 z_index = 20
 custom_minimum_size = Vector2(1920, 1080)
@@ -1219,23 +1221,27 @@ shadow_item_cull_mask = 3
 texture = ExtResource("5_b1hax")
 
 [node name="clickSFX" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("22_wfhco")
 volume_db = -6.0
 pitch_scale = 0.48
 bus = &"SFX"
 
 [node name="World 1 Music" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("23_3druw")
 volume_db = -6.0
 bus = &"Music"
 parameters/looping = true
 
 [node name="PausedSFX" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("24_nr7vx")
 volume_db = -9.0
 bus = &"SFX"
 
 [node name="ResumeSFX" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("25_de41v")
 volume_db = -3.0
 bus = &"SFX"

@@ -4929,6 +4929,7 @@ process_callback = 0
 script = ExtResource("20_rfwaq")
 
 [node name="PauseMenu" parent="Player/Camera2D" instance=ExtResource("18_1cw20")]
+process_mode = 3
 visible = false
 self_modulate = Color(1, 1, 1, 0)
 z_index = 20
@@ -4941,6 +4942,7 @@ scale = Vector2(0.375, 0.375)
 script = ExtResource("19_o8xu0")
 
 [node name="settings_menu" parent="Player/Camera2D" instance=ExtResource("20_4dct3")]
+process_mode = 3
 visible = false
 z_index = 20
 custom_minimum_size = Vector2(1920, 1080)
@@ -5005,22 +5007,26 @@ stream = ExtResource("30_3pyoe")
 bus = &"SFX"
 
 [node name="clickSFX" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("30_6hhgc")
 volume_db = -6.0
 pitch_scale = 0.48
 bus = &"SFX"
 
 [node name="World 2 Music" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("31_4s2bn")
 bus = &"Music"
 parameters/looping = true
 
 [node name="PausedSFX" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("32_hmhcg")
 volume_db = -9.0
 bus = &"SFX"
 
 [node name="ResumeSFX" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("33_6tv6v")
 volume_db = -3.0
 bus = &"SFX"

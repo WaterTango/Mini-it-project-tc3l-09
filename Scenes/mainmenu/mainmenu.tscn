@@ -204,6 +204,7 @@ offset_left = 5.0
 offset_right = 5.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 2
 script = ExtResource("1_e6pdu")
 tween_intensity = 1.2
 tween_duration = 0.3

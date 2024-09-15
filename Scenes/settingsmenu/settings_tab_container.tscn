@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dilgucspn6n7b"]
+[gd_scene load_steps=17 format=3 uid="uid://dilgucspn6n7b"]
 
 [ext_resource type="Script" path="res://Scenes/settingsmenu/settings_tab_container.gd" id="1_8l2eh"]
 [ext_resource type="FontFile" uid="uid://f3bxx2ry3bsw" path="res://shaz_fonts/BLKCHCRY.TTF" id="1_vnq8c"]
@@ -13,6 +13,17 @@
 [ext_resource type="PackedScene" uid="uid://dbpf7ebqb4auh" path="res://Scenes/settingsmenu/accessibility_fpscounter_button.tscn" id="9_ksswr"]
 [ext_resource type="PackedScene" uid="uid://b3q5ax6axgy32" path="res://Scenes/settingsmenu/accessibility_game_speed.tscn" id="11_kc4yb"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f0cjh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5spdt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ac2ff"]
+
+[sub_resource type="Theme" id="Theme_bu11o"]
+TabContainer/styles/panel = SubResource("StyleBoxEmpty_f0cjh")
+TabContainer/styles/tab_disabled = SubResource("StyleBoxEmpty_5spdt")
+TabContainer/styles/tabbar_background = SubResource("StyleBoxEmpty_ac2ff")
+
 [node name="settingsTabContainer" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -20,6 +31,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 2
+theme = SubResource("Theme_bu11o")
 script = ExtResource("1_8l2eh")
 
 [node name="TabContainer" type="TabContainer" parent="."]
@@ -43,6 +56,8 @@ drag_to_rearrange_enabled = true
 
 [node name="Video" type="TabBar" parent="TabContainer"]
 layout_mode = 2
+focus_next = NodePath("../Audio")
+focus_previous = NodePath("../Accessibility")
 theme_override_fonts/font = ExtResource("2_yc538")
 theme_override_font_sizes/font_size = 28
 theme_override_icons/increment_highlight = ExtResource("3_80ajn")
@@ -88,6 +103,8 @@ layout_mode = 2
 [node name="Audio" type="TabBar" parent="TabContainer"]
 visible = false
 layout_mode = 2
+focus_next = NodePath("../Controls")
+focus_previous = NodePath("../Video")
 theme_override_fonts/font = ExtResource("2_yc538")
 theme_override_font_sizes/font_size = 28
 tab_alignment = 2
@@ -128,6 +145,8 @@ bus_name = "SFX"
 [node name="Controls" type="TabBar" parent="TabContainer"]
 visible = false
 layout_mode = 2
+focus_next = NodePath("../Accessibility")
+focus_previous = NodePath("../Audio")
 theme_override_fonts/font = ExtResource("2_yc538")
 theme_override_font_sizes/font_size = 28
 tab_alignment = 2
@@ -191,6 +210,8 @@ text = "work in progress :3"
 [node name="Accessibility" type="TabBar" parent="TabContainer"]
 visible = false
 layout_mode = 2
+focus_next = NodePath("../Video")
+focus_previous = NodePath("../Controls")
 theme_override_fonts/font = ExtResource("2_yc538")
 theme_override_font_sizes/font_size = 28
 tab_alignment = 2

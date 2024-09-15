@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bubxqu7jdai64"]
+[gd_scene load_steps=16 format=3 uid="uid://bubxqu7jdai64"]
 
 [ext_resource type="FontFile" uid="uid://b8oo2dguy484y" path="res://shaz_fonts/basis33.ttf" id="1_hts6b"]
 [ext_resource type="Script" path="res://Scenes/mainmenu/pausemenu.gd" id="1_it465"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://bhnfdxn0m6r6f" path="res://shaz_audio/SFX/clicksfx.mp3" id="3_c0suu"]
 [ext_resource type="Texture2D" uid="uid://ds4lwyn054m6g" path="res://shaz_images/UI/Fantasy Minimal Pixel Art UI/UI/Button_52x14.png" id="5_7s0cg"]
 [ext_resource type="AudioStream" uid="uid://cxdtgh6f6ljyb" path="res://shaz_audio/SFX/resume.mp3" id="6_t5orf"]
+[ext_resource type="Script" path="res://Scenes/mainmenu/resume.gd" id="7_e1114"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vw33s"]
 
@@ -35,6 +36,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 2
 theme = SubResource("Theme_ju8sn")
 script = ExtResource("1_it465")
 
@@ -94,6 +96,7 @@ theme_override_fonts/font = ExtResource("1_hts6b")
 theme_override_font_sizes/font_size = 50
 text = "Resume"
 flat = true
+script = ExtResource("7_e1114")
 
 [node name="HSeparator3" type="HSeparator" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
