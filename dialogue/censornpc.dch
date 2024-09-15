@@ -8,28 +8,19 @@
 "sound_moods": {},
 "style": ""
 },
-"default_portrait": "playerFront",
+"default_portrait": "censor",
 "description": "",
-"display_name": "Rhaegar",
+"display_name": "Barmaid Lysandra",
 "mirror": false,
 "nicknames": [""],
 "offset": Vector2(0, 0),
 "portraits": {
-"playerFront": {
+"censor": {
 "export_overrides": {
-"image": "\"res://PlayerAsset/Idle/potraitzoom.png\""
+"image": "\"res://Assets/pixel assets/library/Enemies/Scholars/Censor/censorpotrait.png\""
 },
 "mirror": false,
-"offset": Vector2(0, 0),
-"scale": 0.6,
-"scene": ""
-},
-"playerside": {
-"export_overrides": {
-"image": "\"res://PlayerAsset/Idle/potraitsidezoom.png\""
-},
-"mirror": false,
-"offset": Vector2(200, 0),
+"offset": Vector2(-200, 0),
 "scale": 0.7,
 "scene": ""
 }

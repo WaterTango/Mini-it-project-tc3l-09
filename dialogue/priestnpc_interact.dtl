@@ -5,7 +5,9 @@
 	[end_timeline]
 	[signal arg="exit"]
 join grandmeister left
-grandmeister: My lord! You survived!
+grandmeister: My lord! You survived!\
+\
+(press enter)
 join player (playerside) right
 player: Grandmeister, I've returned. The traitor has taken the crown, and now the kingdom faces ruin. What is our situation?
 

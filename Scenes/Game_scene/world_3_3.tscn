@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=4 uid="uid://bmaj057vxjvul"]
+[gd_scene load_steps=51 format=4 uid="uid://bmaj057vxjvul"]
 
 [ext_resource type="Script" path="res://Scripts/world_3_3.gd" id="1_6brog"]
 [ext_resource type="Texture2D" uid="uid://dk47txfrdo6hq" path="res://Assets/pixel assets/castle/Assets/ATiles.png" id="2_n1mrr"]
@@ -29,6 +29,7 @@
 [ext_resource type="AudioStream" uid="uid://bgpo5phkq73t4" path="res://shaz_audio/SFX/Key.mp3" id="20_5iylj"]
 [ext_resource type="PackedScene" uid="uid://bsl7oie8lwj0s" path="res://Scenes/Game_scene/soldier.tscn" id="27_l0nyv"]
 [ext_resource type="PackedScene" uid="uid://0uoxn0dpa05s" path="res://Scenes/Game_scene/knight.tscn" id="28_dk7e1"]
+[ext_resource type="PackedScene" uid="uid://bph610j3dc6p2" path="res://Scenes/Game_scene/director.tscn" id="30_wuh5d"]
 
 [sub_resource type="Animation" id="Animation_yl1vf"]
 length = 0.001
@@ -2684,6 +2685,10 @@ position = Vector2(-143, -298)
 [node name="knight7" parent="mobs/knight" instance=ExtResource("28_dk7e1")]
 z_index = 5
 position = Vector2(145, -299)
+
+[node name="director" parent="mobs" instance=ExtResource("30_wuh5d")]
+z_index = 6
+position = Vector2(-1, -1308)
 
 [connection signal="body_entered" from="Doors/door1/door1 zone" to="Doors/door1" method="_on_door_1_zone_body_entered"]
 [connection signal="body_entered" from="Doors/door1/door1 zone" to="Doors/door1/door1_collision" method="_on_door_zone_body_entered"]

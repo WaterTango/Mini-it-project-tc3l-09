@@ -1,0 +1,13 @@
+[style name="lightnovel_File"]
+[signal arg="chatting"]
+- talk to Magus Gartley?
+- look elsewhere
+	[end_timeline]
+	[signal arg="exit"]
+join shopkeeper left
+shopkeeper: My lord, you live! The situation is most dire. The North teems with foul creatures, and these beasts press ever closer to our outposts. We are in desperate need of aid.
+shopkeeper: My brother Gareth has fallen, slain by an orc warrior at the gates of the palace garden.
+shopkeeper: To the east, rumors speak of an orc army gathering, poised to threaten our capital and palace
+shopkeeper: All while the traitor sits upon the throne, mocking us with every passing day.
+[signal arg="exit"]
+[end_timeline]
