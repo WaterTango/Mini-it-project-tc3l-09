@@ -173,7 +173,8 @@ animations = [{
 radius = 7.0
 
 [node name="villagenpc" type="CharacterBody2D"]
-position = Vector2(249, 160)
+position = Vector2(0, -2)
+scale = Vector2(0.955, 0.955)
 script = ExtResource("1_f8can")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

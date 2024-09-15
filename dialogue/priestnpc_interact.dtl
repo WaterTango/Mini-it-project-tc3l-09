@@ -1,0 +1,31 @@
+[style name="lightnovel_File"]
+[signal arg="chatting"]
+- talk with grandmeister?
+- look elsewhere
+	[end_timeline]
+	[signal arg="exit"]
+join grandmeister left
+grandmeister: My lord! You survived!
+join player (playerside) right
+player: Grandmeister, I've returned. The traitor has taken the crown, and now the kingdom faces ruin. What is our situation?
+
+grandmeister: My lord, it is as you feared. Your brother wasted no time tightening his grip on the throne. His loyalists have silenced most of the dissent, and those who opposed him were swiftly dealt with. Meanwhile, the monster invasion grows ever more perilous.
+
+player: What of the frontline? I've heard we've lost communication.
+
+grandmeister: Indeed. The frontline has gone silent. The last message we received spoke of a massive assault, unlike any we've seen. I fear the worst, but without information, we are blind.
+
+player: And what of our forces here? Can we muster a counterattack?
+
+grandmeister: Our numbers dwindle. Your brother's obsession with securing his rule has left our defenses weakened. He siphoned troops from the outposts to put down rebellions, leaving us vulnerable to the enemy at our borders.
+
+player: So he cares more for the throne than the kingdom itself.
+player: What is the situation in the capital and the palace
+grandmeister: Not entirely, my lord. Though he has stationed his guards throughout the city, his grip is far from absolute. The streets have descended into chaos. With the city guard focused on protecting the palace and silencing dissent, looting has become rampant. Shops and homes are ransacked, and order is a fleeting memory
+player: The palace?
+grandmeister: The palace is heavily guarded, turned into a fortress for your brother and his loyalists. Yet, even there, unrest simmers beneath the surface. Many servants and courtiers resent his rule, but they dare not speak openly. His fear of rebellion has led to paranoia, and the palace halls echo with whispers of treachery
+player: Indeed he is not fit to rule
+player: I shall retake my throne.
+grandmeister: Then hope returns. But your brother will not yield easily. He’s fortified the palace, and his loyalists will fight fiercely
+grandmeister: Then we prepare for battle. The rightful king has returned. May the Gods be with you!
+[signal arg="exit"]

@@ -7,7 +7,7 @@ var speed = 150
 var current_dir = "none"
 var player_character
 var attack_inprogress = false
-
+var can_move = true
 func _physics_process(delta):
 	player_movement(delta)
 	attack()
@@ -17,70 +17,62 @@ func _ready():
 	
 	
 func player_movement(_delta):
-
+	if can_move:
 	#diagonal up right 0
-	if Input.is_action_pressed("right") and Input.is_action_pressed("up"):
-		current_dir = "right"
-		play_anim(1)
-		velocity.x = speed
-		velocity.y = -speed
-		#print("diagonal right up")
-	#diagonal down right
-	elif Input.is_action_pressed("right") and Input.is_action_pressed("down"):
-		current_dir = "right"
-		play_anim(1)
-		velocity.x = speed
-		velocity.y = speed
-		#print("diagonal right down")
-	#diagonal up left
-	elif Input.is_action_pressed("left") and Input.is_action_pressed("up"):
-		current_dir = "left"
-		play_anim(1)
-		velocity.x = -speed
-		velocity.y = -speed
-		#print("diagonal left up")
-	#diagonal down left
-	elif Input.is_action_pressed("left") and Input.is_action_pressed("down"):
-		current_dir = "left"
-		play_anim(1)
-		velocity.x = -speed
-		velocity.y = speed
-		#print("diagonal left down")
-	elif Input.is_action_pressed("right"):
-		current_dir = "right"
-		play_anim(1)
-		velocity.x = speed
-		velocity.y = 0
-	elif Input.is_action_pressed("left"):
-		current_dir = "left"
-		play_anim(1)
-		velocity.x = -speed
-		velocity.y = 0
-	elif Input.is_action_pressed("up"):
-		current_dir = "up"
-		play_anim(1)
-		velocity.x = 0
-		velocity.y = -speed
-	elif Input.is_action_pressed("down"):
-		current_dir = "down"
-		play_anim(1)
-		velocity.x = 0
-		velocity.y = speed	
-		
-	#increase player speed	
-	#THIS IS FOR DEBUG ONLY 
-	elif Input.is_action_pressed("sprint"):
-		speed = 500
-	elif Input.is_action_just_released("sprint"):
-		speed = 150
-	
-		
-	else:
-		play_anim(0)
-		velocity.x = 0
-		velocity.y = 0
-		
-	move_and_slide()
+		if Input.is_action_pressed("right") and Input.is_action_pressed("up"):
+			current_dir = "right"
+			play_anim(1)
+			velocity.x = speed
+			velocity.y = -speed
+			#print("diagonal right up")
+		#diagonal down right
+		elif Input.is_action_pressed("right") and Input.is_action_pressed("down"):
+			current_dir = "right"
+			play_anim(1)
+			velocity.x = speed
+			velocity.y = speed
+			#print("diagonal right down")
+		#diagonal up left
+		elif Input.is_action_pressed("left") and Input.is_action_pressed("up"):
+			current_dir = "left"
+			play_anim(1)
+			velocity.x = -speed
+			velocity.y = -speed
+			#print("diagonal left up")
+		#diagonal down left
+		elif Input.is_action_pressed("left") and Input.is_action_pressed("down"):
+			current_dir = "left"
+			play_anim(1)
+			velocity.x = -speed
+			velocity.y = speed
+			#print("diagonal left down")
+		elif Input.is_action_pressed("right"):
+			current_dir = "right"
+			play_anim(1)
+			velocity.x = speed
+			velocity.y = 0
+		elif Input.is_action_pressed("left"):
+			current_dir = "left"
+			play_anim(1)
+			velocity.x = -speed
+			velocity.y = 0
+		elif Input.is_action_pressed("up"):
+			current_dir = "up"
+			play_anim(1)
+			velocity.x = 0
+			velocity.y = -speed
+		elif Input.is_action_pressed("down"):
+			current_dir = "down"
+			play_anim(1)
+			velocity.x = 0
+			velocity.y = speed	
+			
+		else:
+			play_anim(0)
+			velocity.x = 0
+			velocity.y = 0
+			
+		move_and_slide()
 #---------------------------------------------------------------------------------------------------------------
 #PLAYER ANIMATION
 func play_anim(movement):

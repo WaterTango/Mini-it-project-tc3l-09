@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://bhaxqd7s6djc2"]
+[gd_scene load_steps=18 format=3 uid="uid://bhaxqd7s6djc2"]
 
 [ext_resource type="Script" path="res://Scripts/priestnpc.gd" id="1_bxi54"]
 [ext_resource type="Texture2D" uid="uid://b0365ou5j8hae" path="res://Assets/pixel assets/Pixel Crawler - Royal Crew/Priest/Idle-Sheet.png" id="2_kyvm6"]
 [ext_resource type="Texture2D" uid="uid://bgttx5unjiqvy" path="res://Assets/pixel assets/Pixel Crawler - Royal Crew/Priest/Run-Sheet.png" id="3_rm01t"]
+[ext_resource type="Texture2D" uid="uid://crnws7b6mgnqc" path="res://Assets/png/e_dark.png" id="4_lllus"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0fras"]
 size = Vector2(20, 31)
@@ -90,7 +91,11 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_6ue0l"]
+radius = 49.4624
+
 [node name="priestnpc" type="CharacterBody2D"]
+scale = Vector2(0.93, 0.93)
 script = ExtResource("1_bxi54")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -105,4 +110,26 @@ animation = &"priest_run"
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
+[node name="interact_popup2" type="Sprite2D" parent="."]
+visible = false
+z_index = 10
+position = Vector2(5.96046e-08, -35.4839)
+scale = Vector2(0.236842, 0.231707)
+texture = ExtResource("4_lllus")
+
+[node name="chat_detection_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chat_detection_area"]
+position = Vector2(0, -15.0538)
+shape = SubResource("CircleShape2D_6ue0l")
+
+[node name="interact_popup3" type="Sprite2D" parent="."]
+visible = false
+z_index = 10
+position = Vector2(1, -40)
+scale = Vector2(0.236842, 0.231707)
+texture = ExtResource("4_lllus")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="chat_detection_area" to="." method="_on_chat_detection_area_body_entered"]
+[connection signal="body_exited" from="chat_detection_area" to="." method="_on_chat_detection_area_body_exited"]

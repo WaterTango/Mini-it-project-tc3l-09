@@ -91,6 +91,7 @@ animations = [{
 }]
 
 [node name="researchernpc" type="CharacterBody2D"]
+scale = Vector2(0.965, 0.965)
 script = ExtResource("1_x0f3i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

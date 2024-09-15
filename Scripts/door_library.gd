@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-signal door1_collision
+signal door1_coldlision
 
 
 func _ready() -> void:

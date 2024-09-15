@@ -12,9 +12,17 @@ func _ready() -> void:
 	$CanvasLayer/SceneFade.play("fade in")
 	await get_tree().create_timer(3).timeout
 	$"World 2 Music".play()
+	Dialogic.signal_event.connect(DialogicSignal)
 	#===============================================================================================
 	#SceneTransitionAnimation.play("fade_out")
 	pass
+	#============================================================
+# dialogue behaviour
+func DialogicSignal(arg: String):
+	if arg == "chatting":
+		print("chatting with gate soldier")
+	if arg == "exit":
+		print("exit chatting with gate soldier")
 	
 #this is to reload levels
 func _input(_event):
