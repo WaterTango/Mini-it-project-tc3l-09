@@ -31,6 +31,7 @@ theme = SubResource("Theme_1yfhp")
 script = ExtResource("1_gnf14")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.784314)
 layout_mode = 2
 offset_left = 93.0
 offset_top = 181.0

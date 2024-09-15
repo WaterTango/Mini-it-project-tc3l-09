@@ -38,6 +38,7 @@ func pauseMenu():
 	# for resuming, not that paused is !paused
 	if paused:
 		$ResumeSFX.play()
+		#$CanvasModulate.show()
 		pause_menu.hide()
 		Engine.time_scale = 1
 		#get_tree().paused = true  
@@ -45,6 +46,7 @@ func pauseMenu():
 	# paused
 	else:
 		$PausedSFX.play()
+		#$CanvasModulate.hide()
 		pause_menu.show()
 		Engine.time_scale = 0  
 		#get_tree().paused = false

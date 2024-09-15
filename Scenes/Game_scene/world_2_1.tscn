@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=4 uid="uid://o8fuiwevj7kb"]
+[gd_scene load_steps=80 format=4 uid="uid://o8fuiwevj7kb"]
 
 [ext_resource type="Script" path="res://Scripts/world_2_1.gd" id="1_6krru"]
 [ext_resource type="PackedScene" uid="uid://bf5px1sosea0q" path="res://Scenes/Game_scene/orc.tscn" id="2_swtqg"]
@@ -27,6 +27,8 @@
 [ext_resource type="PackedScene" uid="uid://qnhy1jlu3dkk" path="res://Scenes/settingsmenu/settingsmenu.tscn" id="20_4dct3"]
 [ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="20_rfwaq"]
 [ext_resource type="Script" path="res://Scenes/settingsmenu/settingsmenuIngameW2.gd" id="21_5l3jv"]
+[ext_resource type="AudioStream" uid="uid://df2nid6a2p2ex" path="res://shaz_audio/SFX/DoorOpeningSFX.mp3" id="21_fjk5h"]
+[ext_resource type="AudioStream" uid="uid://d2ovpf13fcs0k" path="res://shaz_audio/SFX/DoorClosingSFX.mp3" id="22_engp3"]
 [ext_resource type="PackedScene" uid="uid://cis0128ki1d6f" path="res://Scenes/Game_scene/scene_transition.tscn" id="23_jjoyd"]
 [ext_resource type="Script" path="res://Scripts/door_library.gd" id="24_jl2rb"]
 [ext_resource type="Script" path="res://Scripts/door1_collision.gd" id="25_w6le1"]
@@ -4763,6 +4765,16 @@ z_index = 4
 y_sort_enabled = true
 position = Vector2(-176, 614)
 shape = SubResource("RectangleShape2D_fg416")
+
+[node name="DoorOpeningSFX" type="AudioStreamPlayer" parent="Map/TileMap/village/door_opening_animation"]
+stream = ExtResource("21_fjk5h")
+volume_db = -6.0
+bus = &"SFX"
+
+[node name="DoorClosingSFX" type="AudioStreamPlayer" parent="Map/TileMap/village/door_opening_animation"]
+stream = ExtResource("22_engp3")
+volume_db = -6.0
+bus = &"SFX"
 
 [node name="backhouse" type="TileMapLayer" parent="Map/TileMap/village"]
 z_index = 1
