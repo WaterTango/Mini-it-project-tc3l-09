@@ -1,0 +1,65 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"_translation_id": "",
+"color": Color(1, 1, 1, 1),
+"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+"default_portrait": "censorpotrait",
+"description": "",
+"display_name": "Barmaid Lysandra",
+"mirror": false,
+"nicknames": [""],
+"offset": Vector2(0, 0),
+"portraits": {
+"Death-Sheet": {
+"export_overrides": {
+"image": "\"res://Assets/pixel assets/library/Enemies/Scholars/Censor/Death-Sheet.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Hit-Sheet": {
+"export_overrides": {
+"image": "\"res://Assets/pixel assets/library/Enemies/Scholars/Censor/Hit-Sheet.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Idle-Sheet": {
+"export_overrides": {
+"image": "\"res://Assets/pixel assets/library/Enemies/Scholars/Censor/Idle-Sheet.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Run-Sheet": {
+"export_overrides": {
+"image": "\"res://Assets/pixel assets/library/Enemies/Scholars/Censor/Run-Sheet.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"censorpotrait": {
+"export_overrides": {
+"image": "\"res://Assets/pixel assets/library/Enemies/Scholars/Censor/censorpotrait.png\""
+},
+"mirror": false,
+"offset": Vector2(-300, 0),
+"scale": 0.7,
+"scene": ""
+}
+},
+"scale": 1.0
+}

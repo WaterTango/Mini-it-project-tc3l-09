@@ -1,0 +1,128 @@
+[gd_scene load_steps=18 format=3 uid="uid://43qdefcarx8k"]
+
+[ext_resource type="Script" path="res://Scripts/chattingsoldier_north.gd" id="1_awwrg"]
+[ext_resource type="Texture2D" uid="uid://dap7c4b0eo0pf" path="res://Assets/pixel assets/Pixel Crawler - Royal Crew/Soldier/Idle-Sheet.png" id="1_rekx6"]
+[ext_resource type="Texture2D" uid="uid://b8ci2y8i0xpgq" path="res://Assets/pixel assets/Pixel Crawler - Royal Crew/Soldier/Run-Sheet.png" id="2_yhltv"]
+[ext_resource type="Texture2D" uid="uid://crnws7b6mgnqc" path="res://Assets/png/e_dark.png" id="3_8jel2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_451hi"]
+atlas = ExtResource("1_rekx6")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctvlc"]
+atlas = ExtResource("1_rekx6")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81aic"]
+atlas = ExtResource("1_rekx6")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jv6jp"]
+atlas = ExtResource("1_rekx6")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ocv51"]
+atlas = ExtResource("2_yhltv")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5fqf"]
+atlas = ExtResource("2_yhltv")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdxtv"]
+atlas = ExtResource("2_yhltv")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k77og"]
+atlas = ExtResource("2_yhltv")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0yxsw"]
+atlas = ExtResource("2_yhltv")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcgf3"]
+atlas = ExtResource("2_yhltv")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7qice"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_451hi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ctvlc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81aic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jv6jp")
+}],
+"loop": true,
+"name": &"chatting_soldier_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ocv51")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5fqf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdxtv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k77og")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0yxsw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lcgf3")
+}],
+"loop": true,
+"name": &"chatting_soldier_run",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g551c"]
+radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_omc6n"]
+radius = 31.0
+
+[node name="chattingsoldierNorth" type="CharacterBody2D"]
+script = ExtResource("1_awwrg")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -30)
+scale = Vector2(0.925, 0.925)
+sprite_frames = SubResource("SpriteFrames_7qice")
+animation = &"chatting_soldier_run"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7)
+shape = SubResource("CircleShape2D_g551c")
+
+[node name="chat_detection_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chat_detection_area"]
+position = Vector2(1, -12)
+shape = SubResource("CircleShape2D_omc6n")
+
+[node name="interact_popup3" type="Sprite2D" parent="."]
+visible = false
+z_index = 10
+position = Vector2(1, -40)
+scale = Vector2(0.236842, 0.231707)
+texture = ExtResource("3_8jel2")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="chat_detection_area" to="." method="_on_chat_detection_area_body_entered"]
+[connection signal="body_exited" from="chat_detection_area" to="." method="_on_chat_detection_area_body_exited"]

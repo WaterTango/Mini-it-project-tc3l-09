@@ -1,0 +1,14 @@
+[signal arg="chatting"]
+[style name="lightnovel_File"]
+- Talk with Magus Galius
+- look elsewhere
+	[signal arg="exit"]
+	[end_timeline]
+join shopkeepernpc left
+shopkeepernpc: My lord, you live! The situation is most dire. The North teems with foul creatures, and these beasts press ever closer to our outposts. We are in desperate need of aid.\
+\
+(Press Enter to continue)
+shopkeepernpc: My brother Gareth has fallen, slain by an orc warrior at the gates of the palace garden.
+shopkeepernpc: To the east, rumors speak of an orc army gathering, poised to threaten our capital and palace.
+shopkeepernpc: All while the traitor sits upon the throne, mocking us with every passing day.
+[signal arg="exit"]

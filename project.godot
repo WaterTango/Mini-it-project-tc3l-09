@@ -22,12 +22,17 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
+"censornpc": "res://dialogue/censornpc.dch",
 "grandmeister": "res://dialogue/grandmeister.dch",
 "player": "res://dialogue/player.dch",
+"shopkeepernpc": "res://dialogue/shopkeepernpc.dch",
 "soldiernpc": "res://dialogue/soldiernpc.dch"
 }
 directories/dtl_directory={
+"censornpc_interact": "res://dialogue/censornpc_interact.dtl",
+"gatenorthnpc_interact": "res://dialogue/gatenorthnpc_interact.dtl",
 "priestnpc_interact": "res://dialogue/priestnpc_interact.dtl",
+"shopkeepernpc_interact": "res://dialogue/shopkeepernpc_interact.dtl",
 "soldiernpc_interact": "res://dialogue/soldiernpc_interact.dtl"
 }
 glossary/default_case_sensitive=true

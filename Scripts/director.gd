@@ -88,7 +88,9 @@ func _on_timer_timeout() -> void:
 func _on_area_2d_body_entered(body) -> void:
 	#this to set the body entered as the player
 	if body is Player:
+		$Timer.stop()
 		player = body
+		
 		current_state = CHASE
 	#this to signal the physics process that player has entered
 		print("chasing")
