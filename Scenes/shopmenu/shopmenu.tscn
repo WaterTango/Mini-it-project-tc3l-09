@@ -116,6 +116,7 @@ offset_right = 1346.0
 offset_bottom = 254.0
 
 [node name="Panel" type="Panel" parent="ContainerExt/WeaponsCategory/Label/Control"]
+layout_mode = 0
 offset_left = 1.0
 offset_top = 56.0
 offset_right = 289.0
@@ -127,6 +128,7 @@ scale = Vector2(11.4375, 10.875)
 texture = ExtResource("4_2rjry")
 
 [node name="Panel2" type="Panel" parent="ContainerExt/WeaponsCategory/Label/Control"]
+layout_mode = 0
 offset_left = 297.0
 offset_top = 56.0
 offset_right = 585.0
@@ -138,6 +140,7 @@ scale = Vector2(11.4375, 10.875)
 texture = ExtResource("4_2rjry")
 
 [node name="Panel3" type="Panel" parent="ContainerExt/WeaponsCategory/Label/Control"]
+layout_mode = 0
 offset_left = 597.0
 offset_top = 56.0
 offset_right = 885.0
@@ -149,6 +152,7 @@ scale = Vector2(11.4375, 10.875)
 texture = ExtResource("4_2rjry")
 
 [node name="Panel4" type="Panel" parent="ContainerExt/WeaponsCategory/Label/Control"]
+layout_mode = 0
 offset_left = 896.0
 offset_top = 56.0
 offset_right = 1184.0
@@ -160,6 +164,7 @@ scale = Vector2(11.4375, 10.875)
 texture = ExtResource("4_2rjry")
 
 [node name="HScrollBar" type="HScrollBar" parent="ContainerExt/WeaponsCategory/Label"]
+layout_mode = 0
 offset_left = 299.0
 offset_top = 20.0
 offset_right = 995.0
@@ -196,6 +201,7 @@ text = "Potions
 horizontal_alignment = 1
 
 [node name="HScrollBar" type="HScrollBar" parent="ContainerExt/PotionsCategory"]
+layout_mode = 0
 offset_left = 304.0
 offset_top = 25.0
 offset_right = 1000.0
@@ -231,6 +237,7 @@ text = "Equipments"
 horizontal_alignment = 1
 
 [node name="HScrollBar" type="HScrollBar" parent="ContainerExt/EquimentsCategoru"]
+layout_mode = 0
 offset_left = 304.0
 offset_top = 25.0
 offset_right = 1000.0
