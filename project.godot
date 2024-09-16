@@ -21,8 +21,15 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
-directories/dch_directory={}
-directories/dtl_directory={}
+directories/dch_directory={
+"grandmeister": "res://dialogue/grandmeister.dch",
+"player": "res://dialogue/player.dch",
+"soldiernpc": "res://dialogue/soldiernpc.dch"
+}
+directories/dtl_directory={
+"priestnpc_interact": "res://dialogue/priestnpc_interact.dtl",
+"soldiernpc_interact": "res://dialogue/soldiernpc_interact.dtl"
+}
 glossary/default_case_sensitive=true
 layout/style_list=["res://dialogue/style_chat_File.tres", "res://dialogue/lightnovel_File.tres"]
 layout/default_style="res://dialogue/style_chat_File.tres"
