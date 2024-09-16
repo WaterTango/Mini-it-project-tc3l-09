@@ -1,0 +1,253 @@
+[gd_scene load_steps=13 format=3 uid="uid://tvrth5rx40j5"]
+
+[ext_resource type="FontFile" uid="uid://f3bxx2ry3bsw" path="res://shaz_fonts/BLKCHCRY.TTF" id="1_sqqw3"]
+[ext_resource type="Texture2D" uid="uid://req0p8niwbae" path="res://shaz_images/UI/Fantasy Minimal Pixel Art UI/UI/HotkeyBox_34x34.png" id="2_085ei"]
+[ext_resource type="FontFile" uid="uid://cb7pxe0c4fdr7" path="res://shaz_fonts/CAROBTN_.TTF" id="3_wn4im"]
+[ext_resource type="Texture2D" uid="uid://c10lcsjhs150b" path="res://shaz_images/UI/Icons_Essential/v1.2/Icons/CatHead.png" id="4_2rjry"]
+[ext_resource type="Texture2D" uid="uid://1qc57knvlvdq" path="res://shaz_images/UI/Fantasy Minimal Pixel Art UI/UI/Pipe_36x11.png" id="4_dmfl8"]
+[ext_resource type="Texture2D" uid="uid://rk6j7pyar20k" path="res://shaz_images/UI/Fantasy Minimal Pixel Art UI/UI/MenusBox_34x34.png" id="4_frrma"]
+[ext_resource type="Texture2D" uid="uid://diwj8amd7v4wl" path="res://shaz_images/UI/Fantasy Minimal Pixel Art UI/UI/BlackMediumCircleBoxWithBorder_27x27.png" id="5_ptjfp"]
+[ext_resource type="Texture2D" uid="uid://b74fahatycicu" path="res://shaz_images/UI/Fantasy Minimal Pixel Art UI/UI/CornerKnot_14x14.png" id="6_afacd"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dwdvj"]
+texture = ExtResource("4_dmfl8")
+axis_stretch_horizontal = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sqpo1"]
+content_margin_left = 10.0
+texture = ExtResource("5_ptjfp")
+expand_margin_left = 6.0
+expand_margin_top = 6.0
+expand_margin_right = 6.0
+expand_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4inse"]
+content_margin_left = 10.0
+texture = ExtResource("6_afacd")
+expand_margin_left = 6.0
+expand_margin_top = 6.0
+expand_margin_right = 6.0
+expand_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l86d1"]
+content_margin_left = 10.0
+texture = ExtResource("6_afacd")
+expand_margin_left = 6.0
+expand_margin_top = 6.0
+expand_margin_right = 6.0
+expand_margin_bottom = 6.0
+
+[node name="shopmenu" type="Control"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -52.0
+offset_top = 40.0
+offset_right = 53.0
+offset_bottom = 103.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.886275, 0.65098, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("1_sqqw3")
+theme_override_font_sizes/font_size = 90
+text = "Shop
+"
+
+[node name="ContainerExt" type="NinePatchRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.870588)
+layout_mode = 0
+offset_left = -800.0
+offset_top = 160.0
+offset_right = 800.0
+offset_bottom = 960.0
+texture = ExtResource("2_085ei")
+patch_margin_left = 7
+patch_margin_top = 7
+patch_margin_right = 7
+patch_margin_bottom = 7
+
+[node name="WeaponsCategory" type="NinePatchRect" parent="ContainerExt"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 9.0
+offset_right = 308.0
+offset_bottom = 64.0
+texture = ExtResource("2_085ei")
+patch_margin_left = 7
+patch_margin_top = 7
+patch_margin_right = 7
+patch_margin_bottom = 7
+
+[node name="Label" type="Label" parent="ContainerExt/WeaponsCategory"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 295.0
+offset_bottom = 51.0
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("3_wn4im")
+theme_override_font_sizes/font_size = 39
+text = "Weapons
+"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ContainerExt/WeaponsCategory/Label"]
+layout_mode = 0
+offset_top = -3.0
+offset_right = 1002.0
+offset_bottom = 247.0
+
+[node name="Control" type="Control" parent="ContainerExt/WeaponsCategory/Label"]
+anchors_preset = 0
+offset_left = -4.0
+offset_top = -2.0
+offset_right = 1346.0
+offset_bottom = 254.0
+
+[node name="Panel" type="Panel" parent="ContainerExt/WeaponsCategory/Label/Control"]
+offset_left = 1.0
+offset_top = 56.0
+offset_right = 289.0
+offset_bottom = 244.0
+
+[node name="CatHead" type="Sprite2D" parent="ContainerExt/WeaponsCategory/Label/Control/Panel"]
+position = Vector2(148, 92)
+scale = Vector2(11.4375, 10.875)
+texture = ExtResource("4_2rjry")
+
+[node name="Panel2" type="Panel" parent="ContainerExt/WeaponsCategory/Label/Control"]
+offset_left = 297.0
+offset_top = 56.0
+offset_right = 585.0
+offset_bottom = 244.0
+
+[node name="CatHead" type="Sprite2D" parent="ContainerExt/WeaponsCategory/Label/Control/Panel2"]
+position = Vector2(148, 92)
+scale = Vector2(11.4375, 10.875)
+texture = ExtResource("4_2rjry")
+
+[node name="Panel3" type="Panel" parent="ContainerExt/WeaponsCategory/Label/Control"]
+offset_left = 597.0
+offset_top = 56.0
+offset_right = 885.0
+offset_bottom = 244.0
+
+[node name="CatHead" type="Sprite2D" parent="ContainerExt/WeaponsCategory/Label/Control/Panel3"]
+position = Vector2(148, 92)
+scale = Vector2(11.4375, 10.875)
+texture = ExtResource("4_2rjry")
+
+[node name="Panel4" type="Panel" parent="ContainerExt/WeaponsCategory/Label/Control"]
+offset_left = 896.0
+offset_top = 56.0
+offset_right = 1184.0
+offset_bottom = 244.0
+
+[node name="CatHead" type="Sprite2D" parent="ContainerExt/WeaponsCategory/Label/Control/Panel4"]
+position = Vector2(148, 92)
+scale = Vector2(11.4375, 10.875)
+texture = ExtResource("4_2rjry")
+
+[node name="HScrollBar" type="HScrollBar" parent="ContainerExt/WeaponsCategory/Label"]
+offset_left = 299.0
+offset_top = 20.0
+offset_right = 995.0
+offset_bottom = 28.0
+theme_override_styles/scroll = SubResource("StyleBoxTexture_dwdvj")
+theme_override_styles/grabber = SubResource("StyleBoxTexture_sqpo1")
+theme_override_styles/grabber_highlight = SubResource("StyleBoxTexture_4inse")
+theme_override_styles/grabber_pressed = SubResource("StyleBoxTexture_l86d1")
+
+[node name="PotionsCategory" type="NinePatchRect" parent="ContainerExt"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 264.0
+offset_right = 308.0
+offset_bottom = 319.0
+texture = ExtResource("2_085ei")
+patch_margin_left = 7
+patch_margin_top = 7
+patch_margin_right = 7
+patch_margin_bottom = 7
+
+[node name="Label" type="Label" parent="ContainerExt/PotionsCategory"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 295.0
+offset_bottom = 51.0
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("3_wn4im")
+theme_override_font_sizes/font_size = 39
+text = "Potions
+"
+horizontal_alignment = 1
+
+[node name="HScrollBar" type="HScrollBar" parent="ContainerExt/PotionsCategory"]
+offset_left = 304.0
+offset_top = 25.0
+offset_right = 1000.0
+offset_bottom = 33.0
+theme_override_styles/scroll = SubResource("StyleBoxTexture_dwdvj")
+theme_override_styles/grabber = SubResource("StyleBoxTexture_sqpo1")
+theme_override_styles/grabber_highlight = SubResource("StyleBoxTexture_4inse")
+theme_override_styles/grabber_pressed = SubResource("StyleBoxTexture_l86d1")
+
+[node name="EquimentsCategoru" type="NinePatchRect" parent="ContainerExt"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 524.0
+offset_right = 308.0
+offset_bottom = 579.0
+texture = ExtResource("2_085ei")
+patch_margin_left = 7
+patch_margin_top = 7
+patch_margin_right = 7
+patch_margin_bottom = 7
+
+[node name="Label" type="Label" parent="ContainerExt/EquimentsCategoru"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 295.0
+offset_bottom = 51.0
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("3_wn4im")
+theme_override_font_sizes/font_size = 39
+text = "Equipments"
+horizontal_alignment = 1
+
+[node name="HScrollBar" type="HScrollBar" parent="ContainerExt/EquimentsCategoru"]
+offset_left = 304.0
+offset_top = 25.0
+offset_right = 1000.0
+offset_bottom = 33.0
+theme_override_styles/scroll = SubResource("StyleBoxTexture_dwdvj")
+theme_override_styles/grabber = SubResource("StyleBoxTexture_sqpo1")
+theme_override_styles/grabber_highlight = SubResource("StyleBoxTexture_4inse")
+theme_override_styles/grabber_pressed = SubResource("StyleBoxTexture_l86d1")
+
+[node name="ContainerInfo" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 213.0
+offset_top = 188.0
+offset_right = 771.0
+offset_bottom = 931.0
+texture = ExtResource("4_frrma")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 7

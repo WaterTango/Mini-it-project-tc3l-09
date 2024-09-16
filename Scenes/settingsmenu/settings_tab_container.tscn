@@ -23,6 +23,7 @@ grow_vertical = 2
 script = ExtResource("1_8l2eh")
 
 [node name="TabContainer" type="TabContainer" parent="."]
+show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -37,10 +38,11 @@ theme_override_constants/icon_separation = 10
 theme_override_fonts/font = ExtResource("1_vnq8c")
 theme_override_font_sizes/font_size = 40
 tab_alignment = 2
-current_tab = 0
+current_tab = 2
 drag_to_rearrange_enabled = true
 
 [node name="Video" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_yc538")
 theme_override_font_sizes/font_size = 28
@@ -125,7 +127,6 @@ layout_mode = 2
 bus_name = "SFX"
 
 [node name="Controls" type="TabBar" parent="TabContainer"]
-visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_yc538")
 theme_override_font_sizes/font_size = 28

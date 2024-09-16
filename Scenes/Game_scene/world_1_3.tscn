@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=4 uid="uid://binah6hgxwfcd"]
+[gd_scene load_steps=72 format=4 uid="uid://binah6hgxwfcd"]
 
 [ext_resource type="Script" path="res://Scripts/world_1_3.gd" id="1_mrylb"]
 [ext_resource type="PackedScene" uid="uid://d2yr2v1e0ibvc" path="res://Scenes/Game_scene/player.tscn" id="3_mbbc7"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ba8i2p8le62dm" path="res://Assets/pixel assets/castle/Assets/2d_lights_and_shadows_neutral_point_light.webp" id="5_b1hax"]
 [ext_resource type="PackedScene" uid="uid://qnhy1jlu3dkk" path="res://Scenes/settingsmenu/settingsmenu.tscn" id="6_pnayf"]
 [ext_resource type="Script" path="res://Scenes/settingsmenu/settingsmenuINGAME.gd" id="7_g1hp4"]
+[ext_resource type="PackedScene" uid="uid://cahvqyq6rby61" path="res://DS4 UI/Interact.tscn" id="8_13a6c"]
 [ext_resource type="PackedScene" uid="uid://bf5px1sosea0q" path="res://Scenes/Game_scene/orc.tscn" id="8_36ivf"]
 [ext_resource type="Texture2D" uid="uid://crnws7b6mgnqc" path="res://Assets/png/e_dark.png" id="8_85tnl"]
 [ext_resource type="PackedScene" uid="uid://da3tndjg1hbyh" path="res://Scenes/Game_scene/orc_warrior.tscn" id="9_nsfax"]
@@ -567,6 +568,7 @@ polygon = PackedVector2Array(160, 449, 192, 449, 192, 463, 160, 463)
 polygon = PackedVector2Array(-191, 448, -161, 448, -161, 463, -191, 463)
 
 [node name="world_1_3" type="Node2D"]
+process_mode = 3
 z_index = 5
 y_sort_enabled = true
 script = ExtResource("1_mrylb")
@@ -601,6 +603,7 @@ position = Vector2(-1.19563, -55.0664)
 shape = SubResource("RectangleShape2D_cey23")
 
 [node name="entities" type="Node" parent="."]
+process_mode = 1
 
 [node name="Player" parent="entities" instance=ExtResource("3_mbbc7")]
 z_index = 2
@@ -624,6 +627,7 @@ offset = Vector2(-8.28, 0)
 texture_scale = 0.5
 
 [node name="PauseMenu" parent="entities/Player/Camera2D" instance=ExtResource("5_0m0xn")]
+process_mode = 3
 visible = false
 self_modulate = Color(1, 1, 1, 0)
 z_index = 20
@@ -635,6 +639,7 @@ offset_bottom = 870.0
 scale = Vector2(0.375, 0.375)
 
 [node name="settings_menu" parent="entities/Player/Camera2D" instance=ExtResource("6_pnayf")]
+process_mode = 3
 visible = false
 z_index = 20
 custom_minimum_size = Vector2(1920, 1080)
@@ -644,6 +649,11 @@ offset_right = 1585.0
 offset_bottom = 900.0
 scale = Vector2(0.35, 0.35)
 script = ExtResource("7_g1hp4")
+
+[node name="DS4-UI" parent="entities/Player/Camera2D" instance=ExtResource("8_13a6c")]
+visible = false
+position = Vector2(226, 148)
+scale = Vector2(0.5, 0.5)
 
 [node name="interact_popup2" type="Sprite2D" parent="entities/Player"]
 visible = false
@@ -1219,23 +1229,27 @@ shadow_item_cull_mask = 3
 texture = ExtResource("5_b1hax")
 
 [node name="clickSFX" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("22_wfhco")
 volume_db = -6.0
 pitch_scale = 0.48
 bus = &"SFX"
 
 [node name="World 1 Music" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("23_3druw")
 volume_db = -6.0
 bus = &"Music"
 parameters/looping = true
 
 [node name="PausedSFX" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("24_nr7vx")
 volume_db = -9.0
 bus = &"SFX"
 
 [node name="ResumeSFX" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("25_de41v")
 volume_db = -3.0
 bus = &"SFX"

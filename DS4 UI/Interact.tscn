@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://cahvqyq6rby61"]
+
+[ext_resource type="Texture2D" uid="uid://c4jh3ri8r84e7" path="res://shaz_images/UI/Ps4_Xbox_Controller_Buttons_v1.0/Spritesheet/icons_ps4_animated_buttons1.png" id="1_myh6r"]
+[ext_resource type="FontFile" uid="uid://b8oo2dguy484y" path="res://shaz_fonts/basis33.ttf" id="2_0muul"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3ijg"]
+atlas = ExtResource("1_myh6r")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tsd12"]
+atlas = ExtResource("1_myh6r")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8ni06"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m3ijg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tsd12")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m3ijg")
+}],
+"loop": true,
+"name": &"Interact",
+"speed": 3.0
+}]
+
+[node name="DS4-UI" type="Node2D"]
+position = Vector2(3, 8)
+
+[node name="DS4-Interact" type="AnimatedSprite2D" parent="."]
+position = Vector2(135, 8)
+scale = Vector2(2.064, 2)
+sprite_frames = SubResource("SpriteFrames_8ni06")
+animation = &"Interact"
+autoplay = "Interact"
+frame_progress = 0.609151
+
+[node name="Interact" type="Label" parent="DS4-Interact"]
+anchors_preset = -1
+anchor_left = -3.5
+anchor_right = -3.5
+offset_left = -10.8605
+offset_top = -8.0
+offset_right = 45.1395
+offset_bottom = 8.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_0muul")
+theme_override_font_sizes/font_size = 16
+text = "Interact"

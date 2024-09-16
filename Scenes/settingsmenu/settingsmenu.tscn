@@ -1,13 +1,24 @@
-[gd_scene load_steps=8 format=3 uid="uid://qnhy1jlu3dkk"]
+[gd_scene load_steps=13 format=3 uid="uid://qnhy1jlu3dkk"]
 
 [ext_resource type="Script" path="res://Scenes/mainmenu/settingsmenu.gd" id="1_gnf14"]
 [ext_resource type="FontFile" uid="uid://f3bxx2ry3bsw" path="res://shaz_fonts/BLKCHCRY.TTF" id="1_lj1wd"]
+[ext_resource type="Texture2D" uid="uid://b5xaw21th5old" path="res://shaz_images/UI/Fantasy Minimal Pixel Art UI/UI/RectangleBox_96x96.png" id="2_3jy0x"]
 [ext_resource type="FontFile" uid="uid://b8oo2dguy484y" path="res://shaz_fonts/basis33.ttf" id="2_bm5xm"]
 [ext_resource type="Texture2D" uid="uid://d3v7bgb45ofjd" path="res://shaz_images/icons/exit-export-logout-svgrepo-com.svg" id="3_6k6jv"]
 [ext_resource type="PackedScene" uid="uid://dilgucspn6n7b" path="res://Scenes/settingsmenu/settings_tab_container.tscn" id="3_upxwc"]
 [ext_resource type="AudioStream" uid="uid://bhnfdxn0m6r6f" path="res://shaz_audio/SFX/clicksfx.mp3" id="6_bx2a3"]
 
+[sub_resource type="Theme" id="Theme_1yfhp"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sjlsr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_scfli"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3fqgl"]
+
+[sub_resource type="Theme" id="Theme_pd13r"]
+TabContainer/styles/panel = SubResource("StyleBoxEmpty_scfli")
+TabContainer/styles/tabbar_background = SubResource("StyleBoxEmpty_3fqgl")
 
 [node name="settings_menu" type="Control"]
 layout_mode = 3
@@ -16,7 +27,71 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_1yfhp")
 script = ExtResource("1_gnf14")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.784314)
+layout_mode = 2
+offset_left = 93.0
+offset_top = 181.0
+offset_right = 1828.0
+offset_bottom = 899.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_3jy0x")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 9
+patch_margin_bottom = 9
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 1208.0
+offset_top = 129.0
+offset_right = 1331.0
+offset_bottom = 189.0
+texture = ExtResource("2_3jy0x")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 11
+patch_margin_bottom = 11
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 1330.0
+offset_top = 129.0
+offset_right = 1448.0
+offset_bottom = 189.0
+texture = ExtResource("2_3jy0x")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 11
+patch_margin_bottom = 11
+
+[node name="NinePatchRect4" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 1447.0
+offset_top = 129.0
+offset_right = 1600.0
+offset_bottom = 189.0
+texture = ExtResource("2_3jy0x")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 11
+patch_margin_bottom = 11
+
+[node name="NinePatchRect5" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 1599.0
+offset_top = 129.0
+offset_right = 1810.0
+offset_bottom = 189.0
+texture = ExtResource("2_3jy0x")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 11
+patch_margin_bottom = 11
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -51,6 +126,7 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_sjlsr")
 [node name="settingsTabContainer" parent="MarginContainer/VBoxContainer" instance=ExtResource("3_upxwc")]
 layout_mode = 2
 size_flags_vertical = 3
+theme = SubResource("Theme_pd13r")
 
 [node name="backbutton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2

@@ -2366,6 +2366,7 @@ radius = 24.0
 height = 110.0
 
 [node name="world_3" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_6brog")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -2415,6 +2416,7 @@ z_index = 7
 polygon = PackedVector2Array(-321, -1360, 321, -1360, 321, -1007, 35, -1008, 34, -705, 358, -827, 369, -1485, -374, -1498, -372, -912, -33, -703, -33, -1007, -321, -1004)
 
 [node name="map" type="Node" parent="."]
+process_mode = 1
 
 [node name="TileMap" type="TileMap" parent="map"]
 y_sort_enabled = true
@@ -2519,6 +2521,7 @@ tile_map_data = PackedByteArray("AAD9/7H/BwALAAAAAAD9/7L/BwALAAEAAAD9/7P/BwALAAE
 tile_set = ExtResource("4_bci5w")
 
 [node name="Player" parent="." instance=ExtResource("6_km0e6")]
+process_mode = 1
 z_index = 6
 position = Vector2(0, -2)
 
@@ -2528,6 +2531,7 @@ process_callback = 0
 script = ExtResource("7_h4us7")
 
 [node name="PauseMenu" parent="Player/Camera2D" instance=ExtResource("8_v5k2t")]
+process_mode = 3
 visible = false
 self_modulate = Color(1, 1, 1, 0)
 z_index = 20
@@ -2540,6 +2544,7 @@ scale = Vector2(0.375, 0.375)
 script = ExtResource("9_kop5w")
 
 [node name="settings_menu" parent="Player/Camera2D" instance=ExtResource("10_3jmn2")]
+process_mode = 3
 visible = false
 z_index = 20
 custom_minimum_size = Vector2(1920, 1080)
@@ -2604,23 +2609,27 @@ bus = &"SFX"
 stream = ExtResource("18_vht4x")
 
 [node name="World 3 Music" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("15_vqbpq")
 volume_db = -6.0
 bus = &"Music"
 parameters/looping = true
 
 [node name="clickSFX" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("16_30r3d")
 volume_db = -6.0
 pitch_scale = 0.48
 bus = &"SFX"
 
 [node name="PausedSFX" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("17_thm0h")
 volume_db = -9.0
 bus = &"SFX"
 
 [node name="ResumeSFX" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("18_whr28")
 volume_db = -3.0
 bus = &"SFX"
@@ -2635,6 +2644,7 @@ stream = ExtResource("18_062g3")
 bus = &"SFX"
 
 [node name="mobs" type="Node" parent="."]
+process_mode = 1
 
 [node name="soldier" type="Node" parent="mobs"]
 

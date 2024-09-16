@@ -4,7 +4,7 @@ extends Control
 
 # creates a dictionary for the resolution button by displaying and outputting the res in vector2i.
 const RESOLUTION_DICTIONARY : Dictionary = {
-	"800 x 600" : Vector2i (800, 600),
+	"1024 × 576" : Vector2i (1024, 576),
 	"1152 x 648" : Vector2i(1152, 648),
 	"1280 x 720" : Vector2i(1280, 720),
 	"1366 x 768" : Vector2i(1366, 768),
@@ -35,4 +35,4 @@ func add_resolution_items() -> void:
 func on_resolution_selected(index: int) -> void:
 	$interfaceReleaseSFX.play()
 	DisplayServer.window_set_size(RESOLUTION_DICTIONARY.values()[index])
-	print("[SETTINGS > VIDEO > RESOLUTION] Resolution is now ", InputEventFromWindow)
+	print("[SETTINGS > VIDEO > RESOLUTION] Resolution is now ", DisplayServer.window_set_size)

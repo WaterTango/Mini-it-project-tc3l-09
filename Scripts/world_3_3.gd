@@ -37,14 +37,14 @@ func pauseMenu():
 	if paused:
 		$ResumeSFX.play()
 		pause_menu.hide()
-		Engine.time_scale = 1
-		#get_tree().paused = true  
+		#Engine.time_scale = 1
+		get_tree().paused = false  
 		print("[Pause Menu] Game Resumed")
 	else:
 		$PausedSFX.play()
 		pause_menu.show()
-		Engine.time_scale = 0  
-		#get_tree().paused = false
+		#Engine.time_scale = 0  
+		get_tree().paused = true
 		print("[Pause Menu] Game Paused")
 		
 	paused = !paused

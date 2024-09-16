@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bmeuy7opkv1vh"]
+[gd_scene load_steps=8 format=3 uid="uid://bmeuy7opkv1vh"]
 
 [ext_resource type="Script" path="res://Scenes/settingsmenu/settings_rtx.gd" id="1_v2b8r"]
 [ext_resource type="FontFile" uid="uid://b8oo2dguy484y" path="res://shaz_fonts/basis33.ttf" id="1_w7w2n"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cvss5egaw8csr" path="res://shaz_images/icons/checkbox-on-svgrepo-com.svg" id="3_e7efd"]
 [ext_resource type="AudioStream" uid="uid://cwiqjbp3iejho" path="res://shaz_audio/SFX/interface-checked.mp3" id="5_deto3"]
 [ext_resource type="AudioStream" uid="uid://cudbq52b7s0kh" path="res://shaz_audio/SFX/interface-unchecked.mp3" id="6_pu61u"]
+[ext_resource type="Texture2D" uid="uid://b5xaw21th5old" path="res://shaz_images/UI/Fantasy Minimal Pixel Art UI/UI/RectangleBox_96x96.png" id="7_0tv7c"]
 
 [node name="settings_rtx" type="Control"]
 layout_mode = 3
@@ -15,6 +16,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_v2b8r")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 1395.0
+offset_top = 1.0
+offset_right = 1455.0
+offset_bottom = 61.0
+texture = ExtResource("7_0tv7c")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 11
+patch_margin_bottom = 11
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1

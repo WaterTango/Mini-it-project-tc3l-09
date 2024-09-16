@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://bg65fmt31h84x"]
+[gd_scene load_steps=48 format=4 uid="uid://bg65fmt31h84x"]
 
 [ext_resource type="Script" path="res://Scripts/world_1_2.gd" id="1_lcdo5"]
 [ext_resource type="TileSet" uid="uid://hejtinux6a7x" path="res://Scenes/Game_scene/world_1.tres" id="1_lsqgd"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://qnhy1jlu3dkk" path="res://Scenes/settingsmenu/settingsmenu.tscn" id="6_7hrci"]
 [ext_resource type="Script" path="res://Scenes/settingsmenu/settingsmenuINGAME.gd" id="7_7wpm4"]
 [ext_resource type="PackedScene" uid="uid://b0ajo0ydcnrw5" path="res://Scenes/Game_scene/zombie.tscn" id="7_27s8o"]
+[ext_resource type="PackedScene" uid="uid://cahvqyq6rby61" path="res://DS4 UI/Interact.tscn" id="8_ey1mu"]
 [ext_resource type="Texture2D" uid="uid://crnws7b6mgnqc" path="res://Assets/png/e_dark.png" id="8_gpka8"]
 [ext_resource type="Script" path="res://Scripts/door1.gd" id="11_qa52s"]
 [ext_resource type="Script" path="res://Scripts/door1_collision.gd" id="12_e7k33"]
@@ -418,6 +419,7 @@ height = 110.0
 size = Vector2(142.25, 20)
 
 [node name="world_1_2" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_lcdo5")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -677,6 +679,7 @@ position = Vector2(4.5, -209)
 shape = SubResource("RectangleShape2D_u5ggu")
 
 [node name="entities" type="Node" parent="."]
+process_mode = 1
 
 [node name="Player" parent="entities" instance=ExtResource("3_jdqqv")]
 z_index = 5
@@ -700,6 +703,7 @@ offset = Vector2(-8.28, 0)
 texture_scale = 0.5
 
 [node name="PauseMenu" parent="entities/Player/Camera2D" instance=ExtResource("5_otfr6")]
+process_mode = 3
 visible = false
 self_modulate = Color(1, 1, 1, 0)
 z_index = 20
@@ -711,6 +715,7 @@ offset_bottom = 870.0
 scale = Vector2(0.375, 0.375)
 
 [node name="settings_menu" parent="entities/Player/Camera2D" instance=ExtResource("6_7hrci")]
+process_mode = 3
 visible = false
 z_index = 20
 custom_minimum_size = Vector2(1920, 1080)
@@ -720,6 +725,11 @@ offset_right = 1585.0
 offset_bottom = 900.0
 scale = Vector2(0.35, 0.35)
 script = ExtResource("7_7wpm4")
+
+[node name="DS4-UI" parent="entities/Player/Camera2D" instance=ExtResource("8_ey1mu")]
+visible = false
+position = Vector2(226, 148)
+scale = Vector2(0.5, 0.5)
 
 [node name="interact_popup2" type="Sprite2D" parent="entities/Player"]
 visible = false
@@ -898,23 +908,27 @@ position = Vector2(76.875, 328)
 shape = SubResource("RectangleShape2D_5hyif")
 
 [node name="clickSFX" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("18_p1qfy")
 volume_db = -6.0
 pitch_scale = 0.48
 bus = &"SFX"
 
 [node name="World 1 Music" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("19_eq6bk")
 volume_db = -6.0
 bus = &"Music"
 parameters/looping = true
 
 [node name="PausedSFX" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("20_hyoc5")
 volume_db = -9.0
 bus = &"SFX"
 
 [node name="ResumeSFX" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("21_yww5x")
 volume_db = -3.0
 bus = &"SFX"

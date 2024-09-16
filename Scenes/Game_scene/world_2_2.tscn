@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=4 uid="uid://bwn2x4mky6dpq"]
+[gd_scene load_steps=72 format=4 uid="uid://bwn2x4mky6dpq"]
 
 [ext_resource type="Script" path="res://Scripts/world_2_2.gd" id="1_oobcj"]
 [ext_resource type="PackedScene" uid="uid://d2yr2v1e0ibvc" path="res://Scenes/Game_scene/player.tscn" id="1_whs3t"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://Scenes/settingsmenu/settingsmenuIngameW2.gd" id="7_u0exy"]
 [ext_resource type="Texture2D" uid="uid://cea87kxb4i4hm" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Green Woods/Assets/forest_water.png" id="8_7o0wh"]
 [ext_resource type="Texture2D" uid="uid://crnws7b6mgnqc" path="res://Assets/png/e_dark.png" id="8_j4hva"]
+[ext_resource type="PackedScene" uid="uid://cahvqyq6rby61" path="res://DS4 UI/Interact.tscn" id="8_w7b16"]
 [ext_resource type="Texture2D" uid="uid://7p8exaxsxcrt" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Green Woods/Assets/forest_texture/TX Props.png" id="9_4613w"]
 [ext_resource type="Texture2D" uid="uid://dts0o3myi8sd8" path="res://Assets/tilesets/RF_Catacombs_v1.0/mainlevbuild.png" id="10_k02wt"]
 [ext_resource type="Texture2D" uid="uid://c7ltumb0113o" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Green Woods/Assets/pixil-frame-0.png" id="11_6o86b"]
@@ -4054,6 +4055,7 @@ radius = 24.0
 height = 110.0
 
 [node name="world_2_2" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_oobcj")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -4085,6 +4087,7 @@ shape = SubResource("RectangleShape2D_wjcpj")
 one_way_collision_margin = 0.0
 
 [node name="Player" parent="." instance=ExtResource("1_whs3t")]
+process_mode = 1
 z_index = 4
 position = Vector2(-2, 435)
 
@@ -4094,6 +4097,7 @@ process_callback = 0
 script = ExtResource("2_65htj")
 
 [node name="PauseMenu" parent="Player/Camera2D" instance=ExtResource("4_ehf7m")]
+process_mode = 3
 visible = false
 self_modulate = Color(1, 1, 1, 0)
 z_index = 20
@@ -4106,6 +4110,7 @@ scale = Vector2(0.375, 0.375)
 script = ExtResource("5_gslor")
 
 [node name="settings_menu" parent="Player/Camera2D" instance=ExtResource("6_2orof")]
+process_mode = 3
 visible = false
 z_index = 20
 custom_minimum_size = Vector2(1920, 1080)
@@ -4115,6 +4120,11 @@ offset_right = 1585.0
 offset_bottom = 900.0
 scale = Vector2(0.35, 0.35)
 script = ExtResource("7_u0exy")
+
+[node name="DS4-UI" parent="Player/Camera2D" instance=ExtResource("8_w7b16")]
+visible = false
+position = Vector2(226, 148)
+scale = Vector2(0.5, 0.5)
 
 [node name="interact_popup2" type="Sprite2D" parent="Player"]
 visible = false
@@ -4366,22 +4376,26 @@ z_index = 1
 polygon = PackedVector2Array(530, 256, 764, 255, 765, 229, 768, 220, 768, 208, 784, 208, 794, 207, 800, 200, 800, -303, 784, -303, 784, -335, 784, -336, 768, -336, 768, -352, 752, -352, 752, -384, 543, -384, 495, -334, 494, -145, 495, -128, 513, -128, 513, -144, 529, -144, 544, -145, 544, -304, 560, -304, 560, -320, 736, -320, 737, -306, 753, -306, 752, -293, 752, 161, 737, 162, 737, 178, 721, 177, 721, 208, 576, 209, 576, 177, 560, 177, 560, 161, 544, 161, 543, -15, 528, -16, 528, -32, 513, -32, 513, -14.9503, 495, -15, 495, 32, 495.095, 48.8928, 512, 49, 512, 79, 495.268, 79.4838, 496, 209, 529, 209)
 
 [node name="clickSFX" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("31_pp3ay")
 volume_db = -6.0
 pitch_scale = 0.48
 bus = &"SFX"
 
 [node name="World 2 Music" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("32_mt64l")
 bus = &"Music"
 parameters/looping = true
 
 [node name="PausedSFX" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("33_5ksw8")
 volume_db = -9.0
 bus = &"SFX"
 
 [node name="ResumeSFX" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("34_n7wuv")
 volume_db = -3.0
 bus = &"SFX"
@@ -4396,6 +4410,7 @@ stream = ExtResource("36_hdej5")
 bus = &"SFX"
 
 [node name="mob" type="Node" parent="."]
+process_mode = 1
 
 [node name="soldier" type="Node" parent="mob"]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://b3k265hce1ctr"]
+[gd_scene load_steps=50 format=4 uid="uid://b3k265hce1ctr"]
 
 [ext_resource type="Script" path="res://Scripts/world_3_2.gd" id="1_342vo"]
 [ext_resource type="PackedScene" uid="uid://d2yr2v1e0ibvc" path="res://Scenes/Game_scene/player.tscn" id="1_ctdo8"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://Scripts/door1_collision.gd" id="6_xk5ly"]
 [ext_resource type="Script" path="res://Scenes/settingsmenu/settingsmenuInGameW3.gd" id="7_7duxl"]
 [ext_resource type="Texture2D" uid="uid://d16kv83clog3f" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/door_close.png" id="7_gvukn"]
+[ext_resource type="PackedScene" uid="uid://cahvqyq6rby61" path="res://DS4 UI/Interact.tscn" id="8_djrg8"]
 [ext_resource type="Texture2D" uid="uid://crnws7b6mgnqc" path="res://Assets/png/e_dark.png" id="8_ixb22"]
 [ext_resource type="Texture2D" uid="uid://cnhp21decqan" path="res://Assets/pixel assets/library/Assets/library_closed.png" id="8_r3u00"]
 [ext_resource type="Texture2D" uid="uid://ouf3icuvgc5" path="res://Assets/pixel assets/library/Assets/library_opened.png" id="9_85ruh"]
@@ -2345,6 +2346,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_dceiu")
 
 [node name="world_3_2" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_342vo")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -2364,6 +2366,7 @@ libraries = {
 }
 
 [node name="Player" parent="." instance=ExtResource("1_ctdo8")]
+process_mode = 1
 z_index = 4
 position = Vector2(0, -92)
 
@@ -2373,6 +2376,7 @@ process_callback = 0
 script = ExtResource("2_cb2ce")
 
 [node name="PauseMenu" parent="Player/Camera2D" instance=ExtResource("4_s3bi1")]
+process_mode = 3
 visible = false
 self_modulate = Color(1, 1, 1, 0)
 z_index = 20
@@ -2385,6 +2389,7 @@ scale = Vector2(0.375, 0.375)
 script = ExtResource("5_weq2b")
 
 [node name="settings_menu" parent="Player/Camera2D" instance=ExtResource("6_xj43a")]
+process_mode = 3
 visible = false
 z_index = 20
 custom_minimum_size = Vector2(1920, 1080)
@@ -2394,6 +2399,11 @@ offset_right = 1585.0
 offset_bottom = 900.0
 scale = Vector2(0.35, 0.35)
 script = ExtResource("7_7duxl")
+
+[node name="DS4-UI" parent="Player/Camera2D" instance=ExtResource("8_djrg8")]
+visible = false
+position = Vector2(226, 148)
+scale = Vector2(0.5, 0.5)
 
 [node name="interact_popup2" type="Sprite2D" parent="Player"]
 visible = false
@@ -2455,6 +2465,7 @@ stream = ExtResource("16_ee4bs")
 bus = &"SFX"
 
 [node name="mobs" type="Node" parent="."]
+process_mode = 1
 
 [node name="knight" type="Node" parent="mobs"]
 
@@ -2626,23 +2637,27 @@ polygon = PackedVector2Array(32, -242, 32, -351, 193, -351, 192, -543, 560, -543
 polygon = PackedVector2Array(-785, -288, -768, -288, -768, -432, -592, -432, -592, -544, -835, -544, -818, -286)
 
 [node name="World 3 Music" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("19_f4xys")
 volume_db = -6.0
 bus = &"Music"
 parameters/looping = true
 
 [node name="clickSFX" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("20_mkjxl")
 volume_db = -6.0
 pitch_scale = 0.48
 bus = &"SFX"
 
 [node name="PausedSFX" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("21_24if8")
 volume_db = -9.0
 bus = &"SFX"
 
 [node name="ResumeSFX" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("22_n1j75")
 volume_db = -3.0
 bus = &"SFX"

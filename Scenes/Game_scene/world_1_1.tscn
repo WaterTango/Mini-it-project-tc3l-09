@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=4 uid="uid://dah0ts1ddbmoi"]
+[gd_scene load_steps=55 format=4 uid="uid://dah0ts1ddbmoi"]
 
 [ext_resource type="Script" path="res://Scripts/world_1_1.gd" id="1_56o2p"]
 [ext_resource type="TileSet" uid="uid://hejtinux6a7x" path="res://Scenes/Game_scene/world_1.tres" id="1_lsqgd"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cng2glks0nexv" path="res://Assets/pixel assets/Pixel Crawler - Sewer/Assets/Tiles.png" id="5_uqiey"]
 [ext_resource type="TileSet" uid="uid://cl5petjwvv2yd" path="res://new_tile_set.tres" id="6_qflkk"]
 [ext_resource type="Texture2D" uid="uid://crnws7b6mgnqc" path="res://Assets/png/e_dark.png" id="8_cba2c"]
+[ext_resource type="PackedScene" uid="uid://cahvqyq6rby61" path="res://DS4 UI/Interact.tscn" id="8_nfbui"]
 [ext_resource type="PackedScene" uid="uid://bubxqu7jdai64" path="res://Scenes/mainmenu/pausemenu.tscn" id="10_838wu"]
 [ext_resource type="PackedScene" uid="uid://qnhy1jlu3dkk" path="res://Scenes/settingsmenu/settingsmenu.tscn" id="11_0daj7"]
 [ext_resource type="Script" path="res://Scripts/door1.gd" id="11_0p0f3"]
@@ -437,6 +438,7 @@ radius = 24.0
 height = 110.0
 
 [node name="world_1__1" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_56o2p")
 metadata/_edit_lock_ = true
 
@@ -461,6 +463,7 @@ self_modulate = Color(0.176419, 0.176419, 0.176419, 1)
 color = Color(0.116372, 0.116383, 0.195272, 0.980392)
 
 [node name="entitites" type="Node" parent="."]
+process_mode = 1
 
 [node name="Player" parent="entitites" instance=ExtResource("3_jdqqv")]
 z_index = 3
@@ -484,6 +487,7 @@ offset = Vector2(-8.28, 0)
 texture_scale = 0.5
 
 [node name="PauseMenu" parent="entitites/Player/Camera2D" instance=ExtResource("10_838wu")]
+process_mode = 3
 visible = false
 self_modulate = Color(1, 1, 1, 0)
 z_index = 20
@@ -495,6 +499,7 @@ offset_bottom = 870.0
 scale = Vector2(0.375, 0.375)
 
 [node name="settings_menu" parent="entitites/Player/Camera2D" instance=ExtResource("11_0daj7")]
+process_mode = 3
 visible = false
 z_index = 20
 custom_minimum_size = Vector2(1920, 1080)
@@ -505,6 +510,11 @@ offset_bottom = 900.0
 scale = Vector2(0.35, 0.35)
 script = ExtResource("12_eeqmo")
 
+[node name="DS4-UI" parent="entitites/Player/Camera2D" instance=ExtResource("8_nfbui")]
+visible = false
+position = Vector2(226, 148)
+scale = Vector2(0.5, 0.5)
+
 [node name="interact_popup2" type="Sprite2D" parent="entitites/Player"]
 visible = false
 z_index = 10
@@ -513,6 +523,7 @@ scale = Vector2(0.236842, 0.231707)
 texture = ExtResource("8_cba2c")
 
 [node name="skeleton" type="Node" parent="entitites"]
+process_mode = 1
 
 [node name="skeleton" parent="entitites/skeleton" instance=ExtResource("11_btl6v")]
 z_index = 2
@@ -737,6 +748,7 @@ position = Vector2(144, 0)
 occluder = SubResource("OccluderPolygon2D_1sbg1")
 
 [node name="light" type="Node" parent="."]
+process_mode = 1
 
 [node name="torch_light" type="PointLight2D" parent="light"]
 position = Vector2(-409, -122)
@@ -1019,23 +1031,27 @@ polygon = PackedVector2Array(-128, -31, -144, -31, -144, -24, -239, -23, -240, -
 polygon = PackedVector2Array(-33, -295, -17, -295, -18, -338, -17, -375, -16, -463, -111, -464, -112, -576, -32, -575, -32, -540, -17, -540, -17, -598, 17.0218, -598.15, 17, -540, 32, -540, 32, -576, 112, -576, 111, -463, 19, -464, 16, -295, 176, -296, 436, -600, 342, -725, -269, -741, -277, -326, -192, -295)
 
 [node name="clickSFX" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("21_lj2ob")
 volume_db = -6.0
 pitch_scale = 0.48
 bus = &"SFX"
 
 [node name="World 1 Music" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("22_qrmdu")
 volume_db = -6.0
 bus = &"Music"
 parameters/looping = true
 
 [node name="PausedSFX" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("21_ff3dr")
 volume_db = -9.0
 bus = &"SFX"
 
 [node name="ResumeSFX" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("22_27fjt")
 volume_db = -3.0
 bus = &"SFX"

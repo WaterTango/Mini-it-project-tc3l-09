@@ -38,16 +38,18 @@ func pauseMenu():
 	# for resuming, not that paused is !paused
 	if paused:
 		$ResumeSFX.play()
+		$CanvasModulate.show()
 		pause_menu.hide()
-		Engine.time_scale = 1
-		#get_tree().paused = true  
+		#Engine.time_scale = 1
+		get_tree().paused = false  
 		print("[Pause Menu] Game Resumed")
 	# paused
 	else:
 		$PausedSFX.play()
+		$CanvasModulate.show()
 		pause_menu.show()
-		Engine.time_scale = 0  
-		#get_tree().paused = false
+		#Engine.time_scale = 0  
+		get_tree().paused = true
 		print("[Pause Menu] Game Paused")
 		
 	paused = !paused
@@ -67,7 +69,10 @@ func _on_tp_area_2_body_entered(body: Node2D) -> void:
 
 func _on_key_popup_hide() -> void:
 	$Player/interact_popup2.hide()
-
+	# Shaz's DS4 UI
+	$"Player/Camera2D/DS4-UI".hide()
 
 func _on_key_popup_show() -> void:
 	$Player/interact_popup2.show()
+	# Shaz's DS4 UI
+	$"Player/Camera2D/DS4-UI".show()

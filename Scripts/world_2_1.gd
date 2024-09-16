@@ -3,6 +3,7 @@ extends Node2D
 @onready var SceneTransition = $SceneTransition/AnimationPlayer
 # shaz's pausemenu =================================================================================
 @onready var pause_menu: pausemenuW2 = $Player/Camera2D/PauseMenu
+@onready var settings_menu: settingsmenuInGameW2 = $Player/Camera2D/settings_menu
 
 var paused = false
 # shaz's AudioPlaybackScript =======================================================================
@@ -46,20 +47,35 @@ func _input(_event):
 func pauseMenu():
 	if paused:
 		$ResumeSFX.play()
+		$CanvasModulate.show()
 		pause_menu.hide()
-		Engine.time_scale = 1
-		#get_tree().paused = true  
+		#Engine.time_scale = 1
+		get_tree().paused = false  
 		print("[Pause Menu] Game Resumed")
 	else:
 		$PausedSFX.play()
+		$CanvasModulate.hide()
 		pause_menu.show()
-		Engine.time_scale = 0  
-		#get_tree().paused = false
+		#Engine.time_scale = 0  
+		get_tree().paused = true
 		print("[Pause Menu] Game Paused")
 		
 	paused = !paused
+# Pausemenu Zoom Compatibility Scaling ===========================================
 
-#==================================================================================================
+func pauseMenuDefaultScaling():
+	pause_menu.scale = Vector2(.375 , .375)
+	pause_menu.position = Vector2(-360, -210)
+	settings_menu.scale = Vector2(0.35, 0.35)
+	settings_menu.position = Vector2(-335, -180)
+	
+func pauseMenuHouseScaling():
+	pause_menu.scale = Vector2(.2, .2)
+	pause_menu.position = Vector2(-192.5, -108.5)
+	settings_menu.scale = Vector2(0.2, 0.2)
+	settings_menu.position = Vector2(-192.5, -108.5)
+
+#=================================================================================
 
 func _on_tp_area_2_body_entered(body: Node2D) -> void:
 	if body is Player:
@@ -78,6 +94,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		$Map/TileMap/village/roofchimney.hide()
 		$Player/Camera2D.zoom.x = 5
 		$Player/Camera2D.zoom.y = 5
+		# shaz's pausemenuScaling and SFX
+		pauseMenuHouseScaling()
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body is Player:
@@ -85,21 +103,26 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 		$Map/TileMap/village/roofchimney.show()
 		$Player/Camera2D.zoom.x = 3
 		$Player/Camera2D.zoom.y = 3
+		# shaz's pausemenuScaling
+		pauseMenuDefaultScaling()
 
 
 func _on_door_opening_animation_body_entered(body: Node2D) -> void:
 	if body is Player:
 		$Map/TileMap/village/door.hide()
-
+		$DoorOpening.play()
 
 func _on_door_opening_animation_body_exited(body: Node2D) -> void:
 	if body is Player:
 		$Map/TileMap/village/door.show()
-
+		$DoorClosing.play()
 
 func _on_key_popup_hide() -> void:
 	$Player/interact_popup2.hide()
-
+	#Shaz's DS4 UI ==================================================
+	$"Player/Camera2D/DS4-UI".hide()
 
 func _on_key_popup_show() -> void:
 	$Player/interact_popup2.show()
+	#Shaz's DS4 UI ==================================================
+	$"Player/Camera2D/DS4-UI".show()
