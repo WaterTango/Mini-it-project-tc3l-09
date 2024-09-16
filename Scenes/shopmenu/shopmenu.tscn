@@ -102,12 +102,6 @@ text = "Weapons
 "
 horizontal_alignment = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="ContainerExt/WeaponsCategory/Label"]
-layout_mode = 0
-offset_top = -3.0
-offset_right = 1002.0
-offset_bottom = 247.0
-
 [node name="Control" type="Control" parent="ContainerExt/WeaponsCategory/Label"]
 anchors_preset = 0
 offset_left = -4.0
