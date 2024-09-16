@@ -1,6 +1,6 @@
 [style name="lightnovel_File"]
 [signal arg="chatting"]
-- talk with grandmeister?
+- Talk with Grandmeister Gartley
 - look elsewhere
 	[end_timeline]
 	[signal arg="exit"]

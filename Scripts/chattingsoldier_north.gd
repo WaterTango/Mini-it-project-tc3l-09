@@ -28,11 +28,11 @@ func _ready():
 func _process(delta):
 	#0 = IDLE
 	if current_state == 0:
-		$AnimatedSprite2D.play("shopkeeper_idle")
+		$AnimatedSprite2D.play("chatting_soldier_idle")
 	if current_state == 1:
-		$AnimatedSprite2D.play("shopkeeper_idle")
+		$AnimatedSprite2D.play("chatting_soldier_idle")
 	if current_state == 2:
-		$AnimatedSprite2D.play("shopkeeper_run")
+		$AnimatedSprite2D.play("chatting_soldier_run")
 	
 	match current_state:
 		IDLE:
@@ -42,8 +42,8 @@ func _process(delta):
 		MOVE:
 			move(delta)
 	if Input.is_action_just_pressed("interact") and player_in_chat_zone:
-		$AnimatedSprite2D.play("shopkeeper_idle")
-		run_dialogue("shopkeepernpc_interact")
+		$AnimatedSprite2D.play("chatting_soldier_idle")
+		run_dialogue("gatenorthnpc_interact")
 
 func run_dialogue(dialogue_string):
 	is_chatting = true

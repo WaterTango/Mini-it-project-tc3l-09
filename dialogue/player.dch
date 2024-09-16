@@ -10,7 +10,7 @@
 },
 "default_portrait": "playerFront",
 "description": "",
-"display_name": "player",
+"display_name": "Rhargar",
 "mirror": false,
 "nicknames": [""],
 "offset": Vector2(0, 0),
@@ -29,7 +29,7 @@
 "image": "\"res://PlayerAsset/Idle/potraitsidezoom.png\""
 },
 "mirror": false,
-"offset": Vector2(200, 0),
+"offset": Vector2(350, 0),
 "scale": 0.7,
 "scene": ""
 }

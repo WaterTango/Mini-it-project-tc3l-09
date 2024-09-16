@@ -1,0 +1,14 @@
+[style name="lightnovel_File"]
+[signal arg="chatting"]
+- Talk with gate soldier?
+- look elsewhere
+	[signal arg="exit"]
+	[end_timeline]
+join soldiernpc left
+soldiernpc: Hold there! It's not safe beyond these walls.\
+\
+(Press Enter to continue)
+soldiernpc: The wilds are crawling with beasts and worse—you step out, you may not come back.
+soldiernpc: Stay inside the outpost, or you're as good as lost.
+[signal arg="exit"]
+[end_timeline]

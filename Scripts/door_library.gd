@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-signal door1_coldlision
+signal door1_collision
 
 
 func _ready() -> void:
@@ -12,4 +12,3 @@ func _on_key_door_1_opened() -> void:
 	$DoorSFX.play()
 	$AnimatedSprite2D.play("library_open")
 	emit_signal("door1_collision")
-	

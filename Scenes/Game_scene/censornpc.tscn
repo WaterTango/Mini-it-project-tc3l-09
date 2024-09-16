@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://bx1u3jdh6th4s"]
+[gd_scene load_steps=18 format=3 uid="uid://bx1u3jdh6th4s"]
 
 [ext_resource type="Script" path="res://Scripts/censornpc.gd" id="1_m3ct5"]
 [ext_resource type="Texture2D" uid="uid://bvwy0e2qpasf" path="res://Assets/pixel assets/library/Enemies/Scholars/Censor/Idle-Sheet.png" id="2_a7ifq"]
+[ext_resource type="Texture2D" uid="uid://crnws7b6mgnqc" path="res://Assets/png/e_dark.png" id="2_yacr1"]
 [ext_resource type="Texture2D" uid="uid://y0gvem1k3hom" path="res://Assets/pixel assets/library/Enemies/Scholars/Censor/Run-Sheet.png" id="3_suudf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qijb3"]
@@ -90,10 +91,20 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qmc2f"]
 size = Vector2(21.25, 33.75)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_85yv3"]
+size = Vector2(71.25, 88.75)
+
 [node name="censornpc" type="CharacterBody2D"]
 position = Vector2(-7.10543e-15, -9.53674e-07)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("1_m3ct5")
+
+[node name="interact_popup3" type="Sprite2D" parent="."]
+visible = false
+z_index = 10
+position = Vector2(1.25, -38.75)
+scale = Vector2(0.236842, 0.231707)
+texture = ExtResource("2_yacr1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(8.88178e-15, -32.5)
@@ -108,4 +119,13 @@ autostart = true
 position = Vector2(0.624999, -16.875)
 shape = SubResource("RectangleShape2D_qmc2f")
 
+[node name="chat_detection_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chat_detection_area"]
+position = Vector2(-0.625002, 25.625)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_85yv3")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="chat_detection_area" to="." method="_on_chat_detection_area_body_entered"]
+[connection signal="body_exited" from="chat_detection_area" to="." method="_on_chat_detection_area_body_exited"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://cmkcsdcvi17xw"]
+[gd_scene load_steps=43 format=4 uid="uid://cmkcsdcvi17xw"]
 
 [ext_resource type="Script" path="res://Scripts/world_3_1.gd" id="1_s8enk"]
 [ext_resource type="PackedScene" uid="uid://d2yr2v1e0ibvc" path="res://Scenes/Game_scene/player.tscn" id="1_tegyf"]
@@ -26,7 +26,6 @@
 [ext_resource type="AudioStream" uid="uid://cxdtgh6f6ljyb" path="res://shaz_audio/SFX/resume.mp3" id="19_ggqts"]
 [ext_resource type="AudioStream" uid="uid://f8euu8wxjl1l" path="res://shaz_audio/SFX/Leaving.mp3" id="23_crbi1"]
 [ext_resource type="AudioStream" uid="uid://bykfi4pa6x6x8" path="res://shaz_audio/SFX/Entering.mp3" id="24_30spl"]
-[ext_resource type="PackedScene" uid="uid://bph610j3dc6p2" path="res://Scenes/Game_scene/director.tscn" id="25_pkntf"]
 [ext_resource type="PackedScene" uid="uid://d284wji5iic7p" path="res://Scenes/Game_scene/cataloguer.tscn" id="26_yxcpg"]
 [ext_resource type="PackedScene" uid="uid://orr5u40xx812" path="res://Scenes/Game_scene/researcher.tscn" id="27_tgy2u"]
 
@@ -418,13 +417,6 @@ bus = &"SFX"
 [node name="mobs" type="Node" parent="."]
 process_mode = 1
 
-[node name="director" type="Node" parent="mobs"]
-
-[node name="director" parent="mobs/director" instance=ExtResource("25_pkntf")]
-z_index = 5
-position = Vector2(-1, -137)
-scale = Vector2(1.65, 1.65)
-
 [node name="cataloguer" type="Node" parent="mobs"]
 
 [node name="cataloguer" parent="mobs/cataloguer" instance=ExtResource("26_yxcpg")]
@@ -470,6 +462,7 @@ z_index = 5
 position = Vector2(156, -14)
 
 [connection signal="body_entered" from="Level3_1TP/tp_area" to="." method="_on_tp_area_body_entered"]
+[connection signal="door1_collision" from="Doors/door1" to="Doors/door1/door1_collision" method="_on_door_1_door_1_collision"]
 [connection signal="body_entered" from="Doors/door1/door1 zone" to="Doors/door1/door1_collision" method="_on_door_zone_body_entered"]
 [connection signal="body_entered" from="Doors/door1/door1 zone" to="Keys/key" method="_on_door_1_zone_body_entered"]
 [connection signal="body_exited" from="Doors/door1/door1 zone" to="Keys/key" method="_on_door_1_zone_body_exited"]

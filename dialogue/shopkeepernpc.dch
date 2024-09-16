@@ -8,16 +8,16 @@
 "sound_moods": {},
 "style": ""
 },
-"default_portrait": "soldiernpc",
-"description": "soldier guarding the outpost",
-"display_name": "Gate Soldier",
+"default_portrait": "Magus Galius",
+"description": "",
+"display_name": "Magus Galius",
 "mirror": false,
 "nicknames": [""],
 "offset": Vector2(0, 0),
 "portraits": {
-"soldiernpc": {
+"Magus Galius": {
 "export_overrides": {
-"image": "\"res://Assets/pixel assets/Pixel Crawler - Royal Crew/Soldier/potraitsoldier.png\""
+"image": "\"res://Assets/pixel assets/hideout/Enemies/Baldits/Sorcerer/Idle/sorcererpotrait.png\""
 },
 "mirror": false,
 "offset": Vector2(-300, 0),
