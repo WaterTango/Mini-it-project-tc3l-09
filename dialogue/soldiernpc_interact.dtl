@@ -1,9 +1,9 @@
 [style name="lightnovel_File"]
-[signal arg="chatting"]
 - talk with gate soldier?
 - nevermind
 	[end_timeline]
 	[signal arg="exit"]
+[signal arg="chatting"]
 join soldiernpc left
 soldiernpc: By the gods, it's you, my lord! We feared you were lost to the darkness forever, but you've returned at last.\
 \

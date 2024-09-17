@@ -1,9 +1,9 @@
-[signal arg="chatting"]
 [style name="lightnovel_File"]
 - Talk to Barmaid Lysandra?
 - look elsewhere
 	[end_timeline]
 	[signal arg="exit"]
+[signal arg="chatting"]
 join censornpc left
 censornpc: Orc armies in the east, traitors in the palace—it's a wonder we’ve lasted this long.\
 \

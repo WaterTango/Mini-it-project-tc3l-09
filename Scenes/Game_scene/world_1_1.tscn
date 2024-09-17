@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=4 uid="uid://dah0ts1ddbmoi"]
+[gd_scene load_steps=56 format=4 uid="uid://dah0ts1ddbmoi"]
 
 [ext_resource type="Script" path="res://Scripts/world_1_1.gd" id="1_56o2p"]
 [ext_resource type="TileSet" uid="uid://hejtinux6a7x" path="res://Scenes/Game_scene/world_1.tres" id="1_lsqgd"]
@@ -11,6 +11,7 @@
 [ext_resource type="TileSet" uid="uid://cl5petjwvv2yd" path="res://new_tile_set.tres" id="6_qflkk"]
 [ext_resource type="Texture2D" uid="uid://crnws7b6mgnqc" path="res://Assets/png/e_dark.png" id="8_cba2c"]
 [ext_resource type="PackedScene" uid="uid://cahvqyq6rby61" path="res://DS4 UI/Interact.tscn" id="8_nfbui"]
+[ext_resource type="PackedScene" uid="uid://byfmbyb7684lb" path="res://Scenes/Game_scene/key_notification.tscn" id="9_2ycda"]
 [ext_resource type="PackedScene" uid="uid://bubxqu7jdai64" path="res://Scenes/mainmenu/pausemenu.tscn" id="10_838wu"]
 [ext_resource type="PackedScene" uid="uid://qnhy1jlu3dkk" path="res://Scenes/settingsmenu/settingsmenu.tscn" id="11_0daj7"]
 [ext_resource type="Script" path="res://Scripts/door1.gd" id="11_0p0f3"]
@@ -477,7 +478,7 @@ script = ExtResource("4_qn5wu")
 [node name="Playerlight" type="PointLight2D" parent="entitites/Player/Camera2D"]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(4, -9)
+position = Vector2(2, -13)
 color = Color(0.838897, 0.838897, 0.838897, 1)
 energy = 0.7
 range_item_cull_mask = 3
@@ -514,6 +515,10 @@ script = ExtResource("12_eeqmo")
 visible = false
 position = Vector2(226, 148)
 scale = Vector2(0.5, 0.5)
+
+[node name="key_Notification" parent="entitites/Player/Camera2D" instance=ExtResource("9_2ycda")]
+visible = false
+position = Vector2(226, 162)
 
 [node name="interact_popup2" type="Sprite2D" parent="entitites/Player"]
 visible = false
@@ -1015,8 +1020,8 @@ stream = ExtResource("18_ubu3r")
 [node name="Keys" type="Node" parent="."]
 
 [node name="key" parent="Keys" instance=ExtResource("15_ubtxd")]
-z_index = 2
-position = Vector2(-37, -286)
+z_index = 1
+position = Vector2(-72, -304)
 
 [node name="KeySFX" type="AudioStreamPlayer" parent="Keys/key"]
 stream = ExtResource("20_npl7y")
@@ -1028,7 +1033,7 @@ bus = &"SFX"
 polygon = PackedVector2Array(-128, -31, -144, -31, -144, -24, -239, -23, -240, -32, -257, -32, -256, -160, -224, -160, -224, -192, -191, -192, -191, -223, -160, -224, -160, -241, 161, -240, 161, -225, 192, -225, 192, -193, 225, -192, 224, -161, 257, -160, 256, -32, 240, -32, 240, -24, 143, -23, 143, -31, 127, -31, 126, -120, -112, -120, -128, -120)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(-33, -295, -17, -295, -18, -338, -17, -375, -16, -463, -111, -464, -112, -576, -32, -575, -32, -540, -17, -540, -17, -598, 17.0218, -598.15, 17, -540, 32, -540, 32, -576, 112, -576, 111, -463, 19, -464, 16, -295, 176, -296, 436, -600, 342, -725, -269, -741, -277, -326, -192, -295)
+polygon = PackedVector2Array(-33, -295, -17, -295, -18, -338, -17, -375, -16, -463, -111, -464, -112, -576, -32, -575, -32, -540, -17, -540, -17, -578, 17, -578, 17, -540, 32, -540, 32, -576, 112, -576, 111, -463, 19, -464, 16, -295, 176, -296, 436, -600, 342, -725, -269, -741, -277, -326, -192, -295)
 
 [node name="clickSFX" type="AudioStreamPlayer" parent="."]
 process_mode = 3
@@ -1071,5 +1076,6 @@ bus = &"SFX"
 [connection signal="body_entered" from="Doors/door1/door1 zone" to="Keys/key" method="_on_door_1_zone_body_entered"]
 [connection signal="body_exited" from="Doors/door1/door1 zone" to="Keys/key" method="_on_door_1_zone_body_exited"]
 [connection signal="door1_opened" from="Keys/key" to="Doors/door1" method="_on_key_door_1_opened"]
+[connection signal="key_pickedup" from="Keys/key" to="." method="_on_key_key_pickedup"]
 [connection signal="popup_hide" from="Keys/key" to="." method="_on_key_popup_hide"]
 [connection signal="popup_show" from="Keys/key" to="." method="_on_key_popup_show"]

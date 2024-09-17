@@ -78,3 +78,7 @@ func _on_key_popup_hide() -> void:
 	$entitites/Player/interact_popup2.hide()
 	# Shaz's DS4 UI
 	$"entitites/Player/Camera2D/DS4-UI".hide()
+
+
+func _on_key_key_pickedup() -> void:
+	$entitites/Player/Camera2D/key_Notification.show()

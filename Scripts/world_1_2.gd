@@ -80,3 +80,6 @@ func _on_key_popup_show() -> void:
 	# Shaz's DS4 UI
 	$"entities/Player/Camera2D/DS4-UI".show()
 	
+
+func _on_key_key_pickedup() -> void:
+	$entities/Player/Camera2D/key_Notification.show()

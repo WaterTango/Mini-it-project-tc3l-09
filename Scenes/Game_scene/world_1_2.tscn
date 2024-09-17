@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://bg65fmt31h84x"]
+[gd_scene load_steps=49 format=4 uid="uid://bg65fmt31h84x"]
 
 [ext_resource type="Script" path="res://Scripts/world_1_2.gd" id="1_lcdo5"]
 [ext_resource type="TileSet" uid="uid://hejtinux6a7x" path="res://Scenes/Game_scene/world_1.tres" id="1_lsqgd"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://b0ajo0ydcnrw5" path="res://Scenes/Game_scene/zombie.tscn" id="7_27s8o"]
 [ext_resource type="PackedScene" uid="uid://cahvqyq6rby61" path="res://DS4 UI/Interact.tscn" id="8_ey1mu"]
 [ext_resource type="Texture2D" uid="uid://crnws7b6mgnqc" path="res://Assets/png/e_dark.png" id="8_gpka8"]
+[ext_resource type="PackedScene" uid="uid://byfmbyb7684lb" path="res://Scenes/Game_scene/key_notification.tscn" id="9_jbx44"]
 [ext_resource type="Script" path="res://Scripts/door1.gd" id="11_qa52s"]
 [ext_resource type="Script" path="res://Scripts/door1_collision.gd" id="12_e7k33"]
 [ext_resource type="Texture2D" uid="uid://d16kv83clog3f" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/door_close.png" id="13_56dr3"]
@@ -693,7 +694,7 @@ script = ExtResource("4_qn5wu")
 [node name="Playerlight" type="PointLight2D" parent="entities/Player/Camera2D"]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(4, -9)
+position = Vector2(1, -15)
 color = Color(0.838897, 0.838897, 0.838897, 1)
 energy = 0.7
 range_item_cull_mask = 3
@@ -730,6 +731,10 @@ script = ExtResource("7_7wpm4")
 visible = false
 position = Vector2(226, 148)
 scale = Vector2(0.5, 0.5)
+
+[node name="key_Notification" parent="entities/Player/Camera2D" instance=ExtResource("9_jbx44")]
+visible = false
+position = Vector2(226, 162)
 
 [node name="interact_popup2" type="Sprite2D" parent="entities/Player"]
 visible = false
@@ -890,7 +895,7 @@ stream = ExtResource("17_hetxw")
 
 [node name="key" parent="Keys" instance=ExtResource("15_4nqj5")]
 z_index = 2
-position = Vector2(-43, -356)
+position = Vector2(-56, -394)
 
 [node name="KeySFX" type="AudioStreamPlayer" parent="Keys/key"]
 stream = ExtResource("19_3i7kb")
@@ -901,6 +906,10 @@ position = Vector2(140, -345)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(76.5, 0)
+shape = SubResource("RectangleShape2D_5hyif")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-140, -257)
 shape = SubResource("RectangleShape2D_5hyif")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
@@ -948,5 +957,6 @@ bus = &"SFX"
 [connection signal="body_entered" from="Doors/door1/door1 zone" to="Keys/key" method="_on_door_1_zone_body_entered"]
 [connection signal="body_exited" from="Doors/door1/door1 zone" to="Keys/key" method="_on_door_1_zone_body_exited"]
 [connection signal="door1_opened" from="Keys/key" to="Doors/door1" method="_on_key_door_1_opened"]
+[connection signal="key_pickedup" from="Keys/key" to="." method="_on_key_key_pickedup"]
 [connection signal="popup_hide" from="Keys/key" to="." method="_on_key_popup_hide"]
 [connection signal="popup_show" from="Keys/key" to="." method="_on_key_popup_show"]

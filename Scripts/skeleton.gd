@@ -115,7 +115,6 @@ func _on_player_attack_range_body_exited(body):
 	if body is Player:
 		within_player_range = false
 		$Timer.start()
-
 func _on_attack_range_body_entered(body):
 	if body.is_in_group("Player"):
 		within_range = true

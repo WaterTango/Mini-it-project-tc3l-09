@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=4 uid="uid://binah6hgxwfcd"]
+[gd_scene load_steps=73 format=4 uid="uid://binah6hgxwfcd"]
 
 [ext_resource type="Script" path="res://Scripts/world_1_3.gd" id="1_mrylb"]
 [ext_resource type="PackedScene" uid="uid://d2yr2v1e0ibvc" path="res://Scenes/Game_scene/player.tscn" id="3_mbbc7"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cahvqyq6rby61" path="res://DS4 UI/Interact.tscn" id="8_13a6c"]
 [ext_resource type="PackedScene" uid="uid://bf5px1sosea0q" path="res://Scenes/Game_scene/orc.tscn" id="8_36ivf"]
 [ext_resource type="Texture2D" uid="uid://crnws7b6mgnqc" path="res://Assets/png/e_dark.png" id="8_85tnl"]
+[ext_resource type="PackedScene" uid="uid://byfmbyb7684lb" path="res://Scenes/Game_scene/key_notification.tscn" id="9_g2pkf"]
 [ext_resource type="PackedScene" uid="uid://da3tndjg1hbyh" path="res://Scenes/Game_scene/orc_warrior.tscn" id="9_nsfax"]
 [ext_resource type="PackedScene" uid="uid://cx328oij4ofwy" path="res://Scenes/Game_scene/skeleton.tscn" id="10_cc3sh"]
 [ext_resource type="TileSet" uid="uid://hejtinux6a7x" path="res://Scenes/Game_scene/world_1.tres" id="11_7etfu"]
@@ -591,7 +592,7 @@ libraries = {
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 self_modulate = Color(0.176419, 0.176419, 0.176419, 1)
-color = Color(0.215902, 0.215902, 0.215901, 0.980392)
+color = Color(0.172833, 0.172833, 0.172832, 0.980392)
 
 [node name="Level1_3TP" type="StaticBody2D" parent="."]
 position = Vector2(161, -1013)
@@ -617,7 +618,7 @@ script = ExtResource("4_c67gd")
 [node name="Playerlight" type="PointLight2D" parent="entities/Player/Camera2D"]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(4, -9)
+position = Vector2(1.5545, -13.646)
 color = Color(0.838897, 0.838897, 0.838897, 1)
 energy = 0.7
 range_item_cull_mask = 3
@@ -654,6 +655,10 @@ script = ExtResource("7_g1hp4")
 visible = false
 position = Vector2(226, 148)
 scale = Vector2(0.5, 0.5)
+
+[node name="key_Notification" parent="entities/Player/Camera2D" instance=ExtResource("9_g2pkf")]
+visible = false
+position = Vector2(226, 162)
 
 [node name="interact_popup2" type="Sprite2D" parent="entities/Player"]
 visible = false
@@ -857,7 +862,7 @@ stream = ExtResource("21_s8xjo")
 [node name="Keys" type="Node" parent="."]
 
 [node name="key" parent="Keys" instance=ExtResource("21_e1ob2")]
-position = Vector2(118, -463)
+position = Vector2(105, -497)
 
 [node name="KeySFX" type="AudioStreamPlayer" parent="Keys/key"]
 stream = ExtResource("23_wimnu")
@@ -1269,5 +1274,6 @@ bus = &"SFX"
 [connection signal="body_entered" from="Doors/door1/door1 zone" to="Keys/key" method="_on_door_1_zone_body_entered"]
 [connection signal="body_exited" from="Doors/door1/door1 zone" to="Keys/key" method="_on_door_1_zone_body_exited"]
 [connection signal="door1_opened" from="Keys/key" to="Doors/door1" method="_on_key_door_1_opened"]
+[connection signal="key_pickedup" from="Keys/key" to="." method="_on_key_key_pickedup"]
 [connection signal="popup_hide" from="Keys/key" to="." method="_on_key_popup_hide"]
 [connection signal="popup_show" from="Keys/key" to="." method="_on_key_popup_show"]

@@ -6,6 +6,7 @@ extends Node2D
 @onready var settings_menu: settingsmenuInGameW2 = $Player/Camera2D/settings_menu
 
 var paused = false
+var chatting = false
 # shaz's AudioPlaybackScript =======================================================================
 func _ready() -> void:
 	$Player/interact_popup2.hide()
@@ -22,9 +23,11 @@ func _ready() -> void:
 func DialogicSignal(arg: String):
 	if arg == "chatting":
 		print("chatting with gate soldier")
+		chatting = true
+		
 	if arg == "exit":
 		print("exit chatting with gate soldier")
-	
+		chatting = false
 #this is to reload levels
 func _input(_event):
 	#if Input.is_action_pressed("exit"):
@@ -126,3 +129,15 @@ func _on_key_popup_show() -> void:
 	$Player/interact_popup2.show()
 	#Shaz's DS4 UI ==================================================
 	$"Player/Camera2D/DS4-UI".show()
+
+
+func _on_key_key_pickedup() -> void:
+	$Player/Camera2D/key_Notification.show()
+	
+func _process(delta: float) -> void:
+	if chatting:
+		$Player.can_move = false
+	elif chatting == false:
+		$Player.can_move = true
+
+	

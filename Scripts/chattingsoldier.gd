@@ -93,13 +93,9 @@ func _on_chat_detection_area_body_entered(body: Node2D) -> void:
 		player = body
 		player_in_chat_zone = true
 		$interact_popup2.show()
-		$"../../../Player/Camera2D".zoom.x = 5
-		$"../../../Player/Camera2D".zoom.y = 5
 
 func _on_chat_detection_area_body_exited(body: Node2D) -> void:
 	if body is Player:
 		player_in_chat_zone = false
 		is_chatting = false
 		$interact_popup2.hide()
-		$"../../../Player/Camera2D".zoom.x = 3
-		$"../../../Player/Camera2D".zoom.y = 3
