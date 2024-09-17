@@ -24,7 +24,6 @@ var shop
 
 
 func _ready() -> void:
-	$AnimationPlayer.play("shop_intro")
 	handle_connecting_shop_signals()
 	pass # Replace with function body.
 

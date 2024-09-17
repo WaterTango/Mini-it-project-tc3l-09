@@ -13,8 +13,13 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
-		$"../Player/Camera2D/shopmenu".show()
+		$"../CanvasLayer/shopmenu/shopintro".play("shop_intro")
+		$"../CanvasLayer/shopmenu".show()
+		$"../CanvasLayer/SubViewportContainer".hide()
+		$"../CanvasLayer/NinePatchRect".hide()
 
 func _on_body_exited(body: Node2D) -> void:
 	if body is Player:
-		$"../Player/Camera2D/shopmenu".hide()
+		$"../CanvasLayer/shopmenu".hide()
+		$"../CanvasLayer/SubViewportContainer".show()
+		$"../CanvasLayer/NinePatchRect".show()

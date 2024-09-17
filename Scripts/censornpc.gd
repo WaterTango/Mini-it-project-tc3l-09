@@ -91,8 +91,7 @@ func _on_chat_detection_area_body_entered(body: Node2D) -> void:
 		player = body
 		player_in_chat_zone = true
 		$interact_popup3.show()
-
-
+		
 
 func _on_chat_detection_area_body_exited(body: Node2D) -> void:
 	if body is Player:
