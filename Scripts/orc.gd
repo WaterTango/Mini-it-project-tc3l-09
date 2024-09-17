@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+class_name Enemy
 #veriable set
 var speed = 20
 var move_speed = 70
