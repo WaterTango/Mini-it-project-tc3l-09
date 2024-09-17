@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=4 uid="uid://bmaj057vxjvul"]
+[gd_scene load_steps=53 format=4 uid="uid://bmaj057vxjvul"]
 
 [ext_resource type="Script" path="res://Scripts/world_3_3.gd" id="1_6brog"]
 [ext_resource type="Texture2D" uid="uid://dk47txfrdo6hq" path="res://Assets/pixel assets/castle/Assets/ATiles.png" id="2_n1mrr"]
@@ -28,6 +28,7 @@
 [ext_resource type="AudioStream" uid="uid://cxdtgh6f6ljyb" path="res://shaz_audio/SFX/resume.mp3" id="18_whr28"]
 [ext_resource type="PackedScene" uid="uid://pt3v68ebmn6" path="res://Scenes/Game_scene/key.tscn" id="19_ifrq4"]
 [ext_resource type="AudioStream" uid="uid://bgpo5phkq73t4" path="res://shaz_audio/SFX/Key.mp3" id="20_5iylj"]
+[ext_resource type="PackedScene" uid="uid://bxlwcppxorl7h" path="res://Scenes/Game_scene/normalchest.tscn" id="23_a7rov"]
 [ext_resource type="PackedScene" uid="uid://bsl7oie8lwj0s" path="res://Scenes/Game_scene/soldier.tscn" id="27_l0nyv"]
 [ext_resource type="PackedScene" uid="uid://0uoxn0dpa05s" path="res://Scenes/Game_scene/knight.tscn" id="28_dk7e1"]
 [ext_resource type="PackedScene" uid="uid://bph610j3dc6p2" path="res://Scenes/Game_scene/director.tscn" id="30_u88bn"]
@@ -2613,6 +2614,27 @@ bus = &"SFX"
 
 [node name="DoorSFX2" type="AudioStreamPlayer" parent="Keys/key"]
 stream = ExtResource("18_vht4x")
+
+[node name="normalchest" parent="Keys" instance=ExtResource("23_a7rov")]
+position = Vector2(-671, -133)
+
+[node name="normalchest2" parent="Keys" instance=ExtResource("23_a7rov")]
+position = Vector2(-774, -440)
+
+[node name="normalchest3" parent="Keys" instance=ExtResource("23_a7rov")]
+position = Vector2(-440, -647)
+
+[node name="normalchest4" parent="Keys" instance=ExtResource("23_a7rov")]
+position = Vector2(313, -440)
+
+[node name="normalchest5" parent="Keys" instance=ExtResource("23_a7rov")]
+position = Vector2(688, -647)
+
+[node name="normalchest6" parent="Keys" instance=ExtResource("23_a7rov")]
+position = Vector2(773, -295)
+
+[node name="normalchest7" parent="Keys" instance=ExtResource("23_a7rov")]
+position = Vector2(168, -520)
 
 [node name="World 3 Music" type="AudioStreamPlayer" parent="."]
 process_mode = 3

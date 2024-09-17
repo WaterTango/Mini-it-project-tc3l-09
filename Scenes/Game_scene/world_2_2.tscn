@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=4 uid="uid://bwn2x4mky6dpq"]
+[gd_scene load_steps=74 format=4 uid="uid://bwn2x4mky6dpq"]
 
 [ext_resource type="Script" path="res://Scripts/world_2_2.gd" id="1_oobcj"]
 [ext_resource type="PackedScene" uid="uid://d2yr2v1e0ibvc" path="res://Scenes/Game_scene/player.tscn" id="1_whs3t"]
@@ -36,6 +36,7 @@
 [ext_resource type="AudioStream" uid="uid://bhnfdxn0m6r6f" path="res://shaz_audio/SFX/clicksfx.mp3" id="31_pp3ay"]
 [ext_resource type="AudioStream" uid="uid://bou0fy27tukkp" path="res://shaz_audio/music/medieval-ambient [World 2].mp3" id="32_mt64l"]
 [ext_resource type="AudioStream" uid="uid://cv01x33uvm2v3" path="res://shaz_audio/SFX/paused.mp3" id="33_5ksw8"]
+[ext_resource type="PackedScene" uid="uid://bxlwcppxorl7h" path="res://Scenes/Game_scene/normalchest.tscn" id="34_iufxv"]
 [ext_resource type="AudioStream" uid="uid://cxdtgh6f6ljyb" path="res://shaz_audio/SFX/resume.mp3" id="34_n7wuv"]
 [ext_resource type="AudioStream" uid="uid://f8euu8wxjl1l" path="res://shaz_audio/SFX/Leaving.mp3" id="35_hyubq"]
 [ext_resource type="AudioStream" uid="uid://bykfi4pa6x6x8" path="res://shaz_audio/SFX/Entering.mp3" id="36_hdej5"]
@@ -4336,6 +4337,18 @@ position = Vector2(-41, -780)
 [node name="KeySFX" type="AudioStreamPlayer" parent="Keys/key"]
 stream = ExtResource("29_j8fre")
 bus = &"SFX"
+
+[node name="normalchest" parent="Keys" instance=ExtResource("34_iufxv")]
+position = Vector2(-657, -197)
+
+[node name="normalchest2" parent="Keys" instance=ExtResource("34_iufxv")]
+position = Vector2(640, -198)
+
+[node name="normalchest3" parent="Keys" instance=ExtResource("34_iufxv")]
+position = Vector2(-752, -782)
+
+[node name="normalchest4" parent="Keys" instance=ExtResource("34_iufxv")]
+position = Vector2(464, -781)
 
 [node name="collission" type="StaticBody2D" parent="."]
 

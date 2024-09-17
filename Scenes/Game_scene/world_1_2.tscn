@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://bg65fmt31h84x"]
+[gd_scene load_steps=50 format=4 uid="uid://bg65fmt31h84x"]
 
 [ext_resource type="Script" path="res://Scripts/world_1_2.gd" id="1_lcdo5"]
 [ext_resource type="TileSet" uid="uid://hejtinux6a7x" path="res://Scenes/Game_scene/world_1.tres" id="1_lsqgd"]
@@ -28,6 +28,7 @@
 [ext_resource type="AudioStream" uid="uid://cxdtgh6f6ljyb" path="res://shaz_audio/SFX/resume.mp3" id="21_yww5x"]
 [ext_resource type="AudioStream" uid="uid://f8euu8wxjl1l" path="res://shaz_audio/SFX/Leaving.mp3" id="22_pnlev"]
 [ext_resource type="AudioStream" uid="uid://bykfi4pa6x6x8" path="res://shaz_audio/SFX/Entering.mp3" id="23_w7c3i"]
+[ext_resource type="PackedScene" uid="uid://bxlwcppxorl7h" path="res://Scenes/Game_scene/normalchest.tscn" id="23_xhj3r"]
 
 [sub_resource type="Animation" id="Animation_yl1vf"]
 length = 0.001
@@ -900,6 +901,22 @@ position = Vector2(-56, -394)
 [node name="KeySFX" type="AudioStreamPlayer" parent="Keys/key"]
 stream = ExtResource("19_3i7kb")
 bus = &"SFX"
+
+[node name="normalchest" parent="Keys" instance=ExtResource("23_xhj3r")]
+z_index = 1
+position = Vector2(-390, -64)
+
+[node name="normalchest2" parent="Keys" instance=ExtResource("23_xhj3r")]
+z_index = 1
+position = Vector2(-552, -368)
+
+[node name="normalchest3" parent="Keys" instance=ExtResource("23_xhj3r")]
+z_index = 1
+position = Vector2(105, 414)
+
+[node name="normalchest4" parent="Keys" instance=ExtResource("23_xhj3r")]
+z_index = 1
+position = Vector2(-151, 582)
 
 [node name="Area2D" type="StaticBody2D" parent="."]
 position = Vector2(140, -345)
