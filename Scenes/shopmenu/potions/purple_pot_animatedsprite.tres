@@ -1,0 +1,67 @@
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://gullbvgcd3aq"]
+
+[ext_resource type="Texture2D" uid="uid://vkif5h7o24p1" path="res://shaz_images/UI/All Potions/Purple potions/poç╞o roxa.png" id="1_4oik0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dybc0"]
+atlas = ExtResource("1_4oik0")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tswte"]
+atlas = ExtResource("1_4oik0")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xchmy"]
+atlas = ExtResource("1_4oik0")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fif17"]
+atlas = ExtResource("1_4oik0")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbtby"]
+atlas = ExtResource("1_4oik0")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_03qec"]
+atlas = ExtResource("1_4oik0")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1krpr"]
+atlas = ExtResource("1_4oik0")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bq8xw"]
+atlas = ExtResource("1_4oik0")
+region = Rect2(16, 32, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dybc0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tswte")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xchmy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fif17")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbtby")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_03qec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1krpr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bq8xw")
+}],
+"loop": true,
+"name": &"purple_pot",
+"speed": 10.0
+}]

@@ -512,14 +512,14 @@ offset_bottom = 900.0
 scale = Vector2(0.35, 0.35)
 script = ExtResource("12_eeqmo")
 
+[node name="key_Notification" parent="entitites/Player/Camera2D" instance=ExtResource("9_2ycda")]
+visible = false
+position = Vector2(226, 162)
+
 [node name="DS4-UI" parent="entitites/Player/Camera2D" instance=ExtResource("8_nfbui")]
 visible = false
 position = Vector2(226, 148)
 scale = Vector2(0.5, 0.5)
-
-[node name="key_Notification" parent="entitites/Player/Camera2D" instance=ExtResource("9_2ycda")]
-visible = false
-position = Vector2(226, 162)
 
 [node name="interact_popup2" type="Sprite2D" parent="entitites/Player"]
 visible = false
