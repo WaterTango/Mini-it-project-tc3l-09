@@ -53,3 +53,4 @@ theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_0muul")
 theme_override_font_sizes/font_size = 16
 text = "Interact"
+metadata/_edit_use_anchors_ = true

@@ -1,13 +1,43 @@
-[gd_scene load_steps=13 format=3 uid="uid://tvrth5rx40j5"]
+[gd_scene load_steps=64 format=3 uid="uid://tvrth5rx40j5"]
 
+[ext_resource type="Script" path="res://Scenes/shopmenu/shopmenu.gd" id="1_mqpal"]
 [ext_resource type="FontFile" uid="uid://f3bxx2ry3bsw" path="res://shaz_fonts/BLKCHCRY.TTF" id="1_sqqw3"]
+[ext_resource type="Texture2D" uid="uid://cehmbcvnuc153" path="res://shaz_images/UI/Fantasy Minimal Pixel Art UI/UI/TopPatternPanel_02_33x15.png" id="2_8huc7"]
 [ext_resource type="Texture2D" uid="uid://req0p8niwbae" path="res://shaz_images/UI/Fantasy Minimal Pixel Art UI/UI/HotkeyBox_34x34.png" id="2_085ei"]
 [ext_resource type="FontFile" uid="uid://cb7pxe0c4fdr7" path="res://shaz_fonts/CAROBTN_.TTF" id="3_wn4im"]
-[ext_resource type="Texture2D" uid="uid://c10lcsjhs150b" path="res://shaz_images/UI/Icons_Essential/v1.2/Icons/CatHead.png" id="4_2rjry"]
 [ext_resource type="Texture2D" uid="uid://1qc57knvlvdq" path="res://shaz_images/UI/Fantasy Minimal Pixel Art UI/UI/Pipe_36x11.png" id="4_dmfl8"]
 [ext_resource type="Texture2D" uid="uid://rk6j7pyar20k" path="res://shaz_images/UI/Fantasy Minimal Pixel Art UI/UI/MenusBox_34x34.png" id="4_frrma"]
+[ext_resource type="Texture2D" uid="uid://bvwcautwkfth2" path="res://Assets/Pixel Crawler - FREE - 1.8/Weapons/Wood/Wood.png" id="4_wqmtr"]
+[ext_resource type="Script" path="res://Scenes/shopmenu/wep.gd" id="5_op3se"]
 [ext_resource type="Texture2D" uid="uid://diwj8amd7v4wl" path="res://shaz_images/UI/Fantasy Minimal Pixel Art UI/UI/BlackMediumCircleBoxWithBorder_27x27.png" id="5_ptjfp"]
+[ext_resource type="Texture2D" uid="uid://cggxj63dlhv8b" path="res://shaz_images/UI/Icons_Essential/v1.2/Icons/Basket.png" id="6_44mgr"]
 [ext_resource type="Texture2D" uid="uid://b74fahatycicu" path="res://shaz_images/UI/Fantasy Minimal Pixel Art UI/UI/CornerKnot_14x14.png" id="6_afacd"]
+[ext_resource type="Texture2D" uid="uid://0kh45f0tml0n" path="res://Assets/Pixel Crawler - FREE - 1.8/Weapons/Bone/Bone.png" id="8_jpcgx"]
+[ext_resource type="Script" path="res://Scenes/shopmenu/pot.gd" id="10_hdc50"]
+[ext_resource type="Script" path="res://Scenes/shopmenu/equ.gd" id="11_fl34k"]
+[ext_resource type="SpriteFrames" uid="uid://pahe2o8adi46" path="res://Scenes/shopmenu/potions/green_pot_animatedsprite.tres" id="13_1dudq"]
+[ext_resource type="SpriteFrames" uid="uid://b2l4sp38x4a47" path="res://Scenes/shopmenu/potions/blue_pot_animatedsprite.tres" id="14_q60js"]
+[ext_resource type="SpriteFrames" uid="uid://gullbvgcd3aq" path="res://Scenes/shopmenu/potions/purple_pot_animatedsprite.tres" id="15_0n1gm"]
+[ext_resource type="Texture2D" uid="uid://cchpxyjglov8y" path="res://shaz_images/UI/All Potions/Yellow potions/poç╞o amarela.png" id="16_pofxu"]
+[ext_resource type="Texture2D" uid="uid://bsv34t7sq3men" path="res://shaz_images/UI/All Potions/Red potions/poç╞o vermelha.png" id="17_80hrm"]
+[ext_resource type="Texture2D" uid="uid://b50gehb4tx26h" path="res://shaz_images/UI/Fantasy Minimal Pixel Art UI/UI/TopPatternBG_116x67.png" id="21_4pd6e"]
+[ext_resource type="FontFile" uid="uid://b8oo2dguy484y" path="res://shaz_fonts/basis33.ttf" id="21_72xbj"]
+[ext_resource type="Texture2D" uid="uid://risfqca33h6n" path="res://shaz_images/UI/16x16 RPG Item Pack/Item__60.png" id="21_hx6fl"]
+[ext_resource type="Texture2D" uid="uid://b84bo2v5yybi0" path="res://shaz_images/UI/Fantasy Minimal Pixel Art UI/UI/ValueBar_128x16.png" id="21_yovdj"]
+[ext_resource type="Texture2D" uid="uid://ctll67uk42l14" path="res://shaz_images/UI/16x16 RPG Item Pack/Item__61.png" id="22_rl5h1"]
+[ext_resource type="Texture2D" uid="uid://dxma62j1v4khn" path="res://shaz_images/UI/Fantasy Minimal Pixel Art UI/UI/PatternMiddleBottomBG_199x48.png" id="22_yyvuq"]
+[ext_resource type="Texture2D" uid="uid://dm57n6b7vcv13" path="res://shaz_images/UI/16x16 RPG Item Pack/Item__63.png" id="23_g4i2q"]
+[ext_resource type="Texture2D" uid="uid://dqdu53mom22tk" path="res://shaz_images/UI/16x16 RPG Item Pack/Item__48.png" id="24_hqie6"]
+[ext_resource type="Texture2D" uid="uid://fywfkb6vajhh" path="res://shaz_images/UI/16x16 RPG Item Pack/Item__49.png" id="25_wnjjg"]
+[ext_resource type="Texture2D" uid="uid://bq650gsxspqg7" path="res://shaz_images/UI/16x16 RPG Item Pack/Item__50.png" id="26_46o6i"]
+[ext_resource type="Texture2D" uid="uid://covav57dvh01l" path="res://shaz_images/UI/16x16 RPG Item Pack/Item__56.png" id="27_dhghn"]
+[ext_resource type="Texture2D" uid="uid://de47n8o805ke7" path="res://shaz_images/UI/16x16 RPG Item Pack/Item__57.png" id="28_ua7db"]
+[ext_resource type="Texture2D" uid="uid://fv65r511s53i" path="res://shaz_images/UI/16x16 RPG Item Pack/Item__59.png" id="29_kt1wn"]
+[ext_resource type="Texture2D" uid="uid://bhwiejo6bay8s" path="res://shaz_images/UI/16x16 RPG Item Pack/Item__34.png" id="30_lsmqb"]
+[ext_resource type="Texture2D" uid="uid://buhp14y0r0j4w" path="res://shaz_images/UI/16x16 RPG Item Pack/Item__32.png" id="31_cw27m"]
+[ext_resource type="Texture2D" uid="uid://c8djecgoq7nsq" path="res://shaz_images/UI/16x16 RPG Item Pack/Item__33.png" id="32_xl1h5"]
+[ext_resource type="AudioStream" uid="uid://cfoe36fdkertc" path="res://shaz_audio/SFX/ShopkeeperBellSFX.mp3" id="37_ogtt3"]
+[ext_resource type="AudioStream" uid="uid://doprk6fjj4k3i" path="res://shaz_audio/SFX/ShopScrollingSFX.mp3" id="38_1yyps"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dwdvj"]
 texture = ExtResource("4_dmfl8")
@@ -18,7 +48,7 @@ content_margin_left = 10.0
 texture = ExtResource("5_ptjfp")
 expand_margin_left = 6.0
 expand_margin_top = 6.0
-expand_margin_right = 6.0
+expand_margin_right = 12.0
 expand_margin_bottom = 6.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4inse"]
@@ -26,7 +56,7 @@ content_margin_left = 10.0
 texture = ExtResource("6_afacd")
 expand_margin_left = 6.0
 expand_margin_top = 6.0
-expand_margin_right = 6.0
+expand_margin_right = 12.0
 expand_margin_bottom = 6.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l86d1"]
@@ -37,22 +67,363 @@ expand_margin_top = 6.0
 expand_margin_right = 6.0
 expand_margin_bottom = 6.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_m52se"]
+atlas = ExtResource("16_pofxu")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8sgs"]
+atlas = ExtResource("16_pofxu")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iamxu"]
+atlas = ExtResource("16_pofxu")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7xg7"]
+atlas = ExtResource("16_pofxu")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j38h4"]
+atlas = ExtResource("16_pofxu")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1d1wi"]
+atlas = ExtResource("16_pofxu")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0tgm"]
+atlas = ExtResource("16_pofxu")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ausv4"]
+atlas = ExtResource("16_pofxu")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7bm2h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m52se")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8sgs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iamxu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f7xg7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j38h4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1d1wi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0tgm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ausv4")
+}],
+"loop": true,
+"name": &"yellow_pot",
+"speed": 15.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4m6t"]
+atlas = ExtResource("17_80hrm")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmp37"]
+atlas = ExtResource("17_80hrm")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uv8hs"]
+atlas = ExtResource("17_80hrm")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hkhp"]
+atlas = ExtResource("17_80hrm")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hedg"]
+atlas = ExtResource("17_80hrm")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hig2"]
+atlas = ExtResource("17_80hrm")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yrdx7"]
+atlas = ExtResource("17_80hrm")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cpxfm"]
+atlas = ExtResource("17_80hrm")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5mey2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4m6t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rmp37")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uv8hs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hkhp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hedg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6hig2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yrdx7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cpxfm")
+}],
+"loop": true,
+"name": &"red_pot",
+"speed": 20.0
+}]
+
+[sub_resource type="Animation" id="Animation_cvkov"]
+resource_name = "shop_intro"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BotPattern:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(5.03333, 7.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TopPattern:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(5.03333, 7.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(960, -1000), Vector2(960, 50), Vector2(960, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(3, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-2052, 0), Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ContainerExt/PotionsCategory/Label/PotionScroll/Node2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(4, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-264, 0), Vector2(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(5, 7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1048, 0), Vector2(0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ShopScrollingSFX:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ShopkeeperBellSFX:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(6.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_fs7hu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BotPattern:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TopPattern:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(960, -1000)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-2052, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ContainerExt/PotionsCategory/Label/PotionScroll/Node2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-264, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1048, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ShopScrollingSFX:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ShopkeeperBellSFX:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vvng7"]
+_data = {
+"RESET": SubResource("Animation_fs7hu"),
+"shop_intro": SubResource("Animation_cvkov")
+}
+
 [node name="shopmenu" type="Control"]
 layout_mode = 3
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
+offset_top = -1000.0
+offset_bottom = -1000.0
 grow_horizontal = 2
+script = ExtResource("1_mqpal")
+
+[node name="TitleUnderline" type="Sprite2D" parent="."]
+position = Vector2(0, 129)
+scale = Vector2(2.78916, 2.125)
+texture = ExtResource("2_8huc7")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -52.0
+offset_left = -94.0
 offset_top = 40.0
-offset_right = 53.0
-offset_bottom = 103.0
+offset_right = 95.0
+offset_bottom = 153.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.886275, 0.65098, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -66,10 +437,10 @@ text = "Shop
 [node name="ContainerExt" type="NinePatchRect" parent="."]
 self_modulate = Color(1, 1, 1, 0.870588)
 layout_mode = 0
-offset_left = -800.0
-offset_top = 160.0
-offset_right = 800.0
-offset_bottom = 960.0
+offset_left = -793.0
+offset_top = 162.0
+offset_right = 806.0
+offset_bottom = 962.0
 texture = ExtResource("2_085ei")
 patch_margin_left = 7
 patch_margin_top = 7
@@ -102,71 +473,243 @@ text = "Weapons
 "
 horizontal_alignment = 1
 
-[node name="Control" type="Control" parent="ContainerExt/WeaponsCategory/Label"]
-anchors_preset = 0
-offset_left = -4.0
-offset_top = -2.0
-offset_right = 1346.0
-offset_bottom = 254.0
-
-[node name="Panel" type="Panel" parent="ContainerExt/WeaponsCategory/Label/Control"]
+[node name="WeaponScroll" type="RichTextLabel" parent="ContainerExt/WeaponsCategory/Label"]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 56.0
-offset_right = 289.0
-offset_bottom = 244.0
+offset_right = 993.0
+offset_bottom = 246.0
+script = ExtResource("5_op3se")
 
-[node name="CatHead" type="Sprite2D" parent="ContainerExt/WeaponsCategory/Label/Control/Panel"]
-position = Vector2(148, 92)
-scale = Vector2(11.4375, 10.875)
-texture = ExtResource("4_2rjry")
+[node name="Node2D" type="Node2D" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll"]
+position = Vector2(-1048, 0)
 
-[node name="Panel2" type="Panel" parent="ContainerExt/WeaponsCategory/Label/Control"]
+[node name="weapon1" type="Panel" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D"]
+offset_left = -3.0
+offset_top = 54.0
+offset_right = 217.0
+offset_bottom = 242.0
+
+[node name="ButtonTexture" type="Sprite2D" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D/weapon1"]
+position = Vector2(183.5, 153)
+scale = Vector2(1.67647, 1.70588)
+texture = ExtResource("4_frrma")
+
+[node name="wep1button" type="Button" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D/weapon1"]
 layout_mode = 0
-offset_left = 297.0
-offset_top = 56.0
-offset_right = 585.0
-offset_bottom = 244.0
+offset_left = 160.0
+offset_top = 129.0
+offset_right = 210.0
+offset_bottom = 179.0
+icon = ExtResource("6_44mgr")
+flat = true
+expand_icon = true
 
-[node name="CatHead" type="Sprite2D" parent="ContainerExt/WeaponsCategory/Label/Control/Panel2"]
-position = Vector2(148, 92)
-scale = Vector2(11.4375, 10.875)
-texture = ExtResource("4_2rjry")
+[node name="WoodenDagger" type="Sprite2D" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D/weapon1"]
+position = Vector2(107, 110)
+scale = Vector2(4.5, 3.484)
+texture = ExtResource("4_wqmtr")
+region_enabled = true
+region_rect = Rect2(32.9416, 11.4972, 13.0577, 36.603)
 
-[node name="Panel3" type="Panel" parent="ContainerExt/WeaponsCategory/Label/Control"]
+[node name="weapon2" type="Panel" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D"]
+offset_left = 249.0
+offset_top = 54.0
+offset_right = 469.0
+offset_bottom = 242.0
+
+[node name="ButtonTexture" type="Sprite2D" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D/weapon2"]
+position = Vector2(183.5, 153)
+scale = Vector2(1.67647, 1.70588)
+texture = ExtResource("4_frrma")
+
+[node name="wep2button" type="Button" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D/weapon2"]
+offset_left = 160.0
+offset_top = 129.0
+offset_right = 210.0
+offset_bottom = 179.0
+icon = ExtResource("6_44mgr")
+flat = true
+expand_icon = true
+
+[node name="WoodenSword" type="Sprite2D" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D/weapon2"]
+position = Vector2(105, 81)
+scale = Vector2(4.57307, 3.3219)
+texture = ExtResource("4_wqmtr")
+region_enabled = true
+region_rect = Rect2(0, 0, 14.8098, 47.6722)
+
+[node name="weapon3" type="Panel" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D"]
+offset_left = 507.0
+offset_top = 54.0
+offset_right = 727.0
+offset_bottom = 242.0
+
+[node name="ButtonTexture" type="Sprite2D" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D/weapon3"]
+position = Vector2(183.5, 153)
+scale = Vector2(1.67647, 1.70588)
+texture = ExtResource("4_frrma")
+
+[node name="wep3button" type="Button" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D/weapon3"]
+offset_left = 160.0
+offset_top = 129.0
+offset_right = 210.0
+offset_bottom = 179.0
+icon = ExtResource("6_44mgr")
+flat = true
+expand_icon = true
+
+[node name="WoodenAxe" type="Sprite2D" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D/weapon3"]
+position = Vector2(106, 88)
+scale = Vector2(5, 4.68965)
+texture = ExtResource("4_wqmtr")
+region_enabled = true
+region_rect = Rect2(47.4612, 16.6513, 16.2233, 29.4788)
+
+[node name="weapon4" type="Panel" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D"]
+offset_left = 763.0
+offset_top = 54.0
+offset_right = 983.0
+offset_bottom = 242.0
+
+[node name="ButtonTexture" type="Sprite2D" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D/weapon4"]
+position = Vector2(183.5, 153)
+scale = Vector2(1.67647, 1.70588)
+texture = ExtResource("4_frrma")
+
+[node name="Button" type="Button" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D/weapon4"]
+offset_left = 160.0
+offset_top = 129.0
+offset_right = 210.0
+offset_bottom = 179.0
+icon = ExtResource("6_44mgr")
+flat = true
+expand_icon = true
+
+[node name="WoodenScythe" type="Sprite2D" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D/weapon4"]
+position = Vector2(105, 88)
+scale = Vector2(5, 4.68965)
+texture = ExtResource("4_wqmtr")
+region_enabled = true
+region_rect = Rect2(30.8261, 47.0133, 18.9337, 33.9501)
+
+[node name="weapon5" type="Panel" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D"]
+offset_left = 1027.0
+offset_top = 54.0
+offset_right = 1247.0
+offset_bottom = 242.0
+
+[node name="ButtonTexture" type="Sprite2D" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D/weapon5"]
+position = Vector2(183.5, 153)
+scale = Vector2(1.67647, 1.70588)
+texture = ExtResource("4_frrma")
+
+[node name="Button" type="Button" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D/weapon5"]
+offset_left = 160.0
+offset_top = 129.0
+offset_right = 210.0
+offset_bottom = 179.0
+icon = ExtResource("6_44mgr")
+flat = true
+expand_icon = true
+
+[node name="BoneDagger" type="Sprite2D" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D/weapon5"]
+position = Vector2(107, 110)
+scale = Vector2(5, 4.68965)
+texture = ExtResource("8_jpcgx")
+region_enabled = true
+region_rect = Rect2(35.2958, 17.5805, 8.62133, 27.4991)
+
+[node name="weapon6" type="Panel" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D"]
+offset_left = 1291.0
+offset_top = 54.0
+offset_right = 1511.0
+offset_bottom = 242.0
+
+[node name="ButtonTexture" type="Sprite2D" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D/weapon6"]
+position = Vector2(183.5, 153)
+scale = Vector2(1.67647, 1.70588)
+texture = ExtResource("4_frrma")
+
+[node name="Button" type="Button" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D/weapon6"]
+offset_left = 160.0
+offset_top = 129.0
+offset_right = 210.0
+offset_bottom = 179.0
+icon = ExtResource("6_44mgr")
+flat = true
+expand_icon = true
+
+[node name="BoneSword" type="Sprite2D" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D/weapon6"]
+position = Vector2(106, 95)
+scale = Vector2(3.80769, 2.98491)
+texture = ExtResource("8_jpcgx")
+region_enabled = true
+region_rect = Rect2(1.80343, -0.284272, 13.4077, 48.3415)
+
+[node name="weapon7" type="Panel" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D"]
+offset_left = 1551.0
+offset_top = 54.0
+offset_right = 1771.0
+offset_bottom = 242.0
+
+[node name="ButtonTexture" type="Sprite2D" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D/weapon7"]
+position = Vector2(183.5, 153)
+scale = Vector2(1.67647, 1.70588)
+texture = ExtResource("4_frrma")
+
+[node name="Button" type="Button" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D/weapon7"]
+offset_left = 160.0
+offset_top = 129.0
+offset_right = 210.0
+offset_bottom = 179.0
+icon = ExtResource("6_44mgr")
+flat = true
+expand_icon = true
+
+[node name="BoneAxe" type="Sprite2D" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D/weapon7"]
+position = Vector2(104.5, 93)
+scale = Vector2(4.4375, 4.6)
+texture = ExtResource("8_jpcgx")
+region_enabled = true
+region_rect = Rect2(47.7065, 17.0806, 16.3857, 30.3233)
+
+[node name="weapon8" type="Panel" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D"]
+offset_left = 1811.0
+offset_top = 54.0
+offset_right = 2031.0
+offset_bottom = 242.0
+
+[node name="ButtonTexture" type="Sprite2D" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D/weapon8"]
+position = Vector2(183.5, 153)
+scale = Vector2(1.67647, 1.70588)
+texture = ExtResource("4_frrma")
+
+[node name="Button" type="Button" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D/weapon8"]
+offset_left = 160.0
+offset_top = 129.0
+offset_right = 210.0
+offset_bottom = 179.0
+icon = ExtResource("6_44mgr")
+flat = true
+expand_icon = true
+
+[node name="BoneScythe" type="Sprite2D" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D/weapon8"]
+position = Vector2(104.5, 93)
+scale = Vector2(4.4375, 4.6)
+texture = ExtResource("8_jpcgx")
+region_enabled = true
+region_rect = Rect2(31.5801, 48.2022, 16.2948, 32.1899)
+
+[node name="HScrollBar" type="HScrollBar" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll"]
 layout_mode = 0
-offset_left = 597.0
-offset_top = 56.0
-offset_right = 885.0
-offset_bottom = 244.0
-
-[node name="CatHead" type="Sprite2D" parent="ContainerExt/WeaponsCategory/Label/Control/Panel3"]
-position = Vector2(148, 92)
-scale = Vector2(11.4375, 10.875)
-texture = ExtResource("4_2rjry")
-
-[node name="Panel4" type="Panel" parent="ContainerExt/WeaponsCategory/Label/Control"]
-layout_mode = 0
-offset_left = 896.0
-offset_top = 56.0
-offset_right = 1184.0
-offset_bottom = 244.0
-
-[node name="CatHead" type="Sprite2D" parent="ContainerExt/WeaponsCategory/Label/Control/Panel4"]
-position = Vector2(148, 92)
-scale = Vector2(11.4375, 10.875)
-texture = ExtResource("4_2rjry")
-
-[node name="HScrollBar" type="HScrollBar" parent="ContainerExt/WeaponsCategory/Label"]
-layout_mode = 0
-offset_left = 299.0
-offset_top = 20.0
-offset_right = 995.0
-offset_bottom = 28.0
+offset_left = 300.0
+offset_top = 15.0
+offset_right = 985.0
+offset_bottom = 30.0
 theme_override_styles/scroll = SubResource("StyleBoxTexture_dwdvj")
 theme_override_styles/grabber = SubResource("StyleBoxTexture_sqpo1")
 theme_override_styles/grabber_highlight = SubResource("StyleBoxTexture_4inse")
 theme_override_styles/grabber_pressed = SubResource("StyleBoxTexture_l86d1")
+max_value = 1048.0
 
 [node name="PotionsCategory" type="NinePatchRect" parent="ContainerExt"]
 layout_mode = 0
@@ -194,16 +737,164 @@ text = "Potions
 "
 horizontal_alignment = 1
 
-[node name="HScrollBar" type="HScrollBar" parent="ContainerExt/PotionsCategory"]
-layout_mode = 0
-offset_left = 304.0
-offset_top = 25.0
-offset_right = 1000.0
-offset_bottom = 33.0
+[node name="PotionScroll" type="RichTextLabel" parent="ContainerExt/PotionsCategory/Label"]
+offset_right = 993.0
+offset_bottom = 246.0
+script = ExtResource("10_hdc50")
+
+[node name="Node2D" type="Node2D" parent="ContainerExt/PotionsCategory/Label/PotionScroll"]
+position = Vector2(-264, 0)
+
+[node name="Potion1" type="Panel" parent="ContainerExt/PotionsCategory/Label/PotionScroll/Node2D"]
+offset_left = -3.0
+offset_top = 54.0
+offset_right = 217.0
+offset_bottom = 242.0
+
+[node name="ButtonTexture" type="Sprite2D" parent="ContainerExt/PotionsCategory/Label/PotionScroll/Node2D/Potion1"]
+position = Vector2(183.5, 153)
+scale = Vector2(1.67647, 1.70588)
+texture = ExtResource("4_frrma")
+
+[node name="greenpotbutton" type="Button" parent="ContainerExt/PotionsCategory/Label/PotionScroll/Node2D/Potion1"]
+offset_left = 160.0
+offset_top = 129.0
+offset_right = 210.0
+offset_bottom = 179.0
+icon = ExtResource("6_44mgr")
+flat = true
+expand_icon = true
+
+[node name="GreenPotion" type="AnimatedSprite2D" parent="ContainerExt/PotionsCategory/Label/PotionScroll/Node2D/Potion1"]
+position = Vector2(110, 95)
+scale = Vector2(6, 6)
+sprite_frames = ExtResource("13_1dudq")
+animation = &"green_pot"
+autoplay = "green_pot"
+frame_progress = 0.913212
+
+[node name="Potion2" type="Panel" parent="ContainerExt/PotionsCategory/Label/PotionScroll/Node2D"]
+offset_left = 249.0
+offset_top = 54.0
+offset_right = 469.0
+offset_bottom = 242.0
+
+[node name="ButtonTexture" type="Sprite2D" parent="ContainerExt/PotionsCategory/Label/PotionScroll/Node2D/Potion2"]
+position = Vector2(183.5, 153)
+scale = Vector2(1.67647, 1.70588)
+texture = ExtResource("4_frrma")
+
+[node name="bluepotbutton" type="Button" parent="ContainerExt/PotionsCategory/Label/PotionScroll/Node2D/Potion2"]
+offset_left = 160.0
+offset_top = 129.0
+offset_right = 210.0
+offset_bottom = 179.0
+icon = ExtResource("6_44mgr")
+flat = true
+expand_icon = true
+
+[node name="BluePotion" type="AnimatedSprite2D" parent="ContainerExt/PotionsCategory/Label/PotionScroll/Node2D/Potion2"]
+position = Vector2(110, 95)
+scale = Vector2(6, 6)
+sprite_frames = ExtResource("14_q60js")
+animation = &"blue_pot"
+autoplay = "blue_pot"
+frame_progress = 0.862297
+
+[node name="Potion3" type="Panel" parent="ContainerExt/PotionsCategory/Label/PotionScroll/Node2D"]
+offset_left = 507.0
+offset_top = 54.0
+offset_right = 727.0
+offset_bottom = 242.0
+
+[node name="ButtonTexture" type="Sprite2D" parent="ContainerExt/PotionsCategory/Label/PotionScroll/Node2D/Potion3"]
+position = Vector2(183.5, 153)
+scale = Vector2(1.67647, 1.70588)
+texture = ExtResource("4_frrma")
+
+[node name="purplepotbutton" type="Button" parent="ContainerExt/PotionsCategory/Label/PotionScroll/Node2D/Potion3"]
+offset_left = 160.0
+offset_top = 129.0
+offset_right = 210.0
+offset_bottom = 179.0
+icon = ExtResource("6_44mgr")
+flat = true
+expand_icon = true
+
+[node name="PurplePotion" type="AnimatedSprite2D" parent="ContainerExt/PotionsCategory/Label/PotionScroll/Node2D/Potion3"]
+position = Vector2(110, 95)
+scale = Vector2(6, 6)
+sprite_frames = ExtResource("15_0n1gm")
+animation = &"purple_pot"
+autoplay = "purple_pot"
+frame_progress = 0.713304
+
+[node name="Potion4" type="Panel" parent="ContainerExt/PotionsCategory/Label/PotionScroll/Node2D"]
+offset_left = 763.0
+offset_top = 54.0
+offset_right = 983.0
+offset_bottom = 242.0
+
+[node name="ButtonTexture" type="Sprite2D" parent="ContainerExt/PotionsCategory/Label/PotionScroll/Node2D/Potion4"]
+position = Vector2(183.5, 153)
+scale = Vector2(1.67647, 1.70588)
+texture = ExtResource("4_frrma")
+
+[node name="yellowpotbutton" type="Button" parent="ContainerExt/PotionsCategory/Label/PotionScroll/Node2D/Potion4"]
+offset_left = 160.0
+offset_top = 129.0
+offset_right = 210.0
+offset_bottom = 179.0
+icon = ExtResource("6_44mgr")
+flat = true
+expand_icon = true
+
+[node name="YellowPotion" type="AnimatedSprite2D" parent="ContainerExt/PotionsCategory/Label/PotionScroll/Node2D/Potion4"]
+position = Vector2(110, 95)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_7bm2h")
+animation = &"yellow_pot"
+autoplay = "yellow_pot"
+frame_progress = 0.0128562
+
+[node name="Potion5" type="Panel" parent="ContainerExt/PotionsCategory/Label/PotionScroll/Node2D"]
+offset_left = 1027.0
+offset_top = 54.0
+offset_right = 1247.0
+offset_bottom = 242.0
+
+[node name="ButtonTexture" type="Sprite2D" parent="ContainerExt/PotionsCategory/Label/PotionScroll/Node2D/Potion5"]
+position = Vector2(183.5, 153)
+scale = Vector2(1.67647, 1.70588)
+texture = ExtResource("4_frrma")
+
+[node name="redpotbutton" type="Button" parent="ContainerExt/PotionsCategory/Label/PotionScroll/Node2D/Potion5"]
+offset_left = 160.0
+offset_top = 129.0
+offset_right = 210.0
+offset_bottom = 179.0
+icon = ExtResource("6_44mgr")
+flat = true
+expand_icon = true
+
+[node name="RedPotion" type="AnimatedSprite2D" parent="ContainerExt/PotionsCategory/Label/PotionScroll/Node2D/Potion5"]
+position = Vector2(110, 95)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_5mey2")
+animation = &"red_pot"
+autoplay = "red_pot"
+frame_progress = 0.0218014
+
+[node name="HScrollBar" type="HScrollBar" parent="ContainerExt/PotionsCategory/Label/PotionScroll"]
+offset_left = 300.0
+offset_top = 15.0
+offset_right = 985.0
+offset_bottom = 30.0
 theme_override_styles/scroll = SubResource("StyleBoxTexture_dwdvj")
 theme_override_styles/grabber = SubResource("StyleBoxTexture_sqpo1")
 theme_override_styles/grabber_highlight = SubResource("StyleBoxTexture_4inse")
 theme_override_styles/grabber_pressed = SubResource("StyleBoxTexture_l86d1")
+max_value = 264.0
 
 [node name="EquimentsCategoru" type="NinePatchRect" parent="ContainerExt"]
 layout_mode = 0
@@ -230,25 +921,460 @@ theme_override_font_sizes/font_size = 39
 text = "Equipments"
 horizontal_alignment = 1
 
-[node name="HScrollBar" type="HScrollBar" parent="ContainerExt/EquimentsCategoru"]
-layout_mode = 0
-offset_left = 304.0
-offset_top = 25.0
-offset_right = 1000.0
-offset_bottom = 33.0
+[node name="EquipmentScroll" type="RichTextLabel" parent="ContainerExt/EquimentsCategoru/Label"]
+offset_right = 993.0
+offset_bottom = 246.0
+script = ExtResource("11_fl34k")
+
+[node name="Node2D" type="Node2D" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll"]
+position = Vector2(-2052, 0)
+
+[node name="Equipment1" type="Panel" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D"]
+offset_left = -3.0
+offset_top = 54.0
+offset_right = 217.0
+offset_bottom = 242.0
+
+[node name="ButtonTexture" type="Sprite2D" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment1"]
+position = Vector2(183.5, 153)
+scale = Vector2(1.67647, 1.70588)
+texture = ExtResource("4_frrma")
+
+[node name="Button" type="Button" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment1"]
+offset_left = 160.0
+offset_top = 129.0
+offset_right = 210.0
+offset_bottom = 179.0
+icon = ExtResource("6_44mgr")
+flat = true
+expand_icon = true
+
+[node name="GlovesLvl1" type="Sprite2D" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment1"]
+position = Vector2(111, 93)
+scale = Vector2(7, 7)
+texture = ExtResource("21_hx6fl")
+region_enabled = true
+region_rect = Rect2(0.107971, 0.0139513, 15.9135, 16.0238)
+
+[node name="Equipment2" type="Panel" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D"]
+offset_left = 249.0
+offset_top = 54.0
+offset_right = 469.0
+offset_bottom = 242.0
+
+[node name="ButtonTexture" type="Sprite2D" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment2"]
+position = Vector2(183.5, 153)
+scale = Vector2(1.67647, 1.70588)
+texture = ExtResource("4_frrma")
+
+[node name="Button" type="Button" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment2"]
+offset_left = 160.0
+offset_top = 129.0
+offset_right = 210.0
+offset_bottom = 179.0
+icon = ExtResource("6_44mgr")
+flat = true
+expand_icon = true
+
+[node name="GlovesLvl2" type="Sprite2D" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment2"]
+position = Vector2(108, 93)
+scale = Vector2(7, 7)
+texture = ExtResource("22_rl5h1")
+region_enabled = true
+region_rect = Rect2(0, 0, 16.0117, 16.0225)
+
+[node name="Equipment3" type="Panel" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D"]
+offset_left = 507.0
+offset_top = 54.0
+offset_right = 727.0
+offset_bottom = 242.0
+
+[node name="ButtonTexture" type="Sprite2D" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment3"]
+position = Vector2(183.5, 153)
+scale = Vector2(1.67647, 1.70588)
+texture = ExtResource("4_frrma")
+
+[node name="Button" type="Button" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment3"]
+offset_left = 160.0
+offset_top = 129.0
+offset_right = 210.0
+offset_bottom = 179.0
+icon = ExtResource("6_44mgr")
+flat = true
+expand_icon = true
+
+[node name="GlovesLvl3" type="Sprite2D" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment3"]
+position = Vector2(108, 93)
+scale = Vector2(7, 7)
+texture = ExtResource("23_g4i2q")
+region_enabled = true
+region_rect = Rect2(0, 0, 16.0117, 16.0225)
+
+[node name="Equipment4" type="Panel" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D"]
+offset_left = 763.0
+offset_top = 54.0
+offset_right = 983.0
+offset_bottom = 242.0
+
+[node name="ButtonTexture" type="Sprite2D" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment4"]
+position = Vector2(183.5, 153)
+scale = Vector2(1.67647, 1.70588)
+texture = ExtResource("4_frrma")
+
+[node name="Button" type="Button" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment4"]
+offset_left = 160.0
+offset_top = 129.0
+offset_right = 210.0
+offset_bottom = 179.0
+icon = ExtResource("6_44mgr")
+flat = true
+expand_icon = true
+
+[node name="BootsLvl1" type="Sprite2D" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment4"]
+position = Vector2(108, 93)
+scale = Vector2(7, 7)
+texture = ExtResource("24_hqie6")
+region_enabled = true
+region_rect = Rect2(0, 0, 16.0117, 16.0225)
+
+[node name="Equipment5" type="Panel" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D"]
+offset_left = 1027.0
+offset_top = 54.0
+offset_right = 1247.0
+offset_bottom = 242.0
+
+[node name="ButtonTexture" type="Sprite2D" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment5"]
+position = Vector2(183.5, 153)
+scale = Vector2(1.67647, 1.70588)
+texture = ExtResource("4_frrma")
+
+[node name="Button" type="Button" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment5"]
+offset_left = 160.0
+offset_top = 129.0
+offset_right = 210.0
+offset_bottom = 179.0
+icon = ExtResource("6_44mgr")
+flat = true
+expand_icon = true
+
+[node name="BootsLvl2" type="Sprite2D" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment5"]
+position = Vector2(108, 93)
+scale = Vector2(7, 7)
+texture = ExtResource("25_wnjjg")
+region_enabled = true
+region_rect = Rect2(0, 0, 16.0117, 16.0225)
+
+[node name="Equipment6" type="Panel" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D"]
+offset_left = 1277.0
+offset_top = 54.0
+offset_right = 1497.0
+offset_bottom = 242.0
+
+[node name="ButtonTexture" type="Sprite2D" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment6"]
+position = Vector2(183.5, 153)
+scale = Vector2(1.67647, 1.70588)
+texture = ExtResource("4_frrma")
+
+[node name="Button" type="Button" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment6"]
+offset_left = 160.0
+offset_top = 129.0
+offset_right = 210.0
+offset_bottom = 179.0
+icon = ExtResource("6_44mgr")
+flat = true
+expand_icon = true
+
+[node name="BootsLvl3" type="Sprite2D" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment6"]
+position = Vector2(108, 93)
+scale = Vector2(7, 7)
+texture = ExtResource("26_46o6i")
+region_enabled = true
+region_rect = Rect2(0, 0, 16.0117, 16.0225)
+
+[node name="Equipment7" type="Panel" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D"]
+offset_left = 1537.0
+offset_top = 54.0
+offset_right = 1757.0
+offset_bottom = 242.0
+
+[node name="ButtonTexture" type="Sprite2D" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment7"]
+position = Vector2(183.5, 153)
+scale = Vector2(1.67647, 1.70588)
+texture = ExtResource("4_frrma")
+
+[node name="Button" type="Button" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment7"]
+offset_left = 160.0
+offset_top = 129.0
+offset_right = 210.0
+offset_bottom = 179.0
+icon = ExtResource("6_44mgr")
+flat = true
+expand_icon = true
+
+[node name="ArmorLvl1" type="Sprite2D" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment7"]
+position = Vector2(108, 93)
+scale = Vector2(7, 7)
+texture = ExtResource("27_dhghn")
+region_enabled = true
+region_rect = Rect2(0, 0, 16.0117, 16.0225)
+
+[node name="Equipment8" type="Panel" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D"]
+offset_left = 1793.0
+offset_top = 54.0
+offset_right = 2013.0
+offset_bottom = 242.0
+
+[node name="ButtonTexture" type="Sprite2D" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment8"]
+position = Vector2(183.5, 153)
+scale = Vector2(1.67647, 1.70588)
+texture = ExtResource("4_frrma")
+
+[node name="Button" type="Button" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment8"]
+offset_left = 160.0
+offset_top = 129.0
+offset_right = 210.0
+offset_bottom = 179.0
+icon = ExtResource("6_44mgr")
+flat = true
+expand_icon = true
+
+[node name="ArmorLvl2" type="Sprite2D" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment8"]
+position = Vector2(108, 93)
+scale = Vector2(7, 7)
+texture = ExtResource("28_ua7db")
+region_enabled = true
+region_rect = Rect2(0, 0, 16.0117, 16.0225)
+
+[node name="Equipment9" type="Panel" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D"]
+offset_left = 2047.0
+offset_top = 54.0
+offset_right = 2267.0
+offset_bottom = 242.0
+
+[node name="ButtonTexture" type="Sprite2D" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment9"]
+position = Vector2(183.5, 153)
+scale = Vector2(1.67647, 1.70588)
+texture = ExtResource("4_frrma")
+
+[node name="Button" type="Button" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment9"]
+offset_left = 160.0
+offset_top = 129.0
+offset_right = 210.0
+offset_bottom = 179.0
+icon = ExtResource("6_44mgr")
+flat = true
+expand_icon = true
+
+[node name="ArmorLvl3" type="Sprite2D" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment9"]
+position = Vector2(108, 93)
+scale = Vector2(7, 7)
+texture = ExtResource("29_kt1wn")
+region_enabled = true
+region_rect = Rect2(0, 0, 16.0117, 16.0225)
+
+[node name="Equipment10" type="Panel" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D"]
+offset_left = 2303.0
+offset_top = 54.0
+offset_right = 2523.0
+offset_bottom = 242.0
+
+[node name="ButtonTexture" type="Sprite2D" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment10"]
+position = Vector2(183.5, 153)
+scale = Vector2(1.67647, 1.70588)
+texture = ExtResource("4_frrma")
+
+[node name="Button" type="Button" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment10"]
+offset_left = 160.0
+offset_top = 129.0
+offset_right = 210.0
+offset_bottom = 179.0
+icon = ExtResource("6_44mgr")
+flat = true
+expand_icon = true
+
+[node name="NecklaceLvl1" type="Sprite2D" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment10"]
+position = Vector2(108, 93)
+scale = Vector2(7, 7)
+texture = ExtResource("30_lsmqb")
+region_enabled = true
+region_rect = Rect2(0, 0, 16.0117, 16.0225)
+
+[node name="Equipment11" type="Panel" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D"]
+offset_left = 2559.0
+offset_top = 54.0
+offset_right = 2779.0
+offset_bottom = 242.0
+
+[node name="ButtonTexture" type="Sprite2D" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment11"]
+position = Vector2(183.5, 153)
+scale = Vector2(1.67647, 1.70588)
+texture = ExtResource("4_frrma")
+
+[node name="Button" type="Button" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment11"]
+offset_left = 160.0
+offset_top = 129.0
+offset_right = 210.0
+offset_bottom = 179.0
+icon = ExtResource("6_44mgr")
+flat = true
+expand_icon = true
+
+[node name="NecklaceLvl2" type="Sprite2D" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment11"]
+position = Vector2(108, 93)
+scale = Vector2(7, 7)
+texture = ExtResource("31_cw27m")
+region_enabled = true
+region_rect = Rect2(0, 0, 16.0117, 16.0225)
+
+[node name="Equipment12" type="Panel" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D"]
+offset_left = 2815.0
+offset_top = 54.0
+offset_right = 3035.0
+offset_bottom = 242.0
+
+[node name="ButtonTexture" type="Sprite2D" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment12"]
+position = Vector2(183.5, 153)
+scale = Vector2(1.67647, 1.70588)
+texture = ExtResource("4_frrma")
+
+[node name="Button" type="Button" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment12"]
+offset_left = 160.0
+offset_top = 129.0
+offset_right = 210.0
+offset_bottom = 179.0
+icon = ExtResource("6_44mgr")
+flat = true
+expand_icon = true
+
+[node name="NecklaceLvl3" type="Sprite2D" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment12"]
+position = Vector2(108, 93)
+scale = Vector2(7, 7)
+texture = ExtResource("32_xl1h5")
+region_enabled = true
+region_rect = Rect2(0, 0, 16.0117, 16.0225)
+
+[node name="HScrollBar" type="HScrollBar" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll"]
+offset_left = 300.0
+offset_top = 15.0
+offset_right = 985.0
+offset_bottom = 30.0
 theme_override_styles/scroll = SubResource("StyleBoxTexture_dwdvj")
 theme_override_styles/grabber = SubResource("StyleBoxTexture_sqpo1")
 theme_override_styles/grabber_highlight = SubResource("StyleBoxTexture_4inse")
 theme_override_styles/grabber_pressed = SubResource("StyleBoxTexture_l86d1")
+max_value = 2052.0
 
 [node name="ContainerInfo" type="NinePatchRect" parent="."]
 layout_mode = 0
-offset_left = 213.0
+offset_left = 216.0
 offset_top = 188.0
-offset_right = 771.0
+offset_right = 774.0
 offset_bottom = 931.0
 texture = ExtResource("4_frrma")
 patch_margin_left = 8
 patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 7
+
+[node name="ValueBar128x16" type="Sprite2D" parent="ContainerInfo"]
+position = Vector2(274, 48.5)
+scale = Vector2(3.46875, 3.9375)
+texture = ExtResource("21_yovdj")
+
+[node name="ItemName" type="Label" parent="ContainerInfo"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -219.0
+offset_top = 21.0
+offset_right = 221.0
+offset_bottom = 65.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.956863, 0.647059, 0.407843, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_wn4im")
+theme_override_font_sizes/font_size = 50
+text = "Wooden Dagger"
+horizontal_alignment = 1
+
+[node name="WoodenDagger" type="Sprite2D" parent="ContainerInfo"]
+position = Vector2(270, 282)
+scale = Vector2(11.4928, 8.9858)
+texture = ExtResource("4_wqmtr")
+region_enabled = true
+region_rect = Rect2(32.9416, 11.4972, 13.0577, 36.603)
+
+[node name="Desc" type="Label" parent="ContainerInfo"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 434.0
+offset_right = 499.0
+offset_bottom = 617.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("21_72xbj")
+theme_override_font_sizes/font_size = 35
+text = "Short, but deadly. Poke your
+enemies 'till their death."
+
+[node name="Stats" type="Label" parent="ContainerInfo"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 542.0
+offset_right = 499.0
+offset_bottom = 617.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("21_72xbj")
+theme_override_font_sizes/font_size = 35
+text = "+5 ATK
++10 SPD"
+
+[node name="Button" type="Button" parent="ContainerInfo"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = -91.0
+offset_right = -7.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_disabled_color = Color(0, 0.74902, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0.258824, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0.258824, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.258824, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0.74902, 0, 1)
+theme_override_colors/font_color = Color(0, 0.74902, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0.74902, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("21_72xbj")
+theme_override_font_sizes/font_size = 64
+text = "BUY"
+
+[node name="TopPattern" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(-0.500031, 124.75)
+scale = Vector2(8.55803, 3.73881)
+texture = ExtResource("21_4pd6e")
+
+[node name="BotPattern" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(8, 1006)
+scale = Vector2(5, 3.154)
+texture = ExtResource("22_yyvuq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vvng7")
+}
+
+[node name="ShopkeeperBellSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("37_ogtt3")
+bus = &"SFX"
+
+[node name="ShopScrollingSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("38_1yyps")
+volume_db = -6.0
+bus = &"SFX"
