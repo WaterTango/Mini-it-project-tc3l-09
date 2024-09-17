@@ -195,6 +195,105 @@ animations = [{
 "speed": 20.0
 }]
 
+[sub_resource type="Animation" id="Animation_fs7hu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BotPattern:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TopPattern:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(960, -1000)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-2052, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ContainerExt/PotionsCategory/Label/PotionScroll/Node2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-264, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1048, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ShopScrollingSFX:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ShopkeeperBellSFX:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="Animation" id="Animation_cvkov"]
 resource_name = "shop_intro"
 length = 8.0
@@ -295,105 +394,6 @@ tracks/7/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_fs7hu"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BotPattern:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("TopPattern:self_modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(960, -1000)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-2052, 0)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("ContainerExt/PotionsCategory/Label/PotionScroll/Node2D:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-264, 0)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-1048, 0)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("ShopScrollingSFX:playing")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("ShopkeeperBellSFX:playing")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vvng7"]
 _data = {
 "RESET": SubResource("Animation_fs7hu"),
@@ -402,12 +402,15 @@ _data = {
 
 [node name="shopmenu" type="Control"]
 layout_mode = 3
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_top = -1000.0
-offset_bottom = -1000.0
+anchor_bottom = 0.5
+offset_top = -1540.0
+offset_bottom = -1540.0
 grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_mqpal")
 
 [node name="TitleUnderline" type="Sprite2D" parent="."]
@@ -522,6 +525,7 @@ scale = Vector2(1.67647, 1.70588)
 texture = ExtResource("4_frrma")
 
 [node name="wep2button" type="Button" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D/weapon2"]
+layout_mode = 0
 offset_left = 160.0
 offset_top = 129.0
 offset_right = 210.0
@@ -549,6 +553,7 @@ scale = Vector2(1.67647, 1.70588)
 texture = ExtResource("4_frrma")
 
 [node name="wep3button" type="Button" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D/weapon3"]
+layout_mode = 0
 offset_left = 160.0
 offset_top = 129.0
 offset_right = 210.0
@@ -576,6 +581,7 @@ scale = Vector2(1.67647, 1.70588)
 texture = ExtResource("4_frrma")
 
 [node name="Button" type="Button" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D/weapon4"]
+layout_mode = 0
 offset_left = 160.0
 offset_top = 129.0
 offset_right = 210.0
@@ -603,6 +609,7 @@ scale = Vector2(1.67647, 1.70588)
 texture = ExtResource("4_frrma")
 
 [node name="Button" type="Button" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D/weapon5"]
+layout_mode = 0
 offset_left = 160.0
 offset_top = 129.0
 offset_right = 210.0
@@ -630,6 +637,7 @@ scale = Vector2(1.67647, 1.70588)
 texture = ExtResource("4_frrma")
 
 [node name="Button" type="Button" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D/weapon6"]
+layout_mode = 0
 offset_left = 160.0
 offset_top = 129.0
 offset_right = 210.0
@@ -657,6 +665,7 @@ scale = Vector2(1.67647, 1.70588)
 texture = ExtResource("4_frrma")
 
 [node name="Button" type="Button" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D/weapon7"]
+layout_mode = 0
 offset_left = 160.0
 offset_top = 129.0
 offset_right = 210.0
@@ -684,6 +693,7 @@ scale = Vector2(1.67647, 1.70588)
 texture = ExtResource("4_frrma")
 
 [node name="Button" type="Button" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D/weapon8"]
+layout_mode = 0
 offset_left = 160.0
 offset_top = 129.0
 offset_right = 210.0
@@ -738,6 +748,7 @@ text = "Potions
 horizontal_alignment = 1
 
 [node name="PotionScroll" type="RichTextLabel" parent="ContainerExt/PotionsCategory/Label"]
+layout_mode = 0
 offset_right = 993.0
 offset_bottom = 246.0
 script = ExtResource("10_hdc50")
@@ -757,6 +768,7 @@ scale = Vector2(1.67647, 1.70588)
 texture = ExtResource("4_frrma")
 
 [node name="greenpotbutton" type="Button" parent="ContainerExt/PotionsCategory/Label/PotionScroll/Node2D/Potion1"]
+layout_mode = 0
 offset_left = 160.0
 offset_top = 129.0
 offset_right = 210.0
@@ -785,6 +797,7 @@ scale = Vector2(1.67647, 1.70588)
 texture = ExtResource("4_frrma")
 
 [node name="bluepotbutton" type="Button" parent="ContainerExt/PotionsCategory/Label/PotionScroll/Node2D/Potion2"]
+layout_mode = 0
 offset_left = 160.0
 offset_top = 129.0
 offset_right = 210.0
@@ -813,6 +826,7 @@ scale = Vector2(1.67647, 1.70588)
 texture = ExtResource("4_frrma")
 
 [node name="purplepotbutton" type="Button" parent="ContainerExt/PotionsCategory/Label/PotionScroll/Node2D/Potion3"]
+layout_mode = 0
 offset_left = 160.0
 offset_top = 129.0
 offset_right = 210.0
@@ -841,6 +855,7 @@ scale = Vector2(1.67647, 1.70588)
 texture = ExtResource("4_frrma")
 
 [node name="yellowpotbutton" type="Button" parent="ContainerExt/PotionsCategory/Label/PotionScroll/Node2D/Potion4"]
+layout_mode = 0
 offset_left = 160.0
 offset_top = 129.0
 offset_right = 210.0
@@ -869,6 +884,7 @@ scale = Vector2(1.67647, 1.70588)
 texture = ExtResource("4_frrma")
 
 [node name="redpotbutton" type="Button" parent="ContainerExt/PotionsCategory/Label/PotionScroll/Node2D/Potion5"]
+layout_mode = 0
 offset_left = 160.0
 offset_top = 129.0
 offset_right = 210.0
@@ -886,6 +902,7 @@ autoplay = "red_pot"
 frame_progress = 0.0218014
 
 [node name="HScrollBar" type="HScrollBar" parent="ContainerExt/PotionsCategory/Label/PotionScroll"]
+layout_mode = 0
 offset_left = 300.0
 offset_top = 15.0
 offset_right = 985.0
@@ -922,6 +939,7 @@ text = "Equipments"
 horizontal_alignment = 1
 
 [node name="EquipmentScroll" type="RichTextLabel" parent="ContainerExt/EquimentsCategoru/Label"]
+layout_mode = 0
 offset_right = 993.0
 offset_bottom = 246.0
 script = ExtResource("11_fl34k")
@@ -941,6 +959,7 @@ scale = Vector2(1.67647, 1.70588)
 texture = ExtResource("4_frrma")
 
 [node name="Button" type="Button" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment1"]
+layout_mode = 0
 offset_left = 160.0
 offset_top = 129.0
 offset_right = 210.0
@@ -968,6 +987,7 @@ scale = Vector2(1.67647, 1.70588)
 texture = ExtResource("4_frrma")
 
 [node name="Button" type="Button" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment2"]
+layout_mode = 0
 offset_left = 160.0
 offset_top = 129.0
 offset_right = 210.0
@@ -995,6 +1015,7 @@ scale = Vector2(1.67647, 1.70588)
 texture = ExtResource("4_frrma")
 
 [node name="Button" type="Button" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment3"]
+layout_mode = 0
 offset_left = 160.0
 offset_top = 129.0
 offset_right = 210.0
@@ -1022,6 +1043,7 @@ scale = Vector2(1.67647, 1.70588)
 texture = ExtResource("4_frrma")
 
 [node name="Button" type="Button" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment4"]
+layout_mode = 0
 offset_left = 160.0
 offset_top = 129.0
 offset_right = 210.0
@@ -1049,6 +1071,7 @@ scale = Vector2(1.67647, 1.70588)
 texture = ExtResource("4_frrma")
 
 [node name="Button" type="Button" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment5"]
+layout_mode = 0
 offset_left = 160.0
 offset_top = 129.0
 offset_right = 210.0
@@ -1076,6 +1099,7 @@ scale = Vector2(1.67647, 1.70588)
 texture = ExtResource("4_frrma")
 
 [node name="Button" type="Button" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment6"]
+layout_mode = 0
 offset_left = 160.0
 offset_top = 129.0
 offset_right = 210.0
@@ -1103,6 +1127,7 @@ scale = Vector2(1.67647, 1.70588)
 texture = ExtResource("4_frrma")
 
 [node name="Button" type="Button" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment7"]
+layout_mode = 0
 offset_left = 160.0
 offset_top = 129.0
 offset_right = 210.0
@@ -1130,6 +1155,7 @@ scale = Vector2(1.67647, 1.70588)
 texture = ExtResource("4_frrma")
 
 [node name="Button" type="Button" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment8"]
+layout_mode = 0
 offset_left = 160.0
 offset_top = 129.0
 offset_right = 210.0
@@ -1157,6 +1183,7 @@ scale = Vector2(1.67647, 1.70588)
 texture = ExtResource("4_frrma")
 
 [node name="Button" type="Button" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment9"]
+layout_mode = 0
 offset_left = 160.0
 offset_top = 129.0
 offset_right = 210.0
@@ -1184,6 +1211,7 @@ scale = Vector2(1.67647, 1.70588)
 texture = ExtResource("4_frrma")
 
 [node name="Button" type="Button" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment10"]
+layout_mode = 0
 offset_left = 160.0
 offset_top = 129.0
 offset_right = 210.0
@@ -1211,6 +1239,7 @@ scale = Vector2(1.67647, 1.70588)
 texture = ExtResource("4_frrma")
 
 [node name="Button" type="Button" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment11"]
+layout_mode = 0
 offset_left = 160.0
 offset_top = 129.0
 offset_right = 210.0
@@ -1238,6 +1267,7 @@ scale = Vector2(1.67647, 1.70588)
 texture = ExtResource("4_frrma")
 
 [node name="Button" type="Button" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D/Equipment12"]
+layout_mode = 0
 offset_left = 160.0
 offset_top = 129.0
 offset_right = 210.0
@@ -1254,6 +1284,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 16.0117, 16.0225)
 
 [node name="HScrollBar" type="HScrollBar" parent="ContainerExt/EquimentsCategoru/Label/EquipmentScroll"]
+layout_mode = 0
 offset_left = 300.0
 offset_top = 15.0
 offset_right = 985.0

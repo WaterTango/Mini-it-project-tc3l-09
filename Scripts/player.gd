@@ -2,19 +2,24 @@ extends CharacterBody2D
 
 class_name Player
 
+#combat values
 var health = 100
+var player_alive = true
+var enemy_inattack_range = false
+var enemy_attack_cooldown = true
+var died = false
 var speed = 150 
 var current_dir = "none"
 var player_character
 var attack_inprogress = false
 var can_move = true
+
 func _physics_process(delta):
 	player_movement(delta)
-	attack()
-	
+	enemy_attack()
+		
 func _ready():
 	$AnimatedSprite2D.play("front_idle")
-	
 	
 func player_movement(_delta):
 	if can_move:
@@ -113,20 +118,46 @@ func play_anim(movement):
 			if attack_inprogress == false:
 				anim.play("back_idle")
 			
-func attack():
-	var anim = $AnimatedSprite2D
-	if Input.is_action_just_pressed("attack"):
-		attack_inprogress = true
-		Global.player_current_attack = true
-		$attack_timer.start()
-		anim.play("aoe_attack")
-
 
 func player():
 	pass
 
 
-func _on_attack_timer_timeout():
-	$attack_timer.stop()
-	Global.player_current_attack = false
-	attack_inprogress = false
+func _on_player_hitbox_body_entered(body: Node2D) -> void:
+	if body is Enemy:
+		enemy_inattack_range = true
+		
+
+
+func _on_player_hitbox_body_exited(body: Node2D) -> void:
+	if body is Enemy:
+		enemy_inattack_range = false
+		
+		
+func enemy_attack():
+	if enemy_inattack_range and player_alive and enemy_attack_cooldown == true:
+		health = health - 20
+		$AudioStreamPlayer.play()
+		enemy_attack_cooldown = false
+		$attack_cooldown.start()
+		print(health)
+		if health == 0:
+			died = true
+		if died:
+			health = 0
+			player_alive = false #player is dead
+			$".".can_move = false
+			$AnimatedSprite2D.play('death')
+			print("died")
+			get_tree().reload_current_scene()
+
+func _on_attack_cooldown_timeout() -> void:
+	enemy_attack_cooldown = true
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	$player_death.play()
+
+
+func _on_player_death_finished() -> void:
+	print("end")

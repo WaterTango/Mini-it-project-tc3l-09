@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=4 uid="uid://o8fuiwevj7kb"]
+[gd_scene load_steps=86 format=4 uid="uid://o8fuiwevj7kb"]
 
 [ext_resource type="Script" path="res://Scripts/world_2_1.gd" id="1_6krru"]
 [ext_resource type="PackedScene" uid="uid://bf5px1sosea0q" path="res://Scenes/Game_scene/orc.tscn" id="2_swtqg"]
@@ -7,6 +7,7 @@
 [ext_resource type="TileSet" uid="uid://c6dhenfs23s6h" path="res://Scenes/Game_scene/grass.tres" id="5_6yx4u"]
 [ext_resource type="Texture2D" uid="uid://dktpn7ohj3m42" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Green Woods/Assets/forest.png" id="5_dtv7p"]
 [ext_resource type="PackedScene" uid="uid://d34f67t1vjwur" path="res://Scenes/Game_scene/villagenpc.tscn" id="5_i4cq7"]
+[ext_resource type="Script" path="res://Scripts/blacksmith.gd" id="6_017li"]
 [ext_resource type="PackedScene" uid="uid://cde5mbjo7uyri" path="res://Scenes/Game_scene/researchernpc.tscn" id="6_bd8u3"]
 [ext_resource type="PackedScene" uid="uid://bx1u3jdh6th4s" path="res://Scenes/Game_scene/censornpc.tscn" id="7_e108j"]
 [ext_resource type="PackedScene" uid="uid://c3johty28lw6u" path="res://Scenes/Game_scene/chattingsoldier.tscn" id="8_g817e"]
@@ -54,6 +55,9 @@
 [ext_resource type="Script" path="res://Scripts/petalgrovesign.gd" id="51_ffo3c"]
 [ext_resource type="Script" path="res://Scripts/mainland.gd" id="51_rgv7o"]
 [ext_resource type="Script" path="res://Scripts/shatteredtombsign.gd" id="52_0pfh3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c56kv"]
+radius = 20.0
 
 [sub_resource type="Animation" id="Animation_yl1vf"]
 length = 0.001
@@ -2976,14 +2980,22 @@ process_mode = 3
 script = ExtResource("1_6krru")
 metadata/_edit_lock_ = true
 
+[node name="blacksmith" type="Area2D" parent="."]
+position = Vector2(-5, -9)
+script = ExtResource("6_017li")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="blacksmith"]
+position = Vector2(-482, 315)
+shape = SubResource("CircleShape2D_c56kv")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 0
 
 [node name="Fade" type="ColorRect" parent="CanvasLayer"]
-offset_left = -3368.0
-offset_top = -1383.0
-offset_right = 2439.0
-offset_bottom = 2100.0
+offset_left = -3444.0
+offset_top = -1412.0
+offset_right = 2363.0
+offset_bottom = 2071.0
 color = Color(0, 0, 0, 0)
 metadata/_edit_use_anchors_ = true
 
@@ -3117,9 +3129,9 @@ position = Vector2(-367, -382)
 
 [node name="npc" type="Node" parent="entities"]
 
-[node name="villagenpc" parent="entities/npc" instance=ExtResource("5_i4cq7")]
+[node name="blacksmith" parent="entities/npc" instance=ExtResource("5_i4cq7")]
 z_index = 3
-position = Vector2(-58, 674)
+position = Vector2(-351, 439)
 
 [node name="villagenpc2" parent="entities/npc" instance=ExtResource("5_i4cq7")]
 z_index = 3
@@ -3531,7 +3543,7 @@ polygon = PackedVector2Array(-30, -1023, -31, -1186, -31.7918, -1265.97, 40, -12
 [node name="Player" parent="." instance=ExtResource("19_tp7xi")]
 process_mode = 1
 z_index = 3
-position = Vector2(-6, 1295)
+position = Vector2(-467, 451)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(3, 3)
@@ -3760,6 +3772,7 @@ position = Vector2(-857, 190)
 shape = SubResource("CircleShape2D_ac8j6")
 
 [node name="petalgrove" type="Label" parent="sign"]
+visible = false
 modulate = Color(1, 0.454902, 1, 1)
 z_index = 5
 anchors_preset = -1
@@ -3814,6 +3827,8 @@ script = ExtResource("52_0pfh3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sign/shatteredtombsign"]
 shape = SubResource("CircleShape2D_v3qpt")
 
+[connection signal="body_entered" from="blacksmith" to="blacksmith" method="_on_body_entered"]
+[connection signal="body_exited" from="blacksmith" to="blacksmith" method="_on_body_exited"]
 [connection signal="body_entered" from="Level2_TP/tp_area2" to="." method="_on_tp_area_2_body_entered"]
 [connection signal="body_entered" from="Map/TileMap/village/door_opening_animation" to="." method="_on_door_opening_animation_body_entered"]
 [connection signal="body_exited" from="Map/TileMap/village/door_opening_animation" to="." method="_on_door_opening_animation_body_exited"]
