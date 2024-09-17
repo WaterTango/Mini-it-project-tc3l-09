@@ -11,6 +11,7 @@ func _process(delta: float) -> void:
 	if in_normal_chest_zone:
 		$interact_popup2.show()
 		if Input.is_action_just_pressed("interact"):
+			$KeySFX.play()
 			$interact_popup2.hide()
 			$librarychestclosed.hide()
 			$librarychestopen.show()
