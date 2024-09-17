@@ -1,9 +1,9 @@
 [style name="lightnovel_File"]
-[signal arg="chatting"]
 - Talk with gate soldier?
 - look elsewhere
 	[signal arg="exit"]
 	[end_timeline]
+[signal arg="chatting"]
 join soldiernpc left
 soldiernpc: Hold there! It's not safe beyond these walls.\
 \

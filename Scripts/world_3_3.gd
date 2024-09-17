@@ -58,3 +58,7 @@ func _on_key_popup_hide() -> void:
 
 func _on_key_popup_show() -> void:
 	$Player/interact_popup2.show()
+
+
+func _on_key_key_pickedup() -> void:
+	$Player/Camera2D/key_Notification.show()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://d2yr2v1e0ibvc"]
+[gd_scene load_steps=49 format=3 uid="uid://d2yr2v1e0ibvc"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_6x7ad"]
 [ext_resource type="Texture2D" uid="uid://csad6t5wpv06a" path="res://PlayerAsset/Attack/armour_Attack+sfx.png" id="2_l58w3"]
@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://crnws7b6mgnqc" path="res://Assets/png/e_dark.png" id="6_g65nu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5tavq"]
-radius = 8.0
-height = 16.0
+radius = 6.0
+height = 12.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hjwck"]
 atlas = ExtResource("2_l58w3")
@@ -130,21 +130,21 @@ region = Rect2(512, 384, 128, 128)
 atlas = ExtResource("4_kk3w7")
 region = Rect2(640, 384, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uh1oa"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6yr6x"]
 atlas = ExtResource("3_8unnw")
-region = Rect2(0, 128, 128, 128)
+region = Rect2(0, 256, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qopaj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_axy6d"]
 atlas = ExtResource("3_8unnw")
-region = Rect2(128, 128, 128, 128)
+region = Rect2(128, 256, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_33kb6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_erlpr"]
 atlas = ExtResource("3_8unnw")
-region = Rect2(256, 128, 128, 128)
+region = Rect2(256, 256, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gllq5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_esykr"]
 atlas = ExtResource("3_8unnw")
-region = Rect2(384, 128, 128, 128)
+region = Rect2(384, 256, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ucd1q"]
 atlas = ExtResource("4_kk3w7")
@@ -289,16 +289,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_uh1oa")
+"texture": SubResource("AtlasTexture_6yr6x")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qopaj")
+"texture": SubResource("AtlasTexture_axy6d")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_33kb6")
+"texture": SubResource("AtlasTexture_erlpr")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gllq5")
+"texture": SubResource("AtlasTexture_esykr")
 }],
 "loop": true,
 "name": &"side_idle",
@@ -328,9 +328,6 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ehj6j"]
-polygon = PackedVector2Array(3.76116, -1.88825, 4.67554, -1.88825, 4.6018, -0.826391, 3.62843, 0.117484, -5.29426, 0.144345, -5.36387, -0.760474, -6.35156, -0.828125, -6.32437, -1.8045, -5.375, -1.85156)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_8a327"]
 radius = 31.0
 
@@ -342,7 +339,7 @@ script = ExtResource("1_6x7ad")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(0, -7)
+position = Vector2(1, -6)
 shape = SubResource("CapsuleShape2D_5tavq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -352,15 +349,9 @@ texture_filter = 1
 position = Vector2(0, -3)
 scale = Vector2(0.93, 0.877)
 sprite_frames = SubResource("SpriteFrames_nn7uj")
-animation = &"aoe_attack"
+animation = &"side_idle"
 autoplay = "front_idle"
 offset = Vector2(0.655, -11.84)
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-z_index = -1
-position = Vector2(0.875988, -0.0417137)
-occluder = SubResource("OccluderPolygon2D_ehj6j")
-occluder_light_mask = 2
 
 [node name="Area2D" type="Area2D" parent="."]
 

@@ -1,9 +1,9 @@
 [style name="lightnovel_File"]
-[signal arg="chatting"]
 - Talk with Grandmeister Gartley
 - look elsewhere
 	[end_timeline]
 	[signal arg="exit"]
+[signal arg="chatting"]
 join grandmeister left
 grandmeister: My lord! You survived!
 join player (playerside) right

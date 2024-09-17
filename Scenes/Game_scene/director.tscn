@@ -13,7 +13,7 @@ size = Vector2(15, 22)
 polygon = PackedVector2Array(-7.61818, -0.216099, -4.29786, -0.223911, 3.21776, -0.177036, 3.18651, -0.911411, 2.52245, -0.927036, 2.55934, -2.2875, -6.99318, -2.37235, -7.00099, -0.911411, -7.6338, -0.887974)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qb8cu"]
-radius = 66.0303
+radius = 269.097
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ffvdd"]
 size = Vector2(21.5, 29)

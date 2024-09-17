@@ -1,9 +1,9 @@
-[signal arg="chatting"]
 [style name="lightnovel_File"]
 - Talk with Magus Galius
 - look elsewhere
 	[signal arg="exit"]
 	[end_timeline]
+[signal arg="chatting"]
 join shopkeepernpc left
 shopkeepernpc: My lord, you live! The situation is most dire. The North teems with foul creatures, and these beasts press ever closer to our outposts. We are in desperate need of aid.\
 \
