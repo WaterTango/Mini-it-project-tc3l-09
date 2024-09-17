@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://cmkcsdcvi17xw"]
+[gd_scene load_steps=45 format=4 uid="uid://cmkcsdcvi17xw"]
 
 [ext_resource type="Script" path="res://Scripts/world_3_1.gd" id="1_s8enk"]
 [ext_resource type="PackedScene" uid="uid://d2yr2v1e0ibvc" path="res://Scenes/Game_scene/player.tscn" id="1_tegyf"]
@@ -25,6 +25,7 @@
 [ext_resource type="AudioStream" uid="uid://cv01x33uvm2v3" path="res://shaz_audio/SFX/paused.mp3" id="18_atj7h"]
 [ext_resource type="AudioStream" uid="uid://bgpo5phkq73t4" path="res://shaz_audio/SFX/Key.mp3" id="18_mn53c"]
 [ext_resource type="AudioStream" uid="uid://cxdtgh6f6ljyb" path="res://shaz_audio/SFX/resume.mp3" id="19_ggqts"]
+[ext_resource type="PackedScene" uid="uid://bxlwcppxorl7h" path="res://Scenes/Game_scene/normalchest.tscn" id="22_tsto1"]
 [ext_resource type="AudioStream" uid="uid://f8euu8wxjl1l" path="res://shaz_audio/SFX/Leaving.mp3" id="23_crbi1"]
 [ext_resource type="AudioStream" uid="uid://bykfi4pa6x6x8" path="res://shaz_audio/SFX/Entering.mp3" id="24_30spl"]
 [ext_resource type="PackedScene" uid="uid://d284wji5iic7p" path="res://Scenes/Game_scene/cataloguer.tscn" id="26_yxcpg"]
@@ -371,6 +372,22 @@ position = Vector2(-56, -294)
 [node name="KeySFX" type="AudioStreamPlayer" parent="Keys/key"]
 stream = ExtResource("18_mn53c")
 bus = &"SFX"
+
+[node name="normalchest" parent="Keys" instance=ExtResource("22_tsto1")]
+z_index = 2
+position = Vector2(-102, -184)
+
+[node name="normalchest2" parent="Keys" instance=ExtResource("22_tsto1")]
+z_index = 2
+position = Vector2(-776, -280)
+
+[node name="normalchest3" parent="Keys" instance=ExtResource("22_tsto1")]
+z_index = 2
+position = Vector2(760, -280)
+
+[node name="normalchest4" parent="Keys" instance=ExtResource("22_tsto1")]
+z_index = 2
+position = Vector2(344, -91)
 
 [node name="static" type="StaticBody2D" parent="."]
 position = Vector2(-263, 74)

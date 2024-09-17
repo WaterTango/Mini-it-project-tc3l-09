@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=3 uid="uid://bxlwcppxorl7h"]
+
+[ext_resource type="Texture2D" uid="uid://c1gwcj8np0mse" path="res://Assets/pixel assets/library/Assets/librarychestclosed.png" id="1_2gwt6"]
+[ext_resource type="Script" path="res://Scripts/normalchest.gd" id="1_syws0"]
+[ext_resource type="Texture2D" uid="uid://c20exa62fp6wq" path="res://Assets/pixel assets/library/Assets/librarychestopen.png" id="2_0w4x4"]
+[ext_resource type="Texture2D" uid="uid://crnws7b6mgnqc" path="res://Assets/png/e_dark.png" id="3_f8slv"]
+[ext_resource type="FontFile" uid="uid://b8oo2dguy484y" path="res://shaz_fonts/basis33.ttf" id="5_dco5s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ice21"]
+size = Vector2(16, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_11ris"]
+size = Vector2(16, 16)
+
+[node name="normalchest" type="StaticBody2D"]
+script = ExtResource("1_syws0")
+
+[node name="librarychestclosed" type="Sprite2D" parent="."]
+modulate = Color(0.585062, 0.585062, 0.585062, 1)
+z_index = 1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_2gwt6")
+
+[node name="librarychestopen" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0.584314, 0.584314, 0.584314, 1)
+z_index = 1
+position = Vector2(0, -4)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_0w4x4")
+
+[node name="chestopen_area" type="Area2D" parent="."]
+z_index = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chestopen_area"]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_ice21")
+debug_color = Color(0.934239, 1.88673e-05, 0.641374, 0.42)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_11ris")
+debug_color = Color(0.402585, 0.608265, 0, 0.42)
+
+[node name="interact_popup2" type="Sprite2D" parent="."]
+visible = false
+z_index = 5
+position = Vector2(0, -14)
+scale = Vector2(0.252, 0.246)
+texture = ExtResource("3_f8slv")
+
+[node name="emptychest" type="Label" parent="."]
+visible = false
+modulate = Color(1, 0, 0, 1)
+z_index = 5
+anchors_preset = -1
+anchor_left = -3.5
+anchor_right = -3.5
+offset_left = -9.0
+offset_top = -16.0
+offset_right = 26.0
+scale = Vector2(0.505, 0.505)
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("5_dco5s")
+theme_override_font_sizes/font_size = 16
+text = "Empty"
+
+[connection signal="body_entered" from="chestopen_area" to="." method="_on_chestopen_area_body_entered"]
+[connection signal="body_exited" from="chestopen_area" to="." method="_on_chestopen_area_body_exited"]
