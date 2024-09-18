@@ -514,6 +514,7 @@ script = ExtResource("12_eeqmo")
 
 [node name="key_Notification" parent="entitites/Player/Camera2D" instance=ExtResource("9_2ycda")]
 visible = false
+z_index = 7
 position = Vector2(226, 162)
 
 [node name="DS4-UI" parent="entitites/Player/Camera2D" instance=ExtResource("8_nfbui")]

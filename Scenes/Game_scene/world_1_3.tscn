@@ -659,6 +659,7 @@ scale = Vector2(0.5, 0.5)
 
 [node name="key_Notification" parent="entities/Player/Camera2D" instance=ExtResource("9_g2pkf")]
 visible = false
+z_index = 7
 position = Vector2(226, 162)
 
 [node name="interact_popup2" type="Sprite2D" parent="entities/Player"]
