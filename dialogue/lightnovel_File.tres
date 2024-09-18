@@ -33,8 +33,10 @@ overrides = {
 "bold_font": "\"res://shaz_fonts/basis33.ttf\"",
 "box_margin_bottom": "100.0",
 "box_size": "Vector2(850, 300)",
+"name_label_custom_color": "Color(0.0831757, 0.649301, 0.925781, 1)",
 "name_label_custom_font_size": "40.0",
 "name_label_font": "\"res://shaz_fonts/basis33.ttf\"",
+"name_label_use_global_color": "false",
 "name_label_use_global_font_size": "false",
 "normal_font": "\"res://shaz_fonts/basis33.ttf\"",
 "text_size": "40.0",
@@ -49,7 +51,18 @@ overrides = {}
 [sub_resource type="Resource" id="Resource_t5hdd"]
 script = ExtResource("1_8ce0p")
 scene = ExtResource("7_voc7s")
-overrides = {}
+overrides = {
+"boxes_fill_width": "false",
+"font_custom": "\"res://shaz_fonts/basis33.ttf\"",
+"font_size_custom": "64.0",
+"font_size_use_global": "false",
+"font_use_global": "false",
+"sounds_volume": "10.0",
+"text_color_focused": "Color(0.870588, 0.839216, 0.0392157, 1)",
+"text_color_hovered": "Color(1, 0.67451, 0.0392157, 1)",
+"text_color_pressed": "Color(1, 0.67451, 0.0392157, 1)",
+"text_color_use_global": "false"
+}
 
 [sub_resource type="Resource" id="Resource_moe6f"]
 script = ExtResource("1_8ce0p")
@@ -66,4 +79,4 @@ script = ExtResource("10_kgl3u")
 name = "lightnovel_File"
 base_overrides = {}
 layers = Array[ExtResource("1_8ce0p")]([SubResource("Resource_2xkoo"), SubResource("Resource_j0nto"), SubResource("Resource_1lh1b"), SubResource("Resource_f0u4v"), SubResource("Resource_mjokv"), SubResource("Resource_t5hdd"), SubResource("Resource_moe6f"), SubResource("Resource_q1ips")])
-metadata/_latest_layer = 3
+metadata/_latest_layer = 5

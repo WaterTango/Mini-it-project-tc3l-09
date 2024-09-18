@@ -1,6 +1,6 @@
 [style name="lightnovel_File"]
 - Talk with gate soldier?
-- look elsewhere
+- Look elsewhere
 	[signal arg="exit"]
 	[end_timeline]
 [signal arg="chatting"]

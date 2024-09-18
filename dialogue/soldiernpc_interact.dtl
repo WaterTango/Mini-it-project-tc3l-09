@@ -1,6 +1,6 @@
 [style name="lightnovel_File"]
 - talk with gate soldier?
-- nevermind
+- Nevermind
 	[end_timeline]
 	[signal arg="exit"]
 [signal arg="chatting"]
