@@ -1,48 +1,48 @@
-[gd_scene load_steps=18 format=3 uid="uid://c3johty28lw6u"]
+[gd_scene load_steps=18 format=3 uid="uid://b5wntjn77y6ha"]
 
-[ext_resource type="Script" path="res://Scripts/chattingsoldier.gd" id="1_fvll6"]
-[ext_resource type="Texture2D" uid="uid://dv0uy0nxcroll" path="res://Assets/pixel assets/Pixel Crawler - Royal Crew/rebellion/Idle-Sheet rebellion.png" id="2_cygu8"]
-[ext_resource type="Texture2D" uid="uid://co22ln344ein6" path="res://Assets/pixel assets/Pixel Crawler - Royal Crew/rebellion/Run-Sheet.png" id="3_ap65h"]
-[ext_resource type="Texture2D" uid="uid://crnws7b6mgnqc" path="res://Assets/png/e_dark.png" id="4_urg86"]
+[ext_resource type="Script" path="res://Scripts/chattingrebellionsoldier.gd" id="1_8gnw2"]
+[ext_resource type="Texture2D" uid="uid://dv0uy0nxcroll" path="res://Assets/pixel assets/Pixel Crawler - Royal Crew/rebellion/Idle-Sheet rebellion.png" id="1_h1m75"]
+[ext_resource type="Texture2D" uid="uid://co22ln344ein6" path="res://Assets/pixel assets/Pixel Crawler - Royal Crew/rebellion/Run-Sheet.png" id="2_xpen4"]
+[ext_resource type="Texture2D" uid="uid://crnws7b6mgnqc" path="res://Assets/png/e_dark.png" id="3_c2hqw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sgend"]
-atlas = ExtResource("2_cygu8")
+atlas = ExtResource("1_h1m75")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fmm18"]
-atlas = ExtResource("2_cygu8")
+atlas = ExtResource("1_h1m75")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_18pra"]
-atlas = ExtResource("2_cygu8")
+atlas = ExtResource("1_h1m75")
 region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cnuxt"]
-atlas = ExtResource("2_cygu8")
+atlas = ExtResource("1_h1m75")
 region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vqcoc"]
-atlas = ExtResource("3_ap65h")
+atlas = ExtResource("2_xpen4")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_th0pn"]
-atlas = ExtResource("3_ap65h")
+atlas = ExtResource("2_xpen4")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aynhy"]
-atlas = ExtResource("3_ap65h")
+atlas = ExtResource("2_xpen4")
 region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x1r30"]
-atlas = ExtResource("3_ap65h")
+atlas = ExtResource("2_xpen4")
 region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ex2kn"]
-atlas = ExtResource("3_ap65h")
+atlas = ExtResource("2_xpen4")
 region = Rect2(256, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tc5y8"]
-atlas = ExtResource("3_ap65h")
+atlas = ExtResource("2_xpen4")
 region = Rect2(320, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7qice"]
@@ -94,8 +94,8 @@ radius = 7.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_omc6n"]
 radius = 31.0
 
-[node name="chattingsoldier" type="CharacterBody2D"]
-script = ExtResource("1_fvll6")
+[node name="chattingrebellionsoldier" type="CharacterBody2D"]
+script = ExtResource("1_8gnw2")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
@@ -104,7 +104,7 @@ autostart = true
 position = Vector2(0, -30)
 scale = Vector2(0.925, 0.925)
 sprite_frames = SubResource("SpriteFrames_7qice")
-animation = &"chatting_soldier_run"
+animation = &"chatting_soldier_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7)
@@ -121,7 +121,7 @@ visible = false
 z_index = 10
 position = Vector2(1, -40)
 scale = Vector2(0.236842, 0.231707)
-texture = ExtResource("4_urg86")
+texture = ExtResource("3_c2hqw")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="chat_detection_area" to="." method="_on_chat_detection_area_body_entered"]

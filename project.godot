@@ -32,6 +32,7 @@ directories/dtl_directory={
 "censornpc_interact": "res://dialogue/censornpc_interact.dtl",
 "gatenorthnpc_interact": "res://dialogue/gatenorthnpc_interact.dtl",
 "priestnpc_interact": "res://dialogue/priestnpc_interact.dtl",
+"rebellionsoldier": "res://dialogue/rebellionsoldier.dtl",
 "shopkeepernpc_interact": "res://dialogue/shopkeepernpc_interact.dtl",
 "soldiernpc_interact": "res://dialogue/soldiernpc_interact.dtl"
 }

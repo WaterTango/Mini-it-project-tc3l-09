@@ -1,7 +1,8 @@
-[gd_resource type="TileSet" load_steps=21 format=3 uid="uid://hejtinux6a7x"]
+[gd_resource type="TileSet" load_steps=23 format=3 uid="uid://hejtinux6a7x"]
 
 [ext_resource type="Texture2D" uid="uid://cmud5c4t613jg" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/Tiles.png" id="1_rad27"]
 [ext_resource type="Texture2D" uid="uid://bysluhgy2hwsr" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/Props.png" id="2_jg64n"]
+[ext_resource type="Texture2D" uid="uid://cc8y7nnboxhc" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Green Woods/Assets/pixil-frame-0 (3).png" id="3_jnjo3"]
 [ext_resource type="Texture2D" uid="uid://conyiatj81fl1" path="res://Assets/pixel assets/hideout/Assets/Tiles.png" id="3_k0u0j"]
 [ext_resource type="Texture2D" uid="uid://3vr7qles7yvs" path="res://Assets/tilesets/floors/carpet.png" id="3_xmvxa"]
 [ext_resource type="Texture2D" uid="uid://cng2glks0nexv" path="res://Assets/pixel assets/Pixel Crawler - Sewer/Assets/Tiles.png" id="4_kr67c"]
@@ -517,6 +518,79 @@ texture = ExtResource("2_jg64n")
 10:0/0 = 0
 11:0/size_in_atlas = Vector2i(1, 2)
 11:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_csih8"]
+texture = ExtResource("3_jnjo3")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ijcfn"]
 texture = ExtResource("3_k0u0j")
@@ -4387,3 +4461,4 @@ sources/4 = SubResource("TileSetAtlasSource_i4pnk")
 sources/5 = SubResource("TileSetAtlasSource_me34y")
 sources/6 = SubResource("TileSetAtlasSource_yx7u8")
 sources/7 = SubResource("TileSetAtlasSource_3fru5")
+sources/10 = SubResource("TileSetAtlasSource_csih8")

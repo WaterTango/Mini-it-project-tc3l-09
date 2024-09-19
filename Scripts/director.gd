@@ -31,7 +31,7 @@ func _process(delta):
 		$AnimatedSprite2D.play("director_idle")
 	if current_state == 1:
 		$AnimatedSprite2D.play("director_idle")
-	if current_state == 2:
+	if current_state == 2: 
 		$AnimatedSprite2D.play("director_run")
 	
 	match current_state:

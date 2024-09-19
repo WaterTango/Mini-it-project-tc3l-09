@@ -1,0 +1,113 @@
+[gd_scene load_steps=16 format=3 uid="uid://cpwbrgfkovrin"]
+
+[ext_resource type="Script" path="res://Scripts/rebelknightnpc.gd" id="1_hv0fi"]
+[ext_resource type="Texture2D" uid="uid://bbq4wl4lxevf7" path="res://Assets/pixel assets/Pixel Crawler - Royal Crew/rebellion/Idle-Sheet knight.png" id="2_dht4c"]
+[ext_resource type="Texture2D" uid="uid://dyqqlsb4omp34" path="res://Assets/pixel assets/Pixel Crawler - Royal Crew/rebellion/Run-Sheet knight.png" id="3_0we1w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xa1f7"]
+radius = 7.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4twi"]
+atlas = ExtResource("2_dht4c")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cttdo"]
+atlas = ExtResource("2_dht4c")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2lo3g"]
+atlas = ExtResource("2_dht4c")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xkwj1"]
+atlas = ExtResource("2_dht4c")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_57cjf"]
+atlas = ExtResource("3_0we1w")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4i0eu"]
+atlas = ExtResource("3_0we1w")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttnhb"]
+atlas = ExtResource("3_0we1w")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_igsmb"]
+atlas = ExtResource("3_0we1w")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vim3t"]
+atlas = ExtResource("3_0we1w")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7miu"]
+atlas = ExtResource("3_0we1w")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g3j0l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4twi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cttdo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2lo3g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xkwj1")
+}],
+"loop": true,
+"name": &"rebelknight_idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_57cjf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4i0eu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ttnhb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_igsmb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vim3t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e7miu")
+}],
+"loop": true,
+"name": &"rebelknight_run",
+"speed": 10.0
+}]
+
+[node name="rebelknightnpc" type="CharacterBody2D"]
+position = Vector2(0, -2)
+scale = Vector2(0.955, 0.955)
+script = ExtResource("1_hv0fi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7)
+shape = SubResource("CircleShape2D_xa1f7")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.548963, 0.548963, 0.548963, 1)
+position = Vector2(0, -24.0838)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_g3j0l")
+animation = &"rebelknight_idle"
+autoplay = "rebelknight_idle"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

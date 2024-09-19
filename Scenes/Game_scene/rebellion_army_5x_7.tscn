@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://y73lh8ikmw24"]
+
+[ext_resource type="Texture2D" uid="uid://cvxe6bufm8mpn" path="res://Assets/pixel assets/Pixel Crawler - Royal Crew/rebellion/Idle-Sheet rebellion army 5x7.png" id="1_m4s31"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ua0uj"]
+size = Vector2(12.375, 105)
+
+[node name="rebellion_army_5x7" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -57)
+texture = ExtResource("1_m4s31")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.25, -52.5)
+shape = SubResource("RectangleShape2D_ua0uj")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-31, -53)
+shape = SubResource("RectangleShape2D_ua0uj")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(-63, -54)
+shape = SubResource("RectangleShape2D_ua0uj")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(-96, -53)
+shape = SubResource("RectangleShape2D_ua0uj")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+position = Vector2(32, -52)
+shape = SubResource("RectangleShape2D_ua0uj")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="."]
+position = Vector2(65, -53)
+shape = SubResource("RectangleShape2D_ua0uj")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="."]
+position = Vector2(97, -53)
+shape = SubResource("RectangleShape2D_ua0uj")
