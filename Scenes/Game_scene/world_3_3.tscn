@@ -31,7 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://bxlwcppxorl7h" path="res://Scenes/Game_scene/normalchest.tscn" id="23_a7rov"]
 [ext_resource type="PackedScene" uid="uid://bsl7oie8lwj0s" path="res://Scenes/Game_scene/soldier.tscn" id="27_l0nyv"]
 [ext_resource type="PackedScene" uid="uid://0uoxn0dpa05s" path="res://Scenes/Game_scene/knight.tscn" id="28_dk7e1"]
-[ext_resource type="PackedScene" uid="uid://bph610j3dc6p2" path="res://Scenes/Game_scene/director.tscn" id="30_u88bn"]
+[ext_resource type="PackedScene" uid="uid://bph610j3dc6p2" path="res://Scenes/Game_scene/king.tscn" id="30_u88bn"]
 
 [sub_resource type="Animation" id="Animation_yl1vf"]
 length = 0.001
@@ -2726,7 +2726,7 @@ position = Vector2(145, -299)
 
 [node name="boss" type="Node" parent="mobs"]
 
-[node name="director" parent="mobs/boss" instance=ExtResource("30_u88bn")]
+[node name="king" parent="mobs/boss" instance=ExtResource("30_u88bn")]
 z_index = 6
 position = Vector2(-1, -1268)
 
