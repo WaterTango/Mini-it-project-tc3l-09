@@ -1,0 +1,10 @@
+[style name="lightnovel_File"]
+join Player_king left
+Player_king: Brother! What is the meaning of this treachery?
+join Argus right
+Argus: You know well enough, brother. 'TIS I SHOULD WEAR THE CROWN!
+Player_king: NO! It was by our father’s will, and by my own deeds, that I was crowned!
+Argus: Father’s will was flawed. You are too weak, brother. Unfit to bear the weight of the crown.
+Argus: I should have dealt with you long ago. GUARDS apprehend him!
+[signal arg="guard"]
+[end_timeline]

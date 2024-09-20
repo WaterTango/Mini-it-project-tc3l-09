@@ -10,7 +10,7 @@ extends Control
 @onready var margin_container: MarginContainer = $MarginContainer as MarginContainer
 
 #game initializer
-@onready var start_level = preload("res://Scenes/Game_scene/world_1_1.tscn") # INSERT THE GAME PATH HERE!!!!1!!1!!
+@onready var start_level = preload("res://Scenes/Game_scene/introcutscene.tscn") # INSERT THE GAME PATH HERE!!!!1!!1!!
 
 #----------------------------------main function for startup----------------------------------------
 func _ready() -> void:
