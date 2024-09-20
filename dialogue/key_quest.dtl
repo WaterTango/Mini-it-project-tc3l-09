@@ -1,0 +1,15 @@
+[signal arg="chatting"]
+[style name="lightnovel_File"]
+- Ask Grandmeister Gartley about the palace garden gate
+- nevermind
+	[signal arg="exit"]
+	[end_timeline]
+join player (playerside) right
+player: Grandmeister, where is the key to the palace garden? I need it urgently.
+join grandmeister left
+grandmeister: The key has been split into three parts, scattered to protect it. You must acquire each piece and reassemble it to unlock the garden's gate.
+grandmeister: One chest lies hidden in the northwest Petal Grove but beware of the foul ORCS that have infested the area
+grandmeister: Another in the Shattered Tomb, towards the east protected by the Skeleton giant and its minions
+grandmeister: And the last on the Western Forest Island. Where you could find it among the orcs
+[signal arg="quest_1_start"]
+[signal arg="exit"]

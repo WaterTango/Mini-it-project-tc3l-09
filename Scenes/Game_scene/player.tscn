@@ -435,7 +435,7 @@ texture_filter = 1
 position = Vector2(0, -3)
 scale = Vector2(0.93, 0.877)
 sprite_frames = SubResource("SpriteFrames_nn7uj")
-animation = &"front_idle"
+animation = &"death"
 autoplay = "front_idle"
 offset = Vector2(0.655, -11.84)
 

@@ -10,7 +10,9 @@ var is_chatting = false
 
 var player
 var player_in_chat_zone = false
-
+var not_explained = true
+#var for quest
+var key_quest = false
 var start_pos
 #state machine
 enum{
@@ -41,9 +43,12 @@ func _process(delta):
 			dir = choose([Vector2.RIGHT,Vector2.LEFT])
 		MOVE:
 			move(delta)
-	if Input.is_action_just_pressed("interact") and player_in_chat_zone:
+	if Input.is_action_just_pressed("interact") and player_in_chat_zone and not_explained:
 		$AnimatedSprite2D.play("priest_idle")
 		run_dialogue("priestnpc_interact")
+	if Input.is_action_just_pressed("interact") and player_in_chat_zone and key_quest:
+		$AnimatedSprite2D.play("priest_idle")
+		run_dialogue("key_quest")
 
 func run_dialogue(dialogue_string):
 	is_chatting = true
@@ -58,6 +63,9 @@ func DialogicSignal(arg: String):
 		is_chatting = false
 		is_roaming = true
 		$Timer.start()
+	if arg == "explained":
+		not_explained = false
+		key_quest = true
 func move(delta):
 	#move the character
 	position += dir * speed * delta
