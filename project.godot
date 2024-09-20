@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="tower-crawler"
+config/name="Tower-Crawler"
 run/main_scene="res://Scenes/intro.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 
@@ -28,20 +28,26 @@ directories/dch_directory={
 "grandmeister": "res://dialogue/grandmeister.dch",
 "introguards": "res://dialogue/introguards.dch",
 "player": "res://dialogue/player.dch",
+"rebellionsoldier": "res://dialogue/rebellionsoldier.dch",
+"sewergrate": "res://dialogue/sewergrate.dch",
 "shopkeepernpc": "res://dialogue/shopkeepernpc.dch",
+"skeleton": "res://dialogue/skeleton.dch",
 "soldiernpc": "res://dialogue/soldiernpc.dch"
 }
 directories/dtl_directory={
 "Intro_cutscene": "res://dialogue/Intro_cutscene.dtl",
 "censornpc_interact": "res://dialogue/censornpc_interact.dtl",
+"chesttutorial": "res://dialogue/chesttutorial.dtl",
 "gatenorthnpc_interact": "res://dialogue/gatenorthnpc_interact.dtl",
+"jailwakeup": "res://dialogue/jailwakeup.dtl",
+"mobcutscene": "res://dialogue/mobcutscene.dtl",
 "priestnpc_interact": "res://dialogue/priestnpc_interact.dtl",
 "rebellionsoldier": "res://dialogue/rebellionsoldier.dtl",
 "shopkeepernpc_interact": "res://dialogue/shopkeepernpc_interact.dtl",
 "soldiernpc_interact": "res://dialogue/soldiernpc_interact.dtl"
 }
 glossary/default_case_sensitive=true
-layout/style_list=["res://dialogue/style_chat_File.tres", "res://dialogue/lightnovel_File.tres"]
+layout/style_list=["res://dialogue/style_chat_File.tres", "res://dialogue/lightnovel_File.tres", "res://dialogue/evil.tres", "res://dialogue/bold italics.tres"]
 layout/default_style="res://dialogue/style_chat_File.tres"
 variables={}
 text/letter_speed=0.01

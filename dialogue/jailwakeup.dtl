@@ -1,0 +1,20 @@
+[style name="lightnovel_File"]
+[signal arg="chatting"]
+- Wake up
+- Skip
+	[signal arg="exit"]
+	[end_timeline]
+join player (playerside) right
+player (playerside): The dungeon... so this is where he throws me.\
+\
+\
+\
+(Press Enter to continue)
+player: I won't rot down here. There has to be a way out.
+player: I'll escape... and I’ll take back what’s mine.
+player: I recall the tale... a prisoner once stole a key from the guards, but fortune did not favor him. He was sent to the gallows before he could make his escape.
+player: If that key still lies [b]hidden[/b], perhaps fate will favor me where it did not him.
+join sewergrate left
+player (playerside): Perhaps that grate hides the key still...
+[signal arg="exit"]
+[end_timeline]

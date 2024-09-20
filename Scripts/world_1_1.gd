@@ -4,13 +4,17 @@ extends Node
 @onready var pause_menu: pausemenu = $entitites/Player/Camera2D/PauseMenu
 
 var paused = false
+var NeverChest_tutorial = true
 # shaz's AudioPlaybackScript =======================================================================
 func _ready() -> void:
+	Dialogic.signal_event.connect(DialogicSignal)
+	run_dialogue("jailwakeup")
 	$CanvasLayer/SceneFade.play("fade in")
 	$entitites/Player/interact_popup2.hide()
 	$Entering.play()
 	await get_tree().create_timer(3).timeout
 	$"World 1 Music".play()
+	
 	pass
 #===================================================================================================
 
@@ -82,3 +86,36 @@ func _on_key_popup_hide() -> void:
 
 func _on_key_key_pickedup() -> void:
 	$entitites/Player/Camera2D/key_Notification.show()
+
+
+func _on_jail_door_key_key_pickedup() -> void:
+	$entitites/Player/Camera2D/jailkey_Notification.show()
+
+
+func _on_jail_door_key_jailkey_used() -> void:
+	$entitites/Player/Camera2D/jailkey_Notification.hide()
+#=======================================
+#dialogic codes 
+#========================
+func DialogicSignal(arg: String):
+	if arg == "chatting":
+		$entitites/Player/Camera2D/PauseMenu.modulate.a = 0
+		$entitites/Player.player_idle_anim()
+		$entitites/Player.can_move = false
+	if arg == "exit":
+		$entitites/Player/Camera2D/PauseMenu.modulate.a = 1
+		$entitites/Player.can_move = true
+	if arg == "chesttutorial":
+		NeverChest_tutorial = false
+func run_dialogue(dialogue_string):
+	Dialogic.start(dialogue_string)
+
+
+func _on_jaildoor_playmobcutscene() -> void:
+	run_dialogue("mobcutscene")
+
+
+func _on_tutorial_chest_body_entered(body: Node2D) -> void:
+	if body is Player:
+		if NeverChest_tutorial:
+			run_dialogue("chesttutorial")

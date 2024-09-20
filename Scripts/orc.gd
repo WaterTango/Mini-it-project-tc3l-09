@@ -1,5 +1,6 @@
 extends CharacterBody2D
-class_name Enemy
+
+
 #veriable set
 var speed = 20
 var move_speed = 70
@@ -127,3 +128,5 @@ func _on_detection_body_entered(body: Node2D) -> void:
 func _on_detection_body_exited(body: Node2D) -> void:
 	if body is Player:
 		current_state = IDLE
+func enemyMob():
+	pass
