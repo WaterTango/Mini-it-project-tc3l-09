@@ -28,4 +28,6 @@ player: Indeed he is not fit to rule
 player: I shall retake my throne.
 grandmeister: Then hope returns. But your brother will not yield easily. He’s fortified the palace, and his loyalists will fight fiercely
 grandmeister: Then we prepare for battle. The rightful king has returned. May the Gods be with you!
+[signal arg="explained"]
 [signal arg="exit"]
+[end_timeline]

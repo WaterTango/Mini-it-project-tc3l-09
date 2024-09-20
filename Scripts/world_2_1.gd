@@ -7,6 +7,8 @@ extends Node2D
 
 var paused = false
 var chatting = false
+
+
 # shaz's AudioPlaybackScript =======================================================================
 func _ready() -> void:
 	$Map/TileMap/village/roof.show()
@@ -30,6 +32,13 @@ func DialogicSignal(arg: String):
 	if arg == "exit":
 		print("exit chatting with gate soldier")
 		chatting = false
+	if arg == "quest_1_start":
+		$Player/Camera2D/quest_1.show()
+		
+		
+		
+func run_dialogue(dialogue_string):
+	Dialogic.start(dialogue_string)
 #this is to reload levels
 func _input(_event):
 	#if Input.is_action_pressed("exit"):
@@ -101,7 +110,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		$Player/Camera2D.zoom.y = 5
 		# shaz's pausemenuScaling and SFX
 		pauseMenuHouseScaling()
-
+		$Player/Camera2D/quest_1.hide()
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body is Player:
 		$Map/TileMap/village/roof.show()
@@ -110,7 +119,7 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 		$Player/Camera2D.zoom.y = 3
 		# shaz's pausemenuScaling
 		pauseMenuDefaultScaling()
-
+		$Player/Camera2D/quest_1.show()
 
 func _on_door_opening_animation_body_entered(body: Node2D) -> void:
 	if body is Player:
@@ -141,5 +150,5 @@ func _process(delta: float) -> void:
 		$Player.can_move = false
 	elif chatting == false:
 		$Player.can_move = true
-
+	
 	

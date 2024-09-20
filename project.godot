@@ -40,6 +40,7 @@ directories/dtl_directory={
 "chesttutorial": "res://dialogue/chesttutorial.dtl",
 "gatenorthnpc_interact": "res://dialogue/gatenorthnpc_interact.dtl",
 "jailwakeup": "res://dialogue/jailwakeup.dtl",
+"key_quest": "res://dialogue/key_quest.dtl",
 "mobcutscene": "res://dialogue/mobcutscene.dtl",
 "priestnpc_interact": "res://dialogue/priestnpc_interact.dtl",
 "rebellionsoldier": "res://dialogue/rebellionsoldier.dtl",
