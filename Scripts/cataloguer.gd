@@ -124,3 +124,6 @@ func _on_attack_range_body_exited(body):
 	if body.is_in_group("Player"):
 		within_range = false
 		$Timer.start()
+		
+func enemyMob():
+	pass

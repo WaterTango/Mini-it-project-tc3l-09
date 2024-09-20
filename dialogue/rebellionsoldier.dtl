@@ -1,1 +1,12 @@
-if {} == "":
+[signal arg="chatting"]
+[style name="lightnovel_File"]
+join rebellionsoldier left
+rebellionsoldier: Halt! Entrance is forbidden! State your name and your purpose, or turn back now!
+join player (playerside) right
+player: I am Rhagar, the true king of Valenhardt. Let me speak to your commander at once!
+rebellionsoldier: M-M-My lord! Your Highness! Forgive me, I didn’t recognize you!
+rebellionsoldier: We’ve searched for you everywhere, my lord! We feared the worst!
+rebellionsoldier: GUARDS! Open The gate!
+[signal arg="opengate"]
+[signal arg="exit"]
+[end_timeline]

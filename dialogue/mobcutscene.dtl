@@ -1,0 +1,13 @@
+[signal arg="chatting"]
+[style name="lightnovel_File"]
+join player (playerside) right
+player: There is something in the darkness
+join skeleton left
+[style name="evil"]
+skeleton: [i]*A skeletal figure lurches forward in the distance, its bones clattering, making garbled, distorted noises.*[/i]
+skeleton: Gh...grrrh...sssk...!
+leave skeleton
+[style name="lightnovel_File"]
+player: I’ve no weapon to defend myself... I’ll have to sneak past it. No other choice.
+[signal arg="exit"]
+[end_timeline]

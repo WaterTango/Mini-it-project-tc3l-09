@@ -496,9 +496,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -966.0
-offset_right = 958.0
-offset_bottom = 74.0
+offset_left = -963.0
+offset_top = 1.0
+offset_right = 961.0
+offset_bottom = 75.0
 color = Color(0, 0, 0, 1)
 
 [node name="settings_menu" parent="." instance=ExtResource("13_0e0s6")]

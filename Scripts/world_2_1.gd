@@ -9,6 +9,8 @@ var paused = false
 var chatting = false
 # shaz's AudioPlaybackScript =======================================================================
 func _ready() -> void:
+	$Map/TileMap/village/roof.show()
+	$Map/TileMap/village/roofchimney.show()
 	$Player/interact_popup2.hide()
 	$Entering.play()
 	$CanvasLayer/SceneFade.play("fade in")

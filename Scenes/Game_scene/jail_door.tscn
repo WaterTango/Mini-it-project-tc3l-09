@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=3 uid="uid://d2u8f1d63gomn"]
+
+[ext_resource type="Script" path="res://Scripts/jail_door.gd" id="1_r36lr"]
+[ext_resource type="Texture2D" uid="uid://crnws7b6mgnqc" path="res://Assets/png/e_dark.png" id="1_x8e5s"]
+[ext_resource type="Texture2D" uid="uid://bg2l64yx11h02" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/jaildoor_closed.png" id="2_hlpxx"]
+[ext_resource type="Texture2D" uid="uid://1u86c15c4o3x" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/jaildoor_open.png" id="3_enopm"]
+[ext_resource type="AudioStream" uid="uid://bx0bb6f6awmqu" path="res://shaz_audio/SFX/DoorSFX.mp3" id="4_uawya"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qmkon"]
+size = Vector2(30, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2kki"]
+atlas = ExtResource("2_hlpxx")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ssjwo"]
+atlas = ExtResource("3_enopm")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ge6sf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o2kki")
+}],
+"loop": true,
+"name": &"jail_door_closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ssjwo")
+}],
+"loop": true,
+"name": &"jail_door_opened",
+"speed": 5.0
+}]
+
+[node name="jail_door" type="StaticBody2D"]
+script = ExtResource("1_r36lr")
+
+[node name="interact_popup2" type="Sprite2D" parent="."]
+visible = false
+z_index = 10
+position = Vector2(2, -43)
+scale = Vector2(0.236842, 0.231707)
+texture = ExtResource("1_x8e5s")
+
+[node name="jail_door_area" type="Area2D" parent="."]
+
+[node name="jail_door_area_collision" type="CollisionShape2D" parent="jail_door_area"]
+position = Vector2(1, -3)
+shape = SubResource("RectangleShape2D_qmkon")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -24)
+sprite_frames = SubResource("SpriteFrames_ge6sf")
+animation = &"jail_door_closed"
+
+[node name="door_collision" type="CollisionShape2D" parent="."]
+
+[node name="DoorSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_uawya")

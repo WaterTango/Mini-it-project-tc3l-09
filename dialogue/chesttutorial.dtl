@@ -1,0 +1,9 @@
+[signal arg="chatting"]
+[style name="lightnovel_File"]
+Press E to open\
+\
+\
+(chest can contains items or keys that are needed to unlock certain areas and progress)
+[signal arg="exit"]
+[signal arg="chesttutorial"]
+[end_timeline]

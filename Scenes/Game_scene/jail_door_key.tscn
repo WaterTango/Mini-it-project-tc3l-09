@@ -1,0 +1,72 @@
+[gd_scene load_steps=10 format=3 uid="uid://olfjcvtk5xva"]
+
+[ext_resource type="Script" path="res://Scripts/jail_door_key.gd" id="1_ewm0r"]
+[ext_resource type="Texture2D" uid="uid://bysluhgy2hwsr" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/Props.png" id="2_3j54d"]
+[ext_resource type="Texture2D" uid="uid://crnws7b6mgnqc" path="res://Assets/png/e_dark.png" id="3_62rau"]
+[ext_resource type="Texture2D" uid="uid://88m2s2avednt" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/sewer_opened.png" id="4_gq3y1"]
+[ext_resource type="Texture2D" uid="uid://c06ktpqw25nqy" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/sewer_closed.png" id="5_ch3do"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fks0r"]
+atlas = ExtResource("2_3j54d")
+region = Rect2(32, 64, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1rnpi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fks0r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ice21"]
+size = Vector2(16, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_11ris"]
+size = Vector2(16, 16)
+
+[node name="jail_door_key" type="StaticBody2D"]
+script = ExtResource("1_ewm0r")
+
+[node name="key" type="AnimatedSprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 0, 1)
+z_index = 3
+position = Vector2(-2.03288e-20, 2)
+scale = Vector2(1.215, 0.965)
+sprite_frames = SubResource("SpriteFrames_1rnpi")
+frame_progress = 0.904762
+
+[node name="jailkey" type="Area2D" parent="."]
+z_index = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="jailkey"]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_ice21")
+debug_color = Color(0.934239, 1.88673e-05, 0.641374, 0.42)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_11ris")
+debug_color = Color(0.402585, 0.608265, 0, 0.42)
+
+[node name="interact_popup2" type="Sprite2D" parent="."]
+visible = false
+z_index = 5
+position = Vector2(0, -14)
+scale = Vector2(0.252, 0.246)
+texture = ExtResource("3_62rau")
+
+[node name="sewer_open" type="Sprite2D" parent="."]
+z_index = 2
+texture = ExtResource("4_gq3y1")
+
+[node name="sewer_closed" type="Sprite2D" parent="."]
+z_index = 2
+texture = ExtResource("5_ch3do")
+
+[connection signal="body_entered" from="jailkey" to="." method="_on_jailkey_body_entered"]
+[connection signal="body_entered" from="jailkey" to="." method="_on_chestopen_area_body_entered"]
+[connection signal="body_exited" from="jailkey" to="." method="_on_jailkey_body_exited"]
+[connection signal="body_exited" from="jailkey" to="." method="_on_chestopen_area_body_exited"]

@@ -232,10 +232,10 @@ shape = SubResource("CircleShape2D_75fj3")
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
-[connection signal="body_entered" from="Detection" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
-[connection signal="body_exited" from="Detection" to="." method="_on_detection_area_body_exited"]
+[connection signal="body_entered" from="Detection" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="Detection" to="." method="_on_detection_body_exited"]
+[connection signal="body_exited" from="Detection" to="." method="_on_detection_area_body_exited"]
 [connection signal="body_entered" from="Attack range" to="." method="_on_attack_range_body_entered"]
 [connection signal="body_exited" from="Attack range" to="." method="_on_attack_range_body_exited"]
 [connection signal="body_entered" from="player_attack_range" to="." method="_on_player_attack_range_body_entered"]

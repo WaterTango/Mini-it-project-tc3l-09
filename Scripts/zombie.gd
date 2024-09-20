@@ -122,3 +122,6 @@ func _on_detection_body_exited(body: Node2D) -> void:
 	if body is Player:
 		current_state = IDLE
 		$Timer.start()
+
+func enemyMob():
+	pass

@@ -46,7 +46,8 @@ func _process(delta: float) -> void:
 			NEW_DIR:
 				dir = choose([Vector2.RIGHT,Vector2.LEFT])
 			MOVE:
-				move(delta)
+				pass
+				
 	if Input.is_action_just_pressed("interact") and player_in_chat_zone:
 		$AnimatedSprite2D.play("chatting_soldier_idle")
 		run_dialogue("soldiernpc_interact")

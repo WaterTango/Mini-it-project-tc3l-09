@@ -2,10 +2,13 @@ extends Node2D
 
 # shaz's pausemenu ================================================================================
 @onready var pause_menu: pausemenuW2 = $Player/Camera2D/PauseMenu
+@onready var settings_menu: settingsmenuInGameW2 = $Player/Camera2D/settings_menu
 
 var paused = false
 # shaz's AudioPlaybackScript =======================================================================
 func _ready() -> void:
+	$army_camp/tentroof.show()
+	Dialogic.signal_event.connect(DialogicSignal)
 	$Player/interact_popup2.hide()
 	$Entering.play()
 	$CanvasLayer/SceneFade.play("fade in")
@@ -64,6 +67,36 @@ func _on_tp_area_2_body_entered(body: Node2D) -> void:
 		# ======================================================================
 		get_tree().change_scene_to_file("res://Scenes/Game_scene/world_3_1.tscn")
 
+func DialogicSignal(arg: String):
+	if arg == "chatting":
+		$Player/Camera2D/PauseMenu.modulate.a = 0
+		$Player.player_idle_anim()
+		$Player.can_move = false
+	if arg == "exit":
+		$Player/Camera2D/PauseMenu.modulate.a = 1
+		$Player.can_move = true
+	if arg == "opengate":
+		$Doors/gate/gate_collision.disabled = true
+		$Doors/gate/Sprite2D.hide()
+		
+func run_dialogue(dialogue_string):
+	Dialogic.start(dialogue_string)
+# Pausemenu Zoom Compatibility Scaling ===========================================
+
+func pauseMenuDefaultScaling():
+	pause_menu.scale = Vector2(.375 , .375)
+	pause_menu.position = Vector2(-360, -210)
+	settings_menu.scale = Vector2(0.35, 0.35)
+	settings_menu.position = Vector2(-335, -180)
+	
+func pauseMenuHouseScaling():
+	pause_menu.scale = Vector2(.2, .2)
+	pause_menu.position = Vector2(-192.5, -108.5)
+	settings_menu.scale = Vector2(0.2, 0.2)
+	settings_menu.position = Vector2(-192.5, -108.5)
+
+#=================================================================================
+
 
 func _on_key_popup_hide() -> void:
 	$Player/interact_popup2.hide()
@@ -77,3 +110,26 @@ func _on_key_popup_show() -> void:
 
 func _on_key_key_pickedup() -> void:
 	$Player/Camera2D/key_Notification.show()
+
+
+func _on_gate_area_body_entered(body: Node2D) -> void:
+	if body is Player:
+		run_dialogue("rebellionsoldier")
+
+
+func _on_commander_area_body_entered(body: Node2D) -> void:
+	if body is Player:
+		$army_camp/tentroof.hide()
+		$Player/Camera2D.zoom.x = 5
+		$Player/Camera2D.zoom.y = 5
+		# shaz's pausemenuScaling and SFX
+		pauseMenuHouseScaling()
+
+
+func _on_commander_area_body_exited(body: Node2D) -> void:
+	if body is Player:
+		$army_camp/tentroof.show()
+		$Player/Camera2D.zoom.x = 3
+		$Player/Camera2D.zoom.y = 3
+		# shaz's pausemenuScaling
+		pauseMenuDefaultScaling()

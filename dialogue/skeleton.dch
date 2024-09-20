@@ -8,19 +8,19 @@
 "sound_moods": {},
 "style": ""
 },
-"default_portrait": "New portrait",
+"default_portrait": "skeleton",
 "description": "",
-"display_name": "introguards",
+"display_name": "Foul Skeleton",
 "mirror": false,
-"nicknames": [""],
+"nicknames": ["Skeleton"],
 "offset": Vector2(0, 0),
 "portraits": {
-"New portrait": {
+"skeleton": {
 "export_overrides": {
-"image": "\"res://PlayerAsset/Idle/potraitsidezoom.png\""
+"image": "\"res://Assets/Pixel Crawler - FREE - 1.8/Enemy/Skeleton Crew/Skeleton - Base/Idle/skeleton_potrait.png\""
 },
 "mirror": false,
-"offset": Vector2(300, 0),
+"offset": Vector2(-300, 0),
 "scale": 0.7,
 "scene": ""
 }
