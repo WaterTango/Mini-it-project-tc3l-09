@@ -6,9 +6,9 @@ extends Node
 var paused = false
 # shaz's AudioPlaybackScript =======================================================================
 func _ready() -> void:
+	$CanvasLayer/SceneFade.play("fade in")
 	$entitites/Player/interact_popup2.hide()
 	$Entering.play()
-	$CanvasLayer/SceneFade.play("fade in")
 	await get_tree().create_timer(3).timeout
 	$"World 1 Music".play()
 	pass

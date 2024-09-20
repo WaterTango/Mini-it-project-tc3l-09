@@ -22,13 +22,17 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
+"Argus": "res://dialogue/Argus.dch",
+"Player_king": "res://dialogue/Player_king.dch",
 "censornpc": "res://dialogue/censornpc.dch",
 "grandmeister": "res://dialogue/grandmeister.dch",
+"introguards": "res://dialogue/introguards.dch",
 "player": "res://dialogue/player.dch",
 "shopkeepernpc": "res://dialogue/shopkeepernpc.dch",
 "soldiernpc": "res://dialogue/soldiernpc.dch"
 }
 directories/dtl_directory={
+"Intro_cutscene": "res://dialogue/Intro_cutscene.dtl",
 "censornpc_interact": "res://dialogue/censornpc_interact.dtl",
 "gatenorthnpc_interact": "res://dialogue/gatenorthnpc_interact.dtl",
 "priestnpc_interact": "res://dialogue/priestnpc_interact.dtl",
@@ -60,6 +64,8 @@ animations/join_default_wait=true
 animations/leave_default_length=0.5
 animations/leave_default_wait=true
 animations/cross_fade_default_length=0.5
+text/autoadvance_fixed_delay=0.5
+text/autoadvance_enabled=true
 
 [display]
 
