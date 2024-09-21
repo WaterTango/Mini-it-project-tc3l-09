@@ -193,3 +193,7 @@ func _on_key_hide_fragnoti() -> void:
 	$Player/Camera2D/tombkey_frag.hide()
 	$Player/Camera2D/quest_1.hide()
 	$Player/Camera2D/quest_1/Label.hide()
+
+
+func _on_priestnpc_collect_key() -> void:
+	pass # Replace with function body.

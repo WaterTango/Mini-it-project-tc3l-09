@@ -3876,7 +3876,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_5cmyf")
 text = "  Find the key pieces:
 -North west Petal Grove
 -Western Forest Island
--Eastern Shattered Tombq"
+-Eastern Shattered Tomb"
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -3941,7 +3941,7 @@ bus = &"SFX"
 [node name="Keys" type="Node" parent="."]
 
 [node name="key" parent="Keys" instance=ExtResource("30_fk6ma")]
-position = Vector2(-184, 489)
+position = Vector2(829, 889)
 
 [node name="KeySFX" type="AudioStreamPlayer" parent="Keys/key"]
 stream = ExtResource("30_3pyoe")
@@ -4185,7 +4185,7 @@ shape = SubResource("CircleShape2D_v3qpt")
 [connection signal="body_entered" from="blacksmith" to="blacksmith" method="_on_body_entered"]
 [connection signal="body_exited" from="blacksmith" to="blacksmith" method="_on_body_exited"]
 [connection signal="body_entered" from="Level2_TP/tp_area2" to="." method="_on_tp_area_2_body_entered"]
-[connection signal="keychest_can_open" from="entities/npc/priestnpc" to="Keys/key" method="_on_priestnpc_keychest_can_open"]
+[connection signal="collect_key" from="entities/npc/priestnpc" to="Keys/key" method="_on_priestnpc_collect_key"]
 [connection signal="body_entered" from="Map/TileMap/village/door_opening_animation" to="." method="_on_door_opening_animation_body_entered"]
 [connection signal="body_exited" from="Map/TileMap/village/door_opening_animation" to="." method="_on_door_opening_animation_body_exited"]
 [connection signal="body_entered" from="Map/TileMap/village/houses3/houseinterior" to="." method="_on_area_2d_body_entered"]

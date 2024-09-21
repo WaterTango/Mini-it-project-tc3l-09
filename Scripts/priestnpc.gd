@@ -17,7 +17,8 @@ var start_pos
 var quest1_finished = false
 var key_notfixed = true
 signal quest_start
-signal keychest_can_open
+signal collect_key
+
 #state machine
 enum{
 	IDLE,     #0
@@ -77,7 +78,7 @@ func DialogicSignal(arg: String):
 		key_quest = false
 	if arg == "key_fixed":
 		key_notfixed = false
-		emit_signal("keychest_can_open")
+		emit_signal("collect_key")
 		
 func move(delta):
 	#move the character
