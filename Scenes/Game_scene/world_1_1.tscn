@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=4 uid="uid://dah0ts1ddbmoi"]
+[gd_scene load_steps=68 format=4 uid="uid://dah0ts1ddbmoi"]
 
 [ext_resource type="Script" path="res://Scripts/world_1_1.gd" id="1_56o2p"]
 [ext_resource type="TileSet" uid="uid://hejtinux6a7x" path="res://Scenes/Game_scene/world_1.tres" id="1_lsqgd"]
@@ -35,6 +35,7 @@
 [ext_resource type="PackedScene" uid="uid://bxlwcppxorl7h" path="res://Scenes/Game_scene/normalchest.tscn" id="24_jn0ka"]
 [ext_resource type="AudioStream" uid="uid://f8euu8wxjl1l" path="res://shaz_audio/SFX/Leaving.mp3" id="25_5vwrj"]
 [ext_resource type="AudioStream" uid="uid://bykfi4pa6x6x8" path="res://shaz_audio/SFX/Entering.mp3" id="26_qqwow"]
+[ext_resource type="Texture2D" uid="uid://bgywhb5pnjuwy" path="res://shaz_images/quest.png" id="36_ufkxl"]
 
 [sub_resource type="Animation" id="Animation_yl1vf"]
 length = 0.001
@@ -471,6 +472,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fhn8j"]
+radius = 27.0
+height = 78.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_hd5p2"]
 radius = 16.0
 
@@ -650,7 +655,7 @@ metadata/_edit_lock_ = true
 [node name="deco" type="TileMapLayer" parent="Map"]
 z_index = 2
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAD+/wwAAQABAA0AAAD9/wwAAQAAAA0AAAABAAwAAQADAA0AAAACAAwAAQAEAA0AAAD+/w8AAQAJAAoAAAABAA8AAQAJAAoAAAD+/w4AAQAJAAkAAAD+/w0AAQAJAAgAAAABAA0AAQAJAAgAAAABAA4AAQAJAAkAAAD4/w0AAQAKAAcAAAD4/w4AAQAKAAgAAAD4/w8AAQAKAAkAAAD5/w0AAQALAAcAAAD5/w4AAQALAAgAAAD5/w8AAQALAAkAAAAiAPz/AgADAAQAAAAiAP3/AgADAAUAAAAiAP7/AgADAAYAAAAjAP3/AgAEAAUAAAAjAP7/AgAEAAYAAAAmAP3/AgAFAAUAAAAmAP7/AgAFAAYAAAAnAPz/AgAGAAQAAAAnAP3/AgAGAAUAAAAnAP7/AgAGAAYAAAAbAPL/AgAFAAQAAAAbAPP/AgAFAAUAAAAbAPT/AgAFAAYAAAAcAPL/AgAGAAQAAAAcAPP/AgAGAAUAAAAcAPT/AgAGAAYAAAAXAPL/AgAAAAQAAAAXAPP/AgAAAAUAAAAYAPL/AgABAAQAAAAYAPP/AgABAAUAAAAZAPL/AgACAAQAAAAZAPP/AgACAAUAAADj//b/AgAFAAEAAADj//f/AgAFAAIAAADd//b/AgAGAAEAAADd//f/AgAGAAIAAADm//b/AgAJAAEAAADm//f/AgAJAAIAAAAGAPb/AgAIAAEAAAAGAPf/AgAIAAIAAADx/xIAAQACAAcAAADy/xIAAQADAAcAAAANABIAAQACAAcAAAAOABIAAQADAAcAAAD///b/AQACAAcAAAAAAPb/AQADAAcAAAD7//X/AQABAAQAAAAEAPX/AQABAAQAAAAEAPb/AQABAAUAAAAEAPf/AQABAAYAAADr/wwAAQABAAQAAADr/w0AAQABAAUAAADr/w4AAQABAAYAAADr//v/AQABAAQAAADr//z/AQABAAUAAADr//3/AQABAAYAAAAkAPn/AQABAAQAAAAlAPn/AQABAAQAAADq/w0AAAAGAAIAAADs/w0AAAAGAAIAAADq/w4AAAAGAAQAAADs/w4AAAAGAAQAAADj/woAAAAHAAIAAADm/woAAAAJAAIAAADk/woAAAAIAAIAAADl/woAAAAIAAIAAAACABYAAAAJAAAAAAD9/xYAAAAJAAAAAADh//b/AQAAAAcAAADi//b/AQABAAcAAADz//v/AQAKAAcAAADz//z/AQAKAAgAAADz//3/AQAKAAkAAAD0//v/AQALAAcAAAD0//z/AQALAAgAAAD0//3/AQALAAkAAAADAPb/AAAGAAIAAAAFAPb/AAAGAAIAAAADAPf/AAAGAAQAAAAFAPf/AAAGAAQAAAAKAPz/AAAHAAIAAAANAPz/AAAJAAIAAAALAPz/AAAIAAIAAAAMAPz/AAAIAAIAAAAYAO//AAAHAAIAAAAbAO//AAAJAAIAAAAZAO//AAAIAAIAAAAaAO//AAAIAAIAAAAkAAIAAAAMAAUAAAAlAAIAAAANAAUAAAAmAAIAAAAOAAUAAAAEAOr/AQABAAQAAAAHAOv/AQACAAcAAAAIAOv/AQADAAcAAAD3/+v/AQACAAcAAAD4/+v/AQADAAcAAAD7/+r/AQABAAQAAAD7/+v/AQABAAUAAAD//xYAAQACAAcAAAAAABYAAQADAAcAAAA=")
+tile_map_data = PackedByteArray("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")
 tile_set = ExtResource("2_un0xr")
 metadata/_edit_lock_ = true
 
@@ -1131,11 +1136,6 @@ sprite_frames = SubResource("SpriteFrames_dkhbi")
 animation = &"jail_door_closed"
 autoplay = "jail_door_closed"
 
-[node name="jail_door_zone" type="Area2D" parent="Doors/jaildoor"]
-
-[node name="open zone" type="CollisionShape2D" parent="Doors/jaildoor/jail_door_zone"]
-shape = SubResource("CapsuleShape2D_vst87")
-
 [node name="DoorSFX" type="AudioStreamPlayer" parent="Doors/jaildoor"]
 stream = ExtResource("18_ubu3r")
 
@@ -1145,6 +1145,12 @@ z_index = 10
 position = Vector2(-1, -1)
 scale = Vector2(0.236842, 0.231707)
 texture = ExtResource("8_cba2c")
+
+[node name="jail_door_zone" type="Area2D" parent="Doors/jaildoor"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/jaildoor/jail_door_zone"]
+position = Vector2(0, 7)
+shape = SubResource("CapsuleShape2D_fhn8j")
 
 [node name="Keys" type="Node" parent="."]
 
@@ -1230,17 +1236,21 @@ bus = &"SFX"
 stream = ExtResource("26_qqwow")
 bus = &"SFX"
 
+[node name="Mark" type="Sprite2D" parent="."]
+modulate = Color(0.800491, 0.800491, 0.800491, 1)
+z_index = 5
+position = Vector2(24, 365)
+scale = Vector2(0.0709805, 0.0823086)
+texture = ExtResource("36_ufkxl")
+
 [connection signal="body_entered" from="Level1_1TP/tp_area" to="." method="_on_tp_area_body_entered"]
 [connection signal="door1_collision" from="Doors/door1" to="Doors/door1/door1_collision" method="_on_door_1_door_1_collision"]
 [connection signal="body_entered" from="Doors/door1/door1 zone" to="Doors/door1/door1_collision" method="_on_door_zone_body_entered"]
 [connection signal="body_entered" from="Doors/door1/door1 zone" to="Keys/key" method="_on_door_1_zone_body_entered"]
 [connection signal="body_exited" from="Doors/door1/door1 zone" to="Keys/key" method="_on_door_1_zone_body_exited"]
 [connection signal="playmobcutscene" from="Doors/jaildoor" to="." method="_on_jaildoor_playmobcutscene"]
-[connection signal="body_entered" from="Doors/jaildoor/jail_door_zone" to="Doors/jaildoor/jail_door_collision" method="_on_door_zone_body_entered"]
 [connection signal="body_entered" from="Doors/jaildoor/jail_door_zone" to="Keys/jail_door_key" method="_on_jail_door_zone_body_entered"]
-[connection signal="body_entered" from="Doors/jaildoor/jail_door_zone" to="Keys/key" method="_on_door_1_zone_body_entered"]
 [connection signal="body_exited" from="Doors/jaildoor/jail_door_zone" to="Keys/jail_door_key" method="_on_jail_door_zone_body_exited"]
-[connection signal="body_exited" from="Doors/jaildoor/jail_door_zone" to="Keys/key" method="_on_door_1_zone_body_exited"]
 [connection signal="jaildoor_opened" from="Keys/jail_door_key" to="Doors/jaildoor" method="_on_jail_door_key_jaildoor_opened"]
 [connection signal="jailkey_used" from="Keys/jail_door_key" to="." method="_on_jail_door_key_jailkey_used"]
 [connection signal="key_pickedup" from="Keys/jail_door_key" to="." method="_on_jail_door_key_key_pickedup"]

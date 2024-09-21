@@ -7,8 +7,12 @@ extends Node2D
 
 var paused = false
 var chatting = false
+var quest_start = false
+var petal_key = false
+var forest_key = false
+var tomb_key = false
 
-
+signal quest1_finished
 # shaz's AudioPlaybackScript =======================================================================
 func _ready() -> void:
 	$Map/TileMap/village/roof.show()
@@ -19,6 +23,11 @@ func _ready() -> void:
 	await get_tree().create_timer(3).timeout
 	$"World 2 Music".play()
 	Dialogic.signal_event.connect(DialogicSignal)
+	$Player/Camera2D/petalgrovekey_frag.hide()
+	$Player/Camera2D/forestisland_frag.hide()
+	$Player/Camera2D/tombkey_frag.hide()
+	$Player/Camera2D/key_Notification.hide()
+
 	#===============================================================================================
 	#SceneTransitionAnimation.play("fade_out")
 	pass
@@ -33,7 +42,7 @@ func DialogicSignal(arg: String):
 		print("exit chatting with gate soldier")
 		chatting = false
 	if arg == "quest_1_start":
-		$Player/Camera2D/quest_1.show()
+		quest_start = true
 		
 		
 		
@@ -44,14 +53,14 @@ func _input(_event):
 	#if Input.is_action_pressed("exit"):
 		#get_tree().quit()
 		#print("quit")
-	if Input.is_action_just_pressed('reset'):
+	if Input.is_action_just_pressed('reset') and OS.is_debug_build():
 		get_tree().reload_current_scene()
 		print("resetted")
-	if Input.is_action_just_pressed("transition1"):
+	if Input.is_action_just_pressed("transition1") and OS.is_debug_build():
 		get_tree().change_scene_to_file("res://Scenes/Game_scene/world_1_1.tscn")
-	if Input.is_action_just_pressed("transition2"):
+	if Input.is_action_just_pressed("transition2") and OS.is_debug_build():
 		get_tree().change_scene_to_file("res://Scenes/Game_scene/world_2_1.tscn")
-	if Input.is_action_just_pressed("transition3"):
+	if Input.is_action_just_pressed("transition3") and OS.is_debug_build():
 		get_tree().change_scene_to_file("res://Scenes/Game_scene/world_3_1.tscn")
 # shaz's code for pause below =================================================================
 	if Input.is_action_just_pressed("pause"):
@@ -119,7 +128,8 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 		$Player/Camera2D.zoom.y = 3
 		# shaz's pausemenuScaling
 		pauseMenuDefaultScaling()
-		$Player/Camera2D/quest_1.show()
+		if quest_start:
+			$Player/Camera2D/quest_1.show()
 
 func _on_door_opening_animation_body_entered(body: Node2D) -> void:
 	if body is Player:
@@ -150,5 +160,36 @@ func _process(delta: float) -> void:
 		$Player.can_move = false
 	elif chatting == false:
 		$Player.can_move = true
+		
+	if tomb_key and petal_key and forest_key:
+		emit_signal("quest1_finished")
 	
-	
+
+
+func _on_petalgrove_key_body_entered(body: Node2D) -> void:
+	if body is Player:
+		$KeySFX.play()
+		petal_key = true
+		$Player/Camera2D/petalgrovekey_frag.show()
+		$"Keys/key fragments/petalgrovekey".queue_free()
+func _on_forestislandkey_body_entered(body: Node2D) -> void:
+	if body is Player:
+		$KeySFX.play()
+		forest_key = true
+		$Player/Camera2D/forestisland_frag.show()
+		$"Keys/key fragments/islandkey".queue_free()
+
+func _on_shatteredtombkey_body_entered(body: Node2D) -> void:
+	if body is Player:
+		$KeySFX.play()
+		tomb_key = true
+		$Player/Camera2D/tombkey_frag.show()
+		$"Keys/key fragments/tombkey".queue_free()
+		
+
+func _on_key_hide_fragnoti() -> void:
+	$Player/Camera2D/petalgrovekey_frag.hide()
+	$Player/Camera2D/forestisland_frag.hide()
+	$Player/Camera2D/tombkey_frag.hide()
+	$Player/Camera2D/quest_1.hide()
+	$Player/Camera2D/quest_1/Label.hide()

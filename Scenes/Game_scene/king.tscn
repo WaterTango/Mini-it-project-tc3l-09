@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bph610j3dc6p2"]
+[gd_scene load_steps=29 format=3 uid="uid://bph610j3dc6p2"]
 
 [ext_resource type="Script" path="res://Scripts/director.gd" id="1_dmofl"]
 [ext_resource type="Texture2D" uid="uid://dblgrf4vro0l2" path="res://Assets/pixel assets/library/Enemies/Scholars/Director/Death-Sheet.png" id="1_v7vwi"]
@@ -9,17 +9,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ogknn"]
 size = Vector2(15, 22)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_f5jen"]
-polygon = PackedVector2Array(-7.61818, -0.216099, -4.29786, -0.223911, 3.21776, -0.177036, 3.18651, -0.911411, 2.52245, -0.927036, 2.55934, -2.2875, -6.99318, -2.37235, -7.00099, -0.911411, -7.6338, -0.887974)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_qb8cu"]
-radius = 269.097
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ffvdd"]
-size = Vector2(21.5, 29)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_omeeh"]
-radius = 26.0
+radius = 85.6912
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5h6sp"]
 atlas = ExtResource("1_v7vwi")
@@ -187,6 +178,7 @@ animations = [{
 [node name="king" type="CharacterBody2D"]
 y_sort_enabled = true
 collision_layer = 3
+motion_mode = 1
 script = ExtResource("1_dmofl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -194,11 +186,6 @@ z_index = 1
 position = Vector2(0, -12)
 shape = SubResource("RectangleShape2D_ogknn")
 debug_color = Color(1, 0, 0, 0.419608)
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-position = Vector2(0.875988, -0.0417137)
-occluder = SubResource("OccluderPolygon2D_f5jen")
-occluder_light_mask = 2
 
 [node name="Detection" type="Area2D" parent="."]
 position = Vector2(0, -11)
@@ -208,30 +195,11 @@ scale = Vector2(1.1, 1.1)
 position = Vector2(0, -0.909091)
 shape = SubResource("CircleShape2D_qb8cu")
 
-[node name="Attack range" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack range"]
-position = Vector2(0, -15)
-shape = SubResource("RectangleShape2D_ffvdd")
-
-[node name="player_attack_range" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player_attack_range"]
-position = Vector2(0, -13)
-shape = SubResource("CircleShape2D_omeeh")
-
-[node name="Timer" type="Timer" parent="."]
-autostart = true
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_6h6q1")
 animation = &"director_run"
 
-[connection signal="body_entered" from="Detection" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Detection" to="." method="_on_area_2d_body_exited"]
-[connection signal="body_entered" from="Attack range" to="." method="_on_attack_range_body_entered"]
-[connection signal="body_exited" from="Attack range" to="." method="_on_attack_range_body_exited"]
-[connection signal="body_entered" from="player_attack_range" to="." method="_on_player_attack_range_body_entered"]
-[connection signal="body_exited" from="player_attack_range" to="." method="_on_player_attack_range_body_exited"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="secondchat" from="." to="." method="_on_secondchat"]
+[connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
+[connection signal="body_exited" from="Detection" to="." method="_on_detection_body_exited"]

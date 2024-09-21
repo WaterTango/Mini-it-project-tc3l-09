@@ -97,6 +97,7 @@ size = Vector2(71.25, 88.75)
 [node name="censornpc" type="CharacterBody2D"]
 position = Vector2(-7.10543e-15, -9.53674e-07)
 scale = Vector2(0.8, 0.8)
+motion_mode = 1
 script = ExtResource("1_m3ct5")
 
 [node name="interact_popup3" type="Sprite2D" parent="."]

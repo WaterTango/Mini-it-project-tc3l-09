@@ -66,7 +66,7 @@ texture = ExtResource("4_gq3y1")
 z_index = 2
 texture = ExtResource("5_ch3do")
 
-[connection signal="body_entered" from="jailkey" to="." method="_on_jailkey_body_entered"]
 [connection signal="body_entered" from="jailkey" to="." method="_on_chestopen_area_body_entered"]
-[connection signal="body_exited" from="jailkey" to="." method="_on_jailkey_body_exited"]
+[connection signal="body_entered" from="jailkey" to="." method="_on_jailkey_body_entered"]
 [connection signal="body_exited" from="jailkey" to="." method="_on_chestopen_area_body_exited"]
+[connection signal="body_exited" from="jailkey" to="." method="_on_jailkey_body_exited"]

@@ -187,6 +187,7 @@ animations = [{
 [node name="researcher" type="CharacterBody2D"]
 y_sort_enabled = true
 collision_layer = 3
+motion_mode = 1
 script = ExtResource("1_m720q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

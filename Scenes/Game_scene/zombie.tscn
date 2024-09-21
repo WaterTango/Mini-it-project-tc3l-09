@@ -185,6 +185,7 @@ size = Vector2(17.5238, 30.5265)
 radius = 25.0
 
 [node name="zombie" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_rmxnh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -232,8 +233,8 @@ shape = SubResource("CircleShape2D_75fj3")
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
-[connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_entered" from="Detection" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="Detection" to="." method="_on_detection_body_exited"]
 [connection signal="body_exited" from="Detection" to="." method="_on_detection_area_body_exited"]
 [connection signal="body_entered" from="Attack range" to="." method="_on_attack_range_body_entered"]

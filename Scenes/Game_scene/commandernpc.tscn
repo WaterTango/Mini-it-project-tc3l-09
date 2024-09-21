@@ -1,0 +1,128 @@
+[gd_scene load_steps=18 format=3 uid="uid://cssuxr6niuvvu"]
+
+[ext_resource type="Script" path="res://Scripts/commandernpc.gd" id="1_xelqv"]
+[ext_resource type="Texture2D" uid="uid://crnws7b6mgnqc" path="res://Assets/png/e_dark.png" id="2_61fvy"]
+[ext_resource type="Texture2D" uid="uid://bbq4wl4lxevf7" path="res://Assets/pixel assets/Pixel Crawler - Royal Crew/rebellion/Idle-Sheet knight.png" id="3_mwdsw"]
+[ext_resource type="Texture2D" uid="uid://dyqqlsb4omp34" path="res://Assets/pixel assets/Pixel Crawler - Royal Crew/rebellion/Run-Sheet knight.png" id="4_k8y8o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_an0tk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g3vgl"]
+radius = 69.4378
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_215r7"]
+atlas = ExtResource("3_mwdsw")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdsh2"]
+atlas = ExtResource("3_mwdsw")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3onk"]
+atlas = ExtResource("3_mwdsw")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u10ik"]
+atlas = ExtResource("3_mwdsw")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5kdk"]
+atlas = ExtResource("4_k8y8o")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2bd0q"]
+atlas = ExtResource("4_k8y8o")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r1tra"]
+atlas = ExtResource("4_k8y8o")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsxrs"]
+atlas = ExtResource("4_k8y8o")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uv6vp"]
+atlas = ExtResource("4_k8y8o")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vuohe"]
+atlas = ExtResource("4_k8y8o")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lmdl7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_215r7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fdsh2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3onk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u10ik")
+}],
+"loop": true,
+"name": &"rebel_knight_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5kdk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2bd0q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1tra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jsxrs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uv6vp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vuohe")
+}],
+"loop": true,
+"name": &"rebel_knight_run",
+"speed": 5.0
+}]
+
+[node name="commandernpc" type="CharacterBody2D"]
+scale = Vector2(0.965, 0.965)
+motion_mode = 1
+script = ExtResource("1_xelqv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -12)
+shape = SubResource("CircleShape2D_an0tk")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="chat_detection_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chat_detection_area"]
+position = Vector2(0, -10.3627)
+shape = SubResource("CircleShape2D_g3vgl")
+
+[node name="interact_popup3" type="Sprite2D" parent="."]
+visible = false
+z_index = 10
+position = Vector2(1.19209e-07, -30.0518)
+scale = Vector2(0.236842, 0.231707)
+texture = ExtResource("2_61fvy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.518135, -32.6425)
+sprite_frames = SubResource("SpriteFrames_lmdl7")
+animation = &"rebel_knight_idle"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="chat_detection_area" to="." method="_on_chat_detection_area_body_entered"]
+[connection signal="body_exited" from="chat_detection_area" to="." method="_on_chat_detection_area_body_exited"]

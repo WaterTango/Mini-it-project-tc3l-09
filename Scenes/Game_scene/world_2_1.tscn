@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=4 uid="uid://o8fuiwevj7kb"]
+[gd_scene load_steps=103 format=4 uid="uid://o8fuiwevj7kb"]
 
 [ext_resource type="Script" path="res://Scripts/world_2_1.gd" id="1_6krru"]
 [ext_resource type="PackedScene" uid="uid://bf5px1sosea0q" path="res://Scenes/Game_scene/orc.tscn" id="2_swtqg"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://ciir7sqk2hhgn" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Green Woods/Assets/forest_texture/TX Plant.png" id="13_nxeq4"]
 [ext_resource type="Texture2D" uid="uid://ces3fatiks2vw" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Green Woods/Assets/forest_texture/TX Struct.png" id="14_17oa5"]
 [ext_resource type="Texture2D" uid="uid://dcsxl8hwanurb" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Green Woods/Assets/Props.png" id="15_kwydb"]
+[ext_resource type="Texture2D" uid="uid://bgywhb5pnjuwy" path="res://shaz_images/quest.png" id="16_d1718"]
 [ext_resource type="PackedScene" uid="uid://bubxqu7jdai64" path="res://Scenes/mainmenu/pausemenu.tscn" id="18_1cw20"]
 [ext_resource type="TileSet" uid="uid://cl5petjwvv2yd" path="res://new_tile_set.tres" id="18_8jcnd"]
 [ext_resource type="Script" path="res://Scenes/mainmenu/pausemenuW2.gd" id="19_o8xu0"]
@@ -51,10 +52,14 @@
 [ext_resource type="AudioStream" uid="uid://cxdtgh6f6ljyb" path="res://shaz_audio/SFX/resume.mp3" id="33_6tv6v"]
 [ext_resource type="AudioStream" uid="uid://f8euu8wxjl1l" path="res://shaz_audio/SFX/Leaving.mp3" id="34_id37p"]
 [ext_resource type="AudioStream" uid="uid://bykfi4pa6x6x8" path="res://shaz_audio/SFX/Entering.mp3" id="35_ca7t0"]
+[ext_resource type="PackedScene" uid="uid://hq2i1bnd3bdb" path="res://Scenes/Game_scene/petalgrovekey_frag.tscn" id="37_2es2o"]
+[ext_resource type="PackedScene" uid="uid://bsxs2armky135" path="res://Scenes/Game_scene/forestisland_frag.tscn" id="38_0y15l"]
+[ext_resource type="PackedScene" uid="uid://c30iplr25v165" path="res://Scenes/Game_scene/tombkey_frag.tscn" id="39_1v003"]
 [ext_resource type="PackedScene" uid="uid://bxlwcppxorl7h" path="res://Scenes/Game_scene/normalchest.tscn" id="41_cv6t3"]
 [ext_resource type="AudioStream" uid="uid://c6dkss8k6b3ux" path="res://shaz_audio/SFX/DoorOpeningSFX.mp3" id="44_yqixv"]
 [ext_resource type="AudioStream" uid="uid://cd7qfmk6v1w86" path="res://shaz_audio/SFX/DoorClosingSFX.mp3" id="45_fjt6i"]
 [ext_resource type="FontFile" uid="uid://b8oo2dguy484y" path="res://shaz_fonts/basis33.ttf" id="49_h4a0s"]
+[ext_resource type="Texture2D" uid="uid://bb43702gi1pe1" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/key_frag.png" id="49_srph7"]
 [ext_resource type="Script" path="res://Scripts/islandsign.gd" id="50_562qc"]
 [ext_resource type="Script" path="res://Scripts/petalgrovesign.gd" id="51_ffo3c"]
 [ext_resource type="Script" path="res://Scripts/mainland.gd" id="51_rgv7o"]
@@ -3159,6 +3164,12 @@ animations = [{
 radius = 24.0
 height = 101.224
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ofcwi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uqf4d"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7e3x6"]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_ac8j6"]
 radius = 32.0156
 
@@ -3368,31 +3379,31 @@ z_index = 3
 position = Vector2(-351, 439)
 
 [node name="villagenpc2" parent="entities/npc" instance=ExtResource("5_i4cq7")]
-z_index = 3
+z_index = 2
 position = Vector2(-41, 236)
 
 [node name="villagenpc4" parent="entities/npc" instance=ExtResource("5_i4cq7")]
-z_index = 3
+z_index = 2
 position = Vector2(-86, 405)
 
 [node name="villagenpc3" parent="entities/npc" instance=ExtResource("5_i4cq7")]
-z_index = 3
+z_index = 2
 position = Vector2(-454, 490)
 
 [node name="villagenpc5" parent="entities/npc" instance=ExtResource("5_i4cq7")]
-z_index = 3
+z_index = 2
 position = Vector2(-388, 671)
 
 [node name="villagenpc6" parent="entities/npc" instance=ExtResource("5_i4cq7")]
-z_index = 3
+z_index = 2
 position = Vector2(135, 514)
 
 [node name="villagenpc7" parent="entities/npc" instance=ExtResource("5_i4cq7")]
-z_index = 3
+z_index = 2
 position = Vector2(165, 333)
 
 [node name="villagenpc8" parent="entities/npc" instance=ExtResource("5_i4cq7")]
-z_index = 3
+z_index = 2
 position = Vector2(265, 300)
 
 [node name="researchernpc" parent="entities/npc" instance=ExtResource("6_bd8u3")]
@@ -3400,15 +3411,16 @@ z_index = 2
 position = Vector2(-208, 202)
 
 [node name="censornpc" parent="entities/npc" instance=ExtResource("7_e108j")]
-z_index = 3
+z_index = 2
 position = Vector2(123, 270)
 
 [node name="priestnpc" parent="entities/npc" instance=ExtResource("8_sc0jj")]
-z_index = 3
+z_index = 2
+y_sort_enabled = true
 position = Vector2(-147, 560)
 
 [node name="chattingsoldier" parent="entities/npc" instance=ExtResource("8_g817e")]
-z_index = 3
+z_index = 2
 position = Vector2(-26, 1051)
 
 [node name="chattingsoldierNorth" parent="entities/npc" instance=ExtResource("9_2tmw7")]
@@ -3416,11 +3428,17 @@ z_index = 2
 position = Vector2(11, 182)
 scale = Vector2(0.8, 0.8)
 
+[node name="mark" type="Sprite2D" parent="entities/npc"]
+z_index = 3
+position = Vector2(-147, 526)
+scale = Vector2(0.0693722, 0.0602522)
+texture = ExtResource("16_d1718")
+
 [node name="skelton" type="Node" parent="entities"]
 
 [node name="skeleton_warrior" parent="entities/skelton" instance=ExtResource("8_m0dvs")]
 z_index = 2
-position = Vector2(489, -305)
+position = Vector2(518, -283)
 scale = Vector2(1.5, 1.63)
 
 [node name="skeleton" parent="entities/skelton" instance=ExtResource("4_bly27")]
@@ -3434,10 +3452,6 @@ position = Vector2(299, -382)
 [node name="skeleton3" parent="entities/skelton" instance=ExtResource("4_bly27")]
 z_index = 2
 position = Vector2(252, -150)
-
-[node name="skeleton4" parent="entities/skelton" instance=ExtResource("4_bly27")]
-z_index = 2
-position = Vector2(419, -335)
 
 [node name="skeleton5" parent="entities/skelton" instance=ExtResource("4_bly27")]
 z_index = 2
@@ -3866,6 +3880,21 @@ text = "  Find the key pieces:
 horizontal_alignment = 1
 autowrap_mode = 2
 
+[node name="petalgrovekey_frag" parent="Player/Camera2D" instance=ExtResource("37_2es2o")]
+visible = false
+z_index = 10
+position = Vector2(-318, 164)
+
+[node name="forestisland_frag" parent="Player/Camera2D" instance=ExtResource("38_0y15l")]
+visible = false
+z_index = 10
+position = Vector2(-318, 152)
+
+[node name="tombkey_frag" parent="Player/Camera2D" instance=ExtResource("39_1v003")]
+visible = false
+z_index = 10
+position = Vector2(-319, 140)
+
 [node name="interact_popup2" type="Sprite2D" parent="Player"]
 visible = false
 z_index = 10
@@ -3944,6 +3973,49 @@ position = Vector2(-1947, 132)
 [node name="normalchest7" parent="Keys" instance=ExtResource("41_cv6t3")]
 z_index = 1
 position = Vector2(637, -346)
+
+[node name="key fragments" type="Node" parent="Keys"]
+
+[node name="petalgrovekey" type="Sprite2D" parent="Keys/key fragments"]
+z_index = 3
+position = Vector2(-402.5, -750)
+scale = Vector2(2.1875, 2)
+texture = ExtResource("49_srph7")
+
+[node name="petalgrove_key" type="Area2D" parent="Keys/key fragments/petalgrovekey"]
+z_index = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Keys/key fragments/petalgrovekey/petalgrove_key"]
+z_index = 3
+shape = SubResource("CircleShape2D_ofcwi")
+
+[node name="islandkey" type="Sprite2D" parent="Keys/key fragments"]
+z_index = 5
+position = Vector2(-1545.5, 449)
+scale = Vector2(1.5, 1.439)
+texture = ExtResource("49_srph7")
+
+[node name="forestislandkey" type="Area2D" parent="Keys/key fragments/islandkey"]
+z_index = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Keys/key fragments/islandkey/forestislandkey"]
+z_index = 3
+shape = SubResource("CircleShape2D_uqf4d")
+
+[node name="tombkey" type="Sprite2D" parent="Keys/key fragments"]
+z_index = 3
+position = Vector2(379, -359)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("49_srph7")
+
+[node name="shatteredtombkey" type="Area2D" parent="Keys/key fragments/tombkey"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Keys/key fragments/tombkey/shatteredtombkey"]
+shape = SubResource("CircleShape2D_7e3x6")
+
+[node name="KeySFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("30_3pyoe")
+bus = &"SFX"
 
 [node name="clickSFX" type="AudioStreamPlayer" parent="."]
 process_mode = 3
@@ -4109,9 +4181,11 @@ script = ExtResource("52_0pfh3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sign/shatteredtombsign"]
 shape = SubResource("CircleShape2D_v3qpt")
 
+[connection signal="quest1_finished" from="." to="entities/npc/priestnpc" method="_on_world_2_1_quest_1_finished"]
 [connection signal="body_entered" from="blacksmith" to="blacksmith" method="_on_body_entered"]
 [connection signal="body_exited" from="blacksmith" to="blacksmith" method="_on_body_exited"]
 [connection signal="body_entered" from="Level2_TP/tp_area2" to="." method="_on_tp_area_2_body_entered"]
+[connection signal="keychest_can_open" from="entities/npc/priestnpc" to="Keys/key" method="_on_priestnpc_keychest_can_open"]
 [connection signal="body_entered" from="Map/TileMap/village/door_opening_animation" to="." method="_on_door_opening_animation_body_entered"]
 [connection signal="body_exited" from="Map/TileMap/village/door_opening_animation" to="." method="_on_door_opening_animation_body_exited"]
 [connection signal="body_entered" from="Map/TileMap/village/houses3/houseinterior" to="." method="_on_area_2d_body_entered"]
@@ -4123,9 +4197,13 @@ shape = SubResource("CircleShape2D_v3qpt")
 [connection signal="body_exited" from="Doors/door1/door1 zone" to="Doors/door1" method="_on_door_1_zone_body_exited"]
 [connection signal="body_exited" from="Doors/door1/door1 zone" to="Keys/key" method="_on_door_1_zone_body_exited"]
 [connection signal="door1_opened" from="Keys/key" to="Doors/door1" method="_on_key_door_1_opened"]
+[connection signal="hide_fragnoti" from="Keys/key" to="." method="_on_key_hide_fragnoti"]
 [connection signal="key_pickedup" from="Keys/key" to="." method="_on_key_key_pickedup"]
 [connection signal="popup_hide" from="Keys/key" to="." method="_on_key_popup_hide"]
 [connection signal="popup_show" from="Keys/key" to="." method="_on_key_popup_show"]
+[connection signal="body_entered" from="Keys/key fragments/petalgrovekey/petalgrove_key" to="." method="_on_petalgrove_key_body_entered"]
+[connection signal="body_entered" from="Keys/key fragments/islandkey/forestislandkey" to="." method="_on_forestislandkey_body_entered"]
+[connection signal="body_entered" from="Keys/key fragments/tombkey/shatteredtombkey" to="." method="_on_shatteredtombkey_body_entered"]
 [connection signal="body_entered" from="sign/islandsign" to="sign/islandsign" method="_on_body_entered"]
 [connection signal="body_exited" from="sign/islandsign" to="sign/islandsign" method="_on_body_exited"]
 [connection signal="body_entered" from="sign/mainland" to="sign/mainland" method="_on_body_entered"]

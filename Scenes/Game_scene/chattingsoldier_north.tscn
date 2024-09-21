@@ -95,6 +95,7 @@ radius = 7.0
 radius = 31.0
 
 [node name="chattingsoldierNorth" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_awwrg")
 
 [node name="Timer" type="Timer" parent="."]

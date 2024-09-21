@@ -1,0 +1,14 @@
+[signal arg="chatting"]
+[style name="lightnovel_File"]
+join argue_king (playerside) left
+argue_king: I should have crushed you from the start.
+join player (playerside) right
+player: This is your last chance, Argus. Face justice.
+argue_king: Justice? There is no justice in this world—only power.
+player: It’s over, brother
+argue_king: Perhaps... but you’ll find ruling far harder than rebellion.
+leave argue_king
+player: I’ll rebuild what you destroyed. Take him away.
+[signal arg="ending"]
+[signal arg="exit"]
+[end_timeline]

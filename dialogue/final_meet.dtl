@@ -1,0 +1,19 @@
+[signal arg="chatting"]
+[style name="evil"]
+join argue_king left
+argue_king: So, brother, you’ve come to reclaim the crown? Do you truly think these peasants will make you king again?
+join player (playerside) right
+[style name="lightnovel_File"]
+player: It’s over, Argus. The people stand with me. You no longer have any hold over them, or the crown.
+[style name="evil"]
+argue_king: The people? You’re a fool if you think they’ll follow you. They fear strength, and I’ve given them just that
+[style name="lightnovel_File"]
+player: They fear you because you rule through terror. But now, your reign ends. Surrender, and perhaps I’ll show mercy.
+[style name="evil"]
+argue_king: Mercy? From you? I’d rather die a king than kneel before you
+[style name="lightnovel_File"]
+player: You’ll die a traitor. Surround him!
+[signal arg="exit"]
+[signal arg="firstchat"]
+[signal arg="surround"]
+[end_timeline]

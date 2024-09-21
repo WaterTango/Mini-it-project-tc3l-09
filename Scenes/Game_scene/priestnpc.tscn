@@ -5,8 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bgttx5unjiqvy" path="res://Assets/pixel assets/Pixel Crawler - Royal Crew/Priest/Run-Sheet.png" id="3_rm01t"]
 [ext_resource type="Texture2D" uid="uid://crnws7b6mgnqc" path="res://Assets/png/e_dark.png" id="4_lllus"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0fras"]
-size = Vector2(20, 31)
+[sub_resource type="CircleShape2D" id="CircleShape2D_v6hrx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e1is0"]
 atlas = ExtResource("2_kyvm6")
@@ -92,15 +91,17 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6ue0l"]
-radius = 49.4624
+radius = 36.575
 
 [node name="priestnpc" type="CharacterBody2D"]
 scale = Vector2(0.93, 0.93)
+motion_mode = 1
 script = ExtResource("1_bxi54")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -15.5)
-shape = SubResource("RectangleShape2D_0fras")
+position = Vector2(-1.07527, -8.60215)
+shape = SubResource("CircleShape2D_v6hrx")
+debug_color = Color(0.918699, 6.77681e-05, 0.701187, 0.42)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -32)
@@ -113,7 +114,7 @@ autostart = true
 [node name="interact_popup2" type="Sprite2D" parent="."]
 visible = false
 z_index = 10
-position = Vector2(5.96046e-08, -35.4839)
+position = Vector2(3.55271e-15, -34.4086)
 scale = Vector2(0.236842, 0.231707)
 texture = ExtResource("4_lllus")
 
@@ -126,7 +127,7 @@ shape = SubResource("CircleShape2D_6ue0l")
 [node name="interact_popup3" type="Sprite2D" parent="."]
 visible = false
 z_index = 10
-position = Vector2(1, -40)
+position = Vector2(5.96046e-08, -34.4086)
 scale = Vector2(0.236842, 0.231707)
 texture = ExtResource("4_lllus")
 

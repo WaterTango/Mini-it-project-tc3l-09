@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://domhmq31l23tv"]
+[gd_scene load_steps=15 format=3 uid="uid://domhmq31l23tv"]
 
 [ext_resource type="Texture2D" uid="uid://dv0uy0nxcroll" path="res://Assets/pixel assets/Pixel Crawler - Royal Crew/rebellion/Idle-Sheet rebellion.png" id="1_qv03h"]
+[ext_resource type="Texture2D" uid="uid://co22ln344ein6" path="res://Assets/pixel assets/Pixel Crawler - Royal Crew/rebellion/Run-Sheet.png" id="2_6yey4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_712oh"]
 atlas = ExtResource("1_qv03h")
@@ -17,6 +18,30 @@ region = Rect2(128, 0, 64, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_qw8nr"]
 atlas = ExtResource("1_qv03h")
 region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0bbw"]
+atlas = ExtResource("2_6yey4")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2724"]
+atlas = ExtResource("2_6yey4")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_alet7"]
+atlas = ExtResource("2_6yey4")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0fnu"]
+atlas = ExtResource("2_6yey4")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_icxwj"]
+atlas = ExtResource("2_6yey4")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1udri"]
+atlas = ExtResource("2_6yey4")
+region = Rect2(320, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qkbl3"]
 animations = [{
@@ -36,17 +61,41 @@ animations = [{
 "loop": true,
 "name": &"rebellion_soldier_idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0bbw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2724")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_alet7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0fnu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_icxwj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1udri")
+}],
+"loop": true,
+"name": &"rebellion_soldier_run",
+"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tw38d"]
 radius = 8.0
 
-[node name="rebellion_soldier" type="Node2D"]
+[node name="rebellion_soldier" type="CharacterBody2D"]
+motion_mode = 1
 
 [node name="rebellion_soldier" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_qkbl3")
-animation = &"rebellion_soldier_idle"
+animation = &"rebellion_soldier_run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)
