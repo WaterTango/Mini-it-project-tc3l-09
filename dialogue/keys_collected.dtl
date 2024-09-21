@@ -1,0 +1,14 @@
+[signal arg="chatting"]
+[style name="lightnovel_File"]
+join player (playerside) right
+player: Here are the key fragments... now to piece them together\
+\
+(Press Enter to continue)
+join grandmeister left
+grandmeister: Yes My Lord
+leave grandmeister
+join key_full left
+You can now open the chest beside the table
+[signal arg="exit"]
+[signal arg="key_fixed"]
+[end_timeline]

@@ -1,0 +1,14 @@
+[signal arg="chatting"]
+[style name="lightnovel_File"]
+join rebel_knight left
+rebel_knight: My lord! You lived 
+join player (playerside) right
+player: Tell me about the place of the siege
+rebel_knight: The palace walls are heavily fortified, and Argus will have his best men guarding the gates. We’ll need to strike hard and fast before they can regroup.
+player: I’ll lead the charge at the front. Let the sight of me rally our men. When they see I’ve returned to reclaim the throne, their spirits will rise.
+rebel_knight: Very well, but be careful. If we fail to take the palace swiftly, Argus could rally more forces and trap us inside
+player: Then we don’t fail. Argus has ruled through fear long enough. Tomorrow, we end this and take back what’s ours.
+leave rebel_knight
+player: (I should sneak past the guard and rally the men inside the throne room)
+[signal arg="exit"]
+[end_timeline]

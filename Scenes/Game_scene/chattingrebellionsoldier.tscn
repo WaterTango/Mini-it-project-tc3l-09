@@ -95,6 +95,7 @@ radius = 7.0
 radius = 24.0832
 
 [node name="chattingrebellionsoldier" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_8gnw2")
 
 [node name="Timer" type="Timer" parent="."]
@@ -119,7 +120,7 @@ shape = SubResource("CircleShape2D_omc6n")
 [node name="interact_popup2" type="Sprite2D" parent="."]
 visible = false
 z_index = 10
-position = Vector2(1, -40)
+position = Vector2(1, -37)
 scale = Vector2(0.236842, 0.231707)
 texture = ExtResource("3_c2hqw")
 

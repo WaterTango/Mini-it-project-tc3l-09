@@ -93,6 +93,7 @@ animations = [{
 [node name="rebelknightnpc" type="CharacterBody2D"]
 position = Vector2(0, -2)
 scale = Vector2(0.955, 0.955)
+motion_mode = 1
 script = ExtResource("1_hv0fi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

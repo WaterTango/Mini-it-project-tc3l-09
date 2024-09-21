@@ -6,6 +6,7 @@
 size = Vector2(12.375, 105)
 
 [node name="rebellion_army_5x7" type="StaticBody2D"]
+scale = Vector2(1.2, 1.2)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1, -57)

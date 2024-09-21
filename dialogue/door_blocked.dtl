@@ -1,0 +1,4 @@
+[style name="lightnovel_File"]
+The door’s locked... there has to be a key somewhere nearby.
+[signal arg="exit"]
+[end_timeline]

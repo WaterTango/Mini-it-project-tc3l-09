@@ -153,6 +153,7 @@ size = Vector2(30, 34)
 radius = 29.0
 
 [node name="orc_warrior" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_kkpn0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -191,10 +192,10 @@ one_way_collision_margin = 0.0
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
-[connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_entered" from="Detection" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Detection" to="." method="_on_detection_body_exited"]
+[connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="Detection" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_exited" from="Detection" to="." method="_on_detection_body_exited"]
 [connection signal="body_entered" from="Attack range" to="." method="_on_attack_range_body_entered"]
 [connection signal="body_exited" from="Attack range" to="." method="_on_attack_range_body_exited"]
 [connection signal="body_entered" from="player_attack_range" to="." method="_on_player_attack_range_body_entered"]

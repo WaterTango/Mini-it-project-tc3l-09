@@ -14,6 +14,10 @@ var not_explained = true
 #var for quest
 var key_quest = false
 var start_pos
+var quest1_finished = false
+var key_notfixed = true
+signal quest_start
+signal keychest_can_open
 #state machine
 enum{
 	IDLE,     #0
@@ -49,6 +53,9 @@ func _process(delta):
 	if Input.is_action_just_pressed("interact") and player_in_chat_zone and key_quest:
 		$AnimatedSprite2D.play("priest_idle")
 		run_dialogue("key_quest")
+	if Input.is_action_just_pressed("interact") and player_in_chat_zone and quest1_finished and key_notfixed:
+		$AnimatedSprite2D.play("priest_idle")
+		run_dialogue("keys_collected")
 
 func run_dialogue(dialogue_string):
 	is_chatting = true
@@ -66,6 +73,12 @@ func DialogicSignal(arg: String):
 	if arg == "explained":
 		not_explained = false
 		key_quest = true
+	if arg == "quest_1_start":
+		key_quest = false
+	if arg == "key_fixed":
+		key_notfixed = false
+		emit_signal("keychest_can_open")
+		
 func move(delta):
 	#move the character
 	position += dir * speed * delta
@@ -98,7 +111,7 @@ func _on_chat_detection_area_body_entered(body: Node2D) -> void:
 		player = body
 		player_in_chat_zone = true
 		$interact_popup3.show()
-
+		$"../mark".hide()
 
 
 func _on_chat_detection_area_body_exited(body: Node2D) -> void:
@@ -106,3 +119,10 @@ func _on_chat_detection_area_body_exited(body: Node2D) -> void:
 		player_in_chat_zone = false
 		is_chatting = false
 		$interact_popup3.hide()
+		$"../mark".show()
+
+
+#finish key gathering quest
+func _on_world_2_1_quest_1_finished() -> void:
+	$"../mark".show()
+	quest1_finished = true

@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://hq2i1bnd3bdb"]
+
+[ext_resource type="FontFile" uid="uid://b8oo2dguy484y" path="res://shaz_fonts/basis33.ttf" id="1_efqo2"]
+
+[node name="petalgrovekey_frag" type="Node2D"]
+
+[node name="text" type="Label" parent="."]
+modulate = Color(0, 1, 0, 1)
+anchors_preset = -1
+anchor_left = -3.5
+anchor_right = -3.5
+offset_right = 56.0
+offset_bottom = 16.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("1_efqo2")
+theme_override_font_sizes/font_size = 16
+text = "Petal Grove key fragment 
+"
