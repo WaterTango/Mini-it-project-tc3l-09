@@ -8,7 +8,7 @@ join grandmeister left
 grandmeister: Yes My Lord
 leave grandmeister
 join key_full left
-You can now open the chest beside the table
+(Key collected now you can open the Palace Garden gate)
 [signal arg="exit"]
 [signal arg="key_fixed"]
 [end_timeline]

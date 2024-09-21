@@ -28,7 +28,7 @@ func run_dialogue(dialogue_string):
 	Dialogic.start(dialogue_string)
 	
 func _process(_delta):
-	if keytaken == false and in_chest_zone and key_enabled:
+	if keytaken == false and in_chest_zone:
 		if Input.is_action_just_pressed("interact"):
 			$librarychestclosed.hide()
 			$librarychestopen.show()
@@ -80,10 +80,9 @@ func _on_door_1_zone_body_exited(body) -> void:
 
 func _on_chestopen_area_body_entered(body) -> void:
 	if body is Player:
-		if key_enabled:
-			$interact_popup2.show()
-			print("in key_chest area")
-			in_chest_zone = true
+		$interact_popup2.show()
+		print("in key_chest area")
+		in_chest_zone = true
 		
 func _on_chestopen_area_body_exited(body: Node2D) -> void:
 	if body is Player:
@@ -95,5 +94,9 @@ func _on_doorblocked_notification() -> void:
 	door_noti = true
 
 
-func _on_priestnpc_keychest_can_open() -> void:
-	key_enabled = true
+func _on_priestnpc_collect_key() -> void:
+	$KeySFX.play() # shazSFX
+	keytaken = true
+	emit_signal("key_pickedup")
+	emit_signal("hide_fragnoti")
+	print("key picked up") 
