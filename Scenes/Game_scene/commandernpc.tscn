@@ -121,7 +121,7 @@ texture = ExtResource("2_61fvy")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-0.518135, -32.6425)
 sprite_frames = SubResource("SpriteFrames_lmdl7")
-animation = &"rebel_knight_idle"
+animation = &"rebel_knight_run"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="chat_detection_area" to="." method="_on_chat_detection_area_body_entered"]

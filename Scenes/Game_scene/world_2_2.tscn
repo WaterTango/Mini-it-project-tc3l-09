@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=4 uid="uid://bwn2x4mky6dpq"]
+[gd_scene load_steps=107 format=4 uid="uid://bwn2x4mky6dpq"]
 
 [ext_resource type="Script" path="res://Scripts/world_2_2.gd" id="1_oobcj"]
 [ext_resource type="PackedScene" uid="uid://d2yr2v1e0ibvc" path="res://Scenes/Game_scene/player.tscn" id="1_whs3t"]
@@ -25,7 +25,9 @@
 [ext_resource type="Texture2D" uid="uid://cswic0kq3qlh" path="res://shaz_images/UI/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Banner02a.png" id="13_dyi83"]
 [ext_resource type="TileSet" uid="uid://bm6wjjk4cc7qu" path="res://Scenes/Game_scene/props.tres" id="14_75odb"]
 [ext_resource type="FontFile" uid="uid://b8oo2dguy484y" path="res://shaz_fonts/basis33.ttf" id="14_qjmd3"]
+[ext_resource type="Texture2D" uid="uid://bbq4wl4lxevf7" path="res://Assets/pixel assets/Pixel Crawler - Royal Crew/rebellion/Idle-Sheet knight.png" id="15_x6gyg"]
 [ext_resource type="Texture2D" uid="uid://dqo2pgf00slin" path="res://shaz_images/UI/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Banner03a.png" id="15_xhive"]
+[ext_resource type="Texture2D" uid="uid://dyqqlsb4omp34" path="res://Assets/pixel assets/Pixel Crawler - Royal Crew/rebellion/Run-Sheet knight.png" id="16_q05dw"]
 [ext_resource type="Texture2D" uid="uid://ciir7sqk2hhgn" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Green Woods/Assets/forest_texture/TX Plant.png" id="18_8h4g7"]
 [ext_resource type="Script" path="res://Scripts/door_library.gd" id="18_45ehk"]
 [ext_resource type="Script" path="res://Scripts/door1_collision.gd" id="19_carnr"]
@@ -115,6 +117,89 @@ _data = {
 size = Vector2(69, 67)
 
 [sub_resource type="Theme" id="Theme_w52en"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_215r7"]
+atlas = ExtResource("15_x6gyg")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdsh2"]
+atlas = ExtResource("15_x6gyg")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3onk"]
+atlas = ExtResource("15_x6gyg")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u10ik"]
+atlas = ExtResource("15_x6gyg")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5kdk"]
+atlas = ExtResource("16_q05dw")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2bd0q"]
+atlas = ExtResource("16_q05dw")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r1tra"]
+atlas = ExtResource("16_q05dw")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsxrs"]
+atlas = ExtResource("16_q05dw")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uv6vp"]
+atlas = ExtResource("16_q05dw")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vuohe"]
+atlas = ExtResource("16_q05dw")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x07x4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_215r7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fdsh2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3onk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u10ik")
+}],
+"loop": true,
+"name": &"rebel_knight_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5kdk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2bd0q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1tra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jsxrs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uv6vp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vuohe")
+}],
+"loop": true,
+"name": &"rebel_knight_run",
+"speed": 5.0
+}]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ylt4n"]
 
@@ -4237,8 +4322,15 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 4
 theme_override_fonts/font = ExtResource("14_qjmd3")
 theme_override_font_sizes/font_size = 16
-text = "find the commander"
+text = "Find The Commander"
 horizontal_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player/Camera2D/commander_quest/questbanner"]
+position = Vector2(176, 0.999954)
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_x07x4")
+animation = &"rebel_knight_idle"
+autoplay = "rebel_knight_idle"
 
 [node name="questdetails" type="NinePatchRect" parent="Player/Camera2D/commander_quest"]
 layout_mode = 0
@@ -4262,7 +4354,7 @@ anchor_bottom = 0.5
 offset_left = -100.5
 offset_top = -25.0
 offset_right = 180.5
-offset_bottom = 88.0
+offset_bottom = 48.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.73, 0.73)
@@ -4271,7 +4363,8 @@ theme_override_colors/font_shadow_color = Color(0.577008, 0.577008, 0.577008, 1)
 theme_override_constants/shadow_outline_size = 0
 theme_override_fonts/font = ExtResource("14_qjmd3")
 theme_override_font_sizes/font_size = 16
-text = "Speak with the rebel commander to uncover the details of their plans for the upcoming siege. 
+text = "Speak with the rebel commander to uncover the details of their plans
+ for the upcoming siege. 
 
 "
 horizontal_alignment = 1

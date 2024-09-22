@@ -1,4 +1,4 @@
-[gd_scene load_steps=108 format=4 uid="uid://o8fuiwevj7kb"]
+[gd_scene load_steps=109 format=4 uid="uid://o8fuiwevj7kb"]
 
 [ext_resource type="Script" path="res://Scripts/world_2_1.gd" id="1_6krru"]
 [ext_resource type="PackedScene" uid="uid://bf5px1sosea0q" path="res://Scenes/Game_scene/orc.tscn" id="2_swtqg"]
@@ -63,6 +63,7 @@
 [ext_resource type="PackedScene" uid="uid://bxlwcppxorl7h" path="res://Scenes/Game_scene/normalchest.tscn" id="41_cv6t3"]
 [ext_resource type="AudioStream" uid="uid://c6dkss8k6b3ux" path="res://shaz_audio/SFX/DoorOpeningSFX.mp3" id="44_yqixv"]
 [ext_resource type="AudioStream" uid="uid://cd7qfmk6v1w86" path="res://shaz_audio/SFX/DoorClosingSFX.mp3" id="45_fjt6i"]
+[ext_resource type="PackedScene" uid="uid://b5jide7ow1ec0" path="res://Scenes/shopmenu/inventory/inventoryUI.tscn" id="46_lqady"]
 [ext_resource type="FontFile" uid="uid://b8oo2dguy484y" path="res://shaz_fonts/basis33.ttf" id="49_h4a0s"]
 [ext_resource type="Texture2D" uid="uid://bb43702gi1pe1" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/key_frag.png" id="49_srph7"]
 [ext_resource type="Script" path="res://Scripts/islandsign.gd" id="50_562qc"]
@@ -216,7 +217,7 @@ tracks/6/keys = {
 
 [sub_resource type="Animation" id="Animation_cvkov"]
 resource_name = "shop_intro"
-length = 6.0
+length = 5.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -224,7 +225,7 @@ tracks/0/path = NodePath("BotPattern:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(4.96667, 6.03333),
+"times": PackedFloat32Array(4, 5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -236,7 +237,7 @@ tracks/1/path = NodePath("TopPattern:self_modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(4.96667, 6.03333),
+"times": PackedFloat32Array(4, 5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -260,7 +261,7 @@ tracks/3/path = NodePath("ShopkeeperBellSFX:playing")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(4.7),
+"times": PackedFloat32Array(4.03333),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -314,7 +315,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(960, 0), Vector2(960, -1000)]
+"values": [Vector2(960, 0), Vector2(960, -1200)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vvng7"]
@@ -3267,6 +3268,8 @@ texture = ExtResource("7_vnuif")
 [node name="Camera2D" type="Camera2D" parent="CanvasLayer/SubViewportContainer/SubViewport"]
 zoom = Vector2(0.75, 0.75)
 
+[node name="inventory" parent="CanvasLayer" instance=ExtResource("46_lqady")]
+
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 self_modulate = Color(0.176419, 0.176419, 0.176419, 1)
 color = Color(0.764359, 0.625424, 0.73534, 0.980392)
@@ -3927,7 +3930,6 @@ text = "Find the key pieces"
 horizontal_alignment = 1
 
 [node name="opengate" type="Label" parent="Player/Camera2D/quest_1/questbanner"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -3952,10 +3954,10 @@ horizontal_alignment = 1
 
 [node name="questdetails" type="NinePatchRect" parent="Player/Camera2D/quest_1"]
 layout_mode = 0
-offset_left = 29.0
-offset_top = 282.0
+offset_left = 28.0
+offset_top = 274.0
 offset_right = 228.0
-offset_bottom = 362.0
+offset_bottom = 354.0
 texture = ExtResource("38_x85oy")
 patch_margin_left = 4
 patch_margin_top = 3
@@ -4035,9 +4037,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -92.0
+offset_left = -91.0
 offset_top = 16.0
-offset_right = 63.0
+offset_right = 67.0
 offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2

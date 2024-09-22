@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://dmtkijkcud0lk"]
+[gd_scene load_steps=49 format=3 uid="uid://dmtkijkcud0lk"]
 
 [ext_resource type="Script" path="res://Scripts/introcutscene.gd" id="1_d6ons"]
 [ext_resource type="FontFile" uid="uid://b8oo2dguy484y" path="res://shaz_fonts/basis33.ttf" id="1_xiobq"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://djwglpd7jkkrg" path="res://Assets/pixel assets/Pixel Crawler - Royal Crew/Knight/Idle-Sheet.png" id="7_gv27s"]
 [ext_resource type="Texture2D" uid="uid://ch8g3vkkj7sm1" path="res://Assets/pixel assets/Pixel Crawler - Royal Crew/Knight/Run-Sheet.png" id="8_v7l3f"]
 [ext_resource type="AudioStream" uid="uid://bterik6f2282d" path="res://shaz_audio/music/the-time-is-upon-us [World 3].mp3" id="9_lhrhs"]
+[ext_resource type="Texture2D" uid="uid://jggm2hjuueid" path="res://shaz_images/throene.jpeg" id="10_lv5nh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jhg6n"]
 atlas = ExtResource("3_0yn66")
@@ -1119,6 +1120,7 @@ position = Vector2(291, 163)
 zoom = Vector2(3.3, 3.3)
 
 [node name="background" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(0.481789, 0.481789, 0.481789, 1)
 position = Vector2(289, 189)
 scale = Vector2(0.598077, 0.663628)
@@ -1173,6 +1175,14 @@ parameters/looping = true
 libraries = {
 "": SubResource("AnimationLibrary_sm2qd")
 }
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 5793.0
+offset_bottom = 2683.0
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("10_lv5nh")
 
 [connection signal="animation_changed" from="Intro" to="." method="_on_intro_animation_changed"]
 [connection signal="animation_finished" from="Intro" to="." method="_on_intro_animation_finished"]
