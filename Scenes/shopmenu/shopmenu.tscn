@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://tvrth5rx40j5"]
+[gd_scene load_steps=66 format=3 uid="uid://tvrth5rx40j5"]
 
 [ext_resource type="Script" path="res://Scenes/shopmenu/shopmenu.gd" id="1_mqpal"]
 [ext_resource type="FontFile" uid="uid://f3bxx2ry3bsw" path="res://shaz_fonts/BLKCHCRY.TTF" id="1_sqqw3"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://b74fahatycicu" path="res://shaz_images/UI/Fantasy Minimal Pixel Art UI/UI/CornerKnot_14x14.png" id="6_afacd"]
 [ext_resource type="Texture2D" uid="uid://0kh45f0tml0n" path="res://Assets/Pixel Crawler - FREE - 1.8/Weapons/Bone/Bone.png" id="8_jpcgx"]
 [ext_resource type="Script" path="res://Scenes/shopmenu/pot.gd" id="10_hdc50"]
+[ext_resource type="Texture2D" uid="uid://b4e66ght3ct3" path="res://Assets/pixel assets/Pixel Crawler - Reinforced Iron Weapons/Weapons.png" id="11_c65d2"]
 [ext_resource type="Script" path="res://Scenes/shopmenu/equ.gd" id="11_fl34k"]
 [ext_resource type="SpriteFrames" uid="uid://pahe2o8adi46" path="res://Scenes/shopmenu/potions/green_pot_animatedsprite.tres" id="13_1dudq"]
 [ext_resource type="SpriteFrames" uid="uid://b2l4sp38x4a47" path="res://Scenes/shopmenu/potions/blue_pot_animatedsprite.tres" id="14_q60js"]
@@ -37,7 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://buhp14y0r0j4w" path="res://shaz_images/UI/16x16 RPG Item Pack/Item__32.png" id="31_cw27m"]
 [ext_resource type="Texture2D" uid="uid://c8djecgoq7nsq" path="res://shaz_images/UI/16x16 RPG Item Pack/Item__33.png" id="32_xl1h5"]
 [ext_resource type="AudioStream" uid="uid://cfoe36fdkertc" path="res://shaz_audio/SFX/ShopkeeperBellSFX.mp3" id="37_ogtt3"]
-[ext_resource type="AudioStream" uid="uid://doprk6fjj4k3i" path="res://shaz_audio/SFX/ShopScrollingSFX.mp3" id="38_1yyps"]
+[ext_resource type="AudioStream" uid="uid://bhmyktpwfgacp" path="res://shaz_audio/SFX/PotionBubbling.mp3" id="39_bhiuk"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dwdvj"]
 texture = ExtResource("4_dmfl8")
@@ -236,67 +237,55 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D:position")
+tracks/3/path = NodePath("ShopkeeperBellSFX:playing")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-2052, 0)]
+"update": 1,
+"values": [true]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("ContainerExt/PotionsCategory/Label/PotionScroll/Node2D:position")
+tracks/4/path = NodePath("ContainerExt/EquimentsCategoru/Label/EquipmentScroll/HScrollBar:value")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-264, 0)]
+"values": [2052.0]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D:position")
+tracks/5/path = NodePath("ContainerExt/PotionsCategory/Label/PotionScroll/HScrollBar:value")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-1048, 0)]
+"values": [264.0]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("ShopScrollingSFX:playing")
+tracks/6/path = NodePath("ContainerExt/WeaponsCategory/Label/WeaponScroll/HScrollBar:value")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("ShopkeeperBellSFX:playing")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [2084.0]
 }
 
 [sub_resource type="Animation" id="Animation_cvkov"]
 resource_name = "shop_intro"
-length = 8.0
+length = 6.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -304,7 +293,7 @@ tracks/0/path = NodePath("BotPattern:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(5.03333, 7.5),
+"times": PackedFloat32Array(4.96667, 6.03333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -316,7 +305,7 @@ tracks/1/path = NodePath("TopPattern:self_modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(5.03333, 7.5),
+"times": PackedFloat32Array(4.96667, 6.03333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -325,10 +314,10 @@ tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/path = NodePath(".:position")
-tracks/2/interp = 1
+tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 3, 4),
+"times": PackedFloat32Array(0, 1.53333, 2.03333),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(960, -1000), Vector2(960, 50), Vector2(960, 0)]
@@ -336,68 +325,72 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("ContainerExt/EquimentsCategoru/Label/EquipmentScroll/Node2D:position")
+tracks/3/path = NodePath("ShopkeeperBellSFX:playing")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(3, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-2052, 0), Vector2(0, 0)]
+"times": PackedFloat32Array(4.7),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("ContainerExt/PotionsCategory/Label/PotionScroll/Node2D:position")
-tracks/4/interp = 1
+tracks/4/path = NodePath("ContainerExt/EquimentsCategoru/Label/EquipmentScroll/HScrollBar:value")
+tracks/4/interp = 2
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(4, 6),
+"times": PackedFloat32Array(0.5, 2.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-264, 0), Vector2(0, 0)]
+"values": [2052.0, 0.0]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D:position")
-tracks/5/interp = 1
+tracks/5/path = NodePath("ContainerExt/PotionsCategory/Label/PotionScroll/HScrollBar:value")
+tracks/5/interp = 2
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(5, 7),
+"times": PackedFloat32Array(1.46667, 3.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-1048, 0), Vector2(0, 0)]
+"values": [264.0, 0.0]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("ShopScrollingSFX:playing")
-tracks/6/interp = 1
+tracks/6/path = NodePath("ContainerExt/WeaponsCategory/Label/WeaponScroll/HScrollBar:value")
+tracks/6/interp = 2
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(3),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"times": PackedFloat32Array(2.46667, 4.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2084.0, 0.0]
 }
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("ShopkeeperBellSFX:playing")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(6.5),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+
+[sub_resource type="Animation" id="Animation_pv6iw"]
+resource_name = "shop_outro"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(960, 0), Vector2(960, -1000)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vvng7"]
 _data = {
 "RESET": SubResource("Animation_fs7hu"),
-"shop_intro": SubResource("Animation_cvkov")
+"shop_intro": SubResource("Animation_cvkov"),
+"shop_outro": SubResource("Animation_pv6iw")
 }
 
 [node name="shopmenu" type="Control"]
@@ -483,7 +476,7 @@ offset_bottom = 246.0
 script = ExtResource("5_op3se")
 
 [node name="Node2D" type="Node2D" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll"]
-position = Vector2(-1048, 0)
+position = Vector2(-2084, 0)
 
 [node name="weapon1" type="Panel" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D"]
 offset_left = -3.0
@@ -507,7 +500,7 @@ flat = true
 expand_icon = true
 
 [node name="WoodenDagger" type="Sprite2D" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D/weapon1"]
-position = Vector2(107, 110)
+position = Vector2(99, 111)
 scale = Vector2(4.5, 3.484)
 texture = ExtResource("4_wqmtr")
 region_enabled = true
@@ -535,7 +528,7 @@ flat = true
 expand_icon = true
 
 [node name="WoodenSword" type="Sprite2D" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D/weapon2"]
-position = Vector2(105, 81)
+position = Vector2(104, 81)
 scale = Vector2(4.57307, 3.3219)
 texture = ExtResource("4_wqmtr")
 region_enabled = true
@@ -563,7 +556,7 @@ flat = true
 expand_icon = true
 
 [node name="WoodenAxe" type="Sprite2D" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D/weapon3"]
-position = Vector2(106, 88)
+position = Vector2(101, 88)
 scale = Vector2(5, 4.68965)
 texture = ExtResource("4_wqmtr")
 region_enabled = true
@@ -709,6 +702,118 @@ texture = ExtResource("8_jpcgx")
 region_enabled = true
 region_rect = Rect2(31.5801, 48.2022, 16.2948, 32.1899)
 
+[node name="weapon9" type="Panel" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D"]
+offset_left = 2069.0
+offset_top = 54.0
+offset_right = 2289.0
+offset_bottom = 242.0
+
+[node name="ButtonTexture" type="Sprite2D" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D/weapon9"]
+position = Vector2(183.5, 153)
+scale = Vector2(1.67647, 1.70588)
+texture = ExtResource("4_frrma")
+
+[node name="Button" type="Button" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D/weapon9"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 129.0
+offset_right = 210.0
+offset_bottom = 179.0
+icon = ExtResource("6_44mgr")
+flat = true
+expand_icon = true
+
+[node name="IronDagger" type="Sprite2D" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D/weapon9"]
+position = Vector2(110, 112)
+scale = Vector2(4.4375, 3.95385)
+texture = ExtResource("11_c65d2")
+region_enabled = true
+region_rect = Rect2(49.6687, 37.9556, 11.0991, 26.7684)
+
+[node name="weapon10" type="Panel" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D"]
+offset_left = 2327.0
+offset_top = 54.0
+offset_right = 2547.0
+offset_bottom = 242.0
+
+[node name="ButtonTexture" type="Sprite2D" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D/weapon10"]
+position = Vector2(183.5, 153)
+scale = Vector2(1.67647, 1.70588)
+texture = ExtResource("4_frrma")
+
+[node name="Button" type="Button" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D/weapon10"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 129.0
+offset_right = 210.0
+offset_bottom = 179.0
+icon = ExtResource("6_44mgr")
+flat = true
+expand_icon = true
+
+[node name="IronSword" type="Sprite2D" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D/weapon10"]
+position = Vector2(109, 89)
+scale = Vector2(2.96875, 2.65947)
+texture = ExtResource("11_c65d2")
+region_enabled = true
+region_rect = Rect2(-0.269781, 0.646007, 16.0393, 63.6576)
+
+[node name="weapon11" type="Panel" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D"]
+offset_left = 2583.0
+offset_top = 54.0
+offset_right = 2803.0
+offset_bottom = 242.0
+
+[node name="ButtonTexture" type="Sprite2D" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D/weapon11"]
+position = Vector2(183.5, 153)
+scale = Vector2(1.67647, 1.70588)
+texture = ExtResource("4_frrma")
+
+[node name="Button" type="Button" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D/weapon11"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 129.0
+offset_right = 210.0
+offset_bottom = 179.0
+icon = ExtResource("6_44mgr")
+flat = true
+expand_icon = true
+
+[node name="IronAxe" type="Sprite2D" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D/weapon11"]
+position = Vector2(109, 89)
+scale = Vector2(5, 4.479)
+texture = ExtResource("11_c65d2")
+region_enabled = true
+region_rect = Rect2(63.9186, -0.0643084, 16.2233, 32.0564)
+
+[node name="weapon12" type="Panel" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D"]
+offset_left = 2848.0
+offset_top = 54.0
+offset_right = 3068.0
+offset_bottom = 242.0
+
+[node name="ButtonTexture" type="Sprite2D" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D/weapon12"]
+position = Vector2(183.5, 153)
+scale = Vector2(1.67647, 1.70588)
+texture = ExtResource("4_frrma")
+
+[node name="Button" type="Button" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D/weapon12"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 129.0
+offset_right = 210.0
+offset_bottom = 179.0
+icon = ExtResource("6_44mgr")
+flat = true
+expand_icon = true
+
+[node name="IronScythe" type="Sprite2D" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D/weapon12"]
+position = Vector2(109, 94)
+scale = Vector2(5.023, 4.5)
+texture = ExtResource("11_c65d2")
+region_enabled = true
+region_rect = Rect2(31.7995, 127.907, 16.5544, 32.2133)
+
 [node name="HScrollBar" type="HScrollBar" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll"]
 layout_mode = 0
 offset_left = 300.0
@@ -719,7 +824,8 @@ theme_override_styles/scroll = SubResource("StyleBoxTexture_dwdvj")
 theme_override_styles/grabber = SubResource("StyleBoxTexture_sqpo1")
 theme_override_styles/grabber_highlight = SubResource("StyleBoxTexture_4inse")
 theme_override_styles/grabber_pressed = SubResource("StyleBoxTexture_l86d1")
-max_value = 1048.0
+max_value = 2084.0
+value = 2084.0
 
 [node name="PotionsCategory" type="NinePatchRect" parent="ContainerExt"]
 layout_mode = 0
@@ -912,6 +1018,7 @@ theme_override_styles/grabber = SubResource("StyleBoxTexture_sqpo1")
 theme_override_styles/grabber_highlight = SubResource("StyleBoxTexture_4inse")
 theme_override_styles/grabber_pressed = SubResource("StyleBoxTexture_l86d1")
 max_value = 264.0
+value = 264.0
 
 [node name="EquimentsCategoru" type="NinePatchRect" parent="ContainerExt"]
 layout_mode = 0
@@ -1294,6 +1401,7 @@ theme_override_styles/grabber = SubResource("StyleBoxTexture_sqpo1")
 theme_override_styles/grabber_highlight = SubResource("StyleBoxTexture_4inse")
 theme_override_styles/grabber_pressed = SubResource("StyleBoxTexture_l86d1")
 max_value = 2052.0
+value = 2052.0
 
 [node name="ContainerInfo" type="NinePatchRect" parent="."]
 layout_mode = 0
@@ -1307,60 +1415,20 @@ patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 7
 
-[node name="ValueBar128x16" type="Sprite2D" parent="ContainerInfo"]
+[node name="w1" type="Control" parent="ContainerInfo"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ValueBar128x16" type="Sprite2D" parent="ContainerInfo/w1"]
 position = Vector2(274, 48.5)
 scale = Vector2(3.46875, 3.9375)
 texture = ExtResource("21_yovdj")
 
-[node name="ItemName" type="Label" parent="ContainerInfo"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -219.0
-offset_top = 21.0
-offset_right = 221.0
-offset_bottom = 65.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(0.956863, 0.647059, 0.407843, 1)
-theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("3_wn4im")
-theme_override_font_sizes/font_size = 50
-text = "Wooden Dagger"
-horizontal_alignment = 1
-
-[node name="WoodenDagger" type="Sprite2D" parent="ContainerInfo"]
-position = Vector2(270, 282)
-scale = Vector2(11.4928, 8.9858)
-texture = ExtResource("4_wqmtr")
-region_enabled = true
-region_rect = Rect2(32.9416, 11.4972, 13.0577, 36.603)
-
-[node name="Desc" type="Label" parent="ContainerInfo"]
-layout_mode = 0
-offset_left = 54.0
-offset_top = 434.0
-offset_right = 499.0
-offset_bottom = 617.0
-theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("21_72xbj")
-theme_override_font_sizes/font_size = 35
-text = "Short, but deadly. Poke your
-enemies 'till their death."
-
-[node name="Stats" type="Label" parent="ContainerInfo"]
-layout_mode = 0
-offset_left = 54.0
-offset_top = 542.0
-offset_right = 499.0
-offset_bottom = 617.0
-theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("21_72xbj")
-theme_override_font_sizes/font_size = 35
-text = "+5 ATK
-+10 SPD"
-
-[node name="Button" type="Button" parent="ContainerInfo"]
+[node name="Button" type="Button" parent="ContainerInfo/w1"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -1384,6 +1452,526 @@ theme_override_fonts/font = ExtResource("21_72xbj")
 theme_override_font_sizes/font_size = 64
 text = "BUY"
 
+[node name="Stats" type="Label" parent="ContainerInfo/w1"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 542.0
+offset_right = 499.0
+offset_bottom = 617.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("21_72xbj")
+theme_override_font_sizes/font_size = 35
+text = "+5 ATK
++10 SPD"
+
+[node name="Desc" type="Label" parent="ContainerInfo/w1"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 434.0
+offset_right = 499.0
+offset_bottom = 617.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("21_72xbj")
+theme_override_font_sizes/font_size = 35
+text = "Short, but deadly. Poke your
+enemies 'till their death."
+
+[node name="WoodenDagger" type="Sprite2D" parent="ContainerInfo/w1"]
+position = Vector2(270, 282)
+scale = Vector2(11.4928, 8.9858)
+texture = ExtResource("4_wqmtr")
+region_enabled = true
+region_rect = Rect2(32.9416, 11.4972, 13.0577, 36.603)
+
+[node name="ItemName" type="Label" parent="ContainerInfo/w1"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -219.0
+offset_top = 21.0
+offset_right = 221.0
+offset_bottom = 81.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.956863, 0.647059, 0.407843, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_wn4im")
+theme_override_font_sizes/font_size = 50
+text = "Wooden Dagger"
+horizontal_alignment = 1
+
+[node name="p1" type="Control" parent="ContainerInfo"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ValueBar128x16" type="Sprite2D" parent="ContainerInfo/p1"]
+position = Vector2(274, 48.5)
+scale = Vector2(3.46875, 3.9375)
+texture = ExtResource("21_yovdj")
+
+[node name="Button" type="Button" parent="ContainerInfo/p1"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = -91.0
+offset_right = -7.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_disabled_color = Color(0, 0.74902, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0.258824, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0.258824, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.258824, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0.74902, 0, 1)
+theme_override_colors/font_color = Color(0, 0.74902, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0.74902, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("21_72xbj")
+theme_override_font_sizes/font_size = 64
+text = "BUY"
+
+[node name="Stats" type="Label" parent="ContainerInfo/p1"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 542.0
+offset_right = 499.0
+offset_bottom = 617.0
+theme_override_colors/font_color = Color(0, 1, 0.0980392, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("21_72xbj")
+theme_override_font_sizes/font_size = 35
+text = "Replenishes +10 HP."
+
+[node name="Desc" type="Label" parent="ContainerInfo/p1"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 434.0
+offset_right = 499.0
+offset_bottom = 617.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("21_72xbj")
+theme_override_font_sizes/font_size = 35
+text = "Hey, it's cheap! Better than
+nothin'."
+
+[node name="ItemName" type="Label" parent="ContainerInfo/p1"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -219.0
+offset_top = 21.0
+offset_right = 221.0
+offset_bottom = 81.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.0235294, 0.556863, 0.227451, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_wn4im")
+theme_override_font_sizes/font_size = 50
+text = "Weak Potion
+"
+horizontal_alignment = 1
+
+[node name="GreenPotion" type="AnimatedSprite2D" parent="ContainerInfo/p1"]
+position = Vector2(270, 282)
+scale = Vector2(10, 10)
+sprite_frames = ExtResource("13_1dudq")
+animation = &"green_pot"
+autoplay = "green_pot"
+frame_progress = 0.913212
+
+[node name="p2" type="Control" parent="ContainerInfo"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ValueBar128x16" type="Sprite2D" parent="ContainerInfo/p2"]
+position = Vector2(274, 48.5)
+scale = Vector2(3.46875, 3.9375)
+texture = ExtResource("21_yovdj")
+
+[node name="Button" type="Button" parent="ContainerInfo/p2"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = -91.0
+offset_right = -7.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_disabled_color = Color(0, 0.74902, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0.258824, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0.258824, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.258824, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0.74902, 0, 1)
+theme_override_colors/font_color = Color(0, 0.74902, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0.74902, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("21_72xbj")
+theme_override_font_sizes/font_size = 64
+text = "BUY"
+
+[node name="Stats" type="Label" parent="ContainerInfo/p2"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 542.0
+offset_right = 499.0
+offset_bottom = 617.0
+theme_override_colors/font_color = Color(0, 1, 0.0980392, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("21_72xbj")
+theme_override_font_sizes/font_size = 35
+text = "Replenishes +25 HP."
+
+[node name="Desc" type="Label" parent="ContainerInfo/p2"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 434.0
+offset_right = 499.0
+offset_bottom = 617.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("21_72xbj")
+theme_override_font_sizes/font_size = 35
+text = "Tastes like you're drinking
+water. Quite awkward. :P"
+
+[node name="ItemName" type="Label" parent="ContainerInfo/p2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -219.0
+offset_top = 21.0
+offset_right = 221.0
+offset_bottom = 81.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.0941176, 0.6, 0.780392, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_wn4im")
+theme_override_font_sizes/font_size = 50
+text = "Awkward Potion"
+horizontal_alignment = 1
+
+[node name="BluePotion" type="AnimatedSprite2D" parent="ContainerInfo/p2"]
+position = Vector2(270, 282)
+scale = Vector2(10, 10)
+sprite_frames = ExtResource("14_q60js")
+animation = &"blue_pot"
+autoplay = "blue_pot"
+frame_progress = 0.862297
+
+[node name="p3" type="Control" parent="ContainerInfo"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ValueBar128x16" type="Sprite2D" parent="ContainerInfo/p3"]
+position = Vector2(274, 48.5)
+scale = Vector2(3.46875, 3.9375)
+texture = ExtResource("21_yovdj")
+
+[node name="Button" type="Button" parent="ContainerInfo/p3"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = -91.0
+offset_right = -7.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_disabled_color = Color(0, 0.74902, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0.258824, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0.258824, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.258824, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0.74902, 0, 1)
+theme_override_colors/font_color = Color(0, 0.74902, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0.74902, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("21_72xbj")
+theme_override_font_sizes/font_size = 64
+text = "BUY"
+
+[node name="Stats" type="Label" parent="ContainerInfo/p3"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 542.0
+offset_right = 499.0
+offset_bottom = 617.0
+theme_override_colors/font_color = Color(0, 1, 0.0980392, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("21_72xbj")
+theme_override_font_sizes/font_size = 35
+text = "Replenishes +50 HP."
+
+[node name="Desc" type="Label" parent="ContainerInfo/p3"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 434.0
+offset_right = 499.0
+offset_bottom = 617.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("21_72xbj")
+theme_override_font_sizes/font_size = 35
+text = "Something tells me that this
+one is freaky."
+
+[node name="ItemName" type="Label" parent="ContainerInfo/p3"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -219.0
+offset_top = 21.0
+offset_right = 221.0
+offset_bottom = 81.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.580392, 0.152941, 0.831373, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_wn4im")
+theme_override_font_sizes/font_size = 50
+text = "Perplexed Potion"
+horizontal_alignment = 1
+
+[node name="PurplePotion" type="AnimatedSprite2D" parent="ContainerInfo/p3"]
+position = Vector2(270, 282)
+scale = Vector2(10, 10)
+sprite_frames = ExtResource("15_0n1gm")
+animation = &"purple_pot"
+autoplay = "purple_pot"
+frame_progress = 0.713304
+
+[node name="p4" type="Control" parent="ContainerInfo"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ValueBar128x16" type="Sprite2D" parent="ContainerInfo/p4"]
+position = Vector2(274, 48.5)
+scale = Vector2(3.46875, 3.9375)
+texture = ExtResource("21_yovdj")
+
+[node name="Button" type="Button" parent="ContainerInfo/p4"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = -91.0
+offset_right = -7.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_disabled_color = Color(0, 0.74902, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0.258824, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0.258824, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.258824, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0.74902, 0, 1)
+theme_override_colors/font_color = Color(0, 0.74902, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0.74902, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("21_72xbj")
+theme_override_font_sizes/font_size = 64
+text = "BUY"
+
+[node name="Stats" type="Label" parent="ContainerInfo/p4"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 542.0
+offset_right = 499.0
+offset_bottom = 617.0
+theme_override_colors/font_color = Color(0, 1, 0.0980392, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("21_72xbj")
+theme_override_font_sizes/font_size = 35
+text = "Replenishes +100 HP."
+
+[node name="Stats2" type="Label" parent="ContainerInfo/p4"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 575.0
+offset_right = 499.0
+offset_bottom = 611.0
+theme_override_colors/font_color = Color(1, 0.85098, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("21_72xbj")
+theme_override_font_sizes/font_size = 35
+text = "+10 Movement SPD."
+
+[node name="Desc" type="Label" parent="ContainerInfo/p4"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 434.0
+offset_right = 499.0
+offset_bottom = 617.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("21_72xbj")
+theme_override_font_sizes/font_size = 35
+text = "Ooh, shiny."
+
+[node name="ItemName" type="Label" parent="ContainerInfo/p4"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -219.0
+offset_top = 21.0
+offset_right = 221.0
+offset_bottom = 81.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.886275, 0.294118, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_wn4im")
+theme_override_font_sizes/font_size = 50
+text = "Mythical Potion"
+horizontal_alignment = 1
+
+[node name="YellowPotion" type="AnimatedSprite2D" parent="ContainerInfo/p4"]
+position = Vector2(270, 282)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_7bm2h")
+animation = &"yellow_pot"
+autoplay = "yellow_pot"
+frame_progress = 0.0128562
+
+[node name="p5" type="Control" parent="ContainerInfo"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ValueBar128x16" type="Sprite2D" parent="ContainerInfo/p5"]
+position = Vector2(274, 48.5)
+scale = Vector2(3.46875, 3.9375)
+texture = ExtResource("21_yovdj")
+
+[node name="Button" type="Button" parent="ContainerInfo/p5"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = -91.0
+offset_right = -7.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_disabled_color = Color(0, 0.74902, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0.258824, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0.258824, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.258824, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0.74902, 0, 1)
+theme_override_colors/font_color = Color(0, 0.74902, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0.74902, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("21_72xbj")
+theme_override_font_sizes/font_size = 64
+text = "BUY"
+
+[node name="Stats" type="Label" parent="ContainerInfo/p5"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 542.0
+offset_right = 499.0
+offset_bottom = 578.0
+theme_override_colors/font_color = Color(0, 1, 0.0980392, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("21_72xbj")
+theme_override_font_sizes/font_size = 35
+text = "Replenishes +150 HP."
+
+[node name="Stats2" type="Label" parent="ContainerInfo/p5"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 575.0
+offset_right = 499.0
+offset_bottom = 611.0
+theme_override_colors/font_color = Color(1, 0.85098, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("21_72xbj")
+theme_override_font_sizes/font_size = 35
+text = "+25 Movement SPD."
+
+[node name="Stats3" type="Label" parent="ContainerInfo/p5"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 605.0
+offset_right = 499.0
+offset_bottom = 641.0
+theme_override_colors/font_color = Color(0.780392, 0.0941176, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("21_72xbj")
+theme_override_font_sizes/font_size = 35
+text = "+50 MAX HP."
+
+[node name="Desc" type="Label" parent="ContainerInfo/p5"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 434.0
+offset_right = 499.0
+offset_bottom = 617.0
+theme_override_colors/font_color = Color(0.780392, 0.0941176, 0.223529, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("21_72xbj")
+theme_override_font_sizes/font_size = 35
+text = "LET YOUR BURNING RAGE TAKE
+OVER."
+
+[node name="ItemName" type="Label" parent="ContainerInfo/p5"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -219.0
+offset_top = 21.0
+offset_right = 221.0
+offset_bottom = 81.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.831373, 0.152941, 0.243137, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_wn4im")
+theme_override_font_sizes/font_size = 50
+text = "Enraging Potion"
+horizontal_alignment = 1
+
+[node name="RedPotion" type="AnimatedSprite2D" parent="ContainerInfo/p5"]
+position = Vector2(270, 282)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_5mey2")
+animation = &"red_pot"
+autoplay = "red_pot"
+frame_progress = 0.0218014
+
 [node name="TopPattern" type="Sprite2D" parent="."]
 self_modulate = Color(1, 1, 1, 0)
 position = Vector2(-0.500031, 124.75)
@@ -1397,7 +1985,6 @@ scale = Vector2(5, 3.154)
 texture = ExtResource("22_yyvuq")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-process_mode = 4
 active = false
 libraries = {
 "": SubResource("AnimationLibrary_vvng7")
@@ -1407,7 +1994,13 @@ libraries = {
 stream = ExtResource("37_ogtt3")
 bus = &"SFX"
 
-[node name="ShopScrollingSFX" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("38_1yyps")
+[node name="PotionBubbleSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("39_bhiuk")
 volume_db = -6.0
 bus = &"SFX"
+
+[connection signal="pressed" from="ContainerExt/PotionsCategory/Label/PotionScroll/Node2D/Potion1/greenpotbutton" to="." method="_on_greenpotbutton_pressed"]
+[connection signal="pressed" from="ContainerExt/PotionsCategory/Label/PotionScroll/Node2D/Potion2/bluepotbutton" to="." method="_on_bluepotbutton_pressed"]
+[connection signal="pressed" from="ContainerExt/PotionsCategory/Label/PotionScroll/Node2D/Potion3/purplepotbutton" to="." method="_on_purplepotbutton_pressed"]
+[connection signal="pressed" from="ContainerExt/PotionsCategory/Label/PotionScroll/Node2D/Potion4/yellowpotbutton" to="." method="_on_yellowpotbutton_pressed"]
+[connection signal="pressed" from="ContainerExt/PotionsCategory/Label/PotionScroll/Node2D/Potion5/redpotbutton" to="." method="_on_redpotbutton_pressed"]

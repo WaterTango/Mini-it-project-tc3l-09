@@ -1,9 +1,12 @@
-[gd_scene load_steps=84 format=4 uid="uid://bwn2x4mky6dpq"]
+[gd_scene load_steps=87 format=4 uid="uid://bwn2x4mky6dpq"]
 
 [ext_resource type="Script" path="res://Scripts/world_2_2.gd" id="1_oobcj"]
 [ext_resource type="PackedScene" uid="uid://d2yr2v1e0ibvc" path="res://Scenes/Game_scene/player.tscn" id="1_whs3t"]
 [ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="2_65htj"]
+[ext_resource type="Texture2D" uid="uid://req0p8niwbae" path="res://shaz_images/UI/Fantasy Minimal Pixel Art UI/UI/HotkeyBox_34x34.png" id="2_we5tx"]
+[ext_resource type="Script" path="res://Scenes/Game_scene/minimap2-2.gd" id="3_0k7yx"]
 [ext_resource type="PackedScene" uid="uid://bubxqu7jdai64" path="res://Scenes/mainmenu/pausemenu.tscn" id="4_ehf7m"]
+[ext_resource type="Texture2D" uid="uid://b0ijbmy8ovpev" path="res://shaz_images/minimap/w2-2.png" id="4_jcswx"]
 [ext_resource type="Script" path="res://Scenes/mainmenu/pausemenuW2.gd" id="5_gslor"]
 [ext_resource type="TileSet" uid="uid://hejtinux6a7x" path="res://Scenes/Game_scene/world_1.tres" id="5_njlrm"]
 [ext_resource type="Texture2D" uid="uid://dktpn7ohj3m42" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Green Woods/Assets/forest.png" id="5_xxcp6"]
@@ -4092,6 +4095,37 @@ metadata/_edit_use_anchors_ = true
 libraries = {
 "": SubResource("AnimationLibrary_ljjtb")
 }
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer"]
+offset_left = 43.0
+offset_top = 43.0
+offset_right = 357.0
+offset_bottom = 357.0
+texture = ExtResource("2_we5tx")
+patch_margin_left = 7
+patch_margin_top = 7
+patch_margin_right = 7
+patch_margin_bottom = 7
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer"]
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 350.0
+offset_bottom = 350.0
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(300, 300)
+render_target_update_mode = 4
+script = ExtResource("3_0k7yx")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/SubViewportContainer/SubViewport"]
+position = Vector2(0, 500)
+scale = Vector2(4.245, 4.245)
+texture = ExtResource("4_jcswx")
+
+[node name="Camera2D" type="Camera2D" parent="CanvasLayer/SubViewportContainer/SubViewport"]
+zoom = Vector2(0.25, 0.25)
 
 [node name="Level2_2TP" type="StaticBody2D" parent="."]
 z_index = 3

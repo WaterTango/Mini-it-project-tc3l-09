@@ -19,7 +19,9 @@ func _on_body_entered(body: Node2D) -> void:
 
 func _on_body_exited(body: Node2D) -> void:
 	if body is Player:
-		$"../CanvasLayer/shopmenu".hide()
+		$"../CanvasLayer/shopmenu/shopintro".play("shop_outro")
 		$"../CanvasLayer/SubViewportContainer".show()
 		$"../CanvasLayer/NinePatchRect".show()
+		await get_tree().create_timer(1).timeout
+		$"../CanvasLayer/shopmenu".hide()
 		

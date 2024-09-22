@@ -170,20 +170,20 @@ func _on_petalgrove_key_body_entered(body: Node2D) -> void:
 	if body is Player:
 		$KeySFX.play()
 		petal_key = true
-		$Player/Camera2D/petalgrovekey_frag.show()
+		$"Player/Camera2D/quest_1/questdetails/N Petal Grove/NkeyObtained".show()
 		$"Keys/key fragments/petalgrovekey".queue_free()
 func _on_forestislandkey_body_entered(body: Node2D) -> void:
 	if body is Player:
 		$KeySFX.play()
 		forest_key = true
-		$Player/Camera2D/forestisland_frag.show()
+		$"Player/Camera2D/quest_1/questdetails/W Forest Island/WkeyObtained".show()
 		$"Keys/key fragments/islandkey".queue_free()
 
 func _on_shatteredtombkey_body_entered(body: Node2D) -> void:
 	if body is Player:
 		$KeySFX.play()
 		tomb_key = true
-		$Player/Camera2D/tombkey_frag.show()
+		$"Player/Camera2D/quest_1/questdetails/E Shattered Tomb/EkeyObtained".show()
 		$"Keys/key fragments/tombkey".queue_free()
 		
 

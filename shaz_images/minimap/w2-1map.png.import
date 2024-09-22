@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://v0irx7u516ca"
-path="res://.godot/imported/Spritesheet_UI_Flat_Animated.png-9ca084acb11d6fe8d5575239d08f8750.ctex"
+uid="uid://efq7g3k4geml"
+path="res://.godot/imported/w2-1map.png-ec9e6181c72e4624a36497a994210abd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://shaz_images/UI/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Spritesheets/Spritesheet_UI_Flat_Animated.png"
-dest_files=["res://.godot/imported/Spritesheet_UI_Flat_Animated.png-9ca084acb11d6fe8d5575239d08f8750.ctex"]
+source_file="res://shaz_images/minimap/w2-1map.png"
+dest_files=["res://.godot/imported/w2-1map.png-ec9e6181c72e4624a36497a994210abd.ctex"]
 
 [params]
 
