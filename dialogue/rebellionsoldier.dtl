@@ -9,5 +9,6 @@ rebellionsoldier: We’ve searched for you everywhere, my lord! We feared the wo
 rebellionsoldier: GUARDS! Open The gate!
 [signal arg="opengate"]
 [signal arg="quest_talk_to_commander"]
+[signal arg="rebel_gate_soldier_finished"]
 [signal arg="exit"]
 [end_timeline]
