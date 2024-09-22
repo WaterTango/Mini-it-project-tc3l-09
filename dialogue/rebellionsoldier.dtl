@@ -8,5 +8,6 @@ rebellionsoldier: M-M-My lord! Your Highness! Forgive me, I didn’t recognize y
 rebellionsoldier: We’ve searched for you everywhere, my lord! We feared the worst!
 rebellionsoldier: GUARDS! Open The gate!
 [signal arg="opengate"]
+[signal arg="quest_talk_to_commander"]
 [signal arg="exit"]
 [end_timeline]

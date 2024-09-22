@@ -27,7 +27,7 @@ func _ready() -> void:
 	$Player/Camera2D/forestisland_frag.hide()
 	$Player/Camera2D/tombkey_frag.hide()
 	$Player/Camera2D/key_Notification.hide()
-
+	$Player/Camera2D/quest_1/questbanner/opengate.hide()
 	#===============================================================================================
 	#SceneTransitionAnimation.play("fade_out")
 	pass
@@ -192,8 +192,9 @@ func _on_key_hide_fragnoti() -> void:
 	$Player/Camera2D/forestisland_frag.hide()
 	$Player/Camera2D/tombkey_frag.hide()
 	$Player/Camera2D/quest_1.hide()
-	$Player/Camera2D/quest_1/Label.hide()
-
+	$Player/Camera2D/quest_1/questdetails.hide()
+	$Player/Camera2D/quest_1/questbanner/questtitle.hide()
+	$Player/Camera2D/quest_1/questbanner/opengate.show()
 
 func _on_priestnpc_collect_key() -> void:
 	pass # Replace with function body.

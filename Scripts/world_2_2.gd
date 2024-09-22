@@ -5,6 +5,11 @@ extends Node2D
 @onready var settings_menu: settingsmenuInGameW2 = $Player/Camera2D/settings_menu
 
 var paused = false
+var in_tent = false
+#commander quest
+var commander_quest = false
+signal quest_commander
+signal exit_gate_open
 # shaz's AudioPlaybackScript =======================================================================
 func _ready() -> void:
 	$army_camp/tentroof.show()
@@ -14,10 +19,11 @@ func _ready() -> void:
 	$CanvasLayer/SceneFade.play("fade in")
 	await get_tree().create_timer(3).timeout
 	$"World 2 Music".play()
+	$Player/Camera2D/commander_quest.hide()
 	#===============================================================================================
 	#SceneTransitionAnimation.play("fade_out")
 	pass
-	
+
 #this is to reload levels
 func _input(_event):
 	#if Input.is_action_pressed("exit"):
@@ -78,6 +84,13 @@ func DialogicSignal(arg: String):
 	if arg == "opengate":
 		$Doors/gate/gate_collision.disabled = true
 		$Doors/gate/Sprite2D.hide()
+	if arg == "quest_talk_to_commander":
+		commander_quest = true
+		emit_signal("quest_commander")
+		
+	if arg == "commander_interact_finished":
+		commander_quest = false
+		emit_signal("exit_gate_open")
 		
 func run_dialogue(dialogue_string):
 	Dialogic.start(dialogue_string)
@@ -123,6 +136,7 @@ func _on_commander_area_body_entered(body: Node2D) -> void:
 		$Player/Camera2D.zoom.x = 5
 		$Player/Camera2D.zoom.y = 5
 		# shaz's pausemenuScaling and SFX
+		commander_quest_stop()
 		pauseMenuHouseScaling()
 
 
@@ -132,4 +146,18 @@ func _on_commander_area_body_exited(body: Node2D) -> void:
 		$Player/Camera2D.zoom.x = 3
 		$Player/Camera2D.zoom.y = 3
 		# shaz's pausemenuScaling
+		in_tent = false
 		pauseMenuDefaultScaling()
+		
+func commander_quest_start():
+	$Player/Camera2D/commander_quest.show()
+	$Player/Camera2D/commander_quest/questdetails.show()
+
+
+func commander_quest_stop():
+	$Player/Camera2D/commander_quest.hide()
+	$Player/Camera2D/commander_quest/questdetails.hide()
+
+
+func _on_quest_commander() -> void:
+	commander_quest_start()

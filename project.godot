@@ -43,6 +43,7 @@ directories/dtl_directory={
 "chesttutorial": "res://dialogue/chesttutorial.dtl",
 "commander_interact": "res://dialogue/commander_interact.dtl",
 "door_blocked": "res://dialogue/door_blocked.dtl",
+"exit_gate": "res://dialogue/exit_gate.dtl",
 "final_meet": "res://dialogue/final_meet.dtl",
 "final_meet2": "res://dialogue/final_meet2.dtl",
 "gatenorthnpc_interact": "res://dialogue/gatenorthnpc_interact.dtl",

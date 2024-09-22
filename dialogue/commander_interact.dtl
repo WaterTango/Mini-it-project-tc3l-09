@@ -1,7 +1,7 @@
 [signal arg="chatting"]
 [style name="lightnovel_File"]
 join rebel_knight left
-rebel_knight: My lord! You lived 
+rebel_knight: My lord! You lived
 join player (playerside) right
 player: Tell me about the place of the siege
 rebel_knight: The palace walls are heavily fortified, and Argus will have his best men guarding the gates. We’ll need to strike hard and fast before they can regroup.
@@ -11,4 +11,5 @@ player: Then we don’t fail. Argus has ruled through fear long enough. Tomorrow
 leave rebel_knight
 player: (I should sneak past the guard and rally the men inside the throne room)
 [signal arg="exit"]
+[signal arg="commander_interact_finished"]
 [end_timeline]

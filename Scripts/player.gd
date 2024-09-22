@@ -13,7 +13,9 @@ var current_dir = "none"
 var player_character
 var attack_inprogress = false
 var can_move = true
-
+var face_right = null
+var player_position = $".".position
+var knock = 50
 func _physics_process(delta):
 	player_movement(delta)
 	enemy_attack()
@@ -87,6 +89,7 @@ func play_anim(movement):
 	#when player press d the sprite face the side
 	if dir == "right":
 		anim.flip_h = false
+		face_right = true
 		if movement == 1:
 			anim.play("side_walk")
 		elif movement == 0:
@@ -96,6 +99,7 @@ func play_anim(movement):
 	#when player press a it flips the sprite so that it faces left
 	if dir == "left":
 		anim.flip_h = true
+		face_right = false
 		if movement == 1:
 			anim.play("side_walk")
 		elif movement == 0:
@@ -136,8 +140,13 @@ func _on_player_hitbox_body_exited(body: Node2D) -> void:
 		enemy_inattack_range = false
 		$healthregen.start()
 		
-		
-		
+#this shit dont work dawg
+#func knockback():
+		#if face_right:
+			#player_position = knock
+		#if face_right == false:
+			#player_position = -knock
+			#
 func enemy_attack():
 	if enemy_inattack_range and player_alive and enemy_attack_cooldown == true:
 		health = health - 20
@@ -172,4 +181,7 @@ func _on_healthregen_timeout() -> void:
 	health = 100
 	$regen.play()
 	$HealthBar.value = health
+	
+
+
 	
