@@ -1,0 +1,4 @@
+[signal arg="chatting"]
+[style name="lightnovel_File"]
+(I Should talk to the Rebel Commander first before leaving)
+[signal arg="exit"]
