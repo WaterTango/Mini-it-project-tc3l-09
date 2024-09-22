@@ -10,6 +10,7 @@ var in_tent = false
 var commander_quest = false
 signal quest_commander
 signal exit_gate_open
+var gate_soldier_chat = true
 # shaz's AudioPlaybackScript =======================================================================
 func _ready() -> void:
 	$army_camp/tentroof.show()
@@ -91,7 +92,8 @@ func DialogicSignal(arg: String):
 	if arg == "commander_interact_finished":
 		commander_quest = false
 		emit_signal("exit_gate_open")
-		
+	if arg == "rebel_gate_soldier_finished":
+		gate_soldier_chat = false
 func run_dialogue(dialogue_string):
 	Dialogic.start(dialogue_string)
 # Pausemenu Zoom Compatibility Scaling ===========================================
@@ -127,8 +129,10 @@ func _on_key_key_pickedup() -> void:
 
 func _on_gate_area_body_entered(body: Node2D) -> void:
 	if body is Player:
-		run_dialogue("rebellionsoldier")
-
+		if gate_soldier_chat:
+			run_dialogue("rebellionsoldier")
+			
+	
 
 func _on_commander_area_body_entered(body: Node2D) -> void:
 	if body is Player:

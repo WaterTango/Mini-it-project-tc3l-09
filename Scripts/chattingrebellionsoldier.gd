@@ -52,6 +52,7 @@ func _process(delta: float) -> void:
 		$AnimatedSprite2D.play("chatting_soldier_idle")
 		run_dialogue("soldiernpc_interact")
 		
+		
 func choose(array):
 	array.shuffle()
 	return array.front()
