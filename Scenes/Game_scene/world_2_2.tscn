@@ -1,4 +1,4 @@
-[gd_scene load_steps=107 format=4 uid="uid://bwn2x4mky6dpq"]
+[gd_scene load_steps=108 format=4 uid="uid://bwn2x4mky6dpq"]
 
 [ext_resource type="Script" path="res://Scripts/world_2_2.gd" id="1_oobcj"]
 [ext_resource type="PackedScene" uid="uid://d2yr2v1e0ibvc" path="res://Scenes/Game_scene/player.tscn" id="1_whs3t"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Scenes/Game_scene/minimap2-2.gd" id="3_0k7yx"]
 [ext_resource type="PackedScene" uid="uid://bubxqu7jdai64" path="res://Scenes/mainmenu/pausemenu.tscn" id="4_ehf7m"]
 [ext_resource type="Texture2D" uid="uid://b0ijbmy8ovpev" path="res://shaz_images/minimap/w2-2.png" id="4_jcswx"]
+[ext_resource type="PackedScene" uid="uid://b5jide7ow1ec0" path="res://Scenes/shopmenu/inventory/inventoryUI.tscn" id="5_57t47"]
 [ext_resource type="Script" path="res://Scenes/mainmenu/pausemenuW2.gd" id="5_gslor"]
 [ext_resource type="TileSet" uid="uid://hejtinux6a7x" path="res://Scenes/Game_scene/world_1.tres" id="5_njlrm"]
 [ext_resource type="Texture2D" uid="uid://dktpn7ohj3m42" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Green Woods/Assets/forest.png" id="5_xxcp6"]
@@ -4224,6 +4225,8 @@ texture = ExtResource("4_jcswx")
 [node name="Camera2D" type="Camera2D" parent="CanvasLayer/SubViewportContainer/SubViewport"]
 zoom = Vector2(0.25, 0.25)
 
+[node name="inventory" parent="CanvasLayer" instance=ExtResource("5_57t47")]
+
 [node name="Level2_2TP" type="StaticBody2D" parent="."]
 z_index = 3
 position = Vector2(-1, -384)
@@ -4335,9 +4338,9 @@ autoplay = "rebel_knight_idle"
 [node name="questdetails" type="NinePatchRect" parent="Player/Camera2D/commander_quest"]
 layout_mode = 0
 offset_left = 29.0
-offset_top = 282.0
+offset_top = 275.0
 offset_right = 228.0
-offset_bottom = 362.0
+offset_bottom = 348.0
 texture = ExtResource("15_xhive")
 patch_margin_left = 4
 patch_margin_top = 3
@@ -4351,10 +4354,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -100.5
-offset_top = -25.0
-offset_right = 180.5
-offset_bottom = 48.0
+offset_left = -102.5
+offset_top = -22.5
+offset_right = 178.5
+offset_bottom = 50.5
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.73, 0.73)
@@ -4363,7 +4366,8 @@ theme_override_colors/font_shadow_color = Color(0.577008, 0.577008, 0.577008, 1)
 theme_override_constants/shadow_outline_size = 0
 theme_override_fonts/font = ExtResource("14_qjmd3")
 theme_override_font_sizes/font_size = 16
-text = "Speak with the rebel commander to uncover the details of their plans
+text = "Speak with the Rebel Commander
+to uncover the details of their plans
  for the upcoming siege. 
 
 "

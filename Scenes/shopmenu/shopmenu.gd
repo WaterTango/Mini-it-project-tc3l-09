@@ -4,6 +4,7 @@ var coins = 0
 
 var shop
 
+@export var item: InventoryItem
 #var save_shop_path = `user://save`
 #buttons
 
@@ -90,7 +91,6 @@ func _on_yellowpotbutton_pressed() -> void:
 	$ContainerInfo/p5.visible = false
 	$ContainerInfo/p4.visible = true
 	$PotionBubbleSFX.play()
-	
 
 
 func _on_redpotbutton_pressed() -> void:
@@ -102,3 +102,7 @@ func _on_redpotbutton_pressed() -> void:
 	$ContainerInfo/p5.visible = true
 	$PotionBubbleSFX.play()
 	
+
+
+func _on_buttonp1_pressed() -> void:
+	pass # Replace with function body.
