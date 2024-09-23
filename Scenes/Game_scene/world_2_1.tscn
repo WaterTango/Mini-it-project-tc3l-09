@@ -164,7 +164,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(960, -1000)]
+"values": [Vector2(960, 0)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -188,7 +188,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [2052.0]
+"values": [0.0]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -200,7 +200,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [264.0]
+"values": [0.0]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -212,7 +212,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [2084.0]
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_cvkov"]
@@ -3226,6 +3226,8 @@ libraries = {
 
 [node name="shopmenu" parent="CanvasLayer" instance=ExtResource("3_cpo5d")]
 visible = false
+offset_top = -540.0
+offset_bottom = -540.0
 
 [node name="shopintro" type="AnimationPlayer" parent="CanvasLayer/shopmenu"]
 libraries = {
@@ -3948,8 +3950,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 4
 theme_override_fonts/font = ExtResource("49_h4a0s")
 theme_override_font_sizes/font_size = 16
-text = "Open the Palace garden gate
-"
+text = "Open the Palace Garden Gate"
 horizontal_alignment = 1
 
 [node name="questdetails" type="NinePatchRect" parent="Player/Camera2D/quest_1"]
@@ -3957,7 +3958,7 @@ layout_mode = 0
 offset_left = 28.0
 offset_top = 274.0
 offset_right = 228.0
-offset_bottom = 354.0
+offset_bottom = 348.0
 texture = ExtResource("38_x85oy")
 patch_margin_left = 4
 patch_margin_top = 3
@@ -3971,10 +3972,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -91.5
-offset_top = -35.0
-offset_right = 59.5
-offset_bottom = -19.0
+offset_left = -91.0
+offset_top = -33.0
+offset_right = 60.0
+offset_bottom = -17.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 0.454902, 1, 1)
@@ -4004,9 +4005,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -90.5
+offset_left = -90.0
 offset_top = -9.0
-offset_right = 56.5
+offset_right = 65.0
 offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -4038,9 +4039,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -91.0
-offset_top = 16.0
+offset_top = 13.0
 offset_right = 67.0
-offset_bottom = 32.0
+offset_bottom = 29.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 0, 0, 1)

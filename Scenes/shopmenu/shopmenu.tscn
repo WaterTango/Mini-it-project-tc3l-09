@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://tvrth5rx40j5"]
+[gd_scene load_steps=67 format=3 uid="uid://tvrth5rx40j5"]
 
 [ext_resource type="Script" path="res://Scenes/shopmenu/shopmenu.gd" id="1_mqpal"]
 [ext_resource type="FontFile" uid="uid://f3bxx2ry3bsw" path="res://shaz_fonts/BLKCHCRY.TTF" id="1_sqqw3"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cggxj63dlhv8b" path="res://shaz_images/UI/Icons_Essential/v1.2/Icons/Basket.png" id="6_44mgr"]
 [ext_resource type="Texture2D" uid="uid://b74fahatycicu" path="res://shaz_images/UI/Fantasy Minimal Pixel Art UI/UI/CornerKnot_14x14.png" id="6_afacd"]
 [ext_resource type="Texture2D" uid="uid://0kh45f0tml0n" path="res://Assets/Pixel Crawler - FREE - 1.8/Weapons/Bone/Bone.png" id="8_jpcgx"]
+[ext_resource type="Texture2D" uid="uid://wehximlyou5u" path="res://shaz_images/UI/Icons_Essential/v1.2/Icons/Locked.png" id="8_mnah4"]
 [ext_resource type="Script" path="res://Scenes/shopmenu/pot.gd" id="10_hdc50"]
 [ext_resource type="Texture2D" uid="uid://b4e66ght3ct3" path="res://Assets/pixel assets/Pixel Crawler - Reinforced Iron Weapons/Weapons.png" id="11_c65d2"]
 [ext_resource type="Script" path="res://Scenes/shopmenu/equ.gd" id="11_fl34k"]
@@ -476,7 +477,6 @@ offset_bottom = 246.0
 script = ExtResource("5_op3se")
 
 [node name="Node2D" type="Node2D" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll"]
-position = Vector2(-2084, 0)
 
 [node name="weapon1" type="Panel" parent="ContainerExt/WeaponsCategory/Label/WeaponScroll/Node2D"]
 offset_left = -3.0
@@ -495,7 +495,7 @@ offset_left = 160.0
 offset_top = 129.0
 offset_right = 210.0
 offset_bottom = 179.0
-icon = ExtResource("6_44mgr")
+icon = ExtResource("8_mnah4")
 flat = true
 expand_icon = true
 
@@ -523,7 +523,7 @@ offset_left = 160.0
 offset_top = 129.0
 offset_right = 210.0
 offset_bottom = 179.0
-icon = ExtResource("6_44mgr")
+icon = ExtResource("8_mnah4")
 flat = true
 expand_icon = true
 
@@ -551,7 +551,7 @@ offset_left = 160.0
 offset_top = 129.0
 offset_right = 210.0
 offset_bottom = 179.0
-icon = ExtResource("6_44mgr")
+icon = ExtResource("8_mnah4")
 flat = true
 expand_icon = true
 
@@ -579,7 +579,7 @@ offset_left = 160.0
 offset_top = 129.0
 offset_right = 210.0
 offset_bottom = 179.0
-icon = ExtResource("6_44mgr")
+icon = ExtResource("8_mnah4")
 flat = true
 expand_icon = true
 
@@ -607,7 +607,7 @@ offset_left = 160.0
 offset_top = 129.0
 offset_right = 210.0
 offset_bottom = 179.0
-icon = ExtResource("6_44mgr")
+icon = ExtResource("8_mnah4")
 flat = true
 expand_icon = true
 
@@ -635,7 +635,7 @@ offset_left = 160.0
 offset_top = 129.0
 offset_right = 210.0
 offset_bottom = 179.0
-icon = ExtResource("6_44mgr")
+icon = ExtResource("8_mnah4")
 flat = true
 expand_icon = true
 
@@ -663,7 +663,7 @@ offset_left = 160.0
 offset_top = 129.0
 offset_right = 210.0
 offset_bottom = 179.0
-icon = ExtResource("6_44mgr")
+icon = ExtResource("8_mnah4")
 flat = true
 expand_icon = true
 
@@ -691,7 +691,7 @@ offset_left = 160.0
 offset_top = 129.0
 offset_right = 210.0
 offset_bottom = 179.0
-icon = ExtResource("6_44mgr")
+icon = ExtResource("8_mnah4")
 flat = true
 expand_icon = true
 
@@ -719,7 +719,7 @@ offset_left = 160.0
 offset_top = 129.0
 offset_right = 210.0
 offset_bottom = 179.0
-icon = ExtResource("6_44mgr")
+icon = ExtResource("8_mnah4")
 flat = true
 expand_icon = true
 
@@ -747,7 +747,7 @@ offset_left = 160.0
 offset_top = 129.0
 offset_right = 210.0
 offset_bottom = 179.0
-icon = ExtResource("6_44mgr")
+icon = ExtResource("8_mnah4")
 flat = true
 expand_icon = true
 
@@ -775,7 +775,7 @@ offset_left = 160.0
 offset_top = 129.0
 offset_right = 210.0
 offset_bottom = 179.0
-icon = ExtResource("6_44mgr")
+icon = ExtResource("8_mnah4")
 flat = true
 expand_icon = true
 
@@ -803,7 +803,7 @@ offset_left = 160.0
 offset_top = 129.0
 offset_right = 210.0
 offset_bottom = 179.0
-icon = ExtResource("6_44mgr")
+icon = ExtResource("8_mnah4")
 flat = true
 expand_icon = true
 
@@ -1071,7 +1071,7 @@ offset_left = 160.0
 offset_top = 129.0
 offset_right = 210.0
 offset_bottom = 179.0
-icon = ExtResource("6_44mgr")
+icon = ExtResource("8_mnah4")
 flat = true
 expand_icon = true
 
@@ -1099,7 +1099,7 @@ offset_left = 160.0
 offset_top = 129.0
 offset_right = 210.0
 offset_bottom = 179.0
-icon = ExtResource("6_44mgr")
+icon = ExtResource("8_mnah4")
 flat = true
 expand_icon = true
 
@@ -1127,7 +1127,7 @@ offset_left = 160.0
 offset_top = 129.0
 offset_right = 210.0
 offset_bottom = 179.0
-icon = ExtResource("6_44mgr")
+icon = ExtResource("8_mnah4")
 flat = true
 expand_icon = true
 

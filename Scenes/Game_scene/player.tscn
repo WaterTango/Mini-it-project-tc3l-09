@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://d2yr2v1e0ibvc"]
+[gd_scene load_steps=73 format=3 uid="uid://d2yr2v1e0ibvc"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_6x7ad"]
 [ext_resource type="AudioStream" uid="uid://dedgcbhn54wf1" path="res://shaz_audio/SFX/player_death.mp3" id="2_kexgf"]
@@ -10,6 +10,13 @@
 [ext_resource type="AudioStream" uid="uid://c1s7ee3liklg3" path="res://shaz_audio/SFX/hit.mp3" id="8_822xd"]
 [ext_resource type="Texture2D" uid="uid://danjdwd6mvly8" path="res://PlayerAsset/Idle/Character_Idle.png" id="9_0nubb"]
 [ext_resource type="AudioStream" uid="uid://dgnq1rqhcns4e" path="res://shaz_audio/SFX/health-pickup-6860.mp3" id="10_ykcfo"]
+[ext_resource type="Texture2D" uid="uid://b74fahatycicu" path="res://shaz_images/UI/Fantasy Minimal Pixel Art UI/UI/CornerKnot_14x14.png" id="11_djoql"]
+[ext_resource type="Texture2D" uid="uid://dnredsxm5faxe" path="res://shaz_images/UI/Fantasy Minimal Pixel Art UI/UI/HealthBarPanel_160x41.png" id="11_q4sdk"]
+[ext_resource type="Texture2D" uid="uid://c3phlpf28y4r7" path="res://shaz_images/UI/Fantasy Minimal Pixel Art UI/UI/HeartIcons_32x32.png" id="12_r00sf"]
+[ext_resource type="Texture2D" uid="uid://b6uxnbuhois2u" path="res://shaz_images/UI/Fantasy Minimal Pixel Art UI/UI/TitleBox_64x16.png" id="13_wy2tc"]
+[ext_resource type="Texture2D" uid="uid://teckc4lo64ne" path="res://shaz_images/UI/Fantasy Minimal Pixel Art UI/UI/ValueRed_120x8.png" id="14_2ull8"]
+[ext_resource type="Texture2D" uid="uid://cuh7wuly67tld" path="res://shaz_images/UI/Fantasy Minimal Pixel Art UI/UI/ValueBlue_120x8.png" id="14_fw46d"]
+[ext_resource type="Texture2D" uid="uid://de47n8o805ke7" path="res://shaz_images/UI/16x16 RPG Item Pack/Item__57.png" id="15_w20y3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5tavq"]
 radius = 6.0
@@ -409,10 +416,10 @@ animations = [{
 }]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s3qje"]
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(0, 0, 0, 0.392157)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pcq6n"]
-bg_color = Color(0.905882, 0, 0, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wy3ic"]
+texture = ExtResource("14_2ull8")
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 y_sort_enabled = true
@@ -476,19 +483,6 @@ sprite_frames = SubResource("SpriteFrames_p3uhm")
 animation = &"player_hit"
 frame_progress = 1.0
 
-[node name="HealthBar" type="ProgressBar" parent="."]
-visible = false
-modulate = Color(1, 1, 1, 0.678431)
-z_index = 3
-offset_left = -7.0
-offset_top = -28.0
-offset_right = 7.0
-offset_bottom = -26.0
-theme_override_styles/background = SubResource("StyleBoxFlat_s3qje")
-theme_override_styles/fill = SubResource("StyleBoxFlat_pcq6n")
-rounded = true
-show_percentage = false
-
 [node name="healthregen" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
@@ -497,13 +491,79 @@ one_shot = true
 stream = ExtResource("10_ykcfo")
 volume_db = -8.0
 
+[node name="CornerKnot14x15" type="Sprite2D" parent="."]
+z_index = 11
+position = Vector2(-134, 154)
+scale = Vector2(0.683674, 0.683674)
+texture = ExtResource("11_djoql")
+
+[node name="CornerKnot14x14" type="Sprite2D" parent="."]
+z_index = 11
+position = Vector2(-134, 166)
+scale = Vector2(0.714286, 0.714286)
+texture = ExtResource("11_djoql")
+
+[node name="HPHud" type="NinePatchRect" parent="."]
+z_index = 10
+offset_left = -294.0
+offset_top = 148.496
+offset_right = -123.0
+offset_bottom = 170.496
+texture = ExtResource("11_q4sdk")
+region_rect = Rect2(0, 0, 160, 41)
+patch_margin_left = 9
+patch_margin_top = 8
+patch_margin_right = 9
+patch_margin_bottom = 8
+
+[node name="DEFHud" type="NinePatchRect" parent="HPHud"]
+z_index = -1
+layout_mode = 0
+offset_left = 2.0
+offset_top = 17.0
+offset_right = 141.0
+offset_bottom = 27.0
+texture = ExtResource("13_wy2tc")
+region_rect = Rect2(0, 0, 63.5651, 16)
+patch_margin_left = 5
+patch_margin_top = 2
+patch_margin_right = 6
+patch_margin_bottom = 5
+
+[node name="DefHudTheme" type="Sprite2D" parent="HPHud"]
+position = Vector2(75, 23.004)
+scale = Vector2(1.05, 0.375)
+texture = ExtResource("14_fw46d")
+
+[node name="Def" type="Sprite2D" parent="HPHud"]
+position = Vector2(138, 23.504)
+scale = Vector2(0.593748, 0.625)
+texture = ExtResource("15_w20y3")
+
+[node name="HPIcon" type="Sprite2D" parent="."]
+z_index = 10
+position = Vector2(-287, 159)
+scale = Vector2(1.5, 1.4375)
+texture = ExtResource("12_r00sf")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+z_index = 10
+offset_left = -287.0
+offset_top = 154.0
+offset_right = -130.0
+offset_bottom = 164.0
+theme_override_styles/background = SubResource("StyleBoxFlat_s3qje")
+theme_override_styles/fill = SubResource("StyleBoxTexture_wy3ic")
+rounded = true
+show_percentage = false
+
 [connection signal="playerdead" from="." to="." method="_on_playerdead"]
 [connection signal="finished" from="player_death" to="." method="_on_player_death_finished"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
-[connection signal="timeout" from="attack_cooldown" to="." method="_on_attack_timer_timeout"]
 [connection signal="timeout" from="attack_cooldown" to="." method="_on_attack_cooldown_timeout"]
+[connection signal="timeout" from="attack_cooldown" to="." method="_on_attack_timer_timeout"]
 [connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_exited" from="player_hitbox" to="." method="_on_player_hitbox_body_exited"]
 [connection signal="animation_finished" from="hit" to="." method="_on_hit_animation_finished"]
-[connection signal="timeout" from="healthregen" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="healthregen" to="." method="_on_healthregen_timeout"]
+[connection signal="timeout" from="healthregen" to="." method="_on_timer_timeout"]
