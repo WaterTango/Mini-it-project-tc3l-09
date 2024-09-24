@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=4 uid="uid://dah0ts1ddbmoi"]
+[gd_scene load_steps=75 format=4 uid="uid://dah0ts1ddbmoi"]
 
 [ext_resource type="Script" path="res://Scripts/world_1_1.gd" id="1_56o2p"]
 [ext_resource type="TileSet" uid="uid://hejtinux6a7x" path="res://Scenes/Game_scene/world_1.tres" id="1_lsqgd"]
@@ -16,12 +16,18 @@
 [ext_resource type="PackedScene" uid="uid://bd1kwqyk1mfkt" path="res://Scenes/Game_scene/jailkey_notification.tscn" id="10_o3k6y"]
 [ext_resource type="PackedScene" uid="uid://qnhy1jlu3dkk" path="res://Scenes/settingsmenu/settingsmenu.tscn" id="11_0daj7"]
 [ext_resource type="Script" path="res://Scripts/door1.gd" id="11_0p0f3"]
+[ext_resource type="Texture2D" uid="uid://cswic0kq3qlh" path="res://shaz_images/UI/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Banner02a.png" id="11_6iega"]
 [ext_resource type="PackedScene" uid="uid://cx328oij4ofwy" path="res://Scenes/Game_scene/skeleton.tscn" id="11_btl6v"]
+[ext_resource type="FontFile" uid="uid://b8oo2dguy484y" path="res://shaz_fonts/basis33.ttf" id="12_7wpoa"]
 [ext_resource type="Script" path="res://Scripts/door1_collision.gd" id="12_ckv20"]
 [ext_resource type="Script" path="res://Scenes/settingsmenu/settingsmenuINGAME.gd" id="12_eeqmo"]
+[ext_resource type="Texture2D" uid="uid://dqo2pgf00slin" path="res://shaz_images/UI/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Banner03a.png" id="13_7h0vu"]
 [ext_resource type="Texture2D" uid="uid://d16kv83clog3f" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/door_close.png" id="13_dr23q"]
+[ext_resource type="SpriteFrames" uid="uid://cuaxoo2u21gln" path="res://Scenes/Game_scene/requirement_keyquest.tres" id="14_rdvoh"]
 [ext_resource type="Texture2D" uid="uid://bmmvdmf6lyld5" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/door_open.png" id="14_rwj3n"]
+[ext_resource type="Texture2D" uid="uid://bejjgjo8urgm7" path="res://shaz_images/UI/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_IconCheck01a.png" id="15_8umet"]
 [ext_resource type="PackedScene" uid="uid://pt3v68ebmn6" path="res://Scenes/Game_scene/key.tscn" id="15_ubtxd"]
+[ext_resource type="Texture2D" uid="uid://hmx22fnnj7rk" path="res://Assets/pixel assets/library/Assets/librarychestkeyclosed.png" id="16_hbdxl"]
 [ext_resource type="AudioStream" uid="uid://bx0bb6f6awmqu" path="res://shaz_audio/SFX/DoorSFX.mp3" id="18_ubu3r"]
 [ext_resource type="Texture2D" uid="uid://bg2l64yx11h02" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/jaildoor_closed.png" id="19_u8qbg"]
 [ext_resource type="Texture2D" uid="uid://1u86c15c4o3x" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/jaildoor_open.png" id="20_1bbpn"]
@@ -90,6 +96,8 @@ _data = {
 "fade in": SubResource("Animation_8g7vc"),
 "fade out": SubResource("Animation_d0r68")
 }
+
+[sub_resource type="Theme" id="Theme_b7oar"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_th08e"]
 size = Vector2(45, 20)
@@ -569,6 +577,127 @@ visible = false
 z_index = 12
 position = Vector2(100, 162)
 
+[node name="quest_1" type="Control" parent="entitites/Player/Camera2D"]
+visible = false
+z_index = 10
+layout_mode = 3
+anchors_preset = 0
+offset_left = 79.0
+offset_top = -408.0
+offset_right = 119.0
+offset_bottom = -368.0
+theme = SubResource("Theme_b7oar")
+
+[node name="questbanner" type="NinePatchRect" parent="entitites/Player/Camera2D/quest_1"]
+z_index = 15
+layout_mode = 0
+offset_left = 40.0
+offset_top = 231.0
+offset_right = 240.0
+offset_bottom = 261.0
+texture = ExtResource("11_6iega")
+patch_margin_left = 9
+patch_margin_top = 5
+patch_margin_right = 8
+patch_margin_bottom = 6
+
+[node name="questtitle" type="Label" parent="entitites/Player/Camera2D/quest_1/questbanner"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -84.0
+offset_top = -10.0
+offset_right = 49.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.705695, 0.436172, 0.306493, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 4
+theme_override_fonts/font = ExtResource("12_7wpoa")
+theme_override_font_sizes/font_size = 16
+text = "Find the key chest"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="entitites/Player/Camera2D/quest_1/questbanner"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -107.0
+offset_top = -11.0
+offset_right = 110.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.815, 0.815)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 4
+theme_override_fonts/font = ExtResource("12_7wpoa")
+theme_override_font_sizes/font_size = 19
+text = "Open the exit door"
+horizontal_alignment = 1
+
+[node name="questdetails" type="NinePatchRect" parent="entitites/Player/Camera2D/quest_1"]
+z_index = 20
+layout_mode = 0
+offset_left = 46.0
+offset_top = 264.0
+offset_right = 229.0
+offset_bottom = 315.0
+texture = ExtResource("13_7h0vu")
+patch_margin_left = 4
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 4
+
+[node name="key_collect" type="Label" parent="entitites/Player/Camera2D/quest_1/questdetails"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -83.5
+offset_top = -19.5
+offset_right = 84.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("12_7wpoa")
+theme_override_font_sizes/font_size = 16
+text = "Collect dungeon 
+exit key"
+
+[node name="key Requirement" type="AnimatedSprite2D" parent="entitites/Player/Camera2D/quest_1/questdetails/key_collect"]
+position = Vector2(143, 19)
+scale = Vector2(0.625, 0.625)
+sprite_frames = ExtResource("14_rdvoh")
+animation = &"req"
+autoplay = "req"
+
+[node name="NkeyObtained" type="Sprite2D" parent="entitites/Player/Camera2D/quest_1/questdetails/key_collect"]
+visible = false
+position = Vector2(143, 19)
+scale = Vector2(1.23529, 1.42857)
+texture = ExtResource("15_8umet")
+
+[node name="Key" type="Sprite2D" parent="entitites/Player/Camera2D/quest_1"]
+z_index = 16
+position = Vector2(205, 244)
+scale = Vector2(0.640626, 0.625001)
+texture = ExtResource("16_hbdxl")
+
 [node name="interact_popup2" type="Sprite2D" parent="entitites/Player"]
 visible = false
 z_index = 10
@@ -605,7 +734,7 @@ position = Vector2(595, -12)
 
 [node name="skeleton9" parent="entitites/skeleton" instance=ExtResource("11_btl6v")]
 z_index = 2
-position = Vector2(418, -156)
+position = Vector2(419, -124)
 
 [node name="skeleton10" parent="entitites/skeleton" instance=ExtResource("11_btl6v")]
 z_index = 2
@@ -1163,7 +1292,7 @@ bus = &"SFX"
 
 [node name="key" parent="Keys" instance=ExtResource("15_ubtxd")]
 z_index = 1
-position = Vector2(-72, -304)
+position = Vector2(-41, -292)
 
 [node name="KeySFX" type="AudioStreamPlayer" parent="Keys/key"]
 stream = ExtResource("20_npl7y")

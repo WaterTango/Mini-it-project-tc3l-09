@@ -16,14 +16,22 @@ var can_move = true
 var face_right = null
 var player_position = $".".position
 var knock = 50
+var show_healthbar = true
 func _physics_process(delta):
 	player_movement(delta)
 	enemy_attack()
-		
+	if show_healthbar:
+		$HealthBar.show()
+		$HPHud.show()
+	if show_healthbar == false:
+		$HealthBar.hide()
+		$HPHud.hide()
+		$HPIcon.hide()
+		$CornerKnot14x14.hide()
+		$CornerKnot14x15.hide()
 func _ready():
 	$AnimatedSprite2D.play("front_idle")
 	$HealthBar.value = health
-	$HealthBar.hide()
 func player_movement(_delta):
 	if can_move:
 	#diagonal up right 0

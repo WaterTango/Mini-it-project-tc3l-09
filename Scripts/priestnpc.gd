@@ -113,6 +113,7 @@ func _on_chat_detection_area_body_entered(body: Node2D) -> void:
 		player_in_chat_zone = true
 		$interact_popup3.show()
 		$"../mark".hide()
+		$"../../../Player/Camera2D/talk_to_grandmeister".hide()
 
 
 func _on_chat_detection_area_body_exited(body: Node2D) -> void:

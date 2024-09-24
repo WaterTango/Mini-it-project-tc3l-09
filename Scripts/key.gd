@@ -6,6 +6,7 @@ signal popup_hide
 signal key_pickedup
 signal doorblocked_notification
 signal hide_fragnoti
+
 var door_opened = false
 var keytaken = false
 var in_door1_zone = false

@@ -541,19 +541,20 @@ scale = Vector2(0.593748, 0.625)
 texture = ExtResource("15_w20y3")
 
 [node name="HPIcon" type="Sprite2D" parent="."]
-z_index = 10
+z_index = 11
 position = Vector2(-287, 159)
 scale = Vector2(1.5, 1.4375)
 texture = ExtResource("12_r00sf")
 
 [node name="HealthBar" type="ProgressBar" parent="."]
 z_index = 10
-offset_left = -287.0
+offset_left = -272.0
 offset_top = 154.0
-offset_right = -130.0
+offset_right = -131.0
 offset_bottom = 164.0
 theme_override_styles/background = SubResource("StyleBoxFlat_s3qje")
 theme_override_styles/fill = SubResource("StyleBoxTexture_wy3ic")
+value = 100.0
 rounded = true
 show_percentage = false
 

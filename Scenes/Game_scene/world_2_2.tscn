@@ -1,4 +1,4 @@
-[gd_scene load_steps=108 format=4 uid="uid://bwn2x4mky6dpq"]
+[gd_scene load_steps=110 format=4 uid="uid://bwn2x4mky6dpq"]
 
 [ext_resource type="Script" path="res://Scripts/world_2_2.gd" id="1_oobcj"]
 [ext_resource type="PackedScene" uid="uid://d2yr2v1e0ibvc" path="res://Scenes/Game_scene/player.tscn" id="1_whs3t"]
@@ -33,8 +33,10 @@
 [ext_resource type="Script" path="res://Scripts/door_library.gd" id="18_45ehk"]
 [ext_resource type="Script" path="res://Scripts/door1_collision.gd" id="19_carnr"]
 [ext_resource type="Texture2D" uid="uid://dcsxl8hwanurb" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Green Woods/Assets/Props.png" id="19_m30m5"]
+[ext_resource type="SpriteFrames" uid="uid://cuaxoo2u21gln" path="res://Scenes/Game_scene/requirement_keyquest.tres" id="19_plh8b"]
 [ext_resource type="Texture2D" uid="uid://d16kv83clog3f" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/door_close.png" id="20_offjg"]
 [ext_resource type="Texture2D" uid="uid://cyu5a38g5wbdc" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Green Woods/Assets/forest_texture/TX Shadow.png" id="20_vxecm"]
+[ext_resource type="Texture2D" uid="uid://bejjgjo8urgm7" path="res://shaz_images/UI/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_IconCheck01a.png" id="20_y0lwp"]
 [ext_resource type="Texture2D" uid="uid://ces3fatiks2vw" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Green Woods/Assets/forest_texture/TX Struct.png" id="21_6as8y"]
 [ext_resource type="Texture2D" uid="uid://cnhp21decqan" path="res://Assets/pixel assets/library/Assets/library_closed.png" id="21_bbnqd"]
 [ext_resource type="Texture2D" uid="uid://ouf3icuvgc5" path="res://Assets/pixel assets/library/Assets/library_opened.png" id="22_udtu1"]
@@ -4362,7 +4364,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.73, 0.73)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_shadow_color = Color(0.577008, 0.577008, 0.577008, 1)
+theme_override_colors/font_shadow_color = Color(0.366595, 0.366595, 0.366595, 1)
 theme_override_constants/shadow_outline_size = 0
 theme_override_fonts/font = ExtResource("14_qjmd3")
 theme_override_font_sizes/font_size = 16
@@ -4373,6 +4375,117 @@ to uncover the details of their plans
 "
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="search_for_key" type="Control" parent="Player/Camera2D"]
+visible = false
+z_index = 10
+layout_mode = 3
+anchors_preset = 0
+offset_left = 3.0
+offset_right = 43.0
+offset_bottom = 40.0
+
+[node name="find_key" type="NinePatchRect" parent="Player/Camera2D/search_for_key"]
+layout_mode = 0
+offset_left = 103.0
+offset_top = -179.0
+offset_right = 315.0
+offset_bottom = -140.0
+texture = ExtResource("13_dyi83")
+patch_margin_left = 9
+patch_margin_top = 5
+patch_margin_right = 8
+patch_margin_bottom = 6
+
+[node name="detail" type="Label" parent="Player/Camera2D/search_for_key/find_key"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -97.0
+offset_top = -10.0
+offset_right = 99.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.787472, 0.537206, 1.15514e-06, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 4
+theme_override_fonts/font = ExtResource("14_qjmd3")
+theme_override_font_sizes/font_size = 16
+text = "Sneak into the palace"
+horizontal_alignment = 1
+
+[node name="key_questdetails" type="NinePatchRect" parent="Player/Camera2D/search_for_key"]
+visible = false
+layout_mode = 0
+offset_left = 108.0
+offset_top = -141.0
+offset_right = 308.0
+offset_bottom = -81.0
+texture = ExtResource("15_xhive")
+patch_margin_left = 4
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 4
+
+[node name="detail" type="Label" parent="Player/Camera2D/search_for_key/key_questdetails"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -123.0
+offset_top = -19.0
+offset_right = 73.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0.498039, 0.262745, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 4
+theme_override_fonts/font = ExtResource("14_qjmd3")
+theme_override_font_sizes/font_size = 16
+text = "Find the chest key"
+horizontal_alignment = 1
+
+[node name="detail2" type="Label" parent="Player/Camera2D/search_for_key/key_questdetails"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = 3.5
+offset_right = 66.0
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0.498039, 0.262745, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 4
+theme_override_fonts/font = ExtResource("14_qjmd3")
+theme_override_font_sizes/font_size = 16
+text = "Enter the palace"
+horizontal_alignment = 1
+
+[node name="key Requirement" type="AnimatedSprite2D" parent="Player/Camera2D/search_for_key/key_questdetails"]
+position = Vector2(174, 20)
+scale = Vector2(0.625, 0.625)
+sprite_frames = ExtResource("19_plh8b")
+animation = &"req"
+autoplay = "req"
+
+[node name="EkeyObtained" type="Sprite2D" parent="Player/Camera2D/search_for_key/key_questdetails"]
+visible = false
+position = Vector2(175, 19)
+scale = Vector2(1.23529, 1.42857)
+texture = ExtResource("20_y0lwp")
 
 [node name="interact_popup2" type="Sprite2D" parent="Player"]
 visible = false
@@ -4586,17 +4699,11 @@ debug_color = Color(0.976471, 0, 0, 0.419608)
 [node name="Keys" type="Node" parent="."]
 
 [node name="key" parent="Keys" instance=ExtResource("24_gcpm2")]
-position = Vector2(-41, -780)
+position = Vector2(-656, -194)
 
 [node name="KeySFX" type="AudioStreamPlayer" parent="Keys/key"]
 stream = ExtResource("29_j8fre")
 bus = &"SFX"
-
-[node name="normalchest" parent="Keys" instance=ExtResource("34_iufxv")]
-position = Vector2(-657, -197)
-
-[node name="normalchest2" parent="Keys" instance=ExtResource("34_iufxv")]
-position = Vector2(640, -198)
 
 [node name="normalchest3" parent="Keys" instance=ExtResource("34_iufxv")]
 position = Vector2(-752, -782)
@@ -4702,7 +4809,7 @@ process_mode = 1
 
 [node name="soldier" parent="mob/soldier" instance=ExtResource("37_hv2ck")]
 z_index = 4
-position = Vector2(-684, -153)
+position = Vector2(-713, -98)
 
 [node name="soldier2" parent="mob/soldier" instance=ExtResource("37_hv2ck")]
 z_index = 4
@@ -4730,7 +4837,7 @@ position = Vector2(502, -696)
 
 [node name="soldier5" parent="mob/soldier" instance=ExtResource("37_hv2ck")]
 z_index = 4
-position = Vector2(-645, -2)
+position = Vector2(-617, 68)
 
 [node name="knight" type="Node" parent="mob"]
 
@@ -4748,7 +4855,7 @@ position = Vector2(-315, 287)
 
 [node name="knight2" parent="mob/knight" instance=ExtResource("38_qp8vs")]
 z_index = 4
-position = Vector2(570, -149)
+position = Vector2(681, -81)
 
 [node name="knight10" parent="mob/knight" instance=ExtResource("38_qp8vs")]
 z_index = 4
@@ -4764,7 +4871,7 @@ position = Vector2(504, -462)
 
 [node name="knight4" parent="mob/knight" instance=ExtResource("38_qp8vs")]
 z_index = 4
-position = Vector2(640, -23)
+position = Vector2(710, 86)
 
 [node name="knight7" parent="mob/knight" instance=ExtResource("38_qp8vs")]
 z_index = 4
