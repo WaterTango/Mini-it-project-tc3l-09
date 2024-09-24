@@ -4,6 +4,7 @@ extends Node2D
 # shaz's pausemenu =================================================================================
 @onready var pause_menu: pausemenuW2 = $Player/Camera2D/PauseMenu
 @onready var settings_menu: settingsmenuInGameW2 = $Player/Camera2D/settings_menu
+@onready var inventory: Control = $CanvasLayer/inventory
 
 var paused = false
 var chatting = false
@@ -69,6 +70,8 @@ func pauseMenu():
 	if paused:
 		$ResumeSFX.play()
 		$CanvasModulate.show()
+		$CanvasLayer/NinePatchRect.show()
+		$CanvasLayer/SubViewportContainer.show()
 		pause_menu.hide()
 		#Engine.time_scale = 1
 		get_tree().paused = false  
@@ -76,6 +79,9 @@ func pauseMenu():
 	else:
 		$PausedSFX.play()
 		$CanvasModulate.hide()
+		$CanvasLayer/NinePatchRect.hide()
+		$CanvasLayer/SubViewportContainer.hide()
+		inventory.hide()
 		pause_menu.show()
 		#Engine.time_scale = 0  
 		get_tree().paused = true

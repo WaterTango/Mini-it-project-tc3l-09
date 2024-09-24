@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://d2yr2v1e0ibvc"]
+[gd_scene load_steps=80 format=3 uid="uid://d2yr2v1e0ibvc"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_6x7ad"]
 [ext_resource type="AudioStream" uid="uid://dedgcbhn54wf1" path="res://shaz_audio/SFX/player_death.mp3" id="2_kexgf"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://teckc4lo64ne" path="res://shaz_images/UI/Fantasy Minimal Pixel Art UI/UI/ValueRed_120x8.png" id="14_2ull8"]
 [ext_resource type="Texture2D" uid="uid://cuh7wuly67tld" path="res://shaz_images/UI/Fantasy Minimal Pixel Art UI/UI/ValueBlue_120x8.png" id="14_fw46d"]
 [ext_resource type="Texture2D" uid="uid://de47n8o805ke7" path="res://shaz_images/UI/16x16 RPG Item Pack/Item__57.png" id="15_w20y3"]
+[ext_resource type="PackedScene" uid="uid://cpfbb0w25mx07" path="res://Scenes/deathscene/death_scene.tscn" id="18_ek1vm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5tavq"]
 radius = 6.0
@@ -421,6 +422,321 @@ bg_color = Color(0, 0, 0, 0.392157)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wy3ic"]
 texture = ExtResource("14_2ull8")
 
+[sub_resource type="Animation" id="Animation_8vw4r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.5, 1.4375)]
+}
+
+[sub_resource type="Animation" id="Animation_cf2yw"]
+resource_name = "heartbeat"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.533333, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1.5, 1.4375), Vector2(1.75, 1.677), Vector2(1.5, 1.438)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c04kr"]
+_data = {
+"RESET": SubResource("Animation_8vw4r"),
+"heartbeat": SubResource("Animation_cf2yw")
+}
+
+[sub_resource type="Animation" id="Animation_p3fox"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.223529, 0.223529, 0.223529, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect/you died:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect/you died:theme_override_colors/font_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect/you died:theme_override_constants/shadow_offset_y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ColorRect/you died:theme_override_constants/outline_size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ColorRect/respawning:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ColorRect/respawning:text")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Respawning"]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ColorRect/Death:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("ColorRect/Death:frame")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = false
+tracks/9/path = NodePath("splatSFX:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("deathplayer:active")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_co5co"]
+resource_name = "deathscene"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.223529, 0.223529, 0.223529, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect/you died:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect/you died:theme_override_colors/font_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.5, 3.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.956863, 0, 0, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect/you died:theme_override_constants/shadow_offset_y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [20]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ColorRect/you died:theme_override_constants/outline_size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [10]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ColorRect/respawning:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(4, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ColorRect/respawning:text")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(4, 5.03333, 5.66667, 5.96667, 6.7, 7, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["Respawning", "Respawning.", "Respawning.", "Respawning..", "Respawning..", "Respawning...", "Respawning..."]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ColorRect/Death:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("ColorRect/Death:frame")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(2.5, 2.66667, 2.83333, 3, 3.16667, 3.33333, 3.5, 3.66667, 3.8, 3.93333, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 3, 4, 5, 6, 7, 8, 9]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("splatSFX:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(1.8),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("deathplayer:active")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0t7yn"]
+_data = {
+"RESET": SubResource("Animation_p3fox"),
+"deathscene": SubResource("Animation_co5co")
+}
+
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 y_sort_enabled = true
 collision_layer = 3
@@ -443,7 +759,7 @@ texture_filter = 1
 position = Vector2(0, -3)
 scale = Vector2(0.93, 0.877)
 sprite_frames = SubResource("SpriteFrames_nn7uj")
-animation = &"front_idle"
+animation = &"death"
 autoplay = "front_idle"
 offset = Vector2(0.655, -11.84)
 
@@ -493,22 +809,22 @@ volume_db = -8.0
 
 [node name="CornerKnot14x15" type="Sprite2D" parent="."]
 z_index = 11
-position = Vector2(-134, 154)
-scale = Vector2(0.683674, 0.683674)
+position = Vector2(-134, 151)
+scale = Vector2(0.714, 0.714)
 texture = ExtResource("11_djoql")
 
 [node name="CornerKnot14x14" type="Sprite2D" parent="."]
 z_index = 11
-position = Vector2(-134, 166)
+position = Vector2(-134, 165)
 scale = Vector2(0.714286, 0.714286)
 texture = ExtResource("11_djoql")
 
 [node name="HPHud" type="NinePatchRect" parent="."]
 z_index = 10
 offset_left = -294.0
-offset_top = 148.496
+offset_top = 147.496
 offset_right = -123.0
-offset_bottom = 170.496
+offset_bottom = 169.496
 texture = ExtResource("11_q4sdk")
 region_rect = Rect2(0, 0, 160, 41)
 patch_margin_left = 9
@@ -540,23 +856,40 @@ position = Vector2(138, 23.504)
 scale = Vector2(0.593748, 0.625)
 texture = ExtResource("15_w20y3")
 
-[node name="HPIcon" type="Sprite2D" parent="."]
-z_index = 11
-position = Vector2(-287, 159)
-scale = Vector2(1.5, 1.4375)
-texture = ExtResource("12_r00sf")
-
 [node name="HealthBar" type="ProgressBar" parent="."]
 z_index = 10
 offset_left = -272.0
-offset_top = 154.0
+offset_top = 153.0
 offset_right = -131.0
-offset_bottom = 164.0
+offset_bottom = 163.0
 theme_override_styles/background = SubResource("StyleBoxFlat_s3qje")
 theme_override_styles/fill = SubResource("StyleBoxTexture_wy3ic")
 value = 100.0
 rounded = true
 show_percentage = false
+
+[node name="HPIcon" type="Sprite2D" parent="."]
+z_index = 11
+position = Vector2(-287, 158)
+scale = Vector2(1.99919, 1.91621)
+texture = ExtResource("12_r00sf")
+
+[node name="heartbeat" type="AnimationPlayer" parent="HPIcon"]
+reset_on_save = false
+libraries = {
+"": SubResource("AnimationLibrary_c04kr")
+}
+autoplay = "heartbeat"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="deathScene" parent="CanvasLayer" instance=ExtResource("18_ek1vm")]
+
+[node name="deathplayer2" type="AnimationPlayer" parent="CanvasLayer/deathScene"]
+libraries = {
+"": SubResource("AnimationLibrary_0t7yn")
+}
 
 [connection signal="playerdead" from="." to="." method="_on_playerdead"]
 [connection signal="finished" from="player_death" to="." method="_on_player_death_finished"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=57 format=4 uid="uid://bg65fmt31h84x"]
+[gd_scene load_steps=58 format=4 uid="uid://bg65fmt31h84x"]
 
 [ext_resource type="Script" path="res://Scripts/world_1_2.gd" id="1_lcdo5"]
 [ext_resource type="TileSet" uid="uid://hejtinux6a7x" path="res://Scenes/Game_scene/world_1.tres" id="1_lsqgd"]
+[ext_resource type="PackedScene" uid="uid://b5jide7ow1ec0" path="res://Scenes/shopmenu/inventory/inventoryUI.tscn" id="2_qf30a"]
 [ext_resource type="TileSet" uid="uid://bm6wjjk4cc7qu" path="res://Scenes/Game_scene/props.tres" id="2_un0xr"]
 [ext_resource type="PackedScene" uid="uid://d2yr2v1e0ibvc" path="res://Scenes/Game_scene/player.tscn" id="3_jdqqv"]
 [ext_resource type="Texture2D" uid="uid://ldukf2fqae02" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/image (4).png" id="4_gjgni"]
@@ -447,6 +448,8 @@ metadata/_edit_use_anchors_ = true
 libraries = {
 "": SubResource("AnimationLibrary_ljjtb")
 }
+
+[node name="inventory" parent="CanvasLayer" instance=ExtResource("2_qf30a")]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 self_modulate = Color(0.176419, 0.176419, 0.176419, 1)

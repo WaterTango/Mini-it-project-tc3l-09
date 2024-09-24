@@ -1,6 +1,7 @@
-[gd_scene load_steps=81 format=4 uid="uid://binah6hgxwfcd"]
+[gd_scene load_steps=82 format=4 uid="uid://binah6hgxwfcd"]
 
 [ext_resource type="Script" path="res://Scripts/world_1_3.gd" id="1_mrylb"]
+[ext_resource type="PackedScene" uid="uid://b5jide7ow1ec0" path="res://Scenes/shopmenu/inventory/inventoryUI.tscn" id="2_0o318"]
 [ext_resource type="PackedScene" uid="uid://d2yr2v1e0ibvc" path="res://Scenes/Game_scene/player.tscn" id="3_mbbc7"]
 [ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="4_c67gd"]
 [ext_resource type="PackedScene" uid="uid://bubxqu7jdai64" path="res://Scenes/mainmenu/pausemenu.tscn" id="5_0m0xn"]
@@ -598,6 +599,8 @@ metadata/_edit_use_anchors_ = true
 libraries = {
 "": SubResource("AnimationLibrary_ljjtb")
 }
+
+[node name="inventory" parent="CanvasLayer" instance=ExtResource("2_0o318")]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 self_modulate = Color(0.176419, 0.176419, 0.176419, 1)

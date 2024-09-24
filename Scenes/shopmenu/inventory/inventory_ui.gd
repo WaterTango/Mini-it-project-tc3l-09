@@ -24,6 +24,7 @@ func _process(delta):
 			open()
 
 func open():
+	$backpackSFX.play()
 	visible = true
 	isOpen = true
 func close():

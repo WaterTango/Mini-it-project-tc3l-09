@@ -2,6 +2,7 @@ extends Node
 
 # shaz's pausemenu ================================================================================
 @onready var pause_menu: pausemenu = $entities/Player/Camera2D/PauseMenu
+@onready var inventory: Control = $CanvasLayer/inventory
 
 var paused = false
 var current_state
@@ -79,6 +80,7 @@ func pauseMenu():
 	else:
 		$PausedSFX.play()
 		$CanvasModulate.hide()
+		inventory.hide() 
 		pause_menu.show()
 		#Engine.time_scale = 0  
 		get_tree().paused = true
