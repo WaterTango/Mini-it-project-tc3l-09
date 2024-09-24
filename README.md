@@ -84,7 +84,7 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 ### Built With
 
-* [![Godot Engine][GodotEngine.org]][Next-url]
+* [![Godot Engine][GodotEngine.org]][Godot-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -164,7 +164,8 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 [product-screenshot]: images/screenshot.png
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com 
-[GodotEngine.org]:https://godotengine.org/
+[GodotEngine.org]: https://godotengine.org/assets/logo_dark.svg
+[Godot-url]: https://godotengine.org/ 
 # Changelog
 
 ## v0.8
