@@ -24,7 +24,7 @@
 <h3 align="center">Tower Crawler</h3>
 
   <p align="center">
-    A Game Track Project made with Godot 4.3. 
+    A Game Track Project made for our student's Mini IT Project in Foundation.
     <br />
     <br />
     <br />
@@ -91,7 +91,15 @@ You were once a King, but now, you've been dethroned by your own brother. Sent t
 <!-- GETTING STARTED -->
 ## How We Started
 
-Soo at first, before the start of this game, we were confused on what type of project we were gonna do. Since we've already learned pyGame, we thought of going to the next level. Out of the 3 tracks which was Website, Application and Game Tracks, we chose the latter. Out of the Game engines present (PyGame, Godot Engine, Unity and Unreal Engine). WE chose GODOT
+Soo at first, before the start of this game, we were confused on what type of project we were gonna do. Since we've already learned pygame we thought of going to the next level. Out of the 3 tracks which was Website, Application and Game Tracks, we chose the latter. Out of the Game engines recommended (PyGame, Godot Engine, Unity and Unreal Engine). WE chose GODOT. And thank God we did, cause it is much more easier and powerful than pygame.
+
+At first, we wanted to make this game a turn-based card battler game with rogue-like elements, but then we ended up planning to make a Hack N Slash + Visual Novel genre. We were very determined on making an amazing game, until we stayed up the wee hours just to push our code. Helyz's shift was mainly from 9pm-4am (night shifts), while WaterTango was working from daytime, sometimes he's also coding at nighttime aswell. The main reason is because we had alot of problems trying to merge our code. We ended up having <b> 3 CONFLICTS </b>. At the first time ever when we wanted to merge our code, helyz was working on the intro + mainmenu, while WaterTango was working with the base game and map. It did not end pretty, and watertango had to waste 6 hours, just to download my file and put in my files one by one manually. The second time was when helyz was a noob and didn't know how to push code correctly with Git's CLI(which now he uses GitHub Desktop to avoid PTSD(he was not present during the day we learned about Git and Github)), he also had to manually reinsert his edited files to the main branch. Third times the charm, we were both working on our parts, and forgot to notify ourselves whenever we have pushed to code on GitHub. Helyz had to work his shopUI again from the start, but then it turned out better than last time, so he chill now. (⌐■_■)
+
+Moving on, we ended up joining our University's Hackerspace Club, thanks to our amazing lecturer Willie. He was also our lecturer for the subject too :P. We met a person, who we call `Godot Master` *Raven*. We were inspired on his game projects, and he gave us a burning resolve to make our game even better. So we pushed ourselves even more to deliver a great result. You can check out his amazing projects in the Acknowledges section below. We've also met alot of cool people, working on bizzare projects. *Chan* and *Lim* playtested our game, found lots of collisionbugs, gave some suggestions on what to improve and whatnot. It was quite a journey.
+
+Alas, we have deployed our game, which is still in Beta as we don't have the Hack N Slash elements yet, but we still plan to finish this even after the day we submit our project. 
+
+Made with ❤️.
 
 ### System Requirements
 
