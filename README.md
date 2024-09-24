@@ -72,11 +72,12 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## Game Description
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
+You were once a King, but now, you've been dethroned by your own brother. Sent to the depths of a dungeon cell, your mission is to crawl your way back and reclaim the throne.
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -163,7 +164,7 @@ Project Link: [https://github.com/WaterTango/Mini-it-project-tc3l-09](https://gi
 [stars-url]: https://github.comWaterTango/Mini-it-project-tc3l-09/stargazers
 [issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
 [issues-url]: https://github.com/WaterTango/Mini-it-project-tc3l-09/issues
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: https://img.itch.zone/aW1nLzE3ODk2OTIzLnBuZw==/original/7VOyHK.png
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com 
 [GodotEngine.org]: https://godotengine.org/assets/logo_dark.svg
