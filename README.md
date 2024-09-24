@@ -9,7 +9,7 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 [![Contributors][contributors-shield]][contributors-url]
-\[![Stargazers][stars-shield]][stars-url]
+[![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 
 
@@ -93,15 +93,17 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Soo at first, before the start of this game, we were confused on what type of project we were gonna do. Since we've already learned pyGame, we thought of going to the next level. Out of the 3 tracks which was Website, Application and Game Tracks, we chose the latter. Out of the Game engines present (PyGame, Godot Engine, Unity and Unreal Engine). WE chose GODOT
 
-### Prerequisites
+### System Requirements
 
-This is an example of how to list things you need to use the software and how to install them.
+Minimum Specs
 * npm
   ```sh
-  npm install npm@latest -g
+  Intel i5-5th Gen @ 2.4Ghz
+  4GB RAM
+  Intel HD Graphics 5500
+  200MB of Free Space
   ```
 
 ### Installation
@@ -109,7 +111,7 @@ This is an example of how to list things you need to use the software and how to
 1. Available at itch.io [https://example.com](https://helyz.itch.io/tower-crawler?secret=52fJEYi4RA5aYEAUXjSNTNYG8)
 2. enjoy
    ```sh
-   go play
+   go play NOW!!!
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -132,9 +134,9 @@ See the [open issues](https://github.com/github_username/repo_name/issues) for a
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+helyz - [@twitter_handle](https://twitter.com/twitter_handle) - helyz@gmail.com
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+Project Link: [https://github.com/WaterTango/Mini-it-project-tc3l-09](https://github.com/WaterTango/Mini-it-project-tc3l-09)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
