@@ -18,7 +18,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/WaterTango/Mini-it-project-tc3l-09">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="https://img.itch.zone/aW1nLzE3ODk2NzcwLnBuZw==/original/5ubgiC.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Tower Crawler</h3>
@@ -45,7 +45,7 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
-        <li><a href="#built-with">Built With</a></li>
+        <a href="#built-with">Built With</a>
         Godot Engine 4.3
       </ul>
     </li>
@@ -60,10 +60,7 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
@@ -74,7 +71,7 @@
 <!-- ABOUT THE PROJECT -->
 ## Game Description
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](https://img.itch.zone/aW1nLzE3ODk2OTIzLnBuZw==/original/7VOyHK.png)
 
 You were once a King, but now, you've been dethroned by your own brother. Sent to the depths of a dungeon cell, your mission is to crawl your way back and reclaim the throne.
 
@@ -92,24 +89,30 @@ You were once a King, but now, you've been dethroned by your own brother. Sent t
 
 
 <!-- GETTING STARTED -->
-## Getting Started
+## How We Started
 
 Soo at first, before the start of this game, we were confused on what type of project we were gonna do. Since we've already learned pyGame, we thought of going to the next level. Out of the 3 tracks which was Website, Application and Game Tracks, we chose the latter. Out of the Game engines present (PyGame, Godot Engine, Unity and Unreal Engine). WE chose GODOT
 
 ### System Requirements
 
 Minimum Specs
-* npm
+* Lowest Graphics (No Shaders)
   ```sh
   Intel i5-5th Gen @ 2.4Ghz
   4GB RAM
   Intel HD Graphics 5500
   200MB of Free Space
   ```
-
+Recommended Specs
+* Max Graphics
+  ```sh
+  Intel i5-10th Gen
+  4GB RAM
+  Nvidia GTX 1050
+  200MB of Free Space
 ### Installation
 
-1. Available at itch.io [https://example.com](https://helyz.itch.io/tower-crawler?secret=52fJEYi4RA5aYEAUXjSNTNYG8)
+1. Available at [itch.io](https://helyz.itch.io/tower-crawler?secret=52fJEYi4RA5aYEAUXjSNTNYG8)
 2. enjoy
    ```sh
    go play NOW!!!
@@ -122,11 +125,16 @@ Minimum Specs
 ## Roadmap
 
 - [ ] Combat System
-- [ ] Weapons Shop Category
+- [ ] Shop Category
+    - [ ] Weapons Full Release
+    - [ ] Equipments
 - [ ] Classes
-    - [ ] Nested Feature
+    - [ ] Assassin
+    - [ ] Knight
+    - [ ] Barbarian
+    - [ ] Reaper
 
-See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/WaterTango/Mini-it-project-tc3l-09/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -135,7 +143,8 @@ See the [open issues](https://github.com/github_username/repo_name/issues) for a
 <!-- CONTACT -->
 ## Contact
 
-helyz - [@twitter_handle](https://twitter.com/twitter_handle) - helyz@gmail.com
+* helyz - [@helyz](https://discord.gg/QbR25nfvDb) - Discord
+* WaterTango - [@watertango] - Discord
 
 Project Link: [https://github.com/WaterTango/Mini-it-project-tc3l-09](https://github.com/WaterTango/Mini-it-project-tc3l-09)
 
@@ -146,9 +155,12 @@ Project Link: [https://github.com/WaterTango/Mini-it-project-tc3l-09](https://gi
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* []()
-* []()
-* []()
+* Willie
+* MMU Hackerspace
+  * [Raven](https://thesquawkyraven.itch.io)
+  * Chan
+  * Lim
+* Heedy
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -167,7 +179,7 @@ Project Link: [https://github.com/WaterTango/Mini-it-project-tc3l-09](https://gi
 [product-screenshot]: https://img.itch.zone/aW1nLzE3ODk2OTIzLnBuZw==/original/7VOyHK.png
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com 
-[GodotEngine.org]: https://godotengine.org/assets/logo_dark.svg
+[GodotEngine.org]: https://godotengine.org/assets/logo_dark.svg 
 [Godot-url]: https://godotengine.org/ 
 # Changelog
 
