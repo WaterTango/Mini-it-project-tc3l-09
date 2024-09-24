@@ -1,7 +1,14 @@
 extends CharacterBody2D
 
+
 class_name Player
+
+
 signal playerdead
+
+#shaz's deathanim ----------------------------------------------------------------------------------
+@onready var deathplayer: AnimationPlayer = $CanvasLayer/deathScene/deathplayer2 as AnimationPlayer
+
 #combat values
 var health = 100
 var player_alive = true
@@ -29,9 +36,16 @@ func _physics_process(delta):
 		$HPIcon.hide()
 		$CornerKnot14x14.hide()
 		$CornerKnot14x15.hide()
+		
+		
+		
 func _ready():
 	$AnimatedSprite2D.play("front_idle")
 	$HealthBar.value = health
+
+	
+	
+	
 func player_movement(_delta):
 	if can_move:
 	#diagonal up right 0
@@ -172,13 +186,15 @@ func enemy_attack():
 			emit_signal("playerdead")
 			print("died")
 
-
 func _on_attack_cooldown_timeout() -> void:
 	enemy_attack_cooldown = true
 
 func _on_playerdead() -> void:
+	$CanvasLayer.visible = true
 	$AnimatedSprite2D.play("death")
-	await get_tree().create_timer(2).timeout
+	$player_death.play()
+	deathplayer.play("deathscene")
+	await get_tree().create_timer(8).timeout
 	get_tree().reload_current_scene()
 	
 

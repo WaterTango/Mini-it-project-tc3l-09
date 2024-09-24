@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5jide7ow1ec0"]
+[gd_scene load_steps=5 format=3 uid="uid://b5jide7ow1ec0"]
 
 [ext_resource type="Script" path="res://Scenes/shopmenu/inventory/inventory_ui.gd" id="1_d7xwh"]
 [ext_resource type="Texture2D" uid="uid://b6uxnbuhois2u" path="res://shaz_images/UI/Fantasy Minimal Pixel Art UI/UI/TitleBox_64x16.png" id="1_ptcvh"]
 [ext_resource type="PackedScene" uid="uid://cba557b0ovfcu" path="res://Scenes/shopmenu/inventory/inventory_slot.tscn" id="3_jqllg"]
+[ext_resource type="AudioStream" uid="uid://c563t225vd3oj" path="res://shaz_audio/SFX/BackpackSFX.mp3" id="4_g8dcp"]
 
 [node name="inventory" type="Control"]
 layout_mode = 3
@@ -66,3 +67,8 @@ offset_left = 413.0
 offset_top = 14.0
 offset_right = 485.0
 offset_bottom = 86.0
+
+[node name="backpackSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_g8dcp")
+volume_db = 3.0
+bus = &"SFX"

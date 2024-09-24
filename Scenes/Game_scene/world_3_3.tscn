@@ -1,7 +1,8 @@
-[gd_scene load_steps=81 format=4 uid="uid://bmaj057vxjvul"]
+[gd_scene load_steps=82 format=4 uid="uid://bmaj057vxjvul"]
 
 [ext_resource type="Script" path="res://Scripts/world_3_3.gd" id="1_6brog"]
 [ext_resource type="Texture2D" uid="uid://dk47txfrdo6hq" path="res://Assets/pixel assets/castle/Assets/ATiles.png" id="2_n1mrr"]
+[ext_resource type="PackedScene" uid="uid://b5jide7ow1ec0" path="res://Scenes/shopmenu/inventory/inventoryUI.tscn" id="2_wpmue"]
 [ext_resource type="Texture2D" uid="uid://dkavl6ffevps4" path="res://Assets/pixel assets/library/Assets/Tiles.png" id="3_t8qqg"]
 [ext_resource type="TileSet" uid="uid://cl5petjwvv2yd" path="res://new_tile_set.tres" id="4_bci5w"]
 [ext_resource type="TileSet" uid="uid://bm6wjjk4cc7qu" path="res://Scenes/Game_scene/props.tres" id="5_xcnbl"]
@@ -4047,6 +4048,8 @@ metadata/_edit_use_anchors_ = true
 libraries = {
 "": SubResource("AnimationLibrary_ljjtb")
 }
+
+[node name="inventory" parent="CanvasLayer" instance=ExtResource("2_wpmue")]
 
 [node name="collisions" type="StaticBody2D" parent="."]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=4 uid="uid://o8fuiwevj7kb"]
+[gd_scene load_steps=113 format=4 uid="uid://o8fuiwevj7kb"]
 
 [ext_resource type="Script" path="res://Scripts/world_2_1.gd" id="1_6krru"]
 [ext_resource type="PackedScene" uid="uid://bf5px1sosea0q" path="res://Scenes/Game_scene/orc.tscn" id="2_swtqg"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://cijoarrtyou7a" path="res://Scenes/Game_scene/skeleton_warrior.tscn" id="8_m0dvs"]
 [ext_resource type="PackedScene" uid="uid://bhaxqd7s6djc2" path="res://Scenes/Game_scene/priestnpc.tscn" id="8_sc0jj"]
 [ext_resource type="PackedScene" uid="uid://43qdefcarx8k" path="res://Scenes/Game_scene/chattingsoldier_north.tscn" id="9_2tmw7"]
+[ext_resource type="PackedScene" uid="uid://cpfbb0w25mx07" path="res://Scenes/deathscene/death_scene.tscn" id="9_grrvu"]
 [ext_resource type="Texture2D" uid="uid://dts0o3myi8sd8" path="res://Assets/tilesets/RF_Catacombs_v1.0/mainlevbuild.png" id="10_sgpat"]
 [ext_resource type="Texture2D" uid="uid://cyu5a38g5wbdc" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Green Woods/Assets/forest_texture/TX Shadow.png" id="12_jry00"]
 [ext_resource type="Texture2D" uid="uid://ciir7sqk2hhgn" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Green Woods/Assets/forest_texture/TX Plant.png" id="13_nxeq4"]
@@ -188,7 +189,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
+"values": [2052.0]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -200,7 +201,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
+"values": [264.0]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -212,12 +213,12 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
+"values": [2084.0]
 }
 
 [sub_resource type="Animation" id="Animation_cvkov"]
 resource_name = "shop_intro"
-length = 5.0
+length = 6.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -225,7 +226,7 @@ tracks/0/path = NodePath("BotPattern:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(4, 5),
+"times": PackedFloat32Array(4.96667, 6.03333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -237,7 +238,7 @@ tracks/1/path = NodePath("TopPattern:self_modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(4, 5),
+"times": PackedFloat32Array(4.96667, 6.03333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -261,7 +262,7 @@ tracks/3/path = NodePath("ShopkeeperBellSFX:playing")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(4.03333),
+"times": PackedFloat32Array(4.7),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -315,7 +316,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(960, 0), Vector2(960, -1200)]
+"values": [Vector2(960, 0), Vector2(960, -1000)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vvng7"]
@@ -323,6 +324,283 @@ _data = {
 "RESET": SubResource("Animation_fs7hu"),
 "shop_intro": SubResource("Animation_cvkov"),
 "shop_outro": SubResource("Animation_pv6iw")
+}
+
+[sub_resource type="Animation" id="Animation_p3fox"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.223529, 0.223529, 0.223529, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect/you died:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect/you died:theme_override_colors/font_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect/you died:theme_override_constants/shadow_offset_y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ColorRect/you died:theme_override_constants/outline_size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ColorRect/respawning:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ColorRect/respawning:text")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Respawning"]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ColorRect/Death:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("ColorRect/Death:frame")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = false
+tracks/9/path = NodePath("splatSFX:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("deathplayer:active")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_co5co"]
+resource_name = "deathscene"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.223529, 0.223529, 0.223529, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect/you died:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect/you died:theme_override_colors/font_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.5, 3.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.956863, 0, 0, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect/you died:theme_override_constants/shadow_offset_y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [20]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ColorRect/you died:theme_override_constants/outline_size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [10]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ColorRect/respawning:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(4, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ColorRect/respawning:text")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(4, 5.03333, 5.66667, 5.96667, 6.7, 7, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["Respawning", "Respawning.", "Respawning.", "Respawning..", "Respawning..", "Respawning...", "Respawning..."]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ColorRect/Death:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("ColorRect/Death:frame")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(2.5, 2.66667, 2.83333, 3, 3.16667, 3.33333, 3.5, 3.66667, 3.8, 3.93333, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 3, 4, 5, 6, 7, 8, 9]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("splatSFX:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(1.8),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("deathplayer:active")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0t7yn"]
+_data = {
+"RESET": SubResource("Animation_p3fox"),
+"deathscene": SubResource("Animation_co5co")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5qqo"]
@@ -3272,6 +3550,13 @@ zoom = Vector2(0.75, 0.75)
 
 [node name="inventory" parent="CanvasLayer" instance=ExtResource("46_lqady")]
 
+[node name="deathScene" parent="CanvasLayer" instance=ExtResource("9_grrvu")]
+
+[node name="deathplayer2" type="AnimationPlayer" parent="CanvasLayer/deathScene"]
+libraries = {
+"": SubResource("AnimationLibrary_0t7yn")
+}
+
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 self_modulate = Color(0.176419, 0.176419, 0.176419, 1)
 color = Color(0.764359, 0.625424, 0.73534, 0.980392)
@@ -3892,9 +4177,9 @@ visible = false
 z_index = 10
 layout_mode = 3
 anchors_preset = 0
-offset_left = 79.0
+offset_left = 80.0
 offset_top = -408.0
-offset_right = 119.0
+offset_right = 120.0
 offset_bottom = -368.0
 theme = SubResource("Theme_p6uta")
 
@@ -4089,9 +4374,10 @@ visible = false
 z_index = 10
 layout_mode = 3
 anchors_preset = 0
-offset_left = 3.0
-offset_right = 43.0
-offset_bottom = 40.0
+offset_left = -10.0
+offset_top = 15.0
+offset_right = 30.0
+offset_bottom = 55.0
 
 [node name="talk_to" type="NinePatchRect" parent="Player/Camera2D/talk_to_grandmeister"]
 layout_mode = 0
@@ -4118,13 +4404,12 @@ offset_right = 99.0
 offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(3.36915e-07, 0.623296, 0.117023, 1)
+theme_override_colors/font_color = Color(0.832967, 0.559182, 0.423918, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 4
 theme_override_fonts/font = ExtResource("49_h4a0s")
 theme_override_font_sizes/font_size = 16
-text = "talk to Grandmeister Gartley
-"
+text = "Talk to Grandmaster Gartley"
 horizontal_alignment = 1
 
 [node name="interact_popup2" type="Sprite2D" parent="Player"]

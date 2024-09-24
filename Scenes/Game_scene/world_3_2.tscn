@@ -1,8 +1,9 @@
-[gd_scene load_steps=59 format=4 uid="uid://b3k265hce1ctr"]
+[gd_scene load_steps=60 format=4 uid="uid://b3k265hce1ctr"]
 
 [ext_resource type="Script" path="res://Scripts/world_3_2.gd" id="1_342vo"]
 [ext_resource type="PackedScene" uid="uid://d2yr2v1e0ibvc" path="res://Scenes/Game_scene/player.tscn" id="1_ctdo8"]
 [ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="2_cb2ce"]
+[ext_resource type="PackedScene" uid="uid://b5jide7ow1ec0" path="res://Scenes/shopmenu/inventory/inventoryUI.tscn" id="2_v21de"]
 [ext_resource type="PackedScene" uid="uid://bubxqu7jdai64" path="res://Scenes/mainmenu/pausemenu.tscn" id="4_s3bi1"]
 [ext_resource type="Script" path="res://Scripts/door_library.gd" id="5_nkv88"]
 [ext_resource type="Script" path="res://Scenes/mainmenu/pausemenuW3.gd" id="5_weq2b"]
@@ -2374,6 +2375,8 @@ metadata/_edit_use_anchors_ = true
 libraries = {
 "": SubResource("AnimationLibrary_ljjtb")
 }
+
+[node name="inventory" parent="CanvasLayer" instance=ExtResource("2_v21de")]
 
 [node name="Player" parent="." instance=ExtResource("1_ctdo8")]
 process_mode = 1
