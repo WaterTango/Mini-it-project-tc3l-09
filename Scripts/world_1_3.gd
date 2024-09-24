@@ -4,17 +4,44 @@ extends Node
 @onready var pause_menu: pausemenu = $entities/Player/Camera2D/PauseMenu #@daniel bro why u typo alot
 # i gotta recheck all the directories just to make my code work bruh
 var paused = false
-
+var current_state
 # shaz's AudioPlaybackScript =======================================================================
 func _ready() -> void:
+	key_quest_show()
 	$entities/Player/interact_popup2.hide()
 	$Entering.play()
 	$CanvasLayer/SceneFade.play("fade in")
 	await get_tree().create_timer(3).timeout
 	$"World 1 Music".play()
 	pass
+	current_state = choose([POS_1,POS_2,POS_3])
+	set_key_pos()
 #===================================================================================================
+#key_chest random postion
+enum{
+	POS_1,     #0
+	POS_2,  #1
+	POS_3   #2
+}
+#choose keychecst state (Pos)
+func choose(array):
+	#create an array for randomizer
+	array.shuffle()
+	return array.front()
 
+func set_key_pos():
+	match current_state:
+		POS_1:
+			$Keys/key.position.x = -200
+			$Keys/key.position.y = -562
+		POS_2:
+			$Keys/key.position.x = -161
+			$Keys/key.position.y = 305
+		POS_3:
+			$Keys/key.position.x = 592
+			$Keys/key.position.y = -171		
+			
+#====================================================================================================
 #this is for debug 
 #REMOVE WHEN GAME IS RELEASED
 func _input(_event):
@@ -82,3 +109,12 @@ func _on_key_popup_show() -> void:
 
 func _on_key_key_pickedup() -> void:
 	$entities/Player/Camera2D/key_Notification.show()
+	$entities/Player/Camera2D/quest_1/questbanner/questtitle.hide()
+	$entities/Player/Camera2D/quest_1/questbanner/Label.show()
+	$entities/Player/Camera2D/quest_1/questdetails/key_collect/NkeyObtained.show()
+func key_quest_show():
+	$entities/Player/Camera2D/quest_1.show()
+	$entities/Player/Camera2D/quest_1/questdetails.show()
+	$entities/Player/Camera2D/quest_1/questdetails/key_collect/NkeyObtained.hide()
+	
+	

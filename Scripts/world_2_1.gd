@@ -11,10 +11,11 @@ var quest_start = false
 var petal_key = false
 var forest_key = false
 var tomb_key = false
-
+var current_state
 signal quest1_finished
 # shaz's AudioPlaybackScript =======================================================================
 func _ready() -> void:
+	$Player/Camera2D/talk_to_grandmeister.show()
 	$Map/TileMap/village/roof.show()
 	$Map/TileMap/village/roofchimney.show()
 	$Player/interact_popup2.hide()
@@ -28,10 +29,7 @@ func _ready() -> void:
 	$Player/Camera2D/tombkey_frag.hide()
 	$Player/Camera2D/key_Notification.hide()
 	$Player/Camera2D/quest_1/questbanner/opengate.hide()
-	#===============================================================================================
-	#SceneTransitionAnimation.play("fade_out")
-	pass
-	#============================================================
+#=========================================================================================
 # dialogue behaviour
 func DialogicSignal(arg: String):
 	if arg == "chatting":

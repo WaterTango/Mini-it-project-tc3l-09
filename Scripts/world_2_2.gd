@@ -11,8 +11,11 @@ var commander_quest = false
 signal quest_commander
 signal exit_gate_open
 var gate_soldier_chat = true
+var current_state
 # shaz's AudioPlaybackScript =======================================================================
 func _ready() -> void:
+	$Player/Camera2D/search_for_key.hide()
+	$Player/Camera2D/search_for_key/key_questdetails.hide()
 	$army_camp/tentroof.show()
 	Dialogic.signal_event.connect(DialogicSignal)
 	$Player/interact_popup2.hide()
@@ -21,10 +24,34 @@ func _ready() -> void:
 	await get_tree().create_timer(3).timeout
 	$"World 2 Music".play()
 	$Player/Camera2D/commander_quest.hide()
-	#===============================================================================================
-	#SceneTransitionAnimation.play("fade_out")
-	pass
+	current_state = choose([POS_1,POS_2,POS_3])
+	set_key_pos()
+#===================================================================================================
+#key_chest random postion
+enum{
+	POS_1,     #0
+	POS_2,  #1
+	POS_3   #2
+}
+#choose keychecst state (Pos)
+func choose(array):
+	#create an array for randomizer
+	array.shuffle()
+	return array.front()
 
+func set_key_pos():
+	match current_state:
+		POS_1:
+			$Keys/key.position.x = -385
+			$Keys/key.position.y = -444
+		POS_2:
+			$Keys/key.position.x = 640
+			$Keys/key.position.y = -194
+		POS_3:
+			$Keys/key.position.x = -656
+			$Keys/key.position.y = -194
+			
+#====================================================================================================
 #this is to reload levels
 func _input(_event):
 	#if Input.is_action_pressed("exit"):
@@ -91,6 +118,10 @@ func DialogicSignal(arg: String):
 		
 	if arg == "commander_interact_finished":
 		commander_quest = false
+		$Player/Camera2D/search_for_key.show()
+		$Player/Camera2D/search_for_key/key_questdetails.show()
+		$Player/Camera2D/search_for_key/key_questdetails/detail.show()
+		$"Player/Camera2D/search_for_key/key_questdetails/key Requirement".show()
 		emit_signal("exit_gate_open")
 	if arg == "rebel_gate_soldier_finished":
 		gate_soldier_chat = false
@@ -125,8 +156,8 @@ func _on_key_popup_show() -> void:
 
 func _on_key_key_pickedup() -> void:
 	$Player/Camera2D/key_Notification.show()
-
-
+	$Player/Camera2D/search_for_key/key_questdetails/EkeyObtained.show()
+	$Player/Camera2D/search_for_key/key_questdetails/detail2.show()
 func _on_gate_area_body_entered(body: Node2D) -> void:
 	if body is Player:
 		if gate_soldier_chat:

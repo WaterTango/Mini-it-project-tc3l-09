@@ -4,17 +4,43 @@ extends Node2D
 @onready var pause_menu: pausemenuW3 = $Player/Camera2D/PauseMenu
 
 var paused = false
+var current_state
 # shaz's AudioPlaybackScript =======================================================================
 func _ready() -> void:
+	key_quest_show()
 	$Player/interact_popup2.hide()
 	$Entering.play()
 	$CanvasLayer/SceneFade.play("fade in")
 	await get_tree().create_timer(3).timeout
 	$"World 3 Music".play()
-	pass
-
+	current_state = choose([POS_1,POS_2,POS_3])
+	set_key_pos()
 #===================================================================================================
+#key_chest random postion
+enum{
+	POS_1,     #0
+	POS_2,  #1
+	POS_3   #2
+}
+#choose keychecst state (Pos)
+func choose(array):
+	#create an array for randomizer
+	array.shuffle()
+	return array.front()
 
+func set_key_pos():
+	match current_state:
+		POS_1:
+			$Keys/key.position.x = -216
+			$Keys/key.position.y = -123
+		POS_2:
+			$Keys/key.position.x = -600
+			$Keys/key.position.y = -580
+		POS_3:
+			$Keys/key.position.x = 344
+			$Keys/key.position.y = -424
+			
+#====================================================================================================
 func _input(_event):
 	#if Input.is_action_pressed("exit"):
 		#get_tree().quit()
@@ -75,3 +101,11 @@ func _on_key_popup_show() -> void:
 
 func _on_key_key_pickedup() -> void:
 	$Player/Camera2D/key_Notification.show()
+	$Player/Camera2D/quest_1/questbanner/questtitle.hide()
+	$Player/Camera2D/quest_1/questbanner/Label.show()
+	$Player/Camera2D/quest_1/questdetails/key_collect/NkeyObtained.show()
+
+func key_quest_show():
+	$Player/Camera2D/quest_1.show()
+	$Player/Camera2D/quest_1/questdetails.show()
+	$Player/Camera2D/quest_1/questdetails/key_collect/NkeyObtained.hide()

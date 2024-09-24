@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=4 uid="uid://bg65fmt31h84x"]
+[gd_scene load_steps=57 format=4 uid="uid://bg65fmt31h84x"]
 
 [ext_resource type="Script" path="res://Scripts/world_1_2.gd" id="1_lcdo5"]
 [ext_resource type="TileSet" uid="uid://hejtinux6a7x" path="res://Scenes/Game_scene/world_1.tres" id="1_lsqgd"]
@@ -15,11 +15,17 @@
 [ext_resource type="PackedScene" uid="uid://cahvqyq6rby61" path="res://DS4 UI/Interact.tscn" id="8_ey1mu"]
 [ext_resource type="Texture2D" uid="uid://crnws7b6mgnqc" path="res://Assets/png/e_dark.png" id="8_gpka8"]
 [ext_resource type="PackedScene" uid="uid://byfmbyb7684lb" path="res://Scenes/Game_scene/key_notification.tscn" id="9_jbx44"]
+[ext_resource type="Texture2D" uid="uid://cswic0kq3qlh" path="res://shaz_images/UI/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Banner02a.png" id="10_ni6qb"]
 [ext_resource type="Script" path="res://Scripts/door1.gd" id="11_qa52s"]
+[ext_resource type="FontFile" uid="uid://b8oo2dguy484y" path="res://shaz_fonts/basis33.ttf" id="11_t3r4e"]
 [ext_resource type="Script" path="res://Scripts/door1_collision.gd" id="12_e7k33"]
+[ext_resource type="Texture2D" uid="uid://dqo2pgf00slin" path="res://shaz_images/UI/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Banner03a.png" id="12_hbio7"]
 [ext_resource type="Texture2D" uid="uid://d16kv83clog3f" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/door_close.png" id="13_56dr3"]
+[ext_resource type="SpriteFrames" uid="uid://cuaxoo2u21gln" path="res://Scenes/Game_scene/requirement_keyquest.tres" id="13_p7tep"]
 [ext_resource type="Texture2D" uid="uid://bmmvdmf6lyld5" path="res://Assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/door_open.png" id="14_lufmx"]
+[ext_resource type="Texture2D" uid="uid://bejjgjo8urgm7" path="res://shaz_images/UI/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_IconCheck01a.png" id="14_usspi"]
 [ext_resource type="PackedScene" uid="uid://pt3v68ebmn6" path="res://Scenes/Game_scene/key.tscn" id="15_4nqj5"]
+[ext_resource type="Texture2D" uid="uid://hmx22fnnj7rk" path="res://Assets/pixel assets/library/Assets/librarychestkeyclosed.png" id="15_hk4yf"]
 [ext_resource type="AudioStream" uid="uid://bx0bb6f6awmqu" path="res://shaz_audio/SFX/DoorSFX.mp3" id="17_hetxw"]
 [ext_resource type="AudioStream" uid="uid://bhnfdxn0m6r6f" path="res://shaz_audio/SFX/clicksfx.mp3" id="18_p1qfy"]
 [ext_resource type="AudioStream" uid="uid://bgpo5phkq73t4" path="res://shaz_audio/SFX/Key.mp3" id="19_3i7kb"]
@@ -104,6 +110,8 @@ polygon = PackedVector2Array(-80, -64, -64, -64, -64, -48, -80, -48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u5ggu"]
 size = Vector2(33, 20)
+
+[sub_resource type="Theme" id="Theme_uyoyr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x4x6b"]
 texture = ExtResource("4_gjgni")
@@ -442,6 +450,7 @@ libraries = {
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 self_modulate = Color(0.176419, 0.176419, 0.176419, 1)
+z_index = 10
 color = Color(0.0612135, 0.159423, 0.0612009, 0.980392)
 
 [node name="light" type="Node" parent="."]
@@ -567,7 +576,7 @@ shadow_item_cull_mask = 3
 texture = ExtResource("5_expxc")
 
 [node name="torch_light13" type="PointLight2D" parent="light"]
-position = Vector2(-565, -366)
+position = Vector2(-514, -375)
 color = Color(0.494118, 0.6, 0.6, 1)
 energy = 0.9
 range_item_cull_mask = 3
@@ -738,6 +747,127 @@ visible = false
 z_index = 8
 position = Vector2(226, 162)
 
+[node name="quest_1" type="Control" parent="entities/Player/Camera2D"]
+visible = false
+z_index = 10
+layout_mode = 3
+anchors_preset = 0
+offset_left = 79.0
+offset_top = -408.0
+offset_right = 119.0
+offset_bottom = -368.0
+theme = SubResource("Theme_uyoyr")
+
+[node name="questbanner" type="NinePatchRect" parent="entities/Player/Camera2D/quest_1"]
+z_index = 15
+layout_mode = 0
+offset_left = 40.0
+offset_top = 231.0
+offset_right = 240.0
+offset_bottom = 261.0
+texture = ExtResource("10_ni6qb")
+patch_margin_left = 9
+patch_margin_top = 5
+patch_margin_right = 8
+patch_margin_bottom = 6
+
+[node name="questtitle" type="Label" parent="entities/Player/Camera2D/quest_1/questbanner"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -84.0
+offset_top = -10.0
+offset_right = 49.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.705695, 0.436172, 0.306493, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 4
+theme_override_fonts/font = ExtResource("11_t3r4e")
+theme_override_font_sizes/font_size = 16
+text = "Find the key chest"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="entities/Player/Camera2D/quest_1/questbanner"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -107.0
+offset_top = -11.0
+offset_right = 110.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.815, 0.815)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 4
+theme_override_fonts/font = ExtResource("11_t3r4e")
+theme_override_font_sizes/font_size = 19
+text = "Open the exit door"
+horizontal_alignment = 1
+
+[node name="questdetails" type="NinePatchRect" parent="entities/Player/Camera2D/quest_1"]
+z_index = 20
+layout_mode = 0
+offset_left = 46.0
+offset_top = 264.0
+offset_right = 229.0
+offset_bottom = 315.0
+texture = ExtResource("12_hbio7")
+patch_margin_left = 4
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 4
+
+[node name="key_collect" type="Label" parent="entities/Player/Camera2D/quest_1/questdetails"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -83.5
+offset_top = -19.5
+offset_right = 84.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("11_t3r4e")
+theme_override_font_sizes/font_size = 16
+text = "Collect dungeon 
+exit key"
+
+[node name="key Requirement" type="AnimatedSprite2D" parent="entities/Player/Camera2D/quest_1/questdetails/key_collect"]
+position = Vector2(143, 19)
+scale = Vector2(0.625, 0.625)
+sprite_frames = ExtResource("13_p7tep")
+animation = &"req"
+autoplay = "req"
+
+[node name="NkeyObtained" type="Sprite2D" parent="entities/Player/Camera2D/quest_1/questdetails/key_collect"]
+visible = false
+position = Vector2(143, 19)
+scale = Vector2(1.23529, 1.42857)
+texture = ExtResource("14_usspi")
+
+[node name="Key" type="Sprite2D" parent="entities/Player/Camera2D/quest_1"]
+z_index = 16
+position = Vector2(205, 244)
+scale = Vector2(0.640626, 0.625001)
+texture = ExtResource("15_hk4yf")
+
 [node name="interact_popup2" type="Sprite2D" parent="entities/Player"]
 visible = false
 z_index = 10
@@ -789,7 +919,7 @@ position = Vector2(49, 654)
 
 [node name="zombie11" parent="entities/zombie" instance=ExtResource("7_27s8o")]
 z_index = 2
-position = Vector2(-1, -484)
+position = Vector2(28, -318)
 
 [node name="Map" type="Node" parent="."]
 
@@ -819,7 +949,7 @@ tile_set = ExtResource("2_un0xr")
 [node name="deco" type="TileMapLayer" parent="Map"]
 z_index = 4
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAD0/xoABgAGAAUAAADz/xoABgAFAAUAAAABABoABgAJAAUAAAD0/xIABgAHAAIAAAD0/xMABgAHAAMAAAD9/xIABgAHAAIAAAD9/xMABgAHAAMAAAD1/xIABgAKAAAAAAD8/xIABgAKAAAAAAD1/xMABgAKAAEAAAD8/xMABgAKAAEAAAAMABIABwAJAAwAAAAMABMABwAJAA0AAAANABIABwAKAAwAAAANABMABwAKAA0AAAAOABIABwALAAwAAAAOABMABwALAA0AAAAPABIABwAMAAwAAAAPABMABwAMAA0AAAAEABIABgAHAAIAAAAEABMABgAHAAMAAAAJABIABgAHAAIAAAAJABMABgAHAAMAAAALABIABgAHAAIAAAALABMABgAHAAMAAAAQABIABgAHAAIAAAAQABMABgAHAAMAAAADABEABgAKAAAAAAAKABEABgAKAAAAAAARABEABgAKAAAAAAARABIABgAKAAEAAAAKABIABgAKAAEAAAADABIABgAKAAEAAAADABMABgAKAAIAAAAKABMABgAKAAIAAAARABMABgAKAAIAAADr/xkABwAJAAwAAADr/xoABwAJAA0AAADs/xkABwAKAAwAAADs/xoABwAKAA0AAADt/xkABwALAAwAAADt/xoABwALAA0AAADu/xkABwAMAAwAAADu/xoABwAMAA0AAADz/xQABgAJAAQAAADz/xUABgAFAAQAADAHABEABgAJAAQAAFAGABEABgAFAAQAAGANABEABgAFAAQAAGAOABEABgAJAAQAAFD4/xEABgAFAAQAAGD5/xEABgAJAAQAAFD0/yIABgAAAAYAAAD0/yMABgAAAAcAAAD0/yQABgAAAAgAAAD1/yIABgABAAYAAAD1/yMABgABAAcAAAD1/yQABgABAAgAAAD3/yIABgAAAAYAAAD3/yMABgAAAAcAAAD3/yQABgAAAAgAAAD4/yIABgABAAYAAAD4/yMABgABAAcAAAD4/yQABgABAAgAAAD1/ygABgACAAUAAAD3/ygABgAEAAcAAAD5/yUABgACAAAAAAD6/yUABgADAAAAAAD7/yMABgADAAAAAAD8/yMABgADAAAAAADz/yMABgADAAAAAAACACUABgADAAIAAAADACUABgACAAAAAAAEACUABgADAAAAAAAFACUABgACAAAAAAAGACUABgADAAIAAAAHACUABgADAAAAAAAIACcABgADAAAAAAAJACcABgACAAAAAAAMACcABgACAAAAAAALACcABgACAAIAAAAHACYABgACAAAAAAANAOX/BwAJAAwAAAANAOb/BwAJAA0AAAAOAOX/BwAKAAwAAAAOAOb/BwAKAA0AAAAPAOX/BwALAAwAAAAPAOb/BwALAA0AAAAQAOX/BwAMAAwAAAAQAOb/BwAMAA0AAAASAOX/BwAJAAwAAAASAOb/BwAJAA0AAAATAOX/BwAKAAwAAAATAOb/BwAKAA0AAAAUAOX/BwALAAwAAAAUAOb/BwALAA0AAAAVAOX/BwAMAAwAAAAVAOb/BwAMAA0AAAAMAOX/BgAHAAIAAAAMAOb/BgAHAAMAAAAWAOX/BgAHAAIAAAAWAOb/BgAHAAMAAADz/+X/BgAHAAIAAADz/+b/BgAHAAMAAADu/+X/BgAHAAIAAADu/+b/BgAHAAMAAADd/+f/BgAHAAIAAADd/+j/BgAHAAMAAADi/+f/BgAHAAIAAADi/+j/BgAHAAMAAADb//H/BgAHAAIAAADb//L/BgAHAAMAAADg//H/BgAHAAIAAADg//L/BgAHAAMAAADa/+f/BwAGAAgAAADa/+j/BgACAAAAAADv/xgABwAGAAgAAADv/xkABwAGAAkAAADq/xgABwAGAAgAAADq/xkABwAGAAkAAADo/xgABwAGAAgAAADo/xkABwAGAAkAAADx/xgABwAGAAgAAADx/xkABwAGAAkAAADr/wEABwAEAAwAAADq/wEABwAEAAwAAADp/wEABwAEAAwAAADo/wEABwAEAAwAAADn/wEABwAEAAwAAADm/wEABwAEAAwAAADl/wEABwAEAAwAAADk/wEABwAEAAwAAADj/wEABwAEAAwAAADi/wEABwAEAAwAAADh/wEABwAEAAwAAADg/wEABwAEAAwAAADf/wEABwAEAAwAAADe/wEABwAEAAwAAADd/wEABwAEAAwAAADc/wEABwAEAAwAAADb/wEABwAEAAwAAADa/wEABwAEAAwAAADZ/wEABwAJAAQAAADZ/wAABwAJAAQAAADZ////BwAJAAQAAADZ//7/BwAJAAQAAADZ//3/BwAJAAQAAADZ//z/BwAJAAQAAADZ//v/BwAJAAQAAADZ//r/BwAJAAQAAADd//v/BgACAAUAAADl//v/BgACAAUAAADg//r/BgADAAIAAADi//r/BgADAAAAAADh//r/BgACAAAAAADj//r/BgACAAIAAADf//r/BgADAAIAAADb//r/BgADAAAAAADa//r/BgADAAAAAADa//v/BgADAAIAAADa//z/BgACAAAAAADa//3/BgACAAIAAADa//7/BgADAAIAAADa////BgACAAIAAADb////BgACAAAAAADc/+z/BgACAAUAAADb/+v/BgADAAcAAADc/+v/BgADAAcAAADa/+z/BgAEAAcAABDZ/+j/BgACAAIAAADb/+j/BgACAAAAAADZ/+n/BgADAAIAAADZ/+r/BgACAAIAAADk/+j/BgADAAIAAADm/+j/BgACAAIAAAD0/+X/BgAKAAAAAAD0/+b/BgAKAAEAAADj/+f/BgAKAAAAAADj/+j/BgAKAAEAAADa//H/BgAKAAAAAADa//L/BgAKAAEAAADw/xgABgAKAAAAAADw/xkABgAKAAEAAADp/xgABgAKAAAAAADp/xkABgAKAAEAAAALAB0ABgAKAAAAAAALAB4ABgAKAAEAAADk/+7/BgACAAAAAADk/+//BgACAAAAAADk//D/BgADAAQAAADk//H/BgADAAQAAADk//L/BgACAAAAAADj//L/BgADAAAAAADZ//T/BgACAAAAAADZ//X/BgACAAQAAADZ//P/BgADAAIAAADZ//L/BgACAAIAAADm/+r/BgADAAIAAADm/+v/BgADAAAAAADm/+n/BgACAAAAAADl/+n/BgACAAIAAAAHAOj/BgAFAAQAAAAIAOj/BgAGAAQAAAAJAOj/BgAGAAQAAAAKAOj/BgAGAAQAAAALAOj/BgAGAAQAAAAMAOj/BgAGAAQAAAANAOj/BgAGAAQAAAAOAOj/BgAGAAQAAAAPAOj/BgAGAAQAAAAQAOj/BgAGAAQAAAARAOj/BgAGAAQAAAASAOj/BgAGAAQAAAATAOj/BgAGAAQAAAAUAOj/BgAGAAQAAAAVAOj/BgAJAAQAAAD9//b/BgAGAAAAAAACAPb/BgAGAAAAAADw//3/BgAGAAAAAAARAP3/BgAGAAAAAAD0/wcABgAGAAAAAAALAAcABgAGAAAAAADh//H/BgAGAAAAAADc/+f/BgAGAAAAAAD9/+f/BgAGAAAAAAACAOf/BgAGAAAAAAANAOn/CQASAAcAAAARAOn/CQASAAcAAAD4//j/BgACAAAAAAD4//n/BgADAAAAAAAHAPj/BgADAAAAAAAHAPn/BgADAAAAAAD1//3/BgABAAIAAADx//3/BgAAAAIAAAAJAP3/BgAKAAAAAAAJAP7/BgAKAAEAAAD2//3/BgAKAAAAAAD2//7/BgAKAAEAAADy//3/CQAOAAIAAADy//7/BgACAAIAAADz//3/CQAPAAIAAADz//7/BgADAAAAAAD0//3/CQAQAAIAAAD0//7/BgADAAAAAAD5//f/BgADAAAAAAD8//f/BgACAAAAAAADAPf/BgADAAAAAAAGAPf/BgADAAAAAAAFAPf/BgACAAAAAAD4//r/BgADAAAAAADx//7/BgADAAAAAAD1//7/BgACAAIAAAD3//7/BgADAAIAAAD6//f/BgADAAIAAAD7//f/BgACAAAAAAAEAPf/BgACAAAAAAAKAP7/BgACAAIAAAAQAP7/BgADAAIAAAANAP7/BgACAAAAAAAKAAgABgADAAAAAADu/wgABgACAAAAAAD1/wgABgACAAAAAAARAAgABgADAAAAAADn//r/BgACAAAAAADo//r/BgACAAIAAADr//r/BgADAAAAAAAJAOn/CQASAAcAAAD6/9v/BgAGAAAAAAAFANv/BgAGAAAAAAARAOb/BgAGAAAAAAAXAOb/BgAGAAAAAAALAOb/BgAGAAAAAADt/+X/BgAGAAAAAAA=")
+tile_map_data = PackedByteArray("AAD0/xoABgAGAAUAAADz/xoABgAFAAUAAAABABoABgAJAAUAAAD0/xIABgAHAAIAAAD0/xMABgAHAAMAAAD9/xIABgAHAAIAAAD9/xMABgAHAAMAAAD1/xIABgAKAAAAAAD8/xIABgAKAAAAAAD1/xMABgAKAAEAAAD8/xMABgAKAAEAAAAMABIABwAJAAwAAAAMABMABwAJAA0AAAANABIABwAKAAwAAAANABMABwAKAA0AAAAOABIABwALAAwAAAAOABMABwALAA0AAAAPABIABwAMAAwAAAAPABMABwAMAA0AAAAEABIABgAHAAIAAAAEABMABgAHAAMAAAAJABIABgAHAAIAAAAJABMABgAHAAMAAAALABIABgAHAAIAAAALABMABgAHAAMAAAAQABIABgAHAAIAAAAQABMABgAHAAMAAAADABEABgAKAAAAAAAKABEABgAKAAAAAAARABEABgAKAAAAAAARABIABgAKAAEAAAAKABIABgAKAAEAAAADABIABgAKAAEAAAADABMABgAKAAIAAAAKABMABgAKAAIAAAARABMABgAKAAIAAADr/xkABwAJAAwAAADr/xoABwAJAA0AAADs/xkABwAKAAwAAADs/xoABwAKAA0AAADt/xkABwALAAwAAADt/xoABwALAA0AAADu/xkABwAMAAwAAADu/xoABwAMAA0AAADz/xQABgAJAAQAAADz/xUABgAFAAQAADAHABEABgAJAAQAAFAGABEABgAFAAQAAGANABEABgAFAAQAAGAOABEABgAJAAQAAFD4/xEABgAFAAQAAGD5/xEABgAJAAQAAFD0/yIABgAAAAYAAAD0/yMABgAAAAcAAAD0/yQABgAAAAgAAAD1/yIABgABAAYAAAD1/yMABgABAAcAAAD1/yQABgABAAgAAAD3/yIABgAAAAYAAAD3/yMABgAAAAcAAAD3/yQABgAAAAgAAAD4/yIABgABAAYAAAD4/yMABgABAAcAAAD4/yQABgABAAgAAAD1/ygABgACAAUAAAD3/ygABgAEAAcAAAD5/yUABgACAAAAAAD6/yUABgADAAAAAADz/yMABgADAAAAAAACACUABgADAAIAAAADACUABgACAAAAAAAEACUABgADAAAAAAAFACUABgACAAAAAAAGACUABgADAAIAAAAHACUABgADAAAAAAAIACcABgADAAAAAAAJACcABgACAAAAAAAMACcABgACAAAAAAALACcABgACAAIAAAAHACYABgACAAAAAAANAOX/BwAJAAwAAAANAOb/BwAJAA0AAAAOAOX/BwAKAAwAAAAOAOb/BwAKAA0AAAAPAOX/BwALAAwAAAAPAOb/BwALAA0AAAAQAOX/BwAMAAwAAAAQAOb/BwAMAA0AAAASAOX/BwAJAAwAAAASAOb/BwAJAA0AAAATAOX/BwAKAAwAAAATAOb/BwAKAA0AAAAUAOX/BwALAAwAAAAUAOb/BwALAA0AAAAVAOX/BwAMAAwAAAAVAOb/BwAMAA0AAAAMAOX/BgAHAAIAAAAMAOb/BgAHAAMAAAAWAOX/BgAHAAIAAAAWAOb/BgAHAAMAAADz/+X/BgAHAAIAAADz/+b/BgAHAAMAAADu/+X/BgAHAAIAAADu/+b/BgAHAAMAAADd/+f/BgAHAAIAAADd/+j/BgAHAAMAAADi/+f/BgAHAAIAAADi/+j/BgAHAAMAAADb//H/BgAHAAIAAADb//L/BgAHAAMAAADg//H/BgAHAAIAAADg//L/BgAHAAMAAADa/+f/BwAGAAgAAADa/+j/BgACAAAAAADv/xgABwAGAAgAAADv/xkABwAGAAkAAADq/xgABwAGAAgAAADq/xkABwAGAAkAAADo/xgABwAGAAgAAADo/xkABwAGAAkAAADx/xgABwAGAAgAAADx/xkABwAGAAkAAADr/wEABwAEAAwAAADq/wEABwAEAAwAAADp/wEABwAEAAwAAADo/wEABwAEAAwAAADn/wEABwAEAAwAAADm/wEABwAEAAwAAADl/wEABwAEAAwAAADk/wEABwAEAAwAAADj/wEABwAEAAwAAADi/wEABwAEAAwAAADh/wEABwAEAAwAAADg/wEABwAEAAwAAADf/wEABwAEAAwAAADe/wEABwAEAAwAAADd/wEABwAEAAwAAADc/wEABwAEAAwAAADb/wEABwAEAAwAAADa/wEABwAEAAwAAADZ/wEABwAJAAQAAADZ/wAABwAJAAQAAADZ////BwAJAAQAAADZ//7/BwAJAAQAAADZ//3/BwAJAAQAAADZ//z/BwAJAAQAAADZ//v/BwAJAAQAAADZ//r/BwAJAAQAAADd//v/BgACAAUAAADl//v/BgACAAUAAADg//r/BgADAAIAAADi//r/BgADAAAAAADh//r/BgACAAAAAADj//r/BgACAAIAAADf//r/BgADAAIAAADb//r/BgADAAAAAADa//r/BgADAAAAAADa//v/BgADAAIAAADa//z/BgACAAAAAADa//3/BgACAAIAAADa//7/BgADAAIAAADa////BgACAAIAAADb////BgACAAAAAADc/+z/BgACAAUAAADb/+v/BgADAAcAAADc/+v/BgADAAcAAADa/+z/BgAEAAcAABDZ/+j/BgACAAIAAADb/+j/BgACAAAAAADZ/+n/BgADAAIAAADZ/+r/BgACAAIAAADk/+j/BgADAAIAAADm/+j/BgACAAIAAAD0/+X/BgAKAAAAAAD0/+b/BgAKAAEAAADj/+f/BgAKAAAAAADj/+j/BgAKAAEAAADa//H/BgAKAAAAAADa//L/BgAKAAEAAADw/xgABgAKAAAAAADw/xkABgAKAAEAAADp/xgABgAKAAAAAADp/xkABgAKAAEAAAALAB0ABgAKAAAAAAALAB4ABgAKAAEAAADk/+7/BgACAAAAAADk/+//BgACAAAAAADk//D/BgADAAQAAADk//H/BgADAAQAAADk//L/BgACAAAAAADj//L/BgADAAAAAADZ//T/BgACAAAAAADZ//X/BgACAAQAAADZ//P/BgADAAIAAADZ//L/BgACAAIAAADm/+r/BgADAAIAAADm/+v/BgADAAAAAADm/+n/BgACAAAAAADl/+n/BgACAAIAAAAHAOj/BgAFAAQAAAAIAOj/BgAGAAQAAAAJAOj/BgAGAAQAAAAKAOj/BgAGAAQAAAALAOj/BgAGAAQAAAAMAOj/BgAGAAQAAAANAOj/BgAGAAQAAAAOAOj/BgAGAAQAAAAPAOj/BgAGAAQAAAAQAOj/BgAGAAQAAAARAOj/BgAGAAQAAAASAOj/BgAGAAQAAAATAOj/BgAGAAQAAAAUAOj/BgAGAAQAAAAVAOj/BgAJAAQAAAD9//b/BgAGAAAAAAACAPb/BgAGAAAAAADw//3/BgAGAAAAAAARAP3/BgAGAAAAAAD0/wcABgAGAAAAAAALAAcABgAGAAAAAADh//H/BgAGAAAAAADc/+f/BgAGAAAAAAD9/+f/BgAGAAAAAAACAOf/BgAGAAAAAAANAOn/CQASAAcAAAARAOn/CQASAAcAAAD4//j/BgACAAAAAAD4//n/BgADAAAAAAAHAPj/BgADAAAAAAAHAPn/BgADAAAAAAD1//3/BgABAAIAAADx//3/BgAAAAIAAAAJAP3/BgAKAAAAAAAJAP7/BgAKAAEAAAD2//3/BgAKAAAAAAD2//7/BgAKAAEAAADy//3/CQAOAAIAAADy//7/BgACAAIAAADz//3/CQAPAAIAAADz//7/BgADAAAAAAD0//3/CQAQAAIAAAD0//7/BgADAAAAAAD5//f/BgADAAAAAAD8//f/BgACAAAAAAADAPf/BgADAAAAAAAGAPf/BgADAAAAAAAFAPf/BgACAAAAAAD4//r/BgADAAAAAADx//7/BgADAAAAAAD1//7/BgACAAIAAAD3//7/BgADAAIAAAD6//f/BgADAAIAAAD7//f/BgACAAAAAAAEAPf/BgACAAAAAAAKAP7/BgACAAIAAAAQAP7/BgADAAIAAAANAP7/BgACAAAAAAAKAAgABgADAAAAAADu/wgABgACAAAAAAD1/wgABgACAAAAAAARAAgABgADAAAAAADn//r/BgACAAAAAADo//r/BgACAAIAAADr//r/BgADAAAAAAAJAOn/CQASAAcAAAD6/9v/BgAGAAAAAAAFANv/BgAGAAAAAAARAOb/BgAGAAAAAAAXAOb/BgAGAAAAAAALAOb/BgAGAAAAAADt/+X/BgAGAAAAAAA=")
 tile_set = ExtResource("2_un0xr")
 
 [node name="deco3" type="TileMapLayer" parent="Map"]
@@ -897,7 +1027,7 @@ stream = ExtResource("17_hetxw")
 
 [node name="key" parent="Keys" instance=ExtResource("15_4nqj5")]
 z_index = 2
-position = Vector2(-56, -394)
+position = Vector2(-472, -367)
 
 [node name="KeySFX" type="AudioStreamPlayer" parent="Keys/key"]
 stream = ExtResource("19_3i7kb")
@@ -910,14 +1040,6 @@ position = Vector2(-390, -64)
 [node name="normalchest2" parent="Keys" instance=ExtResource("23_xhj3r")]
 z_index = 1
 position = Vector2(-552, -368)
-
-[node name="normalchest3" parent="Keys" instance=ExtResource("23_xhj3r")]
-z_index = 1
-position = Vector2(105, 414)
-
-[node name="normalchest4" parent="Keys" instance=ExtResource("23_xhj3r")]
-z_index = 1
-position = Vector2(-151, 582)
 
 [node name="Area2D" type="StaticBody2D" parent="."]
 position = Vector2(140, -345)
