@@ -4267,7 +4267,7 @@ script = ExtResource("5_gslor")
 [node name="settings_menu" parent="Player/Camera2D" instance=ExtResource("6_2orof")]
 process_mode = 3
 visible = false
-z_index = 20
+z_index = 30
 custom_minimum_size = Vector2(1920, 1080)
 offset_left = -335.0
 offset_top = -180.0
@@ -4288,7 +4288,7 @@ position = Vector2(226, 162)
 
 [node name="commander_quest" type="Control" parent="Player/Camera2D"]
 visible = false
-z_index = 10
+z_index = 15
 layout_mode = 3
 anchors_preset = 0
 offset_left = 79.0
@@ -4378,7 +4378,7 @@ autowrap_mode = 2
 
 [node name="search_for_key" type="Control" parent="Player/Camera2D"]
 visible = false
-z_index = 10
+z_index = 15
 layout_mode = 3
 anchors_preset = 0
 offset_left = 3.0
