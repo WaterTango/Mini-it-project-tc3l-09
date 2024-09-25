@@ -2404,7 +2404,7 @@ script = ExtResource("5_weq2b")
 [node name="settings_menu" parent="Player/Camera2D" instance=ExtResource("6_xj43a")]
 process_mode = 3
 visible = false
-z_index = 20
+z_index = 30
 custom_minimum_size = Vector2(1920, 1080)
 offset_left = -335.0
 offset_top = -180.0
@@ -2425,7 +2425,7 @@ position = Vector2(226, 162)
 
 [node name="quest_1" type="Control" parent="Player/Camera2D"]
 visible = false
-z_index = 10
+z_index = 15
 layout_mode = 3
 anchors_preset = 0
 offset_left = 79.0
@@ -2435,7 +2435,6 @@ offset_bottom = -368.0
 theme = SubResource("Theme_pd1uu")
 
 [node name="questbanner" type="NinePatchRect" parent="Player/Camera2D/quest_1"]
-z_index = 15
 layout_mode = 0
 offset_left = 40.0
 offset_top = 231.0
@@ -2492,7 +2491,6 @@ text = "Open the exit door"
 horizontal_alignment = 1
 
 [node name="questdetails" type="NinePatchRect" parent="Player/Camera2D/quest_1"]
-z_index = 20
 layout_mode = 0
 offset_left = 48.0
 offset_top = 263.0
@@ -2524,6 +2522,11 @@ theme_override_fonts/font = ExtResource("11_hs2k7")
 theme_override_font_sizes/font_size = 16
 text = "Find the exit key"
 
+[node name="Key" type="Sprite2D" parent="Player/Camera2D/quest_1/questdetails/key_collect"]
+position = Vector2(145, -35)
+scale = Vector2(0.640626, 0.625001)
+texture = ExtResource("15_6lnh8")
+
 [node name="key Requirement" type="AnimatedSprite2D" parent="Player/Camera2D/quest_1/questdetails/key_collect"]
 position = Vector2(145, 9)
 scale = Vector2(0.625, 0.625)
@@ -2536,12 +2539,6 @@ visible = false
 position = Vector2(146, 8)
 scale = Vector2(1.23529, 1.42857)
 texture = ExtResource("14_5lkyd")
-
-[node name="Key" type="Sprite2D" parent="Player/Camera2D/quest_1"]
-z_index = 16
-position = Vector2(205, 244)
-scale = Vector2(0.640626, 0.625001)
-texture = ExtResource("15_6lnh8")
 
 [node name="interact_popup2" type="Sprite2D" parent="Player"]
 visible = false

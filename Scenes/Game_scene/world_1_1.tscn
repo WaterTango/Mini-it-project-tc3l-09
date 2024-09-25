@@ -541,7 +541,7 @@ offset = Vector2(-8.28, 0)
 texture_scale = 0.5
 
 [node name="quest_1" type="Control" parent="entitites/Player/Camera2D"]
-z_index = 10
+z_index = 15
 layout_mode = 3
 anchors_preset = 0
 offset_left = 65.0
@@ -551,7 +551,6 @@ offset_bottom = -352.0
 theme = SubResource("Theme_b7oar")
 
 [node name="questbanner" type="NinePatchRect" parent="entitites/Player/Camera2D/quest_1"]
-z_index = 15
 layout_mode = 0
 offset_left = 40.0
 offset_top = 231.0
@@ -608,7 +607,6 @@ text = "Open the exit door"
 horizontal_alignment = 1
 
 [node name="questdetails" type="NinePatchRect" parent="entitites/Player/Camera2D/quest_1"]
-z_index = 20
 layout_mode = 0
 offset_left = 46.0
 offset_top = 264.0
@@ -664,7 +662,7 @@ texture = ExtResource("16_hbdxl")
 process_mode = 3
 visible = false
 self_modulate = Color(1, 1, 1, 0)
-z_index = 10
+z_index = 20
 custom_minimum_size = Vector2(1920, 1080)
 offset_left = -360.0
 offset_top = -210.0
@@ -675,7 +673,7 @@ scale = Vector2(0.375, 0.375)
 [node name="settings_menu" parent="entitites/Player/Camera2D" instance=ExtResource("11_0daj7")]
 process_mode = 3
 visible = false
-z_index = 10
+z_index = 30
 custom_minimum_size = Vector2(1920, 1080)
 offset_left = -335.0
 offset_top = -180.0
