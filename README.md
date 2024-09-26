@@ -8,10 +8,9 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Contributors][contributors-shield]][contributors-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-
+  [![Contributors][contributors-shield]][contributors-url]
+  [![Stargazers][stars-shield]][stars-url]
+  [![Issues][issues-shield]][issues-url]
 
 
 <!-- PROJECT LOGO -->
@@ -176,13 +175,13 @@ Project Link: [https://github.com/WaterTango/Mini-it-project-tc3l-09](https://gi
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/WaterTango/Mini-it-project-tc3l-09.svg?style=for-the-badge
 [contributors-url]: https://github.com/WaterTango/Mini-it-project-tc3l-09/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/WaterTango/Mini-it-project-tc3l-09.svg?style=for-the-badge
 [forks-url]: https://github.com/WaterTango/Mini-it-project-tc3l-09/network/members
-[stars-shield]: https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/WaterTango/Mini-it-project-tc3l-09.svg?style=for-the-badge
 [stars-url]: https://github.comWaterTango/Mini-it-project-tc3l-09/stargazers
-[issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/WaterTango/Mini-it-project-tc3l-09.svg?style=for-the-badge
 [issues-url]: https://github.com/WaterTango/Mini-it-project-tc3l-09/issues
 [product-screenshot]: https://img.itch.zone/aW1nLzE3ODk2OTIzLnBuZw==/original/7VOyHK.png
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
