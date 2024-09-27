@@ -1,8 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://cyfgbowjsjt2v"]
+[gd_scene load_steps=14 format=3 uid="uid://cyfgbowjsjt2v"]
 
 [ext_resource type="FontFile" uid="uid://b8oo2dguy484y" path="res://shaz_fonts/basis33.ttf" id="1_beutq"]
 [ext_resource type="Script" path="res://Scripts/credits.gd" id="1_hum5i"]
 [ext_resource type="Texture2D" uid="uid://danjdwd6mvly8" path="res://PlayerAsset/Idle/Character_Idle.png" id="2_2127s"]
+[ext_resource type="AudioStream" uid="uid://dkqpfcofwxko4" path="res://shaz_audio/SFX/introSFX.mp3" id="4_vngqt"]
+[ext_resource type="Texture2D" uid="uid://c3phlpf28y4r7" path="res://shaz_images/UI/Fantasy Minimal Pixel Art UI/UI/HeartIcons_32x32.png" id="5_420w7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bi64c"]
 atlas = ExtResource("2_2127s")
@@ -102,6 +104,18 @@ tracks/4/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite2D:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_6nnyb"]
 resource_name = "credit"
@@ -167,6 +181,18 @@ tracks/4/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite2D:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(2, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_itk0b"]
 _data = {
@@ -185,6 +211,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+offset_left = 31.64
+offset_top = 1.64001
+offset_right = 31.64
+offset_bottom = 1.64001
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -196,17 +226,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -111.0
-offset_top = -345.0
-offset_right = 113.0
-offset_bottom = -310.0
+offset_left = -426.0
+offset_top = -393.0
+offset_right = 470.0
+offset_bottom = -262.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.886275, 0.65098, 0, 1)
 theme_override_fonts/font = ExtResource("1_beutq")
 theme_override_font_sizes/font_size = 64
-text = "Thank you for playing our game !
-
+text = "Thank you for playing our game!
 "
+horizontal_alignment = 1
 
 [node name="maker" type="Label" parent="Control"]
 modulate = Color(1, 1, 1, 0)
@@ -216,15 +247,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -445.0
-offset_top = -36.0
-offset_right = 451.0
-offset_bottom = 229.0
+offset_left = -429.0
+offset_top = -37.0
+offset_right = 467.0
+offset_bottom = 228.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_beutq")
 theme_override_font_sizes/font_size = 64
-text = "Made with love by 
+text = "Made with    ,
 Shaz 
 Daniel 
 Syarafiq
@@ -239,15 +270,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -722.0
-offset_top = 270.0
-offset_right = 762.0
-offset_bottom = 535.0
+offset_left = -718.0
+offset_top = 315.0
+offset_right = 766.0
+offset_bottom = 580.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0.819608, 0, 1)
 theme_override_fonts/font = ExtResource("1_beutq")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 48
 text = "Special thanks to :
 Willie, 
 HackerSpace Members  
@@ -256,7 +287,7 @@ horizontal_alignment = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(-2, -198)
+position = Vector2(54.64, -194.36)
 scale = Vector2(5.385, 5.385)
 sprite_frames = SubResource("SpriteFrames_22g8a")
 animation = &"Player_idle"
@@ -265,5 +296,15 @@ animation = &"Player_idle"
 libraries = {
 "": SubResource("AnimationLibrary_itk0b")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_vngqt")
+bus = &"SFX"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(165.64, -5.35999)
+scale = Vector2(2.28125, 2.3125)
+texture = ExtResource("5_420w7")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

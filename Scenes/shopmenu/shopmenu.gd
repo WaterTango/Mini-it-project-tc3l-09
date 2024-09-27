@@ -26,7 +26,8 @@ var shop
 
 
 func _ready() -> void:
-	handle_connecting_shop_signals()
+	greenpotbutton.grab_focus()
+	
 	pass # Replace with function body.
 
 #func save_shop():

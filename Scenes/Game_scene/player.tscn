@@ -746,6 +746,7 @@ script = ExtResource("1_6x7ad")
 [node name="player_death" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_kexgf")
 volume_db = -10.0
+bus = &"SFX"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 2
@@ -788,6 +789,7 @@ debug_color = Color(0.979617, 0, 0.386556, 0.42)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_822xd")
 volume_db = -10.0
+bus = &"SFX"
 
 [node name="hit" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -806,6 +808,7 @@ one_shot = true
 [node name="regen" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_ykcfo")
 volume_db = -8.0
+bus = &"SFX"
 
 [node name="CornerKnot14x15" type="Sprite2D" parent="."]
 z_index = 11
@@ -847,11 +850,13 @@ patch_margin_right = 6
 patch_margin_bottom = 5
 
 [node name="DefHudTheme" type="Sprite2D" parent="HPHud"]
+visible = false
 position = Vector2(75, 23.004)
 scale = Vector2(1.05, 0.375)
 texture = ExtResource("14_fw46d")
 
 [node name="Def" type="Sprite2D" parent="HPHud"]
+visible = false
 position = Vector2(138, 23.504)
 scale = Vector2(0.593748, 0.625)
 texture = ExtResource("15_w20y3")
@@ -871,7 +876,7 @@ show_percentage = false
 [node name="HPIcon" type="Sprite2D" parent="."]
 z_index = 11
 position = Vector2(-287, 158)
-scale = Vector2(1.99919, 1.91621)
+scale = Vector2(1.5, 1.4375)
 texture = ExtResource("12_r00sf")
 
 [node name="heartbeat" type="AnimationPlayer" parent="HPIcon"]
@@ -894,10 +899,10 @@ libraries = {
 [connection signal="playerdead" from="." to="." method="_on_playerdead"]
 [connection signal="finished" from="player_death" to="." method="_on_player_death_finished"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
-[connection signal="timeout" from="attack_cooldown" to="." method="_on_attack_cooldown_timeout"]
 [connection signal="timeout" from="attack_cooldown" to="." method="_on_attack_timer_timeout"]
+[connection signal="timeout" from="attack_cooldown" to="." method="_on_attack_cooldown_timeout"]
 [connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_exited" from="player_hitbox" to="." method="_on_player_hitbox_body_exited"]
 [connection signal="animation_finished" from="hit" to="." method="_on_hit_animation_finished"]
-[connection signal="timeout" from="healthregen" to="." method="_on_healthregen_timeout"]
 [connection signal="timeout" from="healthregen" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="healthregen" to="." method="_on_healthregen_timeout"]

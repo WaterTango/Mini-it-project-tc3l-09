@@ -1982,6 +1982,7 @@ scale = Vector2(5, 3.154)
 texture = ExtResource("22_yyvuq")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+process_mode = 4
 active = false
 libraries = {
 "": SubResource("AnimationLibrary_vvng7")
