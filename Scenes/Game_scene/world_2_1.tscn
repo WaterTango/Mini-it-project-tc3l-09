@@ -129,203 +129,6 @@ _data = {
 "fade out": SubResource("Animation_d0r68")
 }
 
-[sub_resource type="Animation" id="Animation_fs7hu"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BotPattern:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("TopPattern:self_modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(960, 0)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("ShopkeeperBellSFX:playing")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("ContainerExt/EquimentsCategoru/Label/EquipmentScroll/HScrollBar:value")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [2052.0]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("ContainerExt/PotionsCategory/Label/PotionScroll/HScrollBar:value")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [264.0]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("ContainerExt/WeaponsCategory/Label/WeaponScroll/HScrollBar:value")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [2084.0]
-}
-
-[sub_resource type="Animation" id="Animation_cvkov"]
-resource_name = "shop_intro"
-length = 6.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BotPattern:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(4.96667, 6.03333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("TopPattern:self_modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(4.96667, 6.03333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:position")
-tracks/2/interp = 2
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1.53333, 2.03333),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(960, -1000), Vector2(960, 50), Vector2(960, 0)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("ShopkeeperBellSFX:playing")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(4.7),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("ContainerExt/EquimentsCategoru/Label/EquipmentScroll/HScrollBar:value")
-tracks/4/interp = 2
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0.5, 2.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [2052.0, 0.0]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("ContainerExt/PotionsCategory/Label/PotionScroll/HScrollBar:value")
-tracks/5/interp = 2
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(1.46667, 3.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [264.0, 0.0]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("ContainerExt/WeaponsCategory/Label/WeaponScroll/HScrollBar:value")
-tracks/6/interp = 2
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(2.46667, 4.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [2084.0, 0.0]
-}
-
-[sub_resource type="Animation" id="Animation_pv6iw"]
-resource_name = "shop_outro"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(960, 0), Vector2(960, -1000)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_vvng7"]
-_data = {
-"RESET": SubResource("Animation_fs7hu"),
-"shop_intro": SubResource("Animation_cvkov"),
-"shop_outro": SubResource("Animation_pv6iw")
-}
-
 [sub_resource type="Animation" id="Animation_p3fox"]
 length = 0.001
 tracks/0/type = "value"
@@ -601,6 +404,203 @@ tracks/10/keys = {
 _data = {
 "RESET": SubResource("Animation_p3fox"),
 "deathscene": SubResource("Animation_co5co")
+}
+
+[sub_resource type="Animation" id="Animation_fs7hu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BotPattern:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TopPattern:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(960, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ShopkeeperBellSFX:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ContainerExt/EquimentsCategoru/Label/EquipmentScroll/HScrollBar:value")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2052.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ContainerExt/PotionsCategory/Label/PotionScroll/HScrollBar:value")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [264.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ContainerExt/WeaponsCategory/Label/WeaponScroll/HScrollBar:value")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2084.0]
+}
+
+[sub_resource type="Animation" id="Animation_cvkov"]
+resource_name = "shop_intro"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BotPattern:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(4.96667, 6.03333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TopPattern:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(4.96667, 6.03333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.53333, 2.03333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(960, -1000), Vector2(960, 50), Vector2(960, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ShopkeeperBellSFX:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(4.7),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ContainerExt/EquimentsCategoru/Label/EquipmentScroll/HScrollBar:value")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.5, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2052.0, 0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ContainerExt/PotionsCategory/Label/PotionScroll/HScrollBar:value")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1.46667, 3.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [264.0, 0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ContainerExt/WeaponsCategory/Label/WeaponScroll/HScrollBar:value")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(2.46667, 4.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2084.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_pv6iw"]
+resource_name = "shop_outro"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(960, 0), Vector2(960, -1000)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vvng7"]
+_data = {
+"RESET": SubResource("Animation_fs7hu"),
+"shop_intro": SubResource("Animation_cvkov"),
+"shop_outro": SubResource("Animation_pv6iw")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5qqo"]
@@ -3502,17 +3502,6 @@ libraries = {
 "": SubResource("AnimationLibrary_ljjtb")
 }
 
-[node name="shopmenu" parent="CanvasLayer" instance=ExtResource("3_cpo5d")]
-visible = false
-visibility_layer = 513
-offset_top = -540.0
-offset_bottom = -540.0
-
-[node name="shopintro" type="AnimationPlayer" parent="CanvasLayer/shopmenu"]
-libraries = {
-"": SubResource("AnimationLibrary_vvng7")
-}
-
 [node name="DS4-UI" parent="CanvasLayer" instance=ExtResource("29_33bs3")]
 visible = false
 position = Vector2(226, 148)
@@ -3556,6 +3545,18 @@ zoom = Vector2(0.75, 0.75)
 [node name="deathplayer2" type="AnimationPlayer" parent="CanvasLayer/deathScene"]
 libraries = {
 "": SubResource("AnimationLibrary_0t7yn")
+}
+
+[node name="shopmenu" parent="CanvasLayer" instance=ExtResource("3_cpo5d")]
+visible = false
+visibility_layer = 513
+offset_top = -540.0
+offset_bottom = -540.0
+
+[node name="shopintro" type="AnimationPlayer" parent="CanvasLayer/shopmenu"]
+active = false
+libraries = {
+"": SubResource("AnimationLibrary_vvng7")
 }
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]

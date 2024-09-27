@@ -16,6 +16,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
 		# willie wanted me to make it so that if we enter the shop on the 2nd time it'll just popup so here it is :P
 		if totalshopentered < 1:
+			$"../CanvasLayer/shopmenu/shopintro".active = true
 			$"../CanvasLayer/shopmenu/shopintro".play("shop_intro")
 			$"../CanvasLayer/shopmenu".show()
 			$"../CanvasLayer/SubViewportContainer".hide()
