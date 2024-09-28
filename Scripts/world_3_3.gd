@@ -114,11 +114,13 @@ func key_quest_show():
 	$Player/Camera2D/quest_1.show()
 	$Player/Camera2D/quest_1/questdetails.show()
 	$Player/Camera2D/quest_1/questdetails/key_collect/NkeyObtained.hide()
-
+	$Player/Camera2D/ColorRect.hide()
+	$Player/Camera2D/ColorRect2.hide()
 
 func _on_hide_quest_body_entered(body: Node2D) -> void:
 	if body is Player:
 		$Player.show_healthbar = false
 		$Player/Camera2D/quest_1.hide()
 		$Player/Camera2D/key_Notification.hide()
-		
+		$Player/Camera2D/ColorRect.show()
+		$Player/Camera2D/ColorRect2.show()
