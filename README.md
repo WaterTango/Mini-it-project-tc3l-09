@@ -140,6 +140,7 @@ Recommended Specs
     - [ ] Knight
     - [ ] Barbarian
     - [ ] Reaper
+- [ ] Map Expansion
 
 See the [open issues](https://github.com/WaterTango/Mini-it-project-tc3l-09/issues) for a full list of proposed features (and known issues).
 
@@ -190,7 +191,7 @@ Project Link: [https://github.com/WaterTango/Mini-it-project-tc3l-09](https://gi
 [Godot-url]: https://godotengine.org/ 
 # Changelog
 
-## v0.8
+## v0.6
 
 ### Added or Changed
 - Added HPbar
